@@ -1,0 +1,56 @@
+(function (g) {
+  const AR = g.AR = g.AR || {};
+  // size: peso relativo en el electorado. w: cuánto pesa cada indicador en su aprobación. aff: simpatía de base hacia cada partido (-1..1)
+  AR.scoreLabels = {
+    inf: 'Inflación', wage: 'Salario real', pen: 'Jubilación real', pwage: 'Salario público', emp: 'Empleo', pov: 'Pobreza', gro: 'Crecimiento',
+    sec: 'Seguridad', edu: 'Educación', hea: 'Salud', ins: 'Instituciones', tra: 'Transparencia', con: 'Paz social', cult: 'Vida cultural',
+    fxs: 'Libertad cambiaria', risk: 'Riesgo país'
+  };
+  AR.groups = [
+    { id: 'cm', name: 'Clase media urbana', size: 17, desc: 'AMBA, Córdoba, Rosario y otras grandes ciudades. Profesionales, comerciantes y empleados con ahorro en dólares y sensibilidad a la inflación, la seguridad y las instituciones.',
+      w: { inf: 1.0, wage: 0.4, gro: 0.5, sec: 0.8, edu: 0.35, hea: 0.2, ins: 0.6, tra: 0.5, fxs: 0.7, emp: 0.3, cult: 0.2 },
+      aff: { LLA: 0.45, PRO: 0.65, UCR: 0.25, PJ: -0.45, FIT: -0.75, CC: 0.35, PF: 0.05, PROV: -0.1 } },
+    { id: 'sp', name: 'Sectores populares', size: 16, desc: 'Conurbano bonaerense y periferias urbanas. Ingresos bajos, mucho trabajo informal y dependencia de programas sociales y precios regulados.',
+      w: { inf: 0.9, wage: 0.6, pov: 1.0, emp: 0.6, sec: 0.6, hea: 0.3, pen: 0.1, con: 0.2 },
+      aff: { LLA: 0.2, PRO: -0.3, UCR: -0.25, PJ: 0.75, FIT: -0.1, CC: -0.4, PF: 0.1, PROV: 0.1 } },
+    { id: 'jb', name: 'Jubilados y pensionados', size: 14, desc: 'Más de 6 millones de beneficiarios del sistema previsional. Dependen del haber mínimo, el bono y el PAMI.',
+      w: { pen: 1.5, inf: 0.7, hea: 0.9, sec: 0.4, pov: 0.2 },
+      aff: { LLA: -0.05, PRO: 0.0, UCR: 0.05, PJ: 0.5, FIT: 0.05, CC: -0.1, PF: 0.15, PROV: 0.1 } },
+    { id: 'pu', name: 'Empleo público', size: 7, desc: 'Empleados nacionales, provinciales y municipales, docentes y personal de salud estatal.',
+      w: { pwage: 1.3, emp: 0.4, inf: 0.5, ins: 0.3, con: 0.2 },
+      aff: { LLA: -0.6, PRO: -0.35, UCR: 0.0, PJ: 0.6, FIT: 0.2, CC: -0.05, PF: 0.25, PROV: 0.3 } },
+    { id: 'sn', name: 'Trabajadores sindicalizados', size: 8, desc: 'Trabajadores formales con convenio colectivo: CGT, CTA, camioneros, bancarios, UOM, comercio.',
+      w: { wage: 1.2, emp: 0.7, inf: 0.6, pov: 0.3, con: 0.2 },
+      aff: { LLA: -0.35, PRO: -0.35, UCR: -0.1, PJ: 0.65, FIT: 0.35, CC: -0.2, PF: 0.2, PROV: 0.05 } },
+    { id: 'inf', name: 'Informales y cuentapropistas', size: 11, desc: 'Más de un tercio del empleo argentino. Monotributistas, changas, plataformas, venta ambulante.',
+      w: { inf: 0.9, pov: 0.8, emp: 0.5, sec: 0.5, wage: 0.3, gro: 0.3 },
+      aff: { LLA: 0.5, PRO: 0.0, UCR: -0.15, PJ: 0.35, FIT: -0.05, CC: -0.2, PF: 0.0, PROV: 0.05 } },
+    { id: 'pym', name: 'PyMEs y comercio', size: 6, desc: 'Pequeñas y medianas empresas, comercio, talleres y servicios. Sufren impuestos, crédito caro y recesión.',
+      w: { gro: 1.1, inf: 0.5, risk: 0.5, fxs: 0.4, ins: 0.3 },
+      aff: { LLA: 0.5, PRO: 0.5, UCR: 0.3, PJ: -0.2, FIT: -0.6, CC: 0.25, PF: 0.1, PROV: 0.0 } },
+    { id: 'ind', name: 'Gran industria y empresariado', size: 3, desc: 'UIA, Asociación Empresaria Argentina, grandes exportadores y proveedores del Estado.',
+      w: { gro: 0.8, risk: 0.6, fxs: 0.6, inf: 0.5, ins: 0.4 },
+      aff: { LLA: 0.15, PRO: 0.6, UCR: 0.25, PJ: -0.1, FIT: -0.9, CC: 0.2, PF: 0.25, PROV: 0.1 } },
+    { id: 'agro', name: 'Productores agropecuarios', size: 3, desc: 'Pampa húmeda y cadenas agroindustriales: Mesa de Enlace, Sociedad Rural, FAA, CRA. Trauma de la Resolución 125 (2008).',
+      w: { fxs: 0.8, gro: 0.3, inf: 0.4, ins: 0.5, risk: 0.3 },
+      aff: { LLA: 0.55, PRO: 0.65, UCR: 0.4, PJ: -0.75, FIT: -0.9, CC: 0.25, PF: 0.3, PROV: 0.1 } },
+    { id: 'fin', name: 'Sector financiero y mercados', size: 1.5, desc: 'Bancos, fondos, bonistas y analistas. Pocos votos, mucha influencia sobre el dólar, el riesgo país y el financiamiento.',
+      w: { risk: 1.6, inf: 1.0, fxs: 1.0, ins: 0.8, gro: 0.3 },
+      aff: { LLA: 0.6, PRO: 0.6, UCR: 0.2, PJ: -0.6, FIT: -0.9, CC: 0.15, PF: 0.1, PROV: -0.05 } },
+    { id: 'jov', name: 'Jóvenes urbanos (18-29)', size: 9, desc: 'Primera generación nacida con inflación crónica. Trabajo precario, vivienda inaccesible, redes sociales, cultura propia.',
+      w: { emp: 0.9, inf: 0.6, wage: 0.4, fxs: 0.5, cult: 0.7, edu: 0.3, ins: 0.2, sec: 0.3 },
+      aff: { LLA: 0.7, PRO: -0.15, UCR: -0.3, PJ: -0.1, FIT: 0.25, CC: -0.2, PF: -0.05, PROV: -0.2 } },
+    { id: 'uni', name: 'Comunidad universitaria y científica', size: 3, desc: 'Docentes, estudiantes, investigadores del CONICET. Defensa de la universidad pública gratuita (Reforma de 1918).',
+      w: { edu: 1.2, cult: 0.9, ins: 0.6, con: 0.2, tra: 0.3 },
+      aff: { LLA: -0.8, PRO: -0.35, UCR: 0.2, PJ: 0.4, FIT: 0.5, CC: 0.25, PF: 0.1, PROV: -0.1 } },
+    { id: 'int', name: 'Interior provincial', size: 7, desc: 'NOA, NEA y economías regionales dependientes de transferencias, obra pública y coparticipación.',
+      w: { inf: 0.6, gro: 0.5, pov: 0.4, ins: 0.2, emp: 0.3 },
+      aff: { LLA: 0.3, PRO: -0.1, UCR: 0.2, PJ: 0.35, FIT: -0.4, CC: -0.15, PF: 0.35, PROV: 0.6 } },
+    { id: 'rel', name: 'Comunidades religiosas', size: 5, desc: 'Iglesia católica, iglesias evangélicas y otras comunidades de fe, con fuerte trabajo social en los barrios.',
+      w: { sec: 0.7, pov: 0.5, tra: 0.5, cult: 0.2, inf: 0.3 },
+      aff: { LLA: 0.35, PRO: 0.3, UCR: 0.25, PJ: 0.0, FIT: -0.8, CC: 0.05, PF: 0.1, PROV: 0.3 } },
+    { id: 'mov', name: 'Organizaciones sociales', size: 3, desc: 'Movimientos populares, cooperativas, comedores y organizaciones de desocupados con historia en los cortes de ruta de los 90.',
+      w: { pov: 1.2, emp: 0.7, wage: 0.4, inf: 0.4 },
+      aff: { LLA: -0.7, PRO: -0.7, UCR: -0.4, PJ: 0.5, FIT: 0.75, CC: -0.3, PF: -0.05, PROV: -0.1 } }
+  ];
+})(typeof window !== 'undefined' ? window : globalThis);

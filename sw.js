@@ -1,14 +1,15 @@
 /* Service worker: el juego entero queda guardado para jugar sin internet.
    Al publicar cambios, subí VERSION para que los jugadores reciban la versión nueva. */
-const VERSION = 'ar-sim-v4';
+const VERSION = 'ar-sim-v6';
 const CORE = [
-  './', './index.html', './manifest.webmanifest', './css/game.css',
+  './', './index.html', './manifest.webmanifest', './css/game.css', './css/fonts.css',
+  './fonts/barlow-400.woff2', './fonts/barlow-500.woff2', './fonts/barlow-600.woff2', './fonts/barlow-700.woff2', './fonts/barlow-semi-condensed-500.woff2', './fonts/barlow-semi-condensed-600.woff2', './fonts/barlow-semi-condensed-700.woff2',
   './icons/icon.svg', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png',
   './js/engine.js',
   './js/data/parties.js', './js/data/groups.js', './js/data/scenario.js', './js/data/history.js',
   './js/data/policies_a.js', './js/data/policies_b.js', './js/data/policies_c.js', './js/data/policies_d.js', './js/data/policies_e.js',
   './js/data/events.js', './js/data/events_b.js', './js/data/sc_2015.js', './js/data/sc_2002.js', './js/data/sc_1989.js',
-  './js/ui/art.js', './js/ui/audio.js', './js/ui/ach.js', './js/ui/game.js', './js/ui/flows.js', './js/ui/extras.js', './js/ui/pwa.js'
+  './js/ui/icons.js', './js/ui/art.js', './js/ui/audio.js', './js/ui/ach.js', './js/ui/game.js', './js/ui/flows.js', './js/ui/extras.js', './js/ui/pwa.js'
 ];
 
 self.addEventListener('install', e => {

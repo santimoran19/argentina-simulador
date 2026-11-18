@@ -26,4 +26,7 @@ Al publicar cambios, subí `VERSION` en `sw.js` para que los jugadores reciban l
 - `js/ui/`: interfaz, arte SVG, audio sintetizado (multitudes, cánticos, bombos) y flujos de juego.
 - `test/regression.js`: calibración contra datos históricos (`node test/regression.js`).
 
+## Diseño
+Ver [DESIGN.md](DESIGN.md). Íconos: subconjunto de [Tabler Icons](https://tabler.io/icons) (MIT), regenerable con `tools/build-icons.js`. Tipografía: Barlow (SIL Open Font License), incluida en `fonts/`.
+
 Los datos son aproximaciones de INDEC y BCRA. Los personajes son ficticios.

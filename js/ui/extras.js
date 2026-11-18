@@ -10,9 +10,9 @@
 
   /* ================= dificultad ================= */
   X.DIFF = {
-    facil: { icon: '🙂', name: 'Fácil', d: 'Más capital político cada mes y arrancás con más margen.', k: 1.35, pc: 15 },
-    normal: { icon: '😐', name: 'Normal', d: 'La Argentina tal como es.', k: 1, pc: 0 },
-    dificil: { icon: '😈', name: 'Difícil', d: 'El capital político rinde poco. Cada decisión cuesta el doble.', k: 0.75, pc: -8 }
+    facil: { icon: '' + AR.icon('mood-smile') + '', name: 'Fácil', d: 'Más capital político cada mes y arrancás con más margen.', k: 1.35, pc: 15 },
+    normal: { icon: '' + AR.icon('mood-neutral') + '', name: 'Normal', d: 'La Argentina tal como es.', k: 1, pc: 0 },
+    dificil: { icon: '' + AR.icon('mood-sad') + '', name: 'Difícil', d: 'El capital político rinde poco. Cada decisión cuesta el doble.', k: 0.75, pc: -8 }
   };
   U.diff = U.diff || 'normal';
   X.diffPicker = () => '<div class="diffs"><span>Dificultad:</span>' + Object.keys(X.DIFF).map(k => '<button class="diff' + (U.diff === k ? ' on' : '') + '" data-act="diff" data-v="' + k + '" title="' + X.DIFF[k].d + '">' + X.DIFF[k].icon + ' ' + X.DIFF[k].name + '</button>').join('') + '</div>';
@@ -22,28 +22,28 @@
   const gy = S => AR.gdpYoy(S);
   X.GOALS = {
     dic2023: [
-      { id: 'i3', icon: '🔥', name: 'Inflación debajo del 3% mensual', ok: S => S.m.infM < 3 },
-      { id: 'res', icon: '🏦', name: 'Reservas netas positivas', ok: S => S.m.res > 0 },
-      { id: 'rk', icon: '📉', name: 'Riesgo país debajo de 900', ok: S => S.m.risk < 900 },
-      { id: 'pov', icon: '🥣', name: 'Pobreza debajo del 35%', ok: S => S.m.pov < 35 }
+      { id: 'i3', icon: '' + AR.icon('flame') + '', name: 'Inflación debajo del 3% mensual', ok: S => S.m.infM < 3 },
+      { id: 'res', icon: '' + AR.icon('building-bank') + '', name: 'Reservas netas positivas', ok: S => S.m.res > 0 },
+      { id: 'rk', icon: '' + AR.icon('chart-line') + '', name: 'Riesgo país debajo de 900', ok: S => S.m.risk < 900 },
+      { id: 'pov', icon: '' + AR.icon('bowl') + '', name: 'Pobreza debajo del 35%', ok: S => S.m.pov < 35 }
     ],
     dic2015: [
-      { id: 'gap', icon: '💵', name: 'Unificar el dólar (brecha menor al 5%)', ok: S => S.m.gap < 5 },
-      { id: 'i15', icon: '🔥', name: 'Inflación debajo del 1,5% mensual', ok: S => S.m.infM < 1.5 },
-      { id: 'pov', icon: '🥣', name: 'Pobreza debajo del 26%', ok: S => S.m.pov < 26 },
-      { id: 'gro', icon: '📊', name: 'Crecer más del 3% anual', ok: S => gy(S) > 3 }
+      { id: 'gap', icon: '' + AR.icon('currency-dollar') + '', name: 'Unificar el dólar (brecha menor al 5%)', ok: S => S.m.gap < 5 },
+      { id: 'i15', icon: '' + AR.icon('flame') + '', name: 'Inflación debajo del 1,5% mensual', ok: S => S.m.infM < 1.5 },
+      { id: 'pov', icon: '' + AR.icon('bowl') + '', name: 'Pobreza debajo del 26%', ok: S => S.m.pov < 26 },
+      { id: 'gro', icon: '' + AR.icon('chart-bar') + '', name: 'Crecer más del 3% anual', ok: S => gy(S) > 3 }
     ],
     ene2002: [
-      { id: 'pov', icon: '🥣', name: 'Bajar la pobreza del 45%', ok: S => S.m.pov < 45 },
-      { id: 'u', icon: '🧰', name: 'Desocupación debajo del 14%', ok: S => S.m.u < 14 },
-      { id: 'inf', icon: '🔥', name: 'Inflación debajo del 1,5% mensual', ok: S => S.m.infM < 1.5 && S.t > 3 },
-      { id: 'gro', icon: '🚀', name: 'Crecer más del 5% anual', ok: S => gy(S) > 5 }
+      { id: 'pov', icon: '' + AR.icon('bowl') + '', name: 'Bajar la pobreza del 45%', ok: S => S.m.pov < 45 },
+      { id: 'u', icon: '' + AR.icon('briefcase-off') + '', name: 'Desocupación debajo del 14%', ok: S => S.m.u < 14 },
+      { id: 'inf', icon: '' + AR.icon('flame') + '', name: 'Inflación debajo del 1,5% mensual', ok: S => S.m.infM < 1.5 && S.t > 3 },
+      { id: 'gro', icon: '' + AR.icon('rocket') + '', name: 'Crecer más del 5% anual', ok: S => gy(S) > 5 }
     ],
     jul1989: [
-      { id: 'hip', icon: '🌋', name: 'Terminar con la hiper (menos del 5% mensual)', ok: S => S.m.infM < 5 },
-      { id: 'i1', icon: '🧊', name: 'Inflación debajo del 1% mensual', ok: S => S.m.infM < 1 },
-      { id: 'gro', icon: '📊', name: 'Crecer más del 4% anual', ok: S => gy(S) > 4 },
-      { id: 'ap', icon: '❤️', name: 'Recuperar el 50% de aprobación', ok: S => S.appr >= 50 }
+      { id: 'hip', icon: '' + AR.icon('flame') + '', name: 'Terminar con la hiper (menos del 5% mensual)', ok: S => S.m.infM < 5 },
+      { id: 'i1', icon: '' + AR.icon('snowflake') + '', name: 'Inflación debajo del 1% mensual', ok: S => S.m.infM < 1 },
+      { id: 'gro', icon: '' + AR.icon('chart-bar') + '', name: 'Crecer más del 4% anual', ok: S => gy(S) > 4 },
+      { id: 'ap', icon: '' + AR.icon('heart') + '', name: 'Recuperar el 50% de aprobación', ok: S => S.appr >= 50 }
     ]
   };
   X.goals = S => X.GOALS[S.scn] || X.GOALS.dic2023;
@@ -51,7 +51,7 @@
     S.goals = S.goals || {}; const fresh = [];
     X.goals(S).forEach(gl => { if (!S.goals[gl.id]) { let ok = false; try { ok = gl.ok(S); } catch (e) { ok = false; } if (ok) { S.goals[gl.id] = S.t; S.pc = clamp(S.pc + 10, 0, 100); fresh.push(gl); } } });
     fresh.forEach((gl, i) => setTimeout(() => {
-      F.toast('<b>🎯 ¡Objetivo cumplido!</b> ' + gl.icon + ' ' + gl.name + ' · <b>+10 🪙</b>', 'ok'); SFX.fanfare(); setTimeout(() => SFX.celebrate(1), 400);
+      F.toast('<b>' + AR.icon('target') + ' ¡Objetivo cumplido!</b> ' + gl.icon + ' ' + gl.name + ' · <b>+10 ' + AR.icon('coin') + '</b>', 'ok'); SFX.fanfare(); setTimeout(() => SFX.celebrate(1), 400);
       VOX.say('Objetivo cumplido: ' + gl.name, { interrupt: false });
     }, 900 + i * 1200));
     return fresh;
@@ -59,31 +59,31 @@
   X.goalCount = S => { const all = X.goals(S); return Object.keys(S.goals || {}).filter(k => all.some(x => x.id === k)).length + '/' + all.length; };
   function scrObjetivos(S) {
     const all = X.goals(S), done = S.goals || {};
-    return '<h1>🎯 Objetivos del mandato <small>' + X.goalCount(S) + '</small></h1><p class="mut">Cada objetivo cumplido te da <b>+10 de capital político</b> al instante. Se cumple apenas el indicador llega a la meta, al cerrar el mes.</p>' +
-      '<div class="goals">' + all.map(gl => { const ok = done[gl.id] !== undefined; return '<div class="goal' + (ok ? ' ok' : '') + '"><i>' + (ok ? '✅' : gl.icon) + '</i><div><b>' + gl.name + '</b><small>' + (ok ? 'Cumplido en ' + AR.dateLabel(done[gl.id] - 1) : 'Pendiente') + '</small></div></div>'; }).join('') + '</div>' +
+    return '<h1>' + AR.icon('target') + ' Objetivos del mandato <small>' + X.goalCount(S) + '</small></h1><p class="mut">Cada objetivo cumplido te da <b>+10 de capital político</b> al instante. Se cumple apenas el indicador llega a la meta, al cerrar el mes.</p>' +
+      '<div class="goals">' + all.map(gl => { const ok = done[gl.id] !== undefined; return '<div class="goal' + (ok ? ' ok' : '') + '"><i>' + (ok ? '' + AR.icon('circle-check') + '' : gl.icon) + '</i><div><b>' + gl.name + '</b><small>' + (ok ? 'Cumplido en ' + AR.dateLabel(done[gl.id] - 1) : 'Pendiente') + '</small></div></div>'; }).join('') + '</div>' +
       '<h2>Dificultad</h2><p class="mut">Esta partida: <b>' + (X.DIFF[S.diff || 'normal'].icon + ' ' + X.DIFF[S.diff || 'normal'].name) + '</b>. ' + X.DIFF[S.diff || 'normal'].d + '</p>';
   }
 
   /* ================= cadena nacional ================= */
   X.SPEECH = {
-    economia: { icon: '📈', name: 'Defender el rumbo económico', txt: 'Queridos compatriotas: el esfuerzo vale la pena. Estamos ordenando la economía y lo peor ya pasó.', g: { fin: 6, cm: 3, pym: 2, sp: -2, sn: -3 } },
-    jubilados: { icon: '👵', name: 'Homenaje a los jubilados', txt: 'A nuestros abuelos: ustedes construyeron este país, y este gobierno no los va a abandonar.', g: { jb: 7, rel: 2, cm: 1 } },
-    unidad: { icon: '🤝', name: 'Llamado a la unidad nacional', txt: 'Les pido a todos, sin importar a quién votaron, que tiremos para el mismo lado. La Argentina nos necesita unidos.', g: { cm: 1.6, sp: 1.6, jb: 1.6, pu: 1.6, sn: 1.6, inf: 1.6, pym: 1.6, ind: 1.6, agro: 1.6, fin: 1.6, jov: 1.6, uni: 1.6, int: 1.6, rel: 2.5, mov: 1.6 }, e: { conf: -3 } },
-    seguridad: { icon: '🚓', name: 'Mano dura contra el delito', txt: 'Se terminó la impunidad. El que las hace, las paga. Vamos a recuperar las calles para la gente de bien.', g: { cm: 4, int: 3, rel: 2, uni: -3, mov: -3 }, e: { insec: -2 } },
-    produccion: { icon: '🏭', name: 'Apoyo a la producción', txt: 'El trabajo argentino es el motor del país. Vamos a cuidar cada fábrica, cada campo y cada comercio.', g: { agro: 4, ind: 4, pym: 4, sn: 2, fin: -1 } },
-    juventud: { icon: '🎒', name: 'Los jóvenes y el futuro', txt: 'A los jóvenes les digo: no se vayan. Este país va a tener un lugar para ustedes.', g: { jov: 6, uni: 4 } },
-    privilegios: { icon: '✂️', name: 'Contra los privilegios', txt: 'Se terminaron los privilegios de unos pocos que vivieron a costa del esfuerzo de todos.', g: { cm: 4, jov: 3, inf: 2, pu: -4, sn: -4 } },
-    social: { icon: '🍲', name: 'Nadie se salva solo', txt: 'Mientras haya un chico con hambre en la Argentina, ningún gobierno puede estar tranquilo.', g: { sp: 5, mov: 5, rel: 3, inf: 3, fin: -3 } }
+    economia: { icon: '' + AR.icon('trending-up') + '', name: 'Defender el rumbo económico', txt: 'Queridos compatriotas: el esfuerzo vale la pena. Estamos ordenando la economía y lo peor ya pasó.', g: { fin: 6, cm: 3, pym: 2, sp: -2, sn: -3 } },
+    jubilados: { icon: '' + AR.icon('old') + '', name: 'Homenaje a los jubilados', txt: 'A nuestros abuelos: ustedes construyeron este país, y este gobierno no los va a abandonar.', g: { jb: 7, rel: 2, cm: 1 } },
+    unidad: { icon: '' + AR.icon('heart-handshake') + '', name: 'Llamado a la unidad nacional', txt: 'Les pido a todos, sin importar a quién votaron, que tiremos para el mismo lado. La Argentina nos necesita unidos.', g: { cm: 1.6, sp: 1.6, jb: 1.6, pu: 1.6, sn: 1.6, inf: 1.6, pym: 1.6, ind: 1.6, agro: 1.6, fin: 1.6, jov: 1.6, uni: 1.6, int: 1.6, rel: 2.5, mov: 1.6 }, e: { conf: -3 } },
+    seguridad: { icon: '' + AR.icon('shield-check') + '', name: 'Mano dura contra el delito', txt: 'Se terminó la impunidad. El que las hace, las paga. Vamos a recuperar las calles para la gente de bien.', g: { cm: 4, int: 3, rel: 2, uni: -3, mov: -3 }, e: { insec: -2 } },
+    produccion: { icon: '' + AR.icon('building-factory') + '', name: 'Apoyo a la producción', txt: 'El trabajo argentino es el motor del país. Vamos a cuidar cada fábrica, cada campo y cada comercio.', g: { agro: 4, ind: 4, pym: 4, sn: 2, fin: -1 } },
+    juventud: { icon: '' + AR.icon('school') + '', name: 'Los jóvenes y el futuro', txt: 'A los jóvenes les digo: no se vayan. Este país va a tener un lugar para ustedes.', g: { jov: 6, uni: 4 } },
+    privilegios: { icon: '' + AR.icon('scissors') + '', name: 'Contra los privilegios', txt: 'Se terminaron los privilegios de unos pocos que vivieron a costa del esfuerzo de todos.', g: { cm: 4, jov: 3, inf: 2, pu: -4, sn: -4 } },
+    social: { icon: '' + AR.icon('tools-kitchen-2') + '', name: 'Nadie se salva solo', txt: 'Mientras haya un chico con hambre en la Argentina, ningún gobierno puede estar tranquilo.', g: { sp: 5, mov: 5, rel: 3, inf: 3, fin: -3 } }
   };
   X.SPEECH_COST = 6;
   X.openSpeech = () => {
     const S = U.S; if (!S || S.over) return;
-    if (S.speechT === S.t) { SFX.bad(); F.toast('📺 Ya hablaste en cadena nacional este mes. Volvé el mes que viene.', 'bad'); return; }
+    if (S.speechT === S.t) { SFX.bad(); F.toast('' + AR.icon('device-tv') + ' Ya hablaste en cadena nacional este mes. Volvé el mes que viene.', 'bad'); return; }
     const p = Math.round(X.speechOdds(S) * 100);
-    F.modal('<div class="speechm"><div class="tv"><div class="tvin"><span class="cn">🔴 CADENA NACIONAL</span>' + ART.emblem(AR.parties[S.party], 70) + '<b>¿De qué le vas a hablar al país?</b></div></div>' +
-      '<p class="mut center">Cuesta <b>' + X.SPEECH_COST + ' 🪙</b> y podés hacerlo una vez por mes. Con tu aprobación actual, la chance de que el mensaje caiga bien es de <b>' + p + '%</b>.</p>' +
+    F.modal('<div class="speechm"><div class="tv"><div class="tvin"><span class="cn">' + AR.icon('broadcast') + ' CADENA NACIONAL</span>' + ART.emblem(AR.parties[S.party], 70) + '<b>¿De qué le vas a hablar al país?</b></div></div>' +
+      '<p class="mut center">Cuesta <b>' + X.SPEECH_COST + ' ' + AR.icon('coin') + '</b> y podés hacerlo una vez por mes. Con tu aprobación actual, la chance de que el mensaje caiga bien es de <b>' + p + '%</b>.</p>' +
       '<div class="topics">' + Object.keys(X.SPEECH).map(k => { const s = X.SPEECH[k]; const gs = Object.keys(s.g).filter(x => Math.abs(s.g[x]) >= 2).sort((a, b) => s.g[b] - s.g[a]);
-        return '<button class="topic" data-act="speech" data-v="' + k + '"' + (S.pc < X.SPEECH_COST ? ' disabled' : '') + '><i>' + s.icon + '</i><b>' + s.name + '</b><span class="hints">' + (gs.length ? gs.map(x => '<span class="hf ' + (s.g[x] > 0 ? 'up' : 'dn') + '" title="' + U.gshort[x] + '">' + ART.avatar(x, s.g[x] > 0 ? 1 : -1) + '</span>').join('') : '<span class="hc up">👥 Todos un poco</span>') + '</span></button>'; }).join('') + '</div>' +
+        return '<button class="topic" data-act="speech" data-v="' + k + '"' + (S.pc < X.SPEECH_COST ? ' disabled' : '') + '><i>' + s.icon + '</i><b>' + s.name + '</b><span class="hints">' + (gs.length ? gs.map(x => '<span class="hf ' + (s.g[x] > 0 ? 'up' : 'dn') + '" title="' + U.gshort[x] + '">' + ART.avatar(x, s.g[x] > 0 ? 1 : -1) + '</span>').join('') : '<span class="hc up">' + AR.icon('users') + ' Todos un poco</span>') + '</span></button>'; }).join('') + '</div>' +
       '<button class="sm" data-act="closemodal">Cancelar</button></div>', 'wide dark');
   };
   X.speechOdds = S => clamp(0.5 + (S.appr - 40) / 80 + (S.m.conf < 40 ? 0.05 : -0.05), 0.25, 0.92);
@@ -92,7 +92,7 @@
     S.pc -= X.SPEECH_COST; S.speechT = S.t; S.stats.speeches = (S.stats.speeches || 0) + 1;
     const ok = Math.random() < X.speechOdds(S), gg = {};
     Object.keys(sp.g).forEach(x => { gg[x] = ok ? sp.g[x] : (sp.g[x] > 0 ? -sp.g[x] * 0.4 : sp.g[x] * 1.2); });
-    F.modal('<div class="speechm"><div class="tv on"><div class="tvin"><span class="cn">🔴 EN VIVO · CADENA NACIONAL</span>' + ART.emblem(AR.parties[S.party], 70) + '<p class="tvtxt" id="tvtxt"></p></div><div class="scan"></div></div><div id="spres" class="spres"></div></div>', 'wide dark');
+    F.modal('<div class="speechm"><div class="tv on"><div class="tvin"><span class="cn">' + AR.icon('broadcast') + ' EN VIVO · CADENA NACIONAL</span>' + ART.emblem(AR.parties[S.party], 70) + '<p class="tvtxt" id="tvtxt"></p></div><div class="scan"></div></div><div id="spres" class="spres"></div></div>', 'wide dark');
     SFX.news(); VOX.say(sp.txt, { interrupt: true, rate: 1, pitch: 0.95 });
     const el = $('tvtxt'); let i = 0;
     const iv = setInterval(() => { if (!el.isConnected) { clearInterval(iv); return; } i += 2; el.textContent = '“' + sp.txt.slice(0, i) + (i < sp.txt.length ? '' : '”'); if (i >= sp.txt.length) { clearInterval(iv); done(); } }, 45);
@@ -138,7 +138,7 @@
   X.papers = (S, snap) => {
     const h = headlines(S, snap), d = AR.dateOf(S.t);
     const scene = { mat: h.mood.mat ? 'casa' : 'congreso', voz: h.mood.voz ? 'campo' : 'calle', inv: h.mood.inv ? 'mercadoBueno' : 'mercado' };
-    return '<h3>📰 Las tapas de mañana</h3><div class="papers">' + PAPERS.map(p => '<div class="paper2 ' + p.cls + '"><div class="mast"><b>' + p.name + '</b><small>' + p.sub + ' · 1 de ' + MN[d.m] + ' de ' + d.y + '</small></div><h4>' + esc(h[p.id][0]) + '</h4><div class="pimg">' + ART.scene(scene[p.id]) + '</div><p>' + esc(h[p.id][1]) + '</p></div>').join('') + '</div>';
+    return '<h3>' + AR.icon('news') + ' Las tapas de mañana</h3><div class="papers">' + PAPERS.map(p => '<div class="paper2 ' + p.cls + '"><div class="mast"><b>' + p.name + '</b><small>' + p.sub + ' · 1 de ' + MN[d.m] + ' de ' + d.y + '</small></div><h4>' + esc(h[p.id][0]) + '</h4><div class="pimg">' + ART.scene(scene[p.id]) + '</div><p>' + esc(h[p.id][1]) + '</p></div>').join('') + '</div>';
   };
 
   /* ================= redes sociales ================= */
@@ -192,9 +192,9 @@
   };
   function scrRedes(S) {
     const feed = (S.feed || []).slice(0, 24);
-    const posts = feed.length ? feed.map(p => { const h = HANDLE[p.gid]; return '<div class="post ' + (p.up ? 'pup' : 'pdn') + '"><div class="pav">' + ART.avatar(p.gid, p.up ? 1 : -1) + '</div><div class="pb2"><div class="ph2"><b>' + h[1] + '</b><span>@' + h[0] + ' · ' + AR.dateLabel(p.t - 1) + '</span></div><p>' + esc(p.txt) + '</p><div class="pact"><span>💬 ' + Math.round(p.rt / 3) + '</span><span>🔁 ' + p.rt + '</span><span>❤️ ' + p.likes + '</span></div></div></div>'; }).join('') : '<p class="mut">Todavía no hay posteos. Pasá de mes y mirá qué dice la gente.</p>';
+    const posts = feed.length ? feed.map(p => { const h = HANDLE[p.gid]; return '<div class="post ' + (p.up ? 'pup' : 'pdn') + '"><div class="pav">' + ART.face(p.gid, p.up ? 1 : -1) + '</div><div class="pb2"><div class="ph2"><b>' + h[1] + '</b><span>@' + h[0] + ' · ' + AR.dateLabel(p.t - 1) + '</span></div><p>' + esc(p.txt) + '</p><div class="pact"><span>' + AR.icon('message') + ' ' + Math.round(p.rt / 3) + '</span><span>' + AR.icon('repeat') + ' ' + p.rt + '</span><span>' + AR.icon('heart') + ' ' + p.likes + '</span></div></div></div>'; }).join('') : '<p class="mut">Todavía no hay posteos. Pasá de mes y mirá qué dice la gente.</p>';
     const tr = (S.trends || []).map((x, i) => '<div class="trend"><small>' + (i + 1) + ' · Tendencia en Argentina</small><b>' + esc(x.t) + '</b><small>' + x.n + ' posteos</small></div>').join('') || '<p class="mut">Sin tendencias todavía.</p>';
-    return '<h1>📱 Redes sociales</h1><div class="redes"><div class="feed">' + posts + '</div><aside class="trends"><h3>🔥 Tendencias</h3>' + tr + '</aside></div>';
+    return '<h1>' + AR.icon('device-mobile') + ' Redes sociales</h1><div class="redes"><div class="feed">' + posts + '</div><aside class="trends"><h3>' + AR.icon('flame') + ' Tendencias</h3>' + tr + '</aside></div>';
   }
 
   /* ================= encuestas ================= */
@@ -208,11 +208,11 @@
     const bars = ord.map(k => '<div class="eb">' + ART.emblem(AR.parties[k], 30) + '<span>' + AR.parties[k].short + (k === S.party ? ' (vos)' : '') + '</span><div class="track"><i style="width:' + (sh[k] / mx * 100) + '%;background:' + AR.parties[k].color + '"></i></div><b>' + fmt(sh[k], 1) + '%</b></div>').join('');
     const grs = AR.groups.slice().sort((a, b) => S.A[b.id] - S.A[a.id]).map(gr => '<div class="gbar" data-act="open" data-t="grp" data-v="' + gr.id + '"><span class="gfa">' + ART.avatar(gr.id, ART.moodOf(S.A[gr.id])) + '</span><span>' + U.gshort[gr.id] + '</span><div class="track"><i style="width:' + S.A[gr.id] + '%;background:hsl(' + U.hueOf((S.A[gr.id] - 40) / 20) + ' 70% 50%)"></i></div><b>' + fmt(S.A[gr.id]) + '%</b></div>').join('');
     const probs = ART.situations(S).filter(s => !s.good);
-    return '<h1>📈 Encuestas</h1>' +
+    return '<h1>' + AR.icon('trending-up') + ' Encuestas</h1>' +
       (ne ? '<div class="countdown"><b>' + (ne.t - S.t + 1) + '</b><span>' + (ne.t - S.t + 1 === 1 ? 'mes' : 'meses') + ' para las ' + ne.k + '<small>' + AR.dateLong(ne.t) + '</small></span></div>' : '') +
-      '<div class="grid2"><div class="card"><h4>❤️ Aprobación del gobierno</h4>' + U.lineChart(S.h.appr.length > 1 ? S.h.appr : [S.appr, S.appr], '#f6b40e', 200) + '</div>' +
-      '<div class="card"><h4>🗳️ Si las elecciones fueran hoy</h4><div class="ebs">' + bars + '</div></div></div>' +
-      '<div class="grid2"><div class="card"><h4>👥 Aprobación por sector</h4>' + grs + '</div><div class="card"><h4>😟 Lo que más preocupa</h4>' +
+      '<div class="grid2"><div class="card"><h4>' + AR.icon('heart') + ' Aprobación del gobierno</h4>' + U.lineChart(S.h.appr.length > 1 ? S.h.appr : [S.appr, S.appr], '#f6b40e', 200) + '</div>' +
+      '<div class="card"><h4>' + AR.icon('checkbox') + ' Si las elecciones fueran hoy</h4><div class="ebs">' + bars + '</div></div></div>' +
+      '<div class="grid2"><div class="card"><h4>' + AR.icon('users') + ' Aprobación por sector</h4>' + grs + '</div><div class="card"><h4>' + AR.icon('mood-sad') + ' Lo que más preocupa</h4>' +
       (probs.length ? probs.map(s => '<div class="prob2"><i>' + s.icon + '</i><b>' + s.name + '</b><small>' + s.d + '</small></div>').join('') : '<p class="mut">Ningún problema grave domina la agenda. ¡Aprovechalo!</p>') + '</div></div>';
   }
 
@@ -224,7 +224,7 @@
     const url = /^https?:/.test(location.protocol) ? location.href.split('#')[0] : '';
     try {
       if (navigator.share) { await navigator.share({ title: 'Argentina: Simulador de Gobierno', text: txt, url: url || undefined }); return; }
-      await navigator.clipboard.writeText(txt + (url ? '\n' + url : '')); F.toast('📋 Resultado copiado. ¡Pegalo donde quieras!', 'ok');
+      await navigator.clipboard.writeText(txt + (url ? '\n' + url : '')); F.toast('' + AR.icon('clipboard-list') + ' Resultado copiado. ¡Pegalo donde quieras!', 'ok');
     } catch (e) { F.toast('No se pudo compartir desde este navegador.', 'bad'); }
   };
 

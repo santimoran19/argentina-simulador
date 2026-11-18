@@ -49,7 +49,7 @@
     earbuds: () => '<circle cx="31" cy="49" r="2.5" fill="#fff"/><circle cx="69" cy="49" r="2.5" fill="#fff"/>'
   };
   // mood: -1 enojado, 0 neutral, 1 contento
-  ART.avatar = function (id, mood) {
+  ART.face = function (id, mood) {
     const L = LOOK[id] || LOOK.cm, md = mood > 0.33 ? 1 : mood < -0.33 ? -1 : 0;
     const brows = md === 1 ? 'M39 37 Q43 35 47 37 M53 37 Q57 35 61 37' : md === -1 ? 'M39 35 L47 38 M53 38 L61 35' : 'M39 37 L47 37 M53 37 L61 37';
     const mouth = md === 1 ? 'M42 54 Q50 62 58 54' : md === -1 ? 'M43 59 Q50 52 57 59' : 'M44 56 L56 56';
@@ -70,13 +70,18 @@
       mid + top + '</svg>';
   };
   ART.moodOf = a => (a - 45) / 20;
+  // Sector: círculo claro con pictograma; el anillo exterior dice el humor (verde, ámbar o rojo)
+  ART.avatar = function (id, mood) {
+    const md = mood > 0.33 ? 'ok' : mood < -0.33 ? 'bad' : 'mid', ic = AR.iconOf('grp', id, 'gico');
+    return '<span class="av gp ' + md + '">' + ic + '</span>';
+  };
 
   /* ---------------- emblemas de partido ---------------- */
   ART.emblem = function (p, size) {
     const s = size || 40, txt = (p.short || p.id).replace(/[^A-Za-zÁÉÍÓÚÑ\-]/g, '').slice(0, 4).toUpperCase();
     const dark = ['#F2B705', '#F2B705'].includes(p.color);
     return '<svg viewBox="0 0 40 40" width="' + s + '" height="' + s + '" class="emb"><circle cx="20" cy="20" r="19" fill="' + p.color + '" stroke="#ffffff55" stroke-width="2"/>' +
-      '<text x="20" y="24.5" text-anchor="middle" font-size="' + (txt.length > 3 ? 10 : 12) + '" font-weight="800" fill="' + (dark ? '#1b1b1b' : '#fff') + '" font-family="Oswald, Arial Narrow, sans-serif">' + txt + '</text></svg>';
+      '<text x="20" y="24.5" text-anchor="middle" font-size="' + (txt.length > 3 ? 10 : 12) + '" font-weight="800" fill="' + (dark ? '#1b1b1b' : '#fff') + '" font-family="Barlow Semi Condensed, Arial Narrow, sans-serif">' + txt + '</text></svg>';
   };
 
   /* ---------------- escenas ilustradas para eventos ---------------- */
@@ -185,26 +190,30 @@
   ART.situations = function (S) {
     const m = S.m, out = [], gy = AR.gdpYoy ? AR.gdpYoy(S) : 0;
     const add = (ok, icon, name, good, ind, d) => { if (ok) out.push({ icon, name, good, ind, d }); };
-    add(m.infM >= 40, '🌋', 'Hiperinflación', false, 'infl', 'Los precios se duplican en semanas.');
-    add(m.infM >= 6 && m.infM < 40, '🔥', 'Inflación alta', false, 'infl', 'La inflación mensual supera el 6%.');
-    add(m.infM <= 2, '🧊', 'Precios estables', true, 'infl', 'Inflación mensual del 2% o menos.');
-    add(m.gap >= 60, '💸', 'Brecha cambiaria', false, 'dolar', 'El dólar libre vale mucho más que el oficial.');
-    add(m.gap <= 5 && m.infM < 6, '💵', 'Dólar unificado', true, 'dolar', 'Casi no hay brecha entre oficial y libre.');
-    add(m.res < 0, '🏦', 'Reservas negativas', false, 'reservas', 'El BCRA debe más dólares de los que tiene.');
-    add(m.risk >= 2000, '⚠️', 'Riesgo de default', false, 'riesgo', 'Nadie presta: el riesgo país supera los 2.000.');
-    add(m.risk <= 650, '🤝', 'Crédito externo', true, 'riesgo', 'El país vuelve a conseguir financiamiento.');
-    add(gy <= -2, '📉', 'Recesión', false, 'pbi', 'La economía cae más del 2% interanual.');
-    add(gy >= 4, '🚀', 'Crecimiento fuerte', true, 'pbi', 'La economía crece más del 4%.');
-    add(m.u >= 11, '🧰', 'Desempleo masivo', false, 'desempleo', 'Más del 11% de la gente busca trabajo y no lo encuentra.');
-    add(m.pov >= 45, '🥣', 'Emergencia social', false, 'pobreza', 'Casi la mitad del país es pobre.');
-    add(m.pov <= 28, '🏡', 'Pobreza en baja', true, 'pobreza', 'La pobreza baja del 28%.');
-    add(m.conf >= 60, '📢', 'Calles calientes', false, 'conflicto', 'Piquetes, paros y marchas todas las semanas.');
-    add(m.insec >= 65, '🚨', 'Ola de inseguridad', false, 'inseguridad', 'El delito es la preocupación número uno.');
-    add(m.inst <= 35, '⚖️', 'Crisis institucional', false, 'instituciones', 'Los poderes del Estado están en choque.');
-    add(m.pb >= 0.5, '🧮', 'Superávit fiscal', true, 'deficit', 'El Estado gasta menos de lo que recauda.');
-    add(m.pb <= -4, '🕳️', 'Déficit descontrolado', false, 'deficit', 'El rojo fiscal supera el 4% del PBI.');
+    add(m.infM >= 40, AR.icon('flame'), 'Hiperinflación', false, 'infl', 'Los precios se duplican en semanas.');
+    add(m.infM >= 6 && m.infM < 40, AR.icon('flame'), 'Inflación alta', false, 'infl', 'La inflación mensual supera el 6%.');
+    add(m.infM <= 2, AR.icon('snowflake'), 'Precios estables', true, 'infl', 'Inflación mensual del 2% o menos.');
+    add(m.gap >= 60, AR.icon('cash'), 'Brecha cambiaria', false, 'dolar', 'El dólar libre vale mucho más que el oficial.');
+    add(m.gap <= 5 && m.infM < 6, AR.icon('currency-dollar'), 'Dólar unificado', true, 'dolar', 'Casi no hay brecha entre oficial y libre.');
+    add(m.res < 0, AR.icon('building-bank'), 'Reservas negativas', false, 'reservas', 'El BCRA debe más dólares de los que tiene.');
+    add(m.risk >= 2000, AR.icon('alert-triangle'), 'Riesgo de default', false, 'riesgo', 'Nadie presta: el riesgo país supera los 2.000.');
+    add(m.risk <= 650, AR.icon('heart-handshake'), 'Crédito externo', true, 'riesgo', 'El país vuelve a conseguir financiamiento.');
+    add(gy <= -2, AR.icon('chart-line'), 'Recesión', false, 'pbi', 'La economía cae más del 2% interanual.');
+    add(gy >= 4, AR.icon('rocket'), 'Crecimiento fuerte', true, 'pbi', 'La economía crece más del 4%.');
+    add(m.u >= 11, AR.icon('briefcase-off'), 'Desempleo masivo', false, 'desempleo', 'Más del 11% de la gente busca trabajo y no lo encuentra.');
+    add(m.pov >= 45, AR.icon('bowl'), 'Emergencia social', false, 'pobreza', 'Casi la mitad del país es pobre.');
+    add(m.pov <= 28, AR.icon('home'), 'Pobreza en baja', true, 'pobreza', 'La pobreza baja del 28%.');
+    add(m.conf >= 60, AR.icon('speakerphone'), 'Calles calientes', false, 'conflicto', 'Piquetes, paros y marchas todas las semanas.');
+    add(m.insec >= 65, AR.icon('alert-triangle'), 'Ola de inseguridad', false, 'inseguridad', 'El delito es la preocupación número uno.');
+    add(m.inst <= 35, AR.icon('scale'), 'Crisis institucional', false, 'instituciones', 'Los poderes del Estado están en choque.');
+    add(m.pb >= 0.5, AR.icon('calculator'), 'Superávit fiscal', true, 'deficit', 'El Estado gasta menos de lo que recauda.');
+    add(m.pb <= -4, AR.icon('alert-octagon'), 'Déficit descontrolado', false, 'deficit', 'El rojo fiscal supera el 4% del PBI.');
     return out;
   };
+
+  Object.keys(ART.polIcon).forEach(k => { ART.polIcon[k] = AR.iconOf('pol', k); });
+  Object.keys(ART.catIcon).forEach(k => { ART.catIcon[k] = AR.iconOf('cat', k); });
+  ART.catColor = { mon: '#c9a227', fis: '#d9822b', gas: '#cf6060', tra: '#4fa36b', pro: '#3a9fb5', seg: '#7584d8', soc: '#c76aa5', ins: '#8b98a8' };
 
   /* ---------------- indicadores del tablero ---------------- */
   const tone = (v, good, bad) => (good < bad ? (v <= good ? 1 : v >= bad ? -1 : 1 - 2 * (v - good) / (bad - good)) : (v >= good ? 1 : v <= bad ? -1 : -1 + 2 * (v - bad) / (good - bad)));
@@ -225,6 +234,7 @@
     { id: 'educacion', icon: '🎒', name: 'Educación', v: S => S.m.edu, f: v => v.toFixed(0), sub: '0-100', t: v => tone(v, 62, 40) },
     { id: 'salud', icon: '❤️‍🩹', name: 'Salud', v: S => S.m.hea, f: v => v.toFixed(0), sub: '0-100', t: v => tone(v, 62, 40) }
   ];
+  ART.indicators.forEach(d => { d.icon = AR.iconOf('ind', d.id); });
   function fmtN(x) { return Number(x).toLocaleString('es-AR', { maximumFractionDigits: x < 20 ? 2 : 0 }); }
   ART.fmtN = fmtN;
 

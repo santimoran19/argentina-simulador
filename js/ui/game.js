@@ -43,27 +43,25 @@
   };
 
   /* ---------------- HUD ---------------- */
-  function gauge(v) {
-    const a = clamp(v, 0, 100) / 100, len = 125.6;
-    return '<svg viewBox="0 0 100 56" class="gauge"><path d="M10 50 A40 40 0 0 1 90 50" stroke="#ffffff1a" stroke-width="10" fill="none" stroke-linecap="round"/>' +
-      '<path d="M10 50 A40 40 0 0 1 90 50" stroke="hsl(' + hueOf((v - 40) / 20) + ' 75% 52%)" stroke-width="10" fill="none" stroke-linecap="round" stroke-dasharray="' + (a * len) + ' 200"/>' +
-      '<text x="50" y="47" text-anchor="middle" font-size="20" font-weight="800" fill="#fff" font-family="Oswald, sans-serif">' + Math.round(v) + '%</text></svg>';
-  }
+  const ring = (v, r) => { const c = 2 * Math.PI * r, a = clamp(v, 0, 100) / 100; return '<svg class="ring" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="' + r + '" class="rbg"/><circle cx="20" cy="20" r="' + r + '" class="rfg" stroke-dasharray="' + (a * c).toFixed(1) + ' ' + c.toFixed(1) + '" transform="rotate(-90 20 20)"/></svg>'; };
+  U.ring = ring;
+  const tone3 = a => (a >= 50 ? 'ok' : a >= 38 ? 'mid' : 'bad');
+  U.tone3 = tone3;
   function hud(S) {
     const sc = AR.scenario, d = AR.dateOf(S.t), MN = ['ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'];
     const pa = AR.parties[S.party], prev = last(S.h.appr, 2), tr = S.appr - (prev === undefined ? S.appr : prev);
     const gv = Math.round(S.gv || 0);
     return '<header class="hud">' +
-      '<div class="cal"><b>' + MN[d.m] + '</b><span>' + d.y + '</span></div>' +
-      '<div class="who">' + ART.emblem(pa, 38) + '<div><b>' + pa.short + '</b><small>' + sc.short + ' · mes ' + Math.min(S.t + 1, sc.months) + '/' + sc.months + '</small></div></div>' +
-      '<div class="appr" title="Aprobación del gobierno">' + gauge(S.appr) + '<small>Aprobación <em class="' + (tr >= 0 ? 'up' : 'dn') + '">' + (tr >= 0 ? '▲' : '▼') + fmt(Math.abs(tr), 1) + '</em></small></div>' +
-      '<div class="pc" title="Capital político: se gasta al cambiar políticas y se recupera cada mes"><span class="coin">🪙</span><div><b>' + Math.round(S.pc) + '</b><small>Capital político</small><div class="bar"><i style="width:' + S.pc + '%"></i></div></div></div>' +
-      '<div class="pc" title="Respaldo en Diputados"><span class="coin">🏛️</span><div><b>' + gv + '</b><small>Gobernabilidad</small><div class="bar"><i style="width:' + gv + '%;background:#74acdf"></i></div></div></div>' +
+      '<div class="cal"><b>' + MN[d.m] + ' ' + d.y + '</b><small>Mes ' + Math.min(S.t + 1, sc.months) + ' de ' + sc.months + '</small></div>' +
+      '<div class="who">' + ART.emblem(pa, 34) + '<div><b>' + pa.short + '</b><small>' + sc.short + '</small></div></div>' +
+      '<div class="stat appr ' + tone3(S.appr) + '" title="Aprobación del gobierno"><small>Aprobación</small><b>' + Math.round(S.appr) + '%<em class="' + (tr >= 0 ? 'up' : 'dn') + '">' + (tr >= 0 ? '+' : '−') + fmt(Math.abs(tr), 1) + '</em></b><div class="bar"><i style="width:' + clamp(S.appr, 0, 100) + '%"></i></div></div>' +
+      '<div class="stat pc" title="Capital político: se gasta al cambiar políticas y se recupera cada mes"><small>' + AR.icon('coin') + 'Capital político</small><b>' + Math.round(S.pc) + '</b><div class="bar"><i style="width:' + S.pc + '%"></i></div></div>' +
+      '<div class="stat gv" title="Respaldo en el Congreso"><small>' + AR.icon('building-community') + 'Gobernabilidad</small><b>' + gv + '</b><div class="bar"><i style="width:' + gv + '%"></i></div></div>' +
       '<div class="spacer"></div>' +
       '<nav class="hbtn">' +
-      '<button data-act="cadena" class="cadbtn' + (S.speechT === S.t ? ' used' : '') + '" title="Hablarle al país (una vez por mes)"><span>📺</span><small>Cadena nacional</small></button>' +
-      ['congreso:🏛️:Congreso', 'economia:📊:Economía', 'encuestas:📈:Encuestas', 'redes:📱:Redes', 'objetivos:🎯:Objetivos', 'logros:🏆:Logros', 'archivo:📜:Historia', 'menu:⚙️:Menú'].map(x => { const [k, i, l] = x.split(':'); return '<button data-act="screen" data-v="' + k + '" title="' + l + '"><span>' + i + '</span><small>' + (k === 'objetivos' && AR.extras ? 'Objetivos ' + AR.extras.goalCount(S) : l) + '</small></button>'; }).join('') +
-      '<button data-act="mute" title="Sonido"><span>' + (SFX.cfg.sfx ? '🔊' : '🔇') + '</span><small>Sonido</small></button></nav></header>';
+      '<button data-act="cadena" class="cadbtn' + (S.speechT === S.t ? ' used' : '') + '" title="Hablarle al país (una vez por mes)"><span>' + AR.icon('device-tv') + '</span><small>Cadena nacional</small></button>' +
+      ['congreso:' + AR.icon('building-community') + ':Congreso', 'economia:' + AR.icon('chart-bar') + ':Economía', 'encuestas:' + AR.icon('trending-up') + ':Encuestas', 'redes:' + AR.icon('device-mobile') + ':Redes', 'objetivos:' + AR.icon('target') + ':Objetivos', 'logros:' + AR.icon('trophy') + ':Logros', 'archivo:' + AR.icon('file-text') + ':Historia', 'menu:' + AR.icon('settings') + ':Menú'].map(x => { const [k, i, l] = x.split(':'); return '<button data-act="screen" data-v="' + k + '" title="' + l + '"><span>' + i + '</span><small>' + (k === 'objetivos' && AR.extras ? 'Objetivos ' + AR.extras.goalCount(S) : l) + '</small></button>'; }).join('') +
+      '<button data-act="mute" title="Sonido"><span>' + (SFX.cfg.sfx ? '' + AR.icon('volume') + '' : '' + AR.icon('volume-off') + '') + '</span><small>Sonido</small></button></nav></header>';
   }
 
   /* ---------------- tablero ---------------- */
@@ -75,38 +73,38 @@
   }
   function board(S) {
     const P = U.pos; let o = '<div class="board-wrap"><div class="board" id="board"><svg id="links" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>';
-    o += '<div class="zone-c"><span>📊 Cómo está el país</span></div>';
+    o += '<div class="zone-c"><span>' + AR.icon('chart-bar') + ' Cómo está el país</span></div>';
     P.box.forEach(b => { o += '<div class="cbox" style="left:' + b.x + '%;top:' + b.y + '%;width:' + b.w + '%;height:' + b.h + '%;--c:' + ART.catColor[b.cat] + '"><span><b>' + ART.catIcon[b.cat] + '</b>' + AR.cats[b.cat] + '</span></div>'; });
     visible().forEach(p => {
       const q = P.pol[p.id], st = S.pol[p.id], n = p.levels.length, on = U.panel && U.panel.t === 'pol' && U.panel.id === p.id;
       const pos = n > 1 ? st.cur / (n - 1) * 100 : 0, pend = st.pend ? '<i class="ghost" style="left:' + (st.pend.to / (n - 1) * 100) + '%"></i>' : '';
       const dnu = S.dnus.some(d => d.pid === p.id), changed = st.cur !== p.init;
       o += '<button class="node pn' + (on ? ' on' : '') + (changed ? ' chg' : '') + '" data-node="pol:' + p.id + '" data-act="open" data-t="pol" data-v="' + p.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--c:' + ART.catColor[p.cat] + '" aria-label="' + p.name + '">' +
-        '<span class="pcir"><i>' + (ART.polIcon[p.id] || '•') + '</i>' + (st.pend ? '<b class="badge">⏳</b>' : dnu ? '<b class="badge">🖋️</b>' : '') + '</span>' +
+        '<span class="pcir"><i>' + (ART.polIcon[p.id] || '•') + '</i>' + (st.pend ? '<b class="badge">' + AR.icon('hourglass') + '</b>' : dnu ? '<b class="badge">' + AR.icon('writing-sign') + '</b>' : '') + '</span>' +
         '<span class="slider"><i class="fill" style="width:' + pos + '%"></i><i class="knob" style="left:' + pos + '%"></i>' + pend + '</span>' +
         '<span class="nm">' + ART.short(p) + '</span></button>';
     });
     IND.forEach(d => {
       const q = P.ind[d.id], v = d.v(S), t = d.t(v), h = d.h && S.h[d.h], pv = h && h.length > 1 ? h[h.length - 2] : null, cv = h ? last(h) : null, hu = hueOf(t);
       let arr = ''; if (pv !== null && cv !== null && Math.abs(cv - pv) > Math.abs(pv) * 0.004 + 1e-9) { const ug = UPGOOD[d.id]; arr = '<b class="tr ' + (ug === undefined ? '' : (cv > pv) === ug ? 'up' : 'dn') + '">' + (cv > pv ? '▲' : '▼') + '</b>'; }
-      o += '<button class="node in" data-node="ind:' + d.id + '" data-act="open" data-t="ind" data-v="' + d.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--h:' + hu + '">' +
+      o += '<button class="node in t-' + (t > 0.33 ? 'ok' : t < -0.33 ? 'bad' : 'mid') + '" data-node="ind:' + d.id + '" data-act="open" data-t="ind" data-v="' + d.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--h:' + hu + '">' +
         '<span class="itop"><i>' + d.icon + '</i>' + arr + '</span><em>' + d.f(v, S) + '</em><small>' + d.name + '</small>' + (h ? spark(h, hu) : '<span class="lvlbar"><i style="width:' + clamp((t + 1) * 50, 4, 100) + '%"></i></span>') + '</button>';
     });
     AR.groups.forEach(gr => {
       const q = P.grp[gr.id], a = S.A[gr.id];
       o += '<button class="node gn" data-node="grp:' + gr.id + '" data-act="open" data-t="grp" data-v="' + gr.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--h:' + hueOf((a - 40) / 20) + '">' +
-        '<span class="gav">' + ART.avatar(gr.id, ART.moodOf(a)) + '<b class="pct">' + Math.round(a) + '%</b></span><small>' + GSHORT[gr.id] + '</small><span class="abar"><i style="width:' + clamp(a, 2, 100) + '%"></i></span></button>';
+        '<span class="gav ' + tone3(a) + '">' + ring(a, 18.5) + ART.avatar(gr.id, ART.moodOf(a)) + '</span><small>' + GSHORT[gr.id] + '</small><b class="pct ' + tone3(a) + '">' + Math.round(a) + '%</b></button>';
     });
     const sit = ART.situations(S);
-    o += '<div class="sits"><h5>' + (sit.length ? '⚡ Situaciones' : '⚡ Sin situaciones especiales') + '</h5><div>' + sit.map(s => '<button class="sit ' + (s.good ? 'good' : 'bad') + '" data-act="open" data-t="ind" data-v="' + s.ind + '" data-tip="' + s.name + '|' + s.d + '"><i>' + s.icon + '</i>' + s.name + '</button>').join('') + '</div></div>';
-    o += '<div class="legend"><span><i class="lg-pol"></i>Política: clic para cambiarla</span><span><i class="lg-ind"></i>Indicador</span><span><i class="lg-grp">🙂</i>Sector social</span><span><i class="lg-ok"></i>mejora</span><span><i class="lg-bad"></i>empeora</span></div>';
+    o += '<div class="sits"><h5>' + (sit.length ? '' + AR.icon('bolt') + ' Situaciones' : '' + AR.icon('bolt') + ' Sin situaciones especiales') + '</h5><div>' + sit.map(s => '<button class="sit ' + (s.good ? 'good' : 'bad') + '" data-act="open" data-t="ind" data-v="' + s.ind + '" data-tip="' + s.name + '|' + s.d + '"><i>' + s.icon + '</i>' + s.name + '</button>').join('') + '</div></div>';
+    o += '<div class="legend"><span><i class="lg-pol"></i>Política: clic para cambiarla</span><span><i class="lg-ind"></i>Indicador</span><span><i class="lg-grp">' + AR.icon('mood-smile') + '</i>Sector social</span><span><i class="lg-ok"></i>mejora</span><span><i class="lg-bad"></i>empeora</span></div>';
     return o + advisor(S) + '</div></div>';
   }
 
   /* ---------------- tooltip ---------------- */
   function tipFor(key) {
     const S = U.S, [t, id] = key.split(':');
-    if (t === 'pol') { const p = AR.pol(id), st = S.pol[id]; return '<small>' + ART.catIcon[p.cat] + ' ' + AR.cats[p.cat] + '</small><b>' + p.name + '</b><span>Ahora: <em>' + U.lab(p.levels[st.cur]) + '</em></span>' + (st.pend ? '<span>⏳ En trámite: ' + U.lab(p.levels[st.pend.to]) + '</span>' : '') + '<u>Clic para cambiarla</u>'; }
+    if (t === 'pol') { const p = AR.pol(id), st = S.pol[id]; return '<small>' + ART.catIcon[p.cat] + ' ' + AR.cats[p.cat] + '</small><b>' + p.name + '</b><span>Ahora: <em>' + U.lab(p.levels[st.cur]) + '</em></span>' + (st.pend ? '<span>' + AR.icon('hourglass') + ' En trámite: ' + U.lab(p.levels[st.pend.to]) + '</span>' : '') + '<u>Clic para cambiarla</u>'; }
     if (t === 'ind') { const d = INDM[id], v = d.v(S); return '<small>Indicador</small><b>' + d.icon + ' ' + d.name + ': ' + d.f(v, S) + '</b><span>' + (typeof d.sub === 'function' ? d.sub(S) : d.sub) + '</span><u>Clic para ver la evolución y qué lo afecta</u>'; }
     if (t === 'grp') { const gr = AR.groups.find(x => x.id === id); return '<small>Sector social</small><b>' + gr.name + ': ' + Math.round(S.A[id]) + '% te aprueba</b><span>“' + U.quote(S, id) + '”</span><u>Clic para ver qué le preocupa</u>'; }
     return '';
@@ -130,7 +128,7 @@
     const pos = ks.filter(k => d[k] > 0).reduce((s, k) => s + d[k], 0), neg = -ks.filter(k => d[k] < 0).reduce((s, k) => s + d[k], 0);
     ks.slice(0, 6).forEach((k, i) => {
       const n = document.querySelector('.gn[data-node="grp:' + k + '"]'); if (!n) return;
-      const up = d[k] > 0, em = up ? ['👏', '🎉', '🙌', '🥳'][i % 4] : ['😡', '👎', '🤬', '📢'][i % 4];
+      const up = d[k] > 0, em = up ? ['' + AR.icon('mood-happy') + '', '' + AR.icon('confetti') + '', '' + AR.icon('mood-happy') + '', '' + AR.icon('confetti') + ''][i % 4] : ['' + AR.icon('mood-angry') + '', '' + AR.icon('thumb-down') + '', '' + AR.icon('mood-angry') + '', '' + AR.icon('speakerphone') + ''][i % 4];
       n.classList.remove('joy', 'mad'); void n.offsetWidth; n.classList.add(up ? 'joy' : 'mad');
       const f = document.createElement('span'); f.className = 'rx ' + (up ? 'up' : 'dn'); f.style.animationDelay = (i * 0.12) + 's';
       f.innerHTML = '<i>' + em + '</i><b>' + (up ? '+' : '') + Math.round(d[k]) + '</b>'; n.appendChild(f); setTimeout(() => f.remove(), 2600 + i * 120);
@@ -157,8 +155,8 @@
     const keys = new Set(); spec.forEach(l => { keys.add(l.a); keys.add(l.b); });
     keys.forEach(k => { const n = brd.querySelector('[data-node="' + k + '"]'); if (n) n.classList.add('hl'); });
   }
-  const colorOf = v => (v > 0 ? '#22c55e' : '#ef4444');
-  const width = v => clamp(1.5 + Math.abs(v) * 0.9, 1.5, 6);
+  const colorOf = v => (v > 0 ? '#43b26f' : '#e2574c');
+  const width = v => clamp(1.2 + Math.abs(v) * 0.6, 1.2, 4);
   function linksFor(key) {
     const S = U.S, [t, id] = key.split(':'), out = [];
     if (t === 'pol') {
@@ -169,11 +167,11 @@
         Object.keys(e.grp).forEach(k => out.push({ a: key, b: 'grp:' + k, c: colorOf(e.grp[k]), w: width(e.grp[k] / 3), flow: true }));
       } else {
         const l = U.lnk[id] || { ind: [], grp: [] };
-        l.ind.forEach(k => out.push({ a: key, b: 'ind:' + k, c: '#9fc4ea', w: 1.6 }));
-        l.grp.forEach(k => out.push({ a: key, b: 'grp:' + k, c: '#9fc4ea88', w: 1.2 }));
+        l.ind.forEach(k => out.push({ a: key, b: 'ind:' + k, c: '#8fb3d6', w: 1.3 }));
+        l.grp.forEach(k => out.push({ a: key, b: 'grp:' + k, c: '#8fb3d677', w: 1 }));
       }
     } else if (t === 'ind') {
-      (U.rev[id] || []).forEach(p => out.push({ a: 'pol:' + p, b: key, c: '#f6b40e', w: 1.4 }));
+      (U.rev[id] || []).forEach(p => out.push({ a: 'pol:' + p, b: key, c: '#e3b341', w: 1.2 }));
       const sk = IND2SC[id];
       if (sk) { const sc = AR.scores(S); AR.groups.forEach(gr => { if ((gr.w[sk] || 0) >= 0.4) out.push({ a: key, b: 'grp:' + gr.id, c: colorOf(sc[sk]), w: 1 + gr.w[sk] * 2 }); }); }
     } else {
@@ -209,27 +207,27 @@
       let vote = '';
       if (route !== 'admin') {
         const f = AR.forecast(S, id, sel), pr = Math.round(f.p * 100);
-        vote = '<div class="card soft"><h4>🏛️ Pronóstico en el Congreso</h4>' + voteBar('dip', f.dip) + voteBar('sen', f.sen) +
-          '<div class="prob ' + (pr >= 60 ? 'ok' : pr >= 35 ? 'mid' : 'no') + '">' + (pr >= 60 ? '👍 Probable' : pr >= 35 ? '🤞 Reñida' : '👎 Muy difícil') + ' · ' + pr + '%</div>' +
+        vote = '<div class="card soft"><h4>' + AR.icon('building-community') + ' Pronóstico en el Congreso</h4>' + voteBar('dip', f.dip) + voteBar('sen', f.sen) +
+          '<div class="prob ' + (pr >= 60 ? 'ok' : pr >= 35 ? 'mid' : 'no') + '">' + (pr >= 60 ? '' + AR.icon('thumb-up') + ' Probable' : pr >= 35 ? '' + AR.icon('mood-empty') + ' Reñida' : '' + AR.icon('thumb-down') + ' Muy difícil') + ' · ' + pr + '%</div>' +
           (route === 'dnu' ? '<p class="mut small">Por DNU rige hoy, pero el Congreso puede rechazarlo y la Justicia suspenderlo.</p>' : '') + '</div>';
       }
-      const rb = routes.length > 1 ? '<div class="seg">' + routes.map(r => '<button class="' + (r === route ? 'on' : '') + '" data-act="route" data-p="' + id + '" data-v="' + r + '">' + (r === 'ley' ? '📜 Por ley' : '🖋️ Por DNU') + '</button>').join('') + '</div>' : '';
-      const verb = route === 'admin' ? '✍️ Firmar decreto' : route === 'dnu' ? '🖋️ Firmar DNU' : '🏛️ Enviar al Congreso';
+      const rb = routes.length > 1 ? '<div class="seg">' + routes.map(r => '<button class="' + (r === route ? 'on' : '') + '" data-act="route" data-p="' + id + '" data-v="' + r + '">' + (r === 'ley' ? '' + AR.icon('file-text') + ' Por ley' : '' + AR.icon('writing-sign') + ' Por DNU') + '</button>').join('') + '</div>' : '';
+      const verb = route === 'admin' ? '' + AR.icon('writing-sign') + ' Firmar decreto' : route === 'dnu' ? '' + AR.icon('writing-sign') + ' Firmar DNU' : '' + AR.icon('building-community') + ' Enviar al Congreso';
       act = '<div class="card soft"><h4>Qué cambia</h4>' + effChips(ART.effects(p, st.cur, sel)) + '</div>' + vote + rb +
-        '<button class="big ' + (can ? '' : 'dis') + '" data-act="apply" data-p="' + id + '" data-r="' + route + '"' + (can ? '' : ' disabled') + '>' + verb + '<small>🪙 ' + fmt(cost, 1) + ' de capital político' + (st.pend ? ' · ya hay un cambio en trámite' : S.pc < cost ? ' · no alcanza' : '') + '</small></button>';
-    } else act = '<p class="hint">👆 Elegí otro nivel para ver qué pasaría.</p>';
+        '<button class="big ' + (can ? '' : 'dis') + '" data-act="apply" data-p="' + id + '" data-r="' + route + '"' + (can ? '' : ' disabled') + '>' + verb + '<small>' + AR.icon('coin') + ' ' + fmt(cost, 1) + ' de capital político' + (st.pend ? ' · ya hay un cambio en trámite' : S.pc < cost ? ' · no alcanza' : '') + '</small></button>';
+    } else act = '<p class="hint">' + AR.icon('hand-click') + ' Elegí otro nivel para ver qué pasaría.</p>';
     return '<div class="ph" style="--c:' + ART.catColor[p.cat] + '"><div class="bigico">' + (ART.polIcon[id] || '•') + '</div><div><small>' + ART.catIcon[p.cat] + ' ' + AR.cats[p.cat] + ' · ' + (p.how === 'admin' ? 'Decreto' : 'Ley') + '</small><h2>' + p.name + '</h2></div></div>' +
       '<p class="lead">' + p.desc.split('. ')[0] + '.</p><div class="lvls">' + levels + '</div>' + act +
-      '<details class="hist"><summary>📜 Contexto histórico</summary><p>' + p.hist + '</p></details>';
+      '<details class="hist"><summary>' + AR.icon('file-text') + ' Contexto histórico</summary><p>' + p.hist + '</p></details>';
   }
-  const DRV_ICON = { 'Inflación': '🔥', 'Salario real': '👛', 'Jubilación real': '🧓', 'Salario público': '🏛️', 'Empleo': '🧰', 'Pobreza': '🥣', 'Crecimiento': '📊', 'Seguridad': '🚨', 'Educación': '🎒', 'Salud': '❤️‍🩹', 'Instituciones': '🏛️', 'Transparencia': '🔎', 'Paz social': '📢', 'Vida cultural': '🎭', 'Libertad cambiaria': '💵', 'Riesgo país': '📉', 'Medidas de gobierno': '📋', 'Afinidad con tu partido': '🎗️', 'Clima reciente': '🌡️' };
+  const DRV_ICON = { 'Inflación': '' + AR.icon('flame') + '', 'Salario real': '' + AR.icon('wallet') + '', 'Jubilación real': '' + AR.icon('old') + '', 'Salario público': '' + AR.icon('building-community') + '', 'Empleo': '' + AR.icon('briefcase-off') + '', 'Pobreza': '' + AR.icon('bowl') + '', 'Crecimiento': '' + AR.icon('chart-bar') + '', 'Seguridad': '' + AR.icon('alert-triangle') + '', 'Educación': '' + AR.icon('school') + '', 'Salud': '' + AR.icon('heartbeat') + '', 'Instituciones': '' + AR.icon('building-community') + '', 'Transparencia': '' + AR.icon('search') + '', 'Paz social': '' + AR.icon('speakerphone') + '', 'Vida cultural': '' + AR.icon('masks-theater') + '', 'Libertad cambiaria': '' + AR.icon('currency-dollar') + '', 'Riesgo país': '' + AR.icon('chart-line') + '', 'Medidas de gobierno': '' + AR.icon('clipboard-list') + '', 'Afinidad con tu partido': '' + AR.icon('flag') + '', 'Clima reciente': '' + AR.icon('temperature') + '' };
   U.quote = (S, id) => { const d = AR.groupDrivers(S, id).filter(x => !/Afinidad|Clima/.test(x.label)); const top = d[0]; if (!top) return ''; const q = ART.quotes[top.label]; return q ? q[top.val >= 0 ? 1 : 0] : ''; };
   function grpPanel(S, id) {
     const gr = AR.groups.find(x => x.id === id), a = S.A[id], drv = AR.groupDrivers(S, id).slice(0, 7), mx = Math.max(...drv.map(d => Math.abs(d.val)), 1);
     const party = AR.partyOrder.slice().sort((x, y) => gr.aff[y] - gr.aff[x]).slice(0, 3);
     const pols = visible().map(p => ({ p, v: (p.levels[S.pol[p.id].cur].g[id] || 0) - (p.levels[p.init].g[id] || 0) })).filter(x => Math.abs(x.v) >= 1).sort((x, y) => Math.abs(y.v) - Math.abs(x.v)).slice(0, 6);
     const tot = AR.groups.reduce((s, x) => s + x.size, 0);
-    return '<div class="gh" style="--h:' + hueOf((a - 40) / 20) + '"><div class="bigav">' + ART.avatar(id, ART.moodOf(a)) + '</div><div><small>' + fmt(gr.size / tot * 100) + '% del electorado</small><h2>' + gr.name + '</h2><div class="bigpct">' + Math.round(a) + '%<small> te aprueba</small></div></div></div>' +
+    return '<div class="gh ' + tone3(a) + '"><div class="bigav">' + ART.avatar(id, ART.moodOf(a)) + '</div><div><small>' + fmt(gr.size / tot * 100) + '% del electorado</small><h2>' + gr.name + '</h2><div class="bigpct">' + Math.round(a) + '%<small> te aprueba</small></div></div></div>' +
       '<div class="bubble">“' + U.quote(S, id) + '”</div><p class="lead">' + gr.desc + '</p>' +
       '<div class="card soft"><h4>Qué los mueve hoy</h4>' + drv.map(d => '<div class="drv"><span>' + (DRV_ICON[d.label] || '•') + ' ' + d.label + '</span><div class="dtrack"><i class="' + (d.val >= 0 ? 'up' : 'dn') + '" style="width:' + Math.abs(d.val) / mx * 50 + '%;' + (d.val >= 0 ? 'left:50%' : 'right:50%') + '"></i></div></div>').join('') + '</div>' +
       (pols.length ? '<div class="card soft"><h4>Tus medidas que les importan</h4><div class="minis">' + pols.map(x => '<button class="mini ' + (x.v > 0 ? 'up' : 'dn') + '" data-act="open" data-t="pol" data-v="' + x.p.id + '" title="' + x.p.name + '">' + ART.polIcon[x.p.id] + '<b>' + sgn(Math.round(x.v)) + '</b></button>').join('') + '</div></div>' : '') +
@@ -239,11 +237,11 @@
     const W = 600, H = h || 200, p = 34; if (!arr || arr.length < 2) return '';
     const mn = Math.min(...arr), mx = Math.max(...arr), r = mx - mn || 1, x = i => p + i / (arr.length - 1) * (W - p - 8), y = v => H - 18 - (v - mn) / r * (H - 34);
     const pts = arr.map((v, i) => x(i).toFixed(1) + ',' + y(v).toFixed(1)).join(' ');
-    let ax = ''; for (let k = 0; k <= 3; k++) { const v = mn + r * k / 3, yy = y(v); ax += '<line x1="' + p + '" x2="' + (W - 8) + '" y1="' + yy + '" y2="' + yy + '" stroke="#ffffff14"/><text x="2" y="' + (yy + 4) + '" fill="#8ea3bd" font-size="11">' + fmt(v, r < 10 ? 1 : 0) + '</text>'; }
+    let ax = ''; for (let k = 0; k <= 3; k++) { const v = mn + r * k / 3, yy = y(v); ax += '<line x1="' + p + '" x2="' + (W - 8) + '" y1="' + yy + '" y2="' + yy + '" stroke="#ffffff12"/><text x="2" y="' + (yy + 4) + '" fill="#94a6ba" font-size="11" font-family="Barlow, sans-serif">' + fmt(v, r < 10 ? 1 : 0) + '</text>'; }
     const n = arr.length, s = U.S.t - n;
-    [0, n - 1].forEach(i => { ax += '<text x="' + x(i) + '" y="' + (H - 3) + '" fill="#8ea3bd" font-size="11" text-anchor="' + (i ? 'end' : 'start') + '">' + AR.dateLabel(s + i) + '</text>'; });
-    return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="lchart"><defs><linearGradient id="lg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="' + color + '" stop-opacity=".35"/><stop offset="1" stop-color="' + color + '" stop-opacity="0"/></linearGradient></defs>' + ax +
-      '<polygon fill="url(#lg)" points="' + x(0) + ',' + (H - 18) + ' ' + pts + ' ' + x(n - 1) + ',' + (H - 18) + '"/><polyline fill="none" stroke="' + color + '" stroke-width="2.6" points="' + pts + '"/></svg>';
+    [0, n - 1].forEach(i => { ax += '<text x="' + x(i) + '" y="' + (H - 3) + '" fill="#94a6ba" font-size="11" font-family="Barlow, sans-serif" text-anchor="' + (i ? 'end' : 'start') + '">' + AR.dateLabel(s + i) + '</text>'; });
+    return '<svg viewBox="0 0 ' + W + ' ' + H + '" class="lchart"><defs><linearGradient id="lg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="' + color + '" stop-opacity=".18"/><stop offset="1" stop-color="' + color + '" stop-opacity="0"/></linearGradient></defs>' + ax +
+      '<polygon fill="url(#lg)" points="' + x(0) + ',' + (H - 18) + ' ' + pts + ' ' + x(n - 1) + ',' + (H - 18) + '"/><polyline fill="none" stroke="' + color + '" stroke-width="2" points="' + pts + '"/></svg>';
   };
   function indPanel(S, id) {
     const d = INDM[id], v = d.v(S), t = d.t(v), hist = d.h ? S.h[d.h] : null;
@@ -254,15 +252,15 @@
     }
     const pols = (U.rev[id] || []).map(pid => '<button class="mini" data-act="open" data-t="pol" data-v="' + pid + '" title="' + AR.pol(pid).name + '">' + ART.polIcon[pid] + '</button>').join('');
     const sk = IND2SC[id], grps = sk ? AR.groups.filter(gr => (gr.w[sk] || 0) >= 0.4).map(gr => '<button class="mini face" data-act="open" data-t="grp" data-v="' + gr.id + '" title="' + gr.name + '">' + ART.avatar(gr.id, ART.moodOf(S.A[gr.id])) + '</button>').join('') : '';
-    return '<div class="ih" style="--h:' + hueOf(t) + '"><div class="bigico">' + d.icon + '</div><div><small>' + (typeof d.sub === 'function' ? d.sub(S) : d.sub) + '</small><h2>' + d.name + '</h2><div class="bigpct">' + d.f(v, S) + '</div></div></div>' +
-      (hist ? '<div class="card soft">' + U.lineChart(hist.slice(-36), 'hsl(' + hueOf(t) + ' 70% 55%)') + '</div>' : '') + why +
+    return '<div class="ih ' + (t > 0.33 ? 'ok' : t < -0.33 ? 'bad' : 'mid') + '" style="--rc:var(--' + (t > 0.33 ? 'good' : t < -0.33 ? 'bad' : 'warn') + ')"><div class="bigico">' + d.icon + '</div><div><small>' + (typeof d.sub === 'function' ? d.sub(S) : d.sub) + '</small><h2>' + d.name + '</h2><div class="bigpct">' + d.f(v, S) + '</div></div></div>' +
+      (hist ? '<div class="card soft">' + U.lineChart(hist.slice(-36), t > 0.33 ? '#43b26f' : t < -0.33 ? '#e2574c' : '#e0a33a') + '</div>' : '') + why +
       (pols ? '<div class="card soft"><h4>Políticas que lo afectan</h4><div class="minis">' + pols + '</div></div>' : '') +
       (grps ? '<div class="card soft"><h4>A quiénes les importa</h4><div class="minis">' + grps + '</div></div>' : '');
   }
   function panel(S) {
     if (!U.panel) return '';
     const P = U.panel, body = P.t === 'pol' ? polPanel(S, P.id) : P.t === 'grp' ? grpPanel(S, P.id) : indPanel(S, P.id);
-    return '<aside class="drawer" id="drawer"><button class="x" data-act="close" aria-label="Cerrar">✕</button>' + body + '</aside>';
+    return '<aside class="drawer" id="drawer"><button class="x" data-act="close" aria-label="Cerrar">' + AR.icon('x') + '</button>' + body + '</aside>';
   }
 
   /* ---------------- asesor y noticiero ---------------- */
@@ -270,10 +268,10 @@
     const tip = AR.advisor(S); if (!tip) return '';
     const who = tip.who === 'eco' ? 'Ministra de Economía' : 'Jefe de Gabinete';
     const btns = (tip.fx || []).filter(id => U.pos.pol[id]).map(id => '<button class="mini" data-act="open" data-t="pol" data-v="' + id + '" title="' + AR.pol(id).name + '">' + ART.polIcon[id] + '</button>').join('');
-    return '<div class="advisor"><div class="advav">' + ART.avatar(tip.who, 0.4) + '</div><div class="advb"><small>' + who + '</small><p>' + tip.t + '</p>' + (btns ? '<div class="minis">' + btns + '</div>' : '') + '</div></div>';
+    return '<div class="advisor"><div class="advb"><small>' + AR.icon('message-2') + who + '</small><p>' + tip.t + '</p>' + (btns ? '<div class="minis">' + btns + '</div>' : '') + '</div></div>';
   }
   function ticker(S) {
-    const items = S.news.slice(0, 10).map(n => '<span>' + (n.tag === 'Mercados' ? '💹' : n.tag === 'INDEC' ? '📊' : n.tag === 'Congreso' ? '🏛️' : n.tag === 'Elecciones' ? '🗳️' : '📰') + ' ' + n.txt + '</span>').join('<em>•</em>');
+    const items = S.news.slice(0, 10).map(n => '<span>' + (n.tag === 'Mercados' ? '' + AR.icon('chart-candle') + '' : n.tag === 'INDEC' ? '' + AR.icon('chart-bar') + '' : n.tag === 'Congreso' ? '' + AR.icon('building-community') + '' : n.tag === 'Elecciones' ? '' + AR.icon('checkbox') + '' : '' + AR.icon('news') + '') + ' ' + n.txt + '</span>').join('<em>•</em>');
     return '<div class="ticker"><b>ÚLTIMO MOMENTO</b><div class="tk"><div class="tkin">' + items + '<em>•</em>' + items + '</div></div></div>';
   }
 
@@ -291,42 +289,42 @@
   function scrCongreso(S) {
     const tot = AR.CHAMBER, o = AR.oppSeats(S);
     const cards = AR.partyOrder.slice().reverse().map(k => {
-      const p = AR.parties[k], rel = S.rel[k], me = k === S.party, hearts = '❤️'.repeat(Math.round(rel / 20)) + '🤍'.repeat(5 - Math.round(rel / 20));
-      const btn = me ? '<span class="tag">Tu bloque</span>' : '<button class="sm" data-act="neg" data-p="' + k + '" data-v="dialogo">🗣️ Dialogar <small>4🪙</small></button><button class="sm" data-act="neg" data-p="' + k + '" data-v="cargos">💼 Cargos <small>2🪙</small></button>' + (p.fed || p.cash ? '<button class="sm" data-act="neg" data-p="' + k + '" data-v="fondos">💰 Fondos <small>2🪙</small></button>' : '');
-      return '<div class="pcard" style="--c:' + p.color + '">' + ART.emblem(p, 46) + '<div class="pi"><b>' + p.name + '</b><div class="seats"><span>🪑 ' + S.seats[k].dip + ' diputados</span><span>🪑 ' + S.seats[k].sen + ' senadores</span></div><div class="hearts" title="Relación: ' + Math.round(rel) + '/100">' + hearts + '</div></div><div class="pb">' + btn + '</div></div>';
+      const p = AR.parties[k], rel = S.rel[k], me = k === S.party, hearts = '<span class="relbar"><i style="width:' + Math.round(rel) + '%"></i></span><small>Relación ' + Math.round(rel) + '/100</small>';
+      const btn = me ? '<span class="tag">Tu bloque</span>' : '<button class="sm" data-act="neg" data-p="' + k + '" data-v="dialogo">' + AR.icon('message-2') + ' Dialogar <small>4' + AR.icon('coin') + '</small></button><button class="sm" data-act="neg" data-p="' + k + '" data-v="cargos">' + AR.icon('briefcase') + ' Cargos <small>2' + AR.icon('coin') + '</small></button>' + (p.fed || p.cash ? '<button class="sm" data-act="neg" data-p="' + k + '" data-v="fondos">' + AR.icon('coins') + ' Fondos <small>2' + AR.icon('coin') + '</small></button>' : '');
+      return '<div class="pcard" style="--c:' + p.color + '">' + ART.emblem(p, 46) + '<div class="pi"><b>' + p.name + '</b><div class="seats"><span>' + AR.icon('armchair') + ' ' + S.seats[k].dip + ' diputados</span><span>' + AR.icon('armchair') + ' ' + S.seats[k].sen + ' senadores</span></div><div class="hearts" title="Relación: ' + Math.round(rel) + '/100">' + hearts + '</div></div><div class="pb">' + btn + '</div></div>';
     }).join('');
-    return '<h1>🏛️ Congreso de la Nación</h1><div class="hemis"><div><h3>Diputados <small>' + tot.dip.need + ' para aprobar</small></h3>' + hemicycle(S, 'dip') + '</div><div><h3>Senado <small>' + tot.sen.need + ' para aprobar</small></h3>' + hemicycle(S, 'sen') + '</div></div>' +
+    return '<h1>' + AR.icon('building-community') + ' Congreso de la Nación</h1><div class="hemis"><div><h3>Diputados <small>' + tot.dip.need + ' para aprobar</small></h3>' + hemicycle(S, 'dip') + '</div><div><h3>Senado <small>' + tot.sen.need + ' para aprobar</small></h3>' + hemicycle(S, 'sen') + '</div></div>' +
       '<p class="mut center">Oposición dura: ' + o.dip + ' diputados y ' + o.sen + ' senadores · Para superar un veto hacen falta ' + tot.dip.two3 + ' y ' + tot.sen.two3 + '.</p><div class="pcards">' + cards + '</div>';
   }
-  const SERIES = { infM: ['🔥', 'Inflación mensual'], fxOff: ['💵', 'Dólar oficial'], fxBlue: ['💸', 'Dólar libre'], gap: ['↔️', 'Brecha'], risk: ['📉', 'Riesgo país'], res: ['🏦', 'Reservas'], pb: ['🧮', 'Resultado fiscal'], gdp: ['📊', 'PBI real'], u: ['🧰', 'Desocupación'], pov: ['🥣', 'Pobreza'], rw: ['👛', 'Salario real'], rPen: ['🧓', 'Jubilación real'], appr: ['❤️', 'Aprobación'], debt: ['📚', 'Deuda/PBI'], rate: ['📈', 'Tasa'], C: ['🤝', 'Confianza'] };
+  const SERIES = { infM: ['' + AR.icon('flame') + '', 'Inflación mensual'], fxOff: ['' + AR.icon('currency-dollar') + '', 'Dólar oficial'], fxBlue: ['' + AR.icon('cash') + '', 'Dólar libre'], gap: ['' + AR.icon('arrows-horizontal') + '', 'Brecha'], risk: ['' + AR.icon('chart-line') + '', 'Riesgo país'], res: ['' + AR.icon('building-bank') + '', 'Reservas'], pb: ['' + AR.icon('calculator') + '', 'Resultado fiscal'], gdp: ['' + AR.icon('chart-bar') + '', 'PBI real'], u: ['' + AR.icon('briefcase-off') + '', 'Desocupación'], pov: ['' + AR.icon('bowl') + '', 'Pobreza'], rw: ['' + AR.icon('wallet') + '', 'Salario real'], rPen: ['' + AR.icon('old') + '', 'Jubilación real'], appr: ['' + AR.icon('heart') + '', 'Aprobación'], debt: ['' + AR.icon('books') + '', 'Deuda/PBI'], rate: ['' + AR.icon('trending-up') + '', 'Tasa'], C: ['' + AR.icon('heart-handshake') + '', 'Confianza'] };
   function scrEconomia(S) {
     const pills = Object.keys(SERIES).map(k => '<button class="pill ' + (U.chart === k ? 'on' : '') + '" data-act="chart" data-v="' + k + '">' + SERIES[k][0] + ' ' + SERIES[k][1] + '</button>').join('');
     const arr = S.h[U.chart] || [];
-    const m = S.m, tiles = [['🔥', 'Inflación interanual', fmt(AR.inflYoy(S)) + '%'], ['📈', 'Tasa de política', fmt(m.rate) + '% TNA'], ['🖨️', 'Base monetaria', sgn(m.mg, 1) + '% mensual'], ['🚢', 'Balanza comercial', 'US$' + sgn(m.trade, 1) + 'B/mes'], ['📚', 'Deuda pública', fmt(m.debt) + '% PBI'], ['⚖️', 'Gini', fmt(m.gini, 3)], ['🍞', 'Indigencia', fmt(m.ind, 1) + '%'], ['🤝', 'Confianza', fmt(m.C) + '/100']];
-    return '<h1>📊 La economía</h1><div class="pills">' + pills + '</div><div class="card">' + U.lineChart(arr, '#74acdf', 260) + '<p class="center big2">' + SERIES[U.chart][0] + ' ' + fmt(last(arr), Math.abs(last(arr)) < 20 ? 1 : 0) + '</p></div><div class="tiles">' + tiles.map(t => '<div class="tile"><i>' + t[0] + '</i><b>' + t[2] + '</b><small>' + t[1] + '</small></div>').join('') + '</div>';
+    const m = S.m, tiles = [['' + AR.icon('flame') + '', 'Inflación interanual', fmt(AR.inflYoy(S)) + '%'], ['' + AR.icon('trending-up') + '', 'Tasa de política', fmt(m.rate) + '% TNA'], ['' + AR.icon('printer') + '', 'Base monetaria', sgn(m.mg, 1) + '% mensual'], ['' + AR.icon('ship') + '', 'Balanza comercial', 'US$' + sgn(m.trade, 1) + 'B/mes'], ['' + AR.icon('books') + '', 'Deuda pública', fmt(m.debt) + '% PBI'], ['' + AR.icon('scale') + '', 'Gini', fmt(m.gini, 3)], ['' + AR.icon('bread') + '', 'Indigencia', fmt(m.ind, 1) + '%'], ['' + AR.icon('heart-handshake') + '', 'Confianza', fmt(m.C) + '/100']];
+    return '<h1>' + AR.icon('chart-bar') + ' La economía</h1><div class="pills">' + pills + '</div><div class="card">' + U.lineChart(arr, '#6cb4e8', 260) + '<p class="center big2">' + SERIES[U.chart][0] + ' ' + fmt(last(arr), Math.abs(last(arr)) < 20 ? 1 : 0) + '</p></div><div class="tiles">' + tiles.map(t => '<div class="tile"><i>' + t[0] + '</i><b>' + t[2] + '</b><small>' + t[1] + '</small></div>').join('') + '</div>';
   }
   function scrLogros() {
     const all = AR.ach.all(), got = all.filter(a => a.got).length;
-    return '<h1>🏆 Logros <small>' + got + '/' + all.length + '</small></h1><div class="achs">' + all.map(a => '<div class="ach ' + (a.got ? 'got' : '') + '"><i>' + (a.got ? a.icon : '🔒') + '</i><b>' + a.name + '</b><small>' + a.d + '</small></div>').join('') + '</div>';
+    return '<h1>' + AR.icon('trophy') + ' Logros <small>' + got + '/' + all.length + '</small></h1><div class="achs">' + all.map(a => '<div class="ach ' + (a.got ? 'got' : '') + '"><i>' + (a.got ? a.icon : '' + AR.icon('lock') + '') + '</i><b>' + a.name + '</b><small>' + a.d + '</small></div>').join('') + '</div>';
   }
   function scrArchivo(S) {
-    return '<h1>📜 Historia argentina</h1><div class="tl">' + AR.timeline.map(e => '<div class="tli ' + e.k + '"><b>' + e.y + '</b><h3>' + e.t + '</h3><p>' + e.x + '</p></div>').join('') + '</div>' +
+    return '<h1>' + AR.icon('file-text') + ' Historia argentina</h1><div class="tl">' + AR.timeline.map(e => '<div class="tli ' + e.k + '"><b>' + e.y + '</b><h3>' + e.t + '</h3><p>' + e.x + '</p></div>').join('') + '</div>' +
       '<h2>Glosario</h2><div class="gloss">' + AR.glossary.map(x => '<div><b>' + x[0] + '</b><p>' + x[1] + '</p></div>').join('') + '</div>' +
       '<p class="mut small">Fuentes de referencia del escenario: ' + AR.scenario.source + ' El modelo es una simplificación y no un pronóstico.</p>';
   }
   function scrMenu() {
     const c = SFX.cfg;
-    return '<h1>⚙️ Menú</h1><div class="menu"><label class="sw"><input type="checkbox" data-act="cfg" data-v="sfx"' + (c.sfx ? ' checked' : '') + '> 🔊 Efectos de sonido</label>' +
-      '<label class="sw"><input type="checkbox" data-act="cfg" data-v="voice"' + (c.voice ? ' checked' : '') + '> 🗣️ Voces (locutor y diputados)</label>' +
-      '<label class="sw">🎚️ Volumen <input type="range" min="0" max="1" step="0.05" value="' + c.vol + '" data-act="vol"></label>' +
-      (AR.pwa ? AR.pwa.button() : '') + '<button class="big alt" data-act="fullscreen">⛶ Pantalla completa</button>' +
+    return '<h1>' + AR.icon('settings') + ' Menú</h1><div class="menu"><label class="sw"><input type="checkbox" data-act="cfg" data-v="sfx"' + (c.sfx ? ' checked' : '') + '> ' + AR.icon('volume') + ' Efectos de sonido</label>' +
+      '<label class="sw"><input type="checkbox" data-act="cfg" data-v="voice"' + (c.voice ? ' checked' : '') + '> ' + AR.icon('message-2') + ' Voces (locutor y diputados)</label>' +
+      '<label class="sw">' + AR.icon('adjustments') + ' Volumen <input type="range" min="0" max="1" step="0.05" value="' + c.vol + '" data-act="vol"></label>' +
+      (AR.pwa ? AR.pwa.button() : '') + '<button class="big alt" data-act="fullscreen">' + AR.icon('maximize') + ' Pantalla completa</button>' +
       '<p class="mut small">Atajo: <b>barra espaciadora</b> = siguiente mes · <b>Esc</b> = cerrar</p>' +
-      '<button class="big" data-act="tutorial">❓ Cómo se juega</button><button class="big warn" data-act="newgame">🔄 Nueva partida</button></div>';
+      '<button class="big" data-act="tutorial">' + AR.icon('help-circle') + ' Cómo se juega</button><button class="big warn" data-act="newgame">' + AR.icon('refresh') + ' Nueva partida</button></div>';
   }
   function screen(S) {
     if (!U.screen) return '';
     const f = Object.assign({ congreso: scrCongreso, economia: scrEconomia, logros: scrLogros, archivo: scrArchivo, menu: scrMenu }, (AR.extras && AR.extras.screens) || {})[U.screen];
-    return '<div class="screen"><div class="sbox"><button class="x" data-act="screen" data-v="">✕</button>' + f(S) + '</div></div>';
+    return '<div class="screen"><div class="sbox"><button class="x" data-act="screen" data-v="">' + AR.icon('x') + '</button>' + f(S) + '</div></div>';
   }
 
   /* ---------------- render ---------------- */
@@ -335,7 +333,7 @@
     if (!U.pos) U.layout();
     showTip('');
     $('app').innerHTML = hud(S) + '<main class="main">' + board(S) + panel(S) + '</main>' + ticker(S) +
-      '<button class="next" data-act="next"' + (S.over ? ' disabled' : '') + '><span>SIGUIENTE MES</span><b>▶</b></button>' + screen(S);
+      '<button class="next" data-act="next"' + (S.over ? ' disabled' : '') + ' title="Barra espaciadora"><span>Siguiente mes</span>' + AR.icon('player-play') + '</button>' + screen(S);
     U.pinLinks();
   };
   U.open = function (t, id) { U.panel = { t, id }; U.render(); };

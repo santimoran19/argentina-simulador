@@ -17,7 +17,7 @@
   };
   F.achPop = list => list.forEach((a, i) => setTimeout(() => {
     let box = $('toasts'); if (!box) { box = document.createElement('div'); box.id = 'toasts'; document.body.appendChild(box); }
-    const t = document.createElement('div'); t.className = 'achpop'; t.innerHTML = '<i>' + a.icon + '</i><div><small>🏆 LOGRO DESBLOQUEADO</small><b>' + a.name + '</b><span>' + a.d + '</span></div>'; box.appendChild(t);
+    const t = document.createElement('div'); t.className = 'achpop'; t.innerHTML = '<i>' + a.icon + '</i><div><small>' + AR.icon('trophy') + ' LOGRO DESBLOQUEADO</small><b>' + a.name + '</b><span>' + a.d + '</span></div>'; box.appendChild(t);
     SFX.fanfare(); setTimeout(() => SFX.applause(1.6, 0.7), 500); if (i === 0) VOX.say('Logro desbloqueado: ' + a.name);
     setTimeout(() => t.classList.add('out'), 4800); setTimeout(() => t.remove(), 5400);
   }, i * 900));
@@ -35,7 +35,7 @@
     if (!U.scn) {
       body = '<h2 class="sec">Elegí tu momento de la historia</h2><div class="scns">' + Object.keys(AR.SC).map(k => {
         const c = AR.SC[k];
-        return '<button class="scn" data-act="scn" data-v="' + k + '"><div class="scnart">' + ART.scene(SCN_ART[k]) + '<span class="year">' + c.start.y + '</span></div><div class="scnb"><h3>' + c.name + '</h3><p>' + c.blurb + '</p><div class="meta"><span>⏳ ' + c.months + ' meses</span><span>' + '🔥'.repeat(SCN_DIF[k]) + '</span></div></div></button>';
+        return '<button class="scn" data-act="scn" data-v="' + k + '"><div class="scnart">' + ART.scene(SCN_ART[k]) + '<span class="year">' + c.start.y + '</span></div><div class="scnb"><h3>' + c.name + '</h3><p>' + c.blurb + '</p><div class="meta"><span>' + AR.icon('hourglass') + ' ' + c.months + ' meses</span><span class="dif">Dificultad ' + '<i class="on"></i>'.repeat(SCN_DIF[k]) + '<i></i>'.repeat(5 - SCN_DIF[k]) + '</span></div></div></button>';
       }).join('') + '</div>';
     } else {
       AR.setScenario(U.scn); const sc = AR.scenario;
@@ -44,10 +44,10 @@
           const p = sc.parties[k], d = p.seats0.dip / sc.chamber.dip.total * 100, s = p.seats0.sen / sc.chamber.sen.total * 100;
           return '<button class="party" data-act="start" data-v="' + k + '" style="--c:' + p.color + '">' + ART.emblem(p, 64) + '<h3>' + p.name + '</h3><p>' + p.desc + '</p>' +
             '<div class="sb"><span>Diputados</span><div class="track"><i style="width:' + d + '%"></i></div><em>' + p.seats0.dip + '</em></div><div class="sb"><span>Senado</span><div class="track"><i style="width:' + s + '%"></i></div><em>' + p.seats0.sen + '</em></div>' +
-            (p.dificultad ? '<small>⚠️ ' + p.dificultad + '</small>' : '') + '<span class="go">GOBERNAR ▶</span></button>';
+            (p.dificultad ? '<small>' + AR.icon('alert-triangle') + ' ' + p.dificultad + '</small>' : '') + '<span class="go">GOBERNAR ▶</span></button>';
         }).join('') + '</div>';
     }
-    $('app').innerHTML = '<div class="start"><div class="hero">' + ART.scene('casa') + '<div class="herot"><div class="sol">☀️</div><h1>ARGENTINA</h1><p>Simulador de Gobierno</p></div></div><div class="sbody">' +
+    $('app').innerHTML = '<div class="start"><div class="hero">' + ART.scene('casa') + '<div class="herot"><div class="sol">' + AR.icon('sun') + '</div><h1>ARGENTINA</h1><p>Simulador de Gobierno</p></div></div><div class="sbody">' +
       (saved && !U.scn ? '<button class="cont" data-act="continue">▶ Continuar partida · ' + (saved.scnLabel || '') + ' · ' + AR.dateLabelFor(saved) + '</button>' : '') + body +
       (AR.pwa && !U.scn ? '<div class="instwrap">' + AR.pwa.button('cont') + '</div>' : '') + '<p class="foot">Partidos e instituciones reales · datos aproximados del INDEC y el BCRA · los personajes son ficticios</p></div></div>';
     F.close();
@@ -59,11 +59,11 @@
     if (seen && !force) return;
     try { localStorage.setItem('ar-sim-tuto', '1'); } catch (e) { /* nada */ }
     const steps = [
-      ['👥', 'La sociedad', 'Arriba están los sectores sociales. Sus caras muestran el humor: sonríen si te aprueban y se enojan si no. Hacé clic en uno para saber qué le preocupa.'],
-      ['📊', 'El país', 'En el centro, los indicadores: inflación, dólar, reservas, pobreza... Verde es bueno y rojo es malo.'],
-      ['🏛️', 'Tus políticas', 'A los costados, tus herramientas agrupadas por área. Al pasar el mouse ves a qué afectan. Hacé clic para cambiar el nivel y ver líneas verdes (mejora) o rojas (empeora).'],
-      ['🪙', 'Capital político', 'Cada cambio cuesta capital político. Los decretos son rápidos, las leyes se votan en el Congreso y los DNU son un atajo con riesgo.'],
-      ['📺', 'Cadena nacional, encuestas y redes', 'Una vez por mes podés hablarle al país. En Encuestas ves la intención de voto y en Redes qué dice la gente. Cumplí los 🎯 Objetivos del mandato para ganar capital extra.'],
+      ['' + AR.icon('users') + '', 'La sociedad', 'Arriba están los sectores sociales. Sus caras muestran el humor: sonríen si te aprueban y se enojan si no. Hacé clic en uno para saber qué le preocupa.'],
+      ['' + AR.icon('chart-bar') + '', 'El país', 'En el centro, los indicadores: inflación, dólar, reservas, pobreza... Verde es bueno y rojo es malo.'],
+      ['' + AR.icon('building-community') + '', 'Tus políticas', 'A los costados, tus herramientas agrupadas por área. Al pasar el mouse ves a qué afectan. Hacé clic para cambiar el nivel y ver líneas verdes (mejora) o rojas (empeora).'],
+      ['' + AR.icon('coin') + '', 'Capital político', 'Cada cambio cuesta capital político. Los decretos son rápidos, las leyes se votan en el Congreso y los DNU son un atajo con riesgo.'],
+      ['' + AR.icon('device-tv') + '', 'Cadena nacional, encuestas y redes', 'Una vez por mes podés hablarle al país. En Encuestas ves la intención de voto y en Redes qué dice la gente. Cumplí los ' + AR.icon('target') + ' Objetivos del mandato para ganar capital extra.'],
       ['▶', 'Siguiente mes', 'Cuando estés listo, pasá de mes. La economía reacciona con rezago, la gente opina y pueden aparecer emergencias. ¡Suerte, Presidente!']
     ];
     F.modal('<div class="tuto"><h2>Cómo se juega</h2>' + steps.map(s => '<div class="ts"><i>' + s[0] + '</i><div><b>' + s[1] + '</b><p>' + s[2] + '</p></div></div>').join('') + '<button class="big" data-act="closemodal">¡A gobernar!</button></div>', 'wide');
@@ -81,7 +81,7 @@
     else F.stamp(r.kind === 'dnu' ? 'DNU' : 'DECRETO', p, label, () => { F.toast(r.msg, 'ok'); after(true); });
   };
   F.stamp = function (kind, p, label, cb) {
-    F.modal('<div class="stampbox"><div class="paper"><small>BOLETÍN OFICIAL DE LA REPÚBLICA ARGENTINA</small><h3>' + (ART.polIcon[p.id] || '') + ' ' + p.name + '</h3><p>' + label + '</p><div class="sign">✍️ Presidencia de la Nación</div><div class="stamp ' + (kind === 'DNU' ? 'red' : '') + '">' + kind + ' FIRMADO</div></div></div>', 'clear');
+    F.modal('<div class="stampbox"><div class="paper"><small>BOLETÍN OFICIAL DE LA REPÚBLICA ARGENTINA</small><h3>' + (ART.polIcon[p.id] || '') + ' ' + p.name + '</h3><p>' + label + '</p><div class="sign">' + AR.icon('writing-sign') + ' Presidencia de la Nación</div><div class="stamp ' + (kind === 'DNU' ? 'red' : '') + '">' + kind + ' FIRMADO</div></div></div>', 'clear');
     SFX.pen(); setTimeout(SFX.stamp, 450);
     setTimeout(() => { F.close(); cb(); }, 1700);
   };
@@ -89,10 +89,10 @@
   /* ---------------- votación animada ---------------- */
   F.vote = function (p, label, res, cb) {
     const S = U.S, v = res.vote; let skip = false;
-    F.modal('<div class="votem"><small class="kick">🏛️ SESIÓN EN EL CONGRESO DE LA NACIÓN</small><h2>' + (ART.polIcon[p.id] || '') + ' ' + p.name + '</h2><p class="lv">' + label + '</p>' +
+    F.modal('<div class="votem"><small class="kick">' + AR.icon('building-community') + ' SESIÓN EN EL CONGRESO DE LA NACIÓN</small><h2>' + (ART.polIcon[p.id] || '') + ' ' + p.name + '</h2><p class="lv">' + label + '</p>' +
       '<h3 id="vch"></h3><div id="vhemi" class="vhemi"></div>' +
       '<div class="score"><div class="yes"><b id="vy">0</b><small>AFIRMATIVOS</small></div><div class="need"><b id="vneed">-</b><small>NECESARIOS</small></div><div class="no"><b id="vn">0</b><small>NEGATIVOS</small></div></div>' +
-      '<div class="blocs" id="vblocs"></div><div id="vres" class="vres"></div><div class="vbtns"><button class="sm" id="vskip" data-act="vskip">⏩ Saltar</button><button class="big hidden" id="vdone" data-act="vdone">Continuar</button></div></div>', 'wide dark');
+      '<div class="blocs" id="vblocs"></div><div id="vres" class="vres"></div><div class="vbtns"><button class="sm" id="vskip" data-act="vskip">' + AR.icon('player-skip-forward') + ' Saltar</button><button class="big hidden" id="vdone" data-act="vdone">Continuar</button></div></div>', 'wide dark');
     AR.uiActions.vskip = () => { skip = true; };
     AR.uiActions.vdone = () => { F.close(); VOX.stop(); cb(); };
     const chamber = async (ch) => {
@@ -152,14 +152,14 @@
       const dv = after - before, good = Math.abs(dv) < 1e-9 ? null : (dv > 0) === upGood;
       return '<div class="rt ' + (good === null ? '' : good ? 'up' : 'dn') + '"><i>' + icon + '</i><small>' + name + '</small><b>' + fmt(after, dec) + (unit || '') + '</b><em>' + (Math.abs(dv) < 1e-9 ? '=' : (dv > 0 ? '▲ ' : '▼ ') + fmt(Math.abs(dv), dec)) + '</em></div>';
     };
-    const tiles = [tile('🔥', 'Inflación', snap.m.infM, m.infM, 1, false, '%'), tile('💵', 'Dólar oficial', snap.m.fxOff, m.fxOff, m.fxOff < 20 ? 2 : 0, false), tile('🏦', 'Reservas', snap.m.res, m.res, 1, true, 'B'),
-      tile('📉', 'Riesgo país', snap.m.risk, m.risk, 0, false), tile('🥣', 'Pobreza', snap.m.pov, m.pov, 1, false, '%'), tile('❤️', 'Aprobación', snap.appr, S.appr, 0, true, '%')].join('');
+    const tiles = [tile('' + AR.icon('flame') + '', 'Inflación', snap.m.infM, m.infM, 1, false, '%'), tile('' + AR.icon('currency-dollar') + '', 'Dólar oficial', snap.m.fxOff, m.fxOff, m.fxOff < 20 ? 2 : 0, false), tile('' + AR.icon('building-bank') + '', 'Reservas', snap.m.res, m.res, 1, true, 'B'),
+      tile('' + AR.icon('chart-line') + '', 'Riesgo país', snap.m.risk, m.risk, 0, false), tile('' + AR.icon('bowl') + '', 'Pobreza', snap.m.pov, m.pov, 1, false, '%'), tile('' + AR.icon('heart') + '', 'Aprobación', snap.appr, S.appr, 0, true, '%')].join('');
     const ch = AR.groups.map(gr => ({ gr, dv: S.A[gr.id] - snap.A[gr.id] })).sort((a, b) => Math.abs(b.dv) - Math.abs(a.dv)).slice(0, 5);
     const faces = ch.map(x => '<div class="rf ' + (x.dv >= 0 ? 'up' : 'dn') + '">' + ART.avatar(x.gr.id, ART.moodOf(S.A[x.gr.id])) + '<b>' + sgn(Math.round(x.dv)) + '</b><small>' + U.gshort[x.gr.id] + '</small><q>' + U.quote(S, x.gr.id) + '</q></div>').join('');
     let why = '';
-    if (S.why) { const w = Object.entries(S.why).filter(x => x[1] > 0.1).sort((a, b) => b[1] - a[1]).slice(0, 3); why = '<p class="why">🔥 La inflación vino sobre todo por: ' + w.map(x => '<b>' + x[0] + '</b>').join(' · ') + '</p>'; }
+    if (S.why) { const w = Object.entries(S.why).filter(x => x[1] > 0.1).sort((a, b) => b[1] - a[1]).slice(0, 3); why = '<p class="why">' + AR.icon('flame') + ' La inflación vino sobre todo por: ' + w.map(x => '<b>' + x[0] + '</b>').join(' · ') + '</p>'; }
     const ach = fresh.length ? '<div class="rach">' + fresh.map(a => '<span>' + a.icon + ' ' + a.name + '</span>').join('') + '</div>' : '';
-    F.modal('<div class="report"><small class="kick">📋 INFORME MENSUAL</small><h2>' + MN[d.m].replace(/^./, c => c.toUpperCase()) + ' de ' + d.y + '</h2><div class="rts">' + tiles + '</div>' + why +
+    F.modal('<div class="report"><small class="kick">' + AR.icon('clipboard-list') + ' INFORME MENSUAL</small><h2>' + MN[d.m].replace(/^./, c => c.toUpperCase()) + ' de ' + d.y + '</h2><div class="rts">' + tiles + '</div>' + why +
       (AR.extras ? AR.extras.papers(S, snap) : '') + '<h3>Cómo reaccionó la gente</h3><div class="rfs">' + faces + '</div>' + ach + '<button class="big" data-act="repok">Continuar ▶</button></div>', 'wide');
     const dA = S.appr - snap.appr; if (dA >= 1.5) { SFX.good(); SFX.celebrate(1); } else if (dA >= 0) SFX.good(); else if (dA <= -1.5) { SFX.bad(); SFX.disappoint(); } else SFX.bad();
     U.lastDelta = Object.fromEntries(AR.groups.map(gr => [gr.id, S.A[gr.id] - snap.A[gr.id]]));
@@ -168,14 +168,14 @@
   };
 
   /* ---------------- eventos ---------------- */
-  const HINT = { pc: ['🪙', 'Capital', 1], res: ['🏦', 'Reservas', 1], pb: ['🧮', 'Fiscal', 1], inf: ['🔥', 'Inflación', -1], conf: ['📢', 'Conflicto', -1], inst: ['🏛️', 'Instituciones', 1], tra: ['🔎', 'Transparencia', 1],
-    insec: ['🚨', 'Inseguridad', -1], og: ['📊', 'Actividad', 1], cred: ['🤝', 'Confianza', 1], fxj: ['💸', 'Dólar libre', -1], fxo: ['💵', 'Devaluación', -1], harv: ['🌾', 'Cosecha', 1], Ex: ['🧠', 'Expectativas', -1], hea: ['❤️‍🩹', 'Salud', 1], cult: ['🎭', 'Cultura', 1] };
+  const HINT = { pc: ['' + AR.icon('coin') + '', 'Capital', 1], res: ['' + AR.icon('building-bank') + '', 'Reservas', 1], pb: ['' + AR.icon('calculator') + '', 'Fiscal', 1], inf: ['' + AR.icon('flame') + '', 'Inflación', -1], conf: ['' + AR.icon('speakerphone') + '', 'Conflicto', -1], inst: ['' + AR.icon('building-community') + '', 'Instituciones', 1], tra: ['' + AR.icon('search') + '', 'Transparencia', 1],
+    insec: ['' + AR.icon('alert-triangle') + '', 'Inseguridad', -1], og: ['' + AR.icon('chart-bar') + '', 'Actividad', 1], cred: ['' + AR.icon('heart-handshake') + '', 'Confianza', 1], fxj: ['' + AR.icon('cash') + '', 'Dólar libre', -1], fxo: ['' + AR.icon('currency-dollar') + '', 'Devaluación', -1], harv: ['' + AR.icon('plant-2') + '', 'Cosecha', 1], Ex: ['' + AR.icon('brain') + '', 'Expectativas', -1], hea: ['' + AR.icon('heartbeat') + '', 'Salud', 1], cult: ['' + AR.icon('masks-theater') + '', 'Cultura', 1] };
   function hints(c, S) {
     let e; try { e = typeof c.e === 'function' ? c.e(S) : c.e; } catch (x) { e = {}; } e = e || {};
     let o = Object.keys(HINT).filter(k => e[k]).map(k => { const good = e[k] * HINT[k][2] > 0; return '<span class="hc ' + (good ? 'up' : 'dn') + '">' + HINT[k][0] + ' ' + HINT[k][1] + '</span>'; }).join('');
     if (e.g) { const ks = Object.keys(e.g).sort((a, b) => Math.abs(e.g[b]) - Math.abs(e.g[a])).slice(0, 4); o += ks.map(k => '<span class="hf ' + (e.g[k] > 0 ? 'up' : 'dn') + '" title="' + U.gshort[k] + '">' + ART.avatar(k, e.g[k] > 0 ? 1 : -1) + '</span>').join(''); }
-    if (e.setpol) o += '<span class="hc">📋 Cambia una política</span>';
-    if (c.veto) o += '<span class="hc">✋ Veto</span>';
+    if (e.setpol) o += '<span class="hc">' + AR.icon('clipboard-list') + ' Cambia una política</span>';
+    if (c.veto) o += '<span class="hc">' + AR.icon('hand-stop') + ' Veto</span>';
     return o;
   }
   F.queue = function () {
@@ -184,7 +184,7 @@
     const id = S.pending[0];
     if (id === '__elect') { F.election(); return; }
     const ev = AR.eventById(id), urgent = ART.urgent.has(id), happy = ART.happy.has(id);
-    F.modal('<div class="evt ' + (urgent ? 'urgent' : happy ? 'happy' : '') + '"><div class="evscene">' + ART.scene(ART.sceneFor[id] || 'casa') + '<div class="evtag">' + (urgent ? '🚨 EMERGENCIA' : happy ? '🎉 BUENAS NOTICIAS' : '📰 ÚLTIMO MOMENTO') + '</div><h2>' + ev.title + '</h2></div>' +
+    F.modal('<div class="evt ' + (urgent ? 'urgent' : happy ? 'happy' : '') + '"><div class="evscene">' + ART.scene(ART.sceneFor[id] || 'casa') + '<div class="evtag">' + (urgent ? '' + AR.icon('alert-triangle') + ' EMERGENCIA' : happy ? '' + AR.icon('confetti') + ' BUENAS NOTICIAS' : '' + AR.icon('news') + ' ÚLTIMO MOMENTO') + '</div><h2>' + ev.title + '</h2></div>' +
       '<p class="evtext">' + AR.eventText(S, ev) + '</p><div class="choices">' + ev.choices.map((c, i) => '<button class="choice" data-act="evc" data-v="' + i + '"><b>' + c.t + '</b>' + (c.d ? '<small>' + c.d + '</small>' : '') + '<span class="hints">' + hints(c, S) + '</span></button>').join('') + '</div></div>', 'wide' + (urgent ? ' alarm' : ''));
     if (urgent && PROTEST.has(id)) { SFX.protest(2); VOX.say('Atención. ' + ev.title, { interrupt: true }); }
     else if (urgent) { SFX.siren(2.4); SFX.gasp(); VOX.say('Atención. ' + ev.title, { interrupt: true }); }
@@ -198,7 +198,7 @@
     const S = U.S, ev = AR.eventById(S.pending[0]), c = ev.choices[i];
     const msg = AR.resolveEvent(S, i);
     if (c.veto) { if (/sostuvo/.test(msg)) { SFX.gavel(); SFX.applause(2); } else { SFX.boo(2); } } else SFX.click();
-    F.toast((ART.polIcon[ev.id] || '📰') + ' ' + msg, /superado|negativ/.test(msg) ? 'bad' : 'ok');
+    F.toast((ART.polIcon[ev.id] || '' + AR.icon('news') + '') + ' ' + msg, /superado|negativ/.test(msg) ? 'bad' : 'ok');
     F.achPop(AR.ach.check(S)); U.save(); U.render(); F.queue();
     let e; try { e = typeof c.e === 'function' ? c.e(S) : c.e; } catch (x) { e = null; }
     if (e && e.g) setTimeout(() => U.react(e.g, { quiet: !$('modal').hidden || !!c.veto }), 150);
@@ -214,9 +214,9 @@
       res = '<div class="seatsnew">' + AR.partyOrder.slice().reverse().map(k => '<span style="--c:' + AR.parties[k].color + '">' + AR.parties[k].short + ' <b>' + S.seats[k].dip + '</b>/' + S.seats[k].sen + '</span>').join('') + '</div><p class="mut">Nuevo Congreso (diputados/senadores)</p>';
     } else {
       won = e.reelected;
-      res = (e.runoff ? '<p class="runoff">🗳️ Balotaje: ' + Object.keys(e.runoff).map(k => AR.parties[k].short + ' ' + fmt(e.runoff[k], 1) + '%').join(' vs ') + '</p>' : '') + '<h3 class="win">Gana ' + AR.parties[e.winner].name + '</h3>';
+      res = (e.runoff ? '<p class="runoff">' + AR.icon('checkbox') + ' Balotaje: ' + Object.keys(e.runoff).map(k => AR.parties[k].short + ' ' + fmt(e.runoff[k], 1) + '%').join(' vs ') + '</p>' : '') + '<h3 class="win">Gana ' + AR.parties[e.winner].name + '</h3>';
     }
-    F.modal('<div class="elect"><small class="kick">🗳️ ' + (e.kind === 'midterm' ? 'ELECCIONES LEGISLATIVAS' : 'ELECCIONES PRESIDENCIALES') + ' · ' + AR.dateLong(S.t - 1).toUpperCase() + '</small><h2>Escrutinio</h2><div class="ebs">' + bars + '</div><div id="eres" class="hidden">' + res + '</div><button class="big hidden" id="eok" data-act="ackelect">Continuar ▶</button></div>', 'wide dark');
+    F.modal('<div class="elect"><small class="kick">' + AR.icon('checkbox') + ' ' + (e.kind === 'midterm' ? 'ELECCIONES LEGISLATIVAS' : 'ELECCIONES PRESIDENCIALES') + ' · ' + AR.dateLong(S.t - 1).toUpperCase() + '</small><h2>Escrutinio</h2><div class="ebs">' + bars + '</div><div id="eres" class="hidden">' + res + '</div><button class="big hidden" id="eok" data-act="ackelect">Continuar ▶</button></div>', 'wide dark');
     SFX.drum(2.4); VOX.say('Comienza el escrutinio.', { interrupt: true });
     setTimeout(() => document.querySelectorAll('.eb i').forEach(i => { i.style.width = i.dataset.w + '%'; }), 80);
     setTimeout(() => {
@@ -229,15 +229,15 @@
   /* ---------------- final ---------------- */
   F.end = function () {
     const S = U.S, s = S.over.summary || AR.summary(S);
-    const medal = { 'Histórico': '🏆', 'Exitoso': '🥇', 'Pasable': '🥈', 'Difícil': '🥉', 'Desastre': '💀' }[s.grade] || '🎖️';
+    const medal = { 'Histórico': '' + AR.icon('trophy') + '', 'Exitoso': '' + AR.icon('medal') + '', 'Pasable': '' + AR.icon('medal-2') + '', 'Difícil': '' + AR.icon('award') + '', 'Desastre': '' + AR.icon('skull') + '' }[s.grade] || '' + AR.icon('military-award') + '';
     const t = (i, n, v) => '<div class="tile"><i>' + i + '</i><b>' + v + '</b><small>' + n + '</small></div>';
     const achs = (S.ach || []).map(id => AR.ACH.find(a => a.id === id)).filter(Boolean);
     F.modal('<div class="endm"><div class="medal">' + medal + '</div><small class="kick">FIN DE LA PARTIDA</small><h2>' + S.over.title + '</h2>' + (S.over.text ? '<p>' + S.over.text + '</p>' : '') +
       '<div class="grade">' + s.grade + ' · ' + s.score + '/100</div><p class="arq">Tu gobierno se parece a: <b>' + s.archetype + '</b><br><span>' + s.archetypeText + '</span></p>' +
-      '<div class="tiles">' + t('🔥', 'Inflación anual (inicio ' + fmt(s.base.inf) + '%)', fmt(s.infYoy) + '%') + t('🥣', 'Pobreza (inicio ' + fmt(s.base.pov, 1) + '%)', fmt(s.pov, 1) + '%') + t('🧰', 'Desocupación', fmt(s.u, 1) + '%') + t('📊', 'PBI acumulado', sgn(s.gdp, 1) + '%') + t('📉', 'Riesgo país', fmt(s.risk)) + t('❤️', 'Aprobación final', fmt(s.appr) + '%') + '</div>' +
+      '<div class="tiles">' + t('' + AR.icon('flame') + '', 'Inflación anual (inicio ' + fmt(s.base.inf) + '%)', fmt(s.infYoy) + '%') + t('' + AR.icon('bowl') + '', 'Pobreza (inicio ' + fmt(s.base.pov, 1) + '%)', fmt(s.pov, 1) + '%') + t('' + AR.icon('briefcase-off') + '', 'Desocupación', fmt(s.u, 1) + '%') + t('' + AR.icon('chart-bar') + '', 'PBI acumulado', sgn(s.gdp, 1) + '%') + t('' + AR.icon('chart-line') + '', 'Riesgo país', fmt(s.risk)) + t('' + AR.icon('heart') + '', 'Aprobación final', fmt(s.appr) + '%') + '</div>' +
       (achs.length ? '<h3>Logros de esta partida</h3><div class="rach">' + achs.map(a => '<span>' + a.icon + ' ' + a.name + '</span>').join('') + '</div>' : '') +
-      (AR.extras ? '<p class="arq">🎯 Objetivos cumplidos: <b>' + AR.extras.goalCount(S) + '</b></p>' : '') +
-      '<div class="endbtns"><button class="big alt" data-act="share">📤 Compartir resultado</button><button class="big" data-act="newgame">🔄 Jugar otra vez</button></div></div>', 'wide');
+      (AR.extras ? '<p class="arq">' + AR.icon('target') + ' Objetivos cumplidos: <b>' + AR.extras.goalCount(S) + '</b></p>' : '') +
+      '<div class="endbtns"><button class="big alt" data-act="share">' + AR.icon('share') + ' Compartir resultado</button><button class="big" data-act="newgame">' + AR.icon('refresh') + ' Jugar otra vez</button></div></div>', 'wide');
     if (['Histórico', 'Exitoso'].includes(s.grade)) { SFX.celebrate(3); confetti(); } else if (s.grade === 'Desastre') { SFX.protest(2); } else { SFX.good(); SFX.applause(2); }
     VOX.say(S.over.title + '. Tu gobierno fue calificado como ' + s.grade + '.', { interrupt: true });
   };
@@ -248,7 +248,7 @@
     back: () => { SFX.click(); U.scn = null; F.start(); },
     start: el => {
       SFX.coin(); U.S = AR.newGame(el.dataset.v, null, U.scn); U.S.scnLabel = AR.scenario.short; if (AR.extras) AR.extras.applyDiff(U.S); U.pos = null; U.panel = null; U.screen = null; U.save(); U.render();
-      SFX.fanfare(); setTimeout(() => SFX.celebrate(2), 500); confetti(); VOX.say('Asume la Presidencia. Que Dios y la Patria te lo demanden.', { interrupt: true });
+      SFX.fanfare(); setTimeout(() => SFX.celebrate(2), 500); VOX.say('Asume la Presidencia. Que Dios y la Patria te lo demanden.', { interrupt: true });
       F.tutorial(false); if (!$('modal').hidden) return; F.queue();
     },
     continue: () => { const sv = U.load(); if (!sv) return; AR.setScenario(sv.scn || 'dic2023'); AR.policies.forEach(p => { if (!sv.pol[p.id]) sv.pol[p.id] = { cur: p.init, pend: null }; }); U.S = sv; U.scn = sv.scn; U.pos = null; SFX.click(); U.render(); F.queue(); },

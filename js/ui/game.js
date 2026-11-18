@@ -26,14 +26,15 @@
 
   /* ---------------- disposición del tablero ---------------- */
   U.layout = function () {
-    const P = { pol: {}, ind: {}, grp: {}, box: [] };
-    AR.groups.forEach((gr, i) => { P.grp[gr.id] = { x: 4.2 + i * (91.6 / (AR.groups.length - 1)), y: 9.5 }; });
-    IND.forEach((d, i) => { P.ind[d.id] = { x: 34 + (i % 5) * 8, y: 33 + Math.floor(i / 5) * 21 }; });
+    // Coordenadas en % del tablero. Para políticas y sectores, "y" es el centro del círculo.
+    const P = { pol: {}, ind: {}, grp: {}, box: [] }, n = AR.groups.length;
+    AR.groups.forEach((gr, i) => { P.grp[gr.id] = { x: 3.4 + i * (93.2 / (n - 1)), y: 5.6 }; });
+    IND.forEach((d, i) => { P.ind[d.id] = { x: 34.9 + (i % 5) * 7.55, y: 24.6 + Math.floor(i / 5) * 15.2 }; });
     const cols = [['mon', 'fis', 'gas', 'tra'], ['pro', 'seg', 'soc', 'ins']];
     cols.forEach((col, ci) => col.forEach((cat, ri) => {
-      const x0 = ci ? 73 : 1, y0 = 21.5 + ri * 19.6;
-      P.box.push({ cat, x: x0, y: y0, w: 26, h: 18.6 });
-      visible().filter(p => p.cat === cat).forEach((p, k) => { P.pol[p.id] = { x: x0 + 2.9 + (k % 5) * 5.05, y: y0 + 6.6 + Math.floor(k / 5) * 7.3 }; });
+      const x0 = ci ? 69.9 : 0.5, w = 29.6, y0 = 15.8 + ri * 21.05, h = 20.35;
+      P.box.push({ cat, x: x0, y: y0, w, h });
+      visible().filter(p => p.cat === cat).forEach((p, k) => { P.pol[p.id] = { x: x0 + w * (0.1 + (k % 5) * 0.2), y: y0 + h * (k < 5 ? 0.265 : 0.67) }; });
     }));
     // índice inverso: indicador -> políticas que lo afectan
     U.rev = {}; U.lnk = {};
@@ -65,30 +66,80 @@
   }
 
   /* ---------------- tablero ---------------- */
+  function spark(arr, h) {
+    if (!arr || arr.length < 2) return '';
+    const a = arr.slice(-12), mn = Math.min(...a), mx = Math.max(...a), r = mx - mn || 1;
+    const pts = a.map((v, i) => (i / (a.length - 1) * 100).toFixed(1) + ',' + (19 - (v - mn) / r * 16).toFixed(1)).join(' ');
+    return '<svg class="spark" viewBox="0 0 100 20" preserveAspectRatio="none"><polyline points="' + pts + '" fill="none" stroke="hsl(' + h + ' 80% 62%)" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>';
+  }
   function board(S) {
     const P = U.pos; let o = '<div class="board-wrap"><div class="board" id="board"><svg id="links" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>';
-    o += '<div class="zone-t">👥 La sociedad</div><div class="zone-c">📊 El país</div>';
-    P.box.forEach(b => { o += '<div class="cbox" style="left:' + b.x + '%;top:' + b.y + '%;width:' + b.w + '%;height:' + b.h + '%;--c:' + ART.catColor[b.cat] + '"><span>' + ART.catIcon[b.cat] + ' ' + AR.cats[b.cat] + '</span></div>'; });
+    o += '<div class="zone-c"><span>📊 Cómo está el país</span></div>';
+    P.box.forEach(b => { o += '<div class="cbox" style="left:' + b.x + '%;top:' + b.y + '%;width:' + b.w + '%;height:' + b.h + '%;--c:' + ART.catColor[b.cat] + '"><span><b>' + ART.catIcon[b.cat] + '</b>' + AR.cats[b.cat] + '</span></div>'; });
     visible().forEach(p => {
       const q = P.pol[p.id], st = S.pol[p.id], n = p.levels.length, on = U.panel && U.panel.t === 'pol' && U.panel.id === p.id;
-      const pips = p.levels.map((_, i) => '<i class="' + (i === st.cur ? 'c' : '') + (st.pend && st.pend.to === i ? ' p' : '') + '"></i>').join('');
-      const dnu = S.dnus.some(d => d.pid === p.id);
-      o += '<button class="node pn' + (on ? ' on' : '') + '" data-node="pol:' + p.id + '" data-act="open" data-t="pol" data-v="' + p.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--c:' + ART.catColor[p.cat] + '" aria-label="' + p.name + '">' +
-        '<i>' + (ART.polIcon[p.id] || '•') + '</i>' + (st.pend ? '<b class="badge">⏳</b>' : dnu ? '<b class="badge">🖋️</b>' : '') + (n <= 8 ? '<span class="pips">' + pips + '</span>' : '') + '</button>';
+      const pos = n > 1 ? st.cur / (n - 1) * 100 : 0, pend = st.pend ? '<i class="ghost" style="left:' + (st.pend.to / (n - 1) * 100) + '%"></i>' : '';
+      const dnu = S.dnus.some(d => d.pid === p.id), changed = st.cur !== p.init;
+      o += '<button class="node pn' + (on ? ' on' : '') + (changed ? ' chg' : '') + '" data-node="pol:' + p.id + '" data-act="open" data-t="pol" data-v="' + p.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--c:' + ART.catColor[p.cat] + '" aria-label="' + p.name + '">' +
+        '<span class="pcir"><i>' + (ART.polIcon[p.id] || '•') + '</i>' + (st.pend ? '<b class="badge">⏳</b>' : dnu ? '<b class="badge">🖋️</b>' : '') + '</span>' +
+        '<span class="slider"><i class="fill" style="width:' + pos + '%"></i><i class="knob" style="left:' + pos + '%"></i>' + pend + '</span>' +
+        '<span class="nm">' + ART.short(p) + '</span></button>';
     });
     IND.forEach(d => {
-      const q = P.ind[d.id], v = d.v(S), t = d.t(v), h = d.h && S.h[d.h], pv = h && h.length > 1 ? h[h.length - 2] : null, cv = h ? last(h) : null;
+      const q = P.ind[d.id], v = d.v(S), t = d.t(v), h = d.h && S.h[d.h], pv = h && h.length > 1 ? h[h.length - 2] : null, cv = h ? last(h) : null, hu = hueOf(t);
       let arr = ''; if (pv !== null && cv !== null && Math.abs(cv - pv) > Math.abs(pv) * 0.004 + 1e-9) { const ug = UPGOOD[d.id]; arr = '<b class="tr ' + (ug === undefined ? '' : (cv > pv) === ug ? 'up' : 'dn') + '">' + (cv > pv ? '▲' : '▼') + '</b>'; }
-      o += '<button class="node in" data-node="ind:' + d.id + '" data-act="open" data-t="ind" data-v="' + d.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--h:' + hueOf(t) + '"><i>' + d.icon + '</i>' + arr +
-        '<em>' + d.f(v, S) + '</em><small>' + d.name + '</small></button>';
+      o += '<button class="node in" data-node="ind:' + d.id + '" data-act="open" data-t="ind" data-v="' + d.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--h:' + hu + '">' +
+        '<span class="itop"><i>' + d.icon + '</i>' + arr + '</span><em>' + d.f(v, S) + '</em><small>' + d.name + '</small>' + (h ? spark(h, hu) : '<span class="lvlbar"><i style="width:' + clamp((t + 1) * 50, 4, 100) + '%"></i></span>') + '</button>';
     });
     AR.groups.forEach(gr => {
       const q = P.grp[gr.id], a = S.A[gr.id];
       o += '<button class="node gn" data-node="grp:' + gr.id + '" data-act="open" data-t="grp" data-v="' + gr.id + '" style="left:' + q.x + '%;top:' + q.y + '%;--h:' + hueOf((a - 40) / 20) + '">' +
-        ART.avatar(gr.id, ART.moodOf(a)) + '<b class="pct">' + Math.round(a) + '%</b><small>' + GSHORT[gr.id] + '</small></button>';
+        '<span class="gav">' + ART.avatar(gr.id, ART.moodOf(a)) + '<b class="pct">' + Math.round(a) + '%</b></span><small>' + GSHORT[gr.id] + '</small><span class="abar"><i style="width:' + clamp(a, 2, 100) + '%"></i></span></button>';
     });
-    return o + '</div></div>';
+    const sit = ART.situations(S);
+    o += '<div class="sits"><h5>' + (sit.length ? '⚡ Situaciones' : '⚡ Sin situaciones especiales') + '</h5><div>' + sit.map(s => '<button class="sit ' + (s.good ? 'good' : 'bad') + '" data-act="open" data-t="ind" data-v="' + s.ind + '" data-tip="' + s.name + '|' + s.d + '"><i>' + s.icon + '</i>' + s.name + '</button>').join('') + '</div></div>';
+    o += '<div class="legend"><span><i class="lg-pol"></i>Política: clic para cambiarla</span><span><i class="lg-ind"></i>Indicador</span><span><i class="lg-grp">🙂</i>Sector social</span><span><i class="lg-ok"></i>mejora</span><span><i class="lg-bad"></i>empeora</span></div>';
+    return o + advisor(S) + '</div></div>';
   }
+
+  /* ---------------- tooltip ---------------- */
+  function tipFor(key) {
+    const S = U.S, [t, id] = key.split(':');
+    if (t === 'pol') { const p = AR.pol(id), st = S.pol[id]; return '<small>' + ART.catIcon[p.cat] + ' ' + AR.cats[p.cat] + '</small><b>' + p.name + '</b><span>Ahora: <em>' + U.lab(p.levels[st.cur]) + '</em></span>' + (st.pend ? '<span>⏳ En trámite: ' + U.lab(p.levels[st.pend.to]) + '</span>' : '') + '<u>Clic para cambiarla</u>'; }
+    if (t === 'ind') { const d = INDM[id], v = d.v(S); return '<small>Indicador</small><b>' + d.icon + ' ' + d.name + ': ' + d.f(v, S) + '</b><span>' + (typeof d.sub === 'function' ? d.sub(S) : d.sub) + '</span><u>Clic para ver la evolución y qué lo afecta</u>'; }
+    if (t === 'grp') { const gr = AR.groups.find(x => x.id === id); return '<small>Sector social</small><b>' + gr.name + ': ' + Math.round(S.A[id]) + '% te aprueba</b><span>“' + U.quote(S, id) + '”</span><u>Clic para ver qué le preocupa</u>'; }
+    return '';
+  }
+  function showTip(html, x, y) {
+    let t = $('tip'); if (!t) { t = document.createElement('div'); t.id = 'tip'; document.body.appendChild(t); }
+    if (!html) { t.hidden = true; return; }
+    t.innerHTML = html; t.hidden = false; moveTip(x, y);
+  }
+  function moveTip(x, y) {
+    const t = $('tip'); if (!t || t.hidden) return;
+    const w = t.offsetWidth, h = t.offsetHeight, W = innerWidth, H = innerHeight;
+    t.style.left = clamp(x + 16 + w > W ? x - w - 16 : x + 16, 4, W - w - 4) + 'px'; t.style.top = clamp(y + 18 + h > H ? y - h - 12 : y + 18, 4, H - h - 4) + 'px';
+  }
+
+  /* ---------------- reacciones de la gente en el tablero ---------------- */
+  // d: { idGrupo: cambio } -> caras que saltan o se enojan, globos con gritos, sonido de multitud
+  U.react = function (d, opt) {
+    const o = opt || {}, ks = Object.keys(d || {}).filter(k => Math.abs(d[k]) >= (o.min || 0.8)).sort((a, b) => Math.abs(d[b]) - Math.abs(d[a]));
+    if (!ks.length) return;
+    const pos = ks.filter(k => d[k] > 0).reduce((s, k) => s + d[k], 0), neg = -ks.filter(k => d[k] < 0).reduce((s, k) => s + d[k], 0);
+    ks.slice(0, 6).forEach((k, i) => {
+      const n = document.querySelector('.gn[data-node="grp:' + k + '"]'); if (!n) return;
+      const up = d[k] > 0, em = up ? ['👏', '🎉', '🙌', '🥳'][i % 4] : ['😡', '👎', '🤬', '📢'][i % 4];
+      n.classList.remove('joy', 'mad'); void n.offsetWidth; n.classList.add(up ? 'joy' : 'mad');
+      const f = document.createElement('span'); f.className = 'rx ' + (up ? 'up' : 'dn'); f.style.animationDelay = (i * 0.12) + 's';
+      f.innerHTML = '<i>' + em + '</i><b>' + (up ? '+' : '') + Math.round(d[k]) + '</b>'; n.appendChild(f); setTimeout(() => f.remove(), 2600 + i * 120);
+      if (i < 2) { const sb = document.createElement('span'); const gx = U.pos.grp[k].x; sb.className = 'say ' + (up ? 'up' : 'dn') + (gx < 12 ? ' l' : gx > 88 ? ' r' : ''); sb.textContent = ART.shouts[k][up ? 1 : 0]; sb.style.animationDelay = (0.3 + i * 0.5) + 's'; n.appendChild(sb); setTimeout(() => sb.remove(), 3600 + i * 500); }
+    });
+    if (o.quiet) return;
+    const top = ks[0], k = Math.max(pos, neg) > 9 ? 2 : 1;
+    if (pos >= neg) SFX.celebrate(k); else SFX.protest(k);
+    setTimeout(() => AR.voice.shout(ART.shouts[top][d[top] > 0 ? 1 : 0], top), 350);
+  };
 
   /* ---------------- líneas de conexión ---------------- */
   const posOf = key => { const [t, id] = key.split(':'); return U.pos[t === 'pol' ? 'pol' : t === 'ind' ? 'ind' : 'grp'][id]; };
@@ -279,7 +330,8 @@
   U.render = function () {
     const S = U.S; if (!S) { AR.flow.start(); return; }
     if (!U.pos) U.layout();
-    $('app').innerHTML = hud(S) + '<main class="main">' + board(S) + panel(S) + '</main>' + advisor(S) + ticker(S) +
+    showTip('');
+    $('app').innerHTML = hud(S) + '<main class="main">' + board(S) + panel(S) + '</main>' + ticker(S) +
       '<button class="next" data-act="next"' + (S.over ? ' disabled' : '') + '><span>SIGUIENTE MES</span><b>▶</b></button>' + screen(S);
     U.pinLinks();
   };
@@ -289,10 +341,13 @@
   let hoverKey = null;
   document.addEventListener('mouseover', e => {
     const n = e.target.closest && e.target.closest('[data-node]'); const k = n ? n.dataset.node : null;
+    const st = !k && e.target.closest && e.target.closest('[data-tip]');
+    if (st) { const [a, b] = st.dataset.tip.split('|'); showTip('<b>' + a + '</b><span>' + b + '</span><u>Clic para ver el indicador</u>', e.clientX, e.clientY); }
     if (k === hoverKey) return; hoverKey = k;
     if (!U.S || U.busy) return;
-    if (k) { drawLinks(linksFor(k)); SFX.hover(); } else U.pinLinks();
+    if (k) { drawLinks(linksFor(k)); SFX.hover(); showTip(tipFor(k), e.clientX, e.clientY); } else { U.pinLinks(); if (!st) showTip(''); }
   });
+  document.addEventListener('mousemove', e => moveTip(e.clientX, e.clientY));
   document.addEventListener('click', e => {
     const el = e.target.closest && e.target.closest('[data-act]'); if (!el) return;
     if (el.tagName === 'INPUT') return;

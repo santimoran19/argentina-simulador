@@ -149,6 +149,63 @@
     armas: '🔫', carceles: '⛓️', migracion: '🛂', inteligencia: '🕶️', acceso_info: '📂', comedores: '🥘'
   };
 
+  // Nombres cortos para que cada círculo del tablero tenga su etiqueta
+  ART.polShort = {
+    tasa: 'Tasa de interés', cambio: 'Tipo de cambio', cepo: 'Cepo', emit: 'Emisión', overhang: 'Pasivos BCRA', credito: 'Crédito', deuda: 'Deuda', fmi: 'FMI', blanqueo: 'Blanqueo', bancos: 'Depósitos',
+    iva: 'IVA', ganancias: 'Ganancias', retenciones: 'Retenciones agro', ret_ind: 'Retenciones industria', bienes: 'Bienes Personales', estructura: 'Tamaño del Estado', privat: 'Privatizaciones', coparticipacion: 'Coparticipación', monotributo: 'Monotributo', evasion: 'Control de evasión',
+    jubilaciones: 'Jubilaciones', moratoria: 'Moratoria', regimenes: 'Reforma previsional', paritarias_pub: 'Sueldos estatales', asistencia: 'Planes sociales', sub_energia: 'Subsidio luz y gas', sub_transp: 'Subsidio transporte', obras: 'Obra pública', transferencias: 'Fondos a provincias', pami: 'PAMI y remedios',
+    paritarias: 'Paritarias', salario_min: 'Salario mínimo', reforma_lab: 'Reforma laboral', sindicatos: 'Sindicatos', empleo_reg: 'Empleo en blanco', precios: 'Control de precios', vivienda: 'Alquileres', jornada: 'Jornada laboral', plataformas: 'Apps de reparto',
+    aranceles: 'Importaciones', rigi: 'RIGI', energia: 'Vaca Muerta', mineria: 'Minería', mercosur: 'Acuerdos comerciales', turismo: 'Turismo', tdf: 'Tierra del Fuego', conocimiento: 'Economía del conocimiento', hidrovia: 'Hidrovía',
+    seguridad: 'Policía', protesta: 'Protocolo antipiquetes', narco: 'Narcotráfico', justicia: 'Reforma judicial', defensa: 'Fuerzas Armadas', armas: 'Control de armas', carceles: 'Cárceles', migracion: 'Migración',
+    educacion: 'Escuelas', universidades: 'Universidades', ciencia: 'Ciencia', salud: 'Hospitales', ive: 'Aborto legal', diversidad: 'Diversidad', medios: 'Medios públicos', cultura: 'Cultura', futbol: 'Fútbol', comedores: 'Comedores',
+    electoral: 'Sistema electoral', ficha: 'Ficha Limpia', anticorrupcion: 'Anticorrupción', malvinas: 'Malvinas', memoria: 'Memoria y DD.HH.', exterior: 'Política exterior', inteligencia: 'Inteligencia', acceso_info: 'Acceso a la info'
+  };
+  ART.short = p => ART.polShort[p.id] || p.name.replace(/\s*\(.*\)$/, '');
+
+  // Gritos de cada sector cuando una medida los toca: [enojo, alegría]
+  ART.shouts = {
+    cm: ['¡Así no llegamos a fin de mes!', '¡Por fin una buena para la clase media!'],
+    sp: ['¡En el barrio no damos más!', '¡Esto sí ayuda al barrio!'],
+    jb: ['¡Con los jubilados no!', '¡Gracias! ¡Por fin nos escuchan!'],
+    pu: ['¡Paro de estatales!', '¡Bien ahí con los estatales!'],
+    sn: ['¡Paro general, compañeros!', '¡Victoria de los trabajadores!'],
+    inf: ['¡Changas no hay, señor!', '¡Ahora sí se puede laburar!'],
+    pym: ['¡Así cerramos la persiana!', '¡Las pymes festejan!'],
+    ind: ['¡La industria se funde!', '¡Vuelven las máquinas!'],
+    agro: ['¡El campo dice basta!', '¡Viva el campo!'],
+    fin: ['¡Los mercados se asustan!', '¡Los mercados aplauden!'],
+    jov: ['¡Me voy a Ezeiza!', '¡Vamos, loco, esto sí!'],
+    uni: ['¡La universidad se defiende!', '¡Educación pública, sí!'],
+    int: ['¡El interior también existe!', '¡Por fin se acuerdan del interior!'],
+    rel: ['¡Recemos por la Patria!', '¡Bendito sea!'],
+    mov: ['¡Unidad de los que luchan!', '¡Esta es para el pueblo!']
+  };
+
+  // Situaciones activas: crisis y logros que aparecen en el centro del tablero
+  ART.situations = function (S) {
+    const m = S.m, out = [], gy = AR.gdpYoy ? AR.gdpYoy(S) : 0;
+    const add = (ok, icon, name, good, ind, d) => { if (ok) out.push({ icon, name, good, ind, d }); };
+    add(m.infM >= 40, '🌋', 'Hiperinflación', false, 'infl', 'Los precios se duplican en semanas.');
+    add(m.infM >= 6 && m.infM < 40, '🔥', 'Inflación alta', false, 'infl', 'La inflación mensual supera el 6%.');
+    add(m.infM <= 2, '🧊', 'Precios estables', true, 'infl', 'Inflación mensual del 2% o menos.');
+    add(m.gap >= 60, '💸', 'Brecha cambiaria', false, 'dolar', 'El dólar libre vale mucho más que el oficial.');
+    add(m.gap <= 5 && m.infM < 6, '💵', 'Dólar unificado', true, 'dolar', 'Casi no hay brecha entre oficial y libre.');
+    add(m.res < 0, '🏦', 'Reservas negativas', false, 'reservas', 'El BCRA debe más dólares de los que tiene.');
+    add(m.risk >= 2000, '⚠️', 'Riesgo de default', false, 'riesgo', 'Nadie presta: el riesgo país supera los 2.000.');
+    add(m.risk <= 650, '🤝', 'Crédito externo', true, 'riesgo', 'El país vuelve a conseguir financiamiento.');
+    add(gy <= -2, '📉', 'Recesión', false, 'pbi', 'La economía cae más del 2% interanual.');
+    add(gy >= 4, '🚀', 'Crecimiento fuerte', true, 'pbi', 'La economía crece más del 4%.');
+    add(m.u >= 11, '🧰', 'Desempleo masivo', false, 'desempleo', 'Más del 11% de la gente busca trabajo y no lo encuentra.');
+    add(m.pov >= 45, '🥣', 'Emergencia social', false, 'pobreza', 'Casi la mitad del país es pobre.');
+    add(m.pov <= 28, '🏡', 'Pobreza en baja', true, 'pobreza', 'La pobreza baja del 28%.');
+    add(m.conf >= 60, '📢', 'Calles calientes', false, 'conflicto', 'Piquetes, paros y marchas todas las semanas.');
+    add(m.insec >= 65, '🚨', 'Ola de inseguridad', false, 'inseguridad', 'El delito es la preocupación número uno.');
+    add(m.inst <= 35, '⚖️', 'Crisis institucional', false, 'instituciones', 'Los poderes del Estado están en choque.');
+    add(m.pb >= 0.5, '🧮', 'Superávit fiscal', true, 'deficit', 'El Estado gasta menos de lo que recauda.');
+    add(m.pb <= -4, '🕳️', 'Déficit descontrolado', false, 'deficit', 'El rojo fiscal supera el 4% del PBI.');
+    return out;
+  };
+
   /* ---------------- indicadores del tablero ---------------- */
   const tone = (v, good, bad) => (good < bad ? (v <= good ? 1 : v >= bad ? -1 : 1 - 2 * (v - good) / (bad - good)) : (v >= good ? 1 : v <= bad ? -1 : -1 + 2 * (v - bad) / (good - bad)));
   ART.indicators = [

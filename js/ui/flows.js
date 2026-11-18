@@ -18,7 +18,7 @@
   F.achPop = list => list.forEach((a, i) => setTimeout(() => {
     let box = $('toasts'); if (!box) { box = document.createElement('div'); box.id = 'toasts'; document.body.appendChild(box); }
     const t = document.createElement('div'); t.className = 'achpop'; t.innerHTML = '<i>' + a.icon + '</i><div><small>🏆 LOGRO DESBLOQUEADO</small><b>' + a.name + '</b><span>' + a.d + '</span></div>'; box.appendChild(t);
-    SFX.chime(); if (i === 0) VOX.say('Logro desbloqueado: ' + a.name);
+    SFX.fanfare(); setTimeout(() => SFX.applause(1.6, 0.7), 500); if (i === 0) VOX.say('Logro desbloqueado: ' + a.name);
     setTimeout(() => t.classList.add('out'), 4800); setTimeout(() => t.remove(), 5400);
   }, i * 900));
   const confetti = () => {
@@ -71,12 +71,13 @@
   /* ---------------- aplicar políticas ---------------- */
   F.apply = function (pid, route) {
     const S = U.S, p = AR.pol(pid), to = U.sel[pid], label = U.lab(p.levels[to]);
-    const r = AR.proposeChange(S, pid, to, route);
+    const eff = ART.effects(p, S.pol[pid].cur, to).grp;
+    const r = AR.proposeChange(S, pid, to, route); r.eff = eff;
     if (!r.kind) { SFX.bad(); F.toast(r.msg, 'bad'); return; }
     delete U.sel[pid];
-    const after = () => { U.save(); U.render(); F.achPop(AR.ach.check(S)); };
-    if (r.kind === 'ley') F.vote(p, label, r, () => { F.toast(r.msg, r.ok ? 'ok' : 'bad'); after(); });
-    else F.stamp(r.kind === 'dnu' ? 'DNU' : 'DECRETO', p, label, () => { F.toast(r.msg, 'ok'); after(); });
+    const after = live => { U.panel = null; U.save(); U.render(); if (live) setTimeout(() => U.react(r.eff, { quiet: r.kind === 'ley' }), 120); F.achPop(AR.ach.check(S)); };
+    if (r.kind === 'ley') F.vote(p, label, r, () => { F.toast(r.msg, r.ok ? 'ok' : 'bad'); after(r.ok); });
+    else F.stamp(r.kind === 'dnu' ? 'DNU' : 'DECRETO', p, label, () => { F.toast(r.msg, 'ok'); after(true); });
   };
   F.stamp = function (kind, p, label, cb) {
     F.modal('<div class="stampbox"><div class="paper"><small>BOLETÍN OFICIAL DE LA REPÚBLICA ARGENTINA</small><h3>' + (ART.polIcon[p.id] || '') + ' ' + p.name + '</h3><p>' + label + '</p><div class="sign">✍️ Presidencia de la Nación</div><div class="stamp ' + (kind === 'DNU' ? 'red' : '') + '">' + kind + ' FIRMADO</div></div></div>', 'clear');
@@ -114,7 +115,7 @@
       SFX.gavel();
       await wait(skip ? 100 : 700);
       $('vres').innerHTML = '<div class="stamp xl ' + (ok ? '' : 'red') + '">' + (ok ? 'APROBADO' : 'RECHAZADO') + '</div>';
-      if (ok) { SFX.applause(2.8); } else { SFX.boo(2.4); }
+      if (ok) { SFX.applause(2.8); SFX.crowd('cheer', 18, 2.6); setTimeout(() => VOX.say(['¡Bravo!', '¡Muy bien!', '¡Es ley!'][Math.floor(Math.random() * 3)], { pitch: 1.3, rate: 1.2 }), 200); } else { SFX.boo(2.4); SFX.crowd('boo', 14, 2.4); setTimeout(() => VOX.say(['¡Vergüenza!', '¡Afuera!', '¡No pasará!'][Math.floor(Math.random() * 3)], { pitch: 0.8, rate: 1.15 }), 200); }
       VOX.say((ok ? 'Resulta afirmativa' : 'Resulta negativa') + ', con ' + c.yes + ' votos a favor y ' + (c.total - c.yes) + ' en contra.', { interrupt: true });
       if (!skip) await wait(2200);
       return ok;
@@ -123,7 +124,7 @@
       const okD = await chamber('dip');
       if (okD) await chamber('sen');
       $('vskip').classList.add('hidden'); $('vdone').classList.remove('hidden');
-      if (res.ok) confetti();
+      if (res.ok) { confetti(); SFX.celebrate(2); }
     })();
   };
 
@@ -158,7 +159,8 @@
     const ach = fresh.length ? '<div class="rach">' + fresh.map(a => '<span>' + a.icon + ' ' + a.name + '</span>').join('') + '</div>' : '';
     F.modal('<div class="report"><small class="kick">📋 INFORME MENSUAL</small><h2>' + MN[d.m].replace(/^./, c => c.toUpperCase()) + ' de ' + d.y + '</h2><div class="rts">' + tiles + '</div>' + why +
       '<h3>Cómo reaccionó la gente</h3><div class="rfs">' + faces + '</div>' + ach + '<button class="big" data-act="repok">Continuar ▶</button></div>', 'wide');
-    const dA = S.appr - snap.appr; if (dA >= 0) SFX.good(); else SFX.bad();
+    const dA = S.appr - snap.appr; if (dA >= 1.5) { SFX.good(); SFX.celebrate(1); } else if (dA >= 0) SFX.good(); else if (dA <= -1.5) { SFX.bad(); SFX.disappoint(); } else SFX.bad();
+    U.lastDelta = Object.fromEntries(AR.groups.map(gr => [gr.id, S.A[gr.id] - snap.A[gr.id]]));
     VOX.say('Informe de ' + MN[d.m] + '. La inflación fue de ' + fmt(m.infM, 1) + ' por ciento. ' + (dA >= 0 ? 'Tu aprobación sube.' : 'Tu aprobación baja.'), { interrupt: true, who: 'f' });
     F.achPop(fresh);
   };
@@ -182,16 +184,22 @@
     const ev = AR.eventById(id), urgent = ART.urgent.has(id), happy = ART.happy.has(id);
     F.modal('<div class="evt ' + (urgent ? 'urgent' : happy ? 'happy' : '') + '"><div class="evscene">' + ART.scene(ART.sceneFor[id] || 'casa') + '<div class="evtag">' + (urgent ? '🚨 EMERGENCIA' : happy ? '🎉 BUENAS NOTICIAS' : '📰 ÚLTIMO MOMENTO') + '</div><h2>' + ev.title + '</h2></div>' +
       '<p class="evtext">' + AR.eventText(S, ev) + '</p><div class="choices">' + ev.choices.map((c, i) => '<button class="choice" data-act="evc" data-v="' + i + '"><b>' + c.t + '</b>' + (c.d ? '<small>' + c.d + '</small>' : '') + '<span class="hints">' + hints(c, S) + '</span></button>').join('') + '</div></div>', 'wide' + (urgent ? ' alarm' : ''));
-    if (urgent) { SFX.siren(2.4); VOX.say('Atención. ' + ev.title, { interrupt: true }); }
-    else if (happy) { SFX.cheer(2.5); confetti(); VOX.say(ev.title, { interrupt: true }); }
+    if (urgent && PROTEST.has(id)) { SFX.protest(2); VOX.say('Atención. ' + ev.title, { interrupt: true }); }
+    else if (urgent) { SFX.siren(2.4); SFX.gasp(); VOX.say('Atención. ' + ev.title, { interrupt: true }); }
+    else if (happy) { SFX.celebrate(BIG.has(id) ? 3 : 2); confetti(); VOX.say(ev.title, { interrupt: true }); }
+    else if (PROTEST.has(id)) { SFX.news(); SFX.protest(1); VOX.say(ev.title, { interrupt: true }); }
     else { SFX.news(); VOX.say(ev.title, { interrupt: true }); }
   };
+  const PROTEST = new Set(['paro_cgt', 'marcha_univ', 'cacerolazo', 'saqueos', 'tomas', 'paro_docente', 'camioneros', 'ruidazo', 'ni_una_menos', 'dia_memoria', 'jefes', 'avellaneda', 'lockout_agro', 'cierre_fabricas', 'aceiteros', 'veto_jub', 'veto_univ']);
+  const BIG = new Set(['mundial', 'copa_america']);
   F.choose = function (i) {
     const S = U.S, ev = AR.eventById(S.pending[0]), c = ev.choices[i];
     const msg = AR.resolveEvent(S, i);
     if (c.veto) { if (/sostuvo/.test(msg)) { SFX.gavel(); SFX.applause(2); } else { SFX.boo(2); } } else SFX.click();
     F.toast((ART.polIcon[ev.id] || '📰') + ' ' + msg, /superado|negativ/.test(msg) ? 'bad' : 'ok');
     F.achPop(AR.ach.check(S)); U.save(); U.render(); F.queue();
+    let e; try { e = typeof c.e === 'function' ? c.e(S) : c.e; } catch (x) { e = null; }
+    if (e && e.g) setTimeout(() => U.react(e.g, { quiet: !$('modal').hidden || !!c.veto }), 150);
   };
 
   /* ---------------- elecciones ---------------- */
@@ -211,7 +219,7 @@
     setTimeout(() => document.querySelectorAll('.eb i').forEach(i => { i.style.width = i.dataset.w + '%'; }), 80);
     setTimeout(() => {
       $('eres').classList.remove('hidden'); $('eok').classList.remove('hidden');
-      if (won) { SFX.cheer(3); confetti(); } else SFX.boo(2.6);
+      if (won) { SFX.celebrate(3); confetti(); setTimeout(() => SFX.chant('si', 18), 2200); } else { SFX.disappoint(); SFX.boo(2.6); }
       VOX.say(e.kind === 'midterm' ? (won ? 'Tu espacio gana las elecciones legislativas.' : 'Tu espacio pierde las elecciones legislativas.') : 'Gana ' + AR.parties[e.winner].name + '.', { interrupt: true });
     }, 2700);
   };
@@ -227,7 +235,7 @@
       '<div class="tiles">' + t('🔥', 'Inflación anual (inicio ' + fmt(s.base.inf) + '%)', fmt(s.infYoy) + '%') + t('🥣', 'Pobreza (inicio ' + fmt(s.base.pov, 1) + '%)', fmt(s.pov, 1) + '%') + t('🧰', 'Desocupación', fmt(s.u, 1) + '%') + t('📊', 'PBI acumulado', sgn(s.gdp, 1) + '%') + t('📉', 'Riesgo país', fmt(s.risk)) + t('❤️', 'Aprobación final', fmt(s.appr) + '%') + '</div>' +
       (achs.length ? '<h3>Logros de esta partida</h3><div class="rach">' + achs.map(a => '<span>' + a.icon + ' ' + a.name + '</span>').join('') + '</div>' : '') +
       '<button class="big" data-act="newgame">🔄 Jugar otra vez</button></div>', 'wide');
-    if (['Histórico', 'Exitoso'].includes(s.grade)) { SFX.cheer(3); confetti(); } else if (s.grade === 'Desastre') SFX.boo(2.5); else SFX.good();
+    if (['Histórico', 'Exitoso'].includes(s.grade)) { SFX.celebrate(3); confetti(); } else if (s.grade === 'Desastre') { SFX.protest(2); } else { SFX.good(); SFX.applause(2); }
     VOX.say(S.over.title + '. Tu gobierno fue calificado como ' + s.grade + '.', { interrupt: true });
   };
 
@@ -237,12 +245,12 @@
     back: () => { SFX.click(); U.scn = null; F.start(); },
     start: el => {
       SFX.coin(); U.S = AR.newGame(el.dataset.v, null, U.scn); U.S.scnLabel = AR.scenario.short; U.pos = null; U.panel = null; U.screen = null; U.save(); U.render();
-      VOX.say('Asume la Presidencia. Que Dios y la Patria te lo demanden.', { interrupt: true });
+      SFX.fanfare(); setTimeout(() => SFX.celebrate(2), 500); confetti(); VOX.say('Asume la Presidencia. Que Dios y la Patria te lo demanden.', { interrupt: true });
       F.tutorial(false); if (!$('modal').hidden) return; F.queue();
     },
     continue: () => { const sv = U.load(); if (!sv) return; AR.setScenario(sv.scn || 'dic2023'); AR.policies.forEach(p => { if (!sv.pol[p.id]) sv.pol[p.id] = { cur: p.init, pend: null }; }); U.S = sv; U.scn = sv.scn; U.pos = null; SFX.click(); U.render(); F.queue(); },
     evc: el => F.choose(parseInt(el.dataset.v, 10)),
-    repok: () => { SFX.click(); F.queue(); },
+    repok: () => { SFX.click(); F.queue(); if (U.lastDelta && $('modal').hidden) U.react(U.lastDelta, { min: 1.5 }); U.lastDelta = null; },
     ackelect: () => { AR.ackElection(U.S); U.save(); U.render(); F.queue(); },
     closemodal: () => { F.close(); if (U.S) F.queue(); }
   };

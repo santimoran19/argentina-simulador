@@ -9,11 +9,15 @@ Juego de simulación política al estilo Democracy, basado en la historia econó
 - **Diciembre 2023**: inflación del 25% mensual, reservas negativas.
 
 ## Cómo jugar
-Abrí `index.html` en el navegador. No necesita instalación ni servidor.
+Abrí `index.html` en el navegador. Para instalarlo como app (PWA) y jugar sin internet, servilo por HTTPS (GitHub Pages, Netlify, Vercel) o en local con `python3 -m http.server`, y tocá **Instalar el juego** en el inicio o en el Menú. En iPhone: Compartir → Agregar a inicio.
+
+Al publicar cambios, subí `VERSION` en `sw.js` para que los jugadores reciban la actualización.
 
 - **Arriba**, los 15 sectores sociales. La cara y el anillo de color muestran cuánto te aprueban.
 - **En el centro**, los indicadores del país, con su evolución reciente y las situaciones activas (crisis y logros).
 - **A los costados**, las políticas agrupadas por área. Pasá el mouse para ver qué afectan; hacé clic para cambiarlas.
+- **Cadena nacional** (una vez por mes), **Encuestas** con intención de voto, **Redes sociales** con lo que dice la gente, **tapas de diarios** en el informe mensual y **Objetivos del mandato** por escenario.
+- Tres niveles de dificultad. Barra espaciadora = siguiente mes.
 - Las medidas se aplican por decreto, por DNU o por ley (con votación animada en el Congreso).
 
 ## Estructura

@@ -278,6 +278,8 @@
     if (e.rel) for (const k in e.rel) if (S.rel[k] !== undefined) S.rel[k] = clamp(S.rel[k] + e.rel[k], 0, 100);
   }
 
+  AR.applyEff = applyEff;
+
   /* ---------- escalas para aprobación ---------- */
   const gdpYoy = S => (last(S.h.gdp) / S.h.gdp[S.h.gdp.length - 12] - 1) * 100;
   AR.gdpYoy = gdpYoy;
@@ -522,7 +524,7 @@
   function politics(S, c) {
     S.buffs.forEach(b => { b.left--; }); S.buffs = S.buffs.filter(b => b.left > 0);
     updateApproval(S, false);
-    S.pc = clamp(S.pc + clamp(3.5 + 0.10 * (S.appr - 35), 1.5, 8), 0, 100);
+    S.pc = clamp(S.pc + clamp(3.5 + 0.10 * (S.appr - 35), 1.5, 8) * (S.diffK || 1), 0, 100);
     PK().forEach(k => { S.rel[k] += 0.12 * (relTarget(S, k) - S.rel[k]); S.rel[k] = clamp(S.rel[k], 0, 100); });
   }
 

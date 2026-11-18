@@ -40,7 +40,7 @@
     } else {
       AR.setScenario(U.scn); const sc = AR.scenario;
       body = '<button class="back" data-act="back">← Otra época</button><div class="intro"><div class="scnart small">' + ART.scene(SCN_ART[sc.id]) + '<span class="year">' + sc.start.y + '</span></div><div><h2>' + sc.name + '</h2><p>' + sc.intro + '</p></div></div>' +
-        '<h2 class="sec">¿Con qué partido gobernás?</h2><div class="parties">' + Object.keys(sc.parties).filter(k => sc.parties[k].govern).map(k => {
+        '<h2 class="sec">¿Con qué partido gobernás?</h2>' + (AR.extras ? AR.extras.diffPicker() : '') + '<div class="parties">' + Object.keys(sc.parties).filter(k => sc.parties[k].govern).map(k => {
           const p = sc.parties[k], d = p.seats0.dip / sc.chamber.dip.total * 100, s = p.seats0.sen / sc.chamber.sen.total * 100;
           return '<button class="party" data-act="start" data-v="' + k + '" style="--c:' + p.color + '">' + ART.emblem(p, 64) + '<h3>' + p.name + '</h3><p>' + p.desc + '</p>' +
             '<div class="sb"><span>Diputados</span><div class="track"><i style="width:' + d + '%"></i></div><em>' + p.seats0.dip + '</em></div><div class="sb"><span>Senado</span><div class="track"><i style="width:' + s + '%"></i></div><em>' + p.seats0.sen + '</em></div>' +
@@ -49,7 +49,7 @@
     }
     $('app').innerHTML = '<div class="start"><div class="hero">' + ART.scene('casa') + '<div class="herot"><div class="sol">☀️</div><h1>ARGENTINA</h1><p>Simulador de Gobierno</p></div></div><div class="sbody">' +
       (saved && !U.scn ? '<button class="cont" data-act="continue">▶ Continuar partida · ' + (saved.scnLabel || '') + ' · ' + AR.dateLabelFor(saved) + '</button>' : '') + body +
-      '<p class="foot">Partidos e instituciones reales · datos aproximados del INDEC y el BCRA · los personajes son ficticios</p></div></div>';
+      (AR.pwa && !U.scn ? '<div class="instwrap">' + AR.pwa.button('cont') + '</div>' : '') + '<p class="foot">Partidos e instituciones reales · datos aproximados del INDEC y el BCRA · los personajes son ficticios</p></div></div>';
     F.close();
   };
 
@@ -63,6 +63,7 @@
       ['📊', 'El país', 'En el centro, los indicadores: inflación, dólar, reservas, pobreza... Verde es bueno y rojo es malo.'],
       ['🏛️', 'Tus políticas', 'A los costados, tus herramientas agrupadas por área. Al pasar el mouse ves a qué afectan. Hacé clic para cambiar el nivel y ver líneas verdes (mejora) o rojas (empeora).'],
       ['🪙', 'Capital político', 'Cada cambio cuesta capital político. Los decretos son rápidos, las leyes se votan en el Congreso y los DNU son un atajo con riesgo.'],
+      ['📺', 'Cadena nacional, encuestas y redes', 'Una vez por mes podés hablarle al país. En Encuestas ves la intención de voto y en Redes qué dice la gente. Cumplí los 🎯 Objetivos del mandato para ganar capital extra.'],
       ['▶', 'Siguiente mes', 'Cuando estés listo, pasá de mes. La economía reacciona con rezago, la gente opina y pueden aparecer emergencias. ¡Suerte, Presidente!']
     ];
     F.modal('<div class="tuto"><h2>Cómo se juega</h2>' + steps.map(s => '<div class="ts"><i>' + s[0] + '</i><div><b>' + s[1] + '</b><p>' + s[2] + '</p></div></div>').join('') + '<button class="big" data-act="closemodal">¡A gobernar!</button></div>', 'wide');
@@ -138,6 +139,7 @@
     F.modal('<div class="flip"><div class="page"><b>' + MN[d0.m].toUpperCase() + '</b><span>' + d0.y + '</span></div><p>Pasa el mes...</p></div>', 'clear');
     SFX.turn();
     AR.endTurn(S);
+    if (AR.extras) { AR.extras.monthly(S, snap); AR.extras.checkGoals(S); }
     const fresh = AR.ach.check(S);
     U.save();
     await wait(1000);
@@ -158,7 +160,7 @@
     if (S.why) { const w = Object.entries(S.why).filter(x => x[1] > 0.1).sort((a, b) => b[1] - a[1]).slice(0, 3); why = '<p class="why">🔥 La inflación vino sobre todo por: ' + w.map(x => '<b>' + x[0] + '</b>').join(' · ') + '</p>'; }
     const ach = fresh.length ? '<div class="rach">' + fresh.map(a => '<span>' + a.icon + ' ' + a.name + '</span>').join('') + '</div>' : '';
     F.modal('<div class="report"><small class="kick">📋 INFORME MENSUAL</small><h2>' + MN[d.m].replace(/^./, c => c.toUpperCase()) + ' de ' + d.y + '</h2><div class="rts">' + tiles + '</div>' + why +
-      '<h3>Cómo reaccionó la gente</h3><div class="rfs">' + faces + '</div>' + ach + '<button class="big" data-act="repok">Continuar ▶</button></div>', 'wide');
+      (AR.extras ? AR.extras.papers(S, snap) : '') + '<h3>Cómo reaccionó la gente</h3><div class="rfs">' + faces + '</div>' + ach + '<button class="big" data-act="repok">Continuar ▶</button></div>', 'wide');
     const dA = S.appr - snap.appr; if (dA >= 1.5) { SFX.good(); SFX.celebrate(1); } else if (dA >= 0) SFX.good(); else if (dA <= -1.5) { SFX.bad(); SFX.disappoint(); } else SFX.bad();
     U.lastDelta = Object.fromEntries(AR.groups.map(gr => [gr.id, S.A[gr.id] - snap.A[gr.id]]));
     VOX.say('Informe de ' + MN[d.m] + '. La inflación fue de ' + fmt(m.infM, 1) + ' por ciento. ' + (dA >= 0 ? 'Tu aprobación sube.' : 'Tu aprobación baja.'), { interrupt: true, who: 'f' });
@@ -234,7 +236,8 @@
       '<div class="grade">' + s.grade + ' · ' + s.score + '/100</div><p class="arq">Tu gobierno se parece a: <b>' + s.archetype + '</b><br><span>' + s.archetypeText + '</span></p>' +
       '<div class="tiles">' + t('🔥', 'Inflación anual (inicio ' + fmt(s.base.inf) + '%)', fmt(s.infYoy) + '%') + t('🥣', 'Pobreza (inicio ' + fmt(s.base.pov, 1) + '%)', fmt(s.pov, 1) + '%') + t('🧰', 'Desocupación', fmt(s.u, 1) + '%') + t('📊', 'PBI acumulado', sgn(s.gdp, 1) + '%') + t('📉', 'Riesgo país', fmt(s.risk)) + t('❤️', 'Aprobación final', fmt(s.appr) + '%') + '</div>' +
       (achs.length ? '<h3>Logros de esta partida</h3><div class="rach">' + achs.map(a => '<span>' + a.icon + ' ' + a.name + '</span>').join('') + '</div>' : '') +
-      '<button class="big" data-act="newgame">🔄 Jugar otra vez</button></div>', 'wide');
+      (AR.extras ? '<p class="arq">🎯 Objetivos cumplidos: <b>' + AR.extras.goalCount(S) + '</b></p>' : '') +
+      '<div class="endbtns"><button class="big alt" data-act="share">📤 Compartir resultado</button><button class="big" data-act="newgame">🔄 Jugar otra vez</button></div></div>', 'wide');
     if (['Histórico', 'Exitoso'].includes(s.grade)) { SFX.celebrate(3); confetti(); } else if (s.grade === 'Desastre') { SFX.protest(2); } else { SFX.good(); SFX.applause(2); }
     VOX.say(S.over.title + '. Tu gobierno fue calificado como ' + s.grade + '.', { interrupt: true });
   };
@@ -244,7 +247,7 @@
     scn: el => { SFX.click(); U.scn = el.dataset.v; F.start(); },
     back: () => { SFX.click(); U.scn = null; F.start(); },
     start: el => {
-      SFX.coin(); U.S = AR.newGame(el.dataset.v, null, U.scn); U.S.scnLabel = AR.scenario.short; U.pos = null; U.panel = null; U.screen = null; U.save(); U.render();
+      SFX.coin(); U.S = AR.newGame(el.dataset.v, null, U.scn); U.S.scnLabel = AR.scenario.short; if (AR.extras) AR.extras.applyDiff(U.S); U.pos = null; U.panel = null; U.screen = null; U.save(); U.render();
       SFX.fanfare(); setTimeout(() => SFX.celebrate(2), 500); confetti(); VOX.say('Asume la Presidencia. Que Dios y la Patria te lo demanden.', { interrupt: true });
       F.tutorial(false); if (!$('modal').hidden) return; F.queue();
     },

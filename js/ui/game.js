@@ -61,7 +61,8 @@
       '<div class="pc" title="Respaldo en Diputados"><span class="coin">🏛️</span><div><b>' + gv + '</b><small>Gobernabilidad</small><div class="bar"><i style="width:' + gv + '%;background:#74acdf"></i></div></div></div>' +
       '<div class="spacer"></div>' +
       '<nav class="hbtn">' +
-      ['congreso:🏛️:Congreso', 'economia:📊:Economía', 'logros:🏆:Logros', 'archivo:📜:Historia', 'menu:⚙️:Menú'].map(x => { const [k, i, l] = x.split(':'); return '<button data-act="screen" data-v="' + k + '" title="' + l + '"><span>' + i + '</span><small>' + l + '</small></button>'; }).join('') +
+      '<button data-act="cadena" class="cadbtn' + (S.speechT === S.t ? ' used' : '') + '" title="Hablarle al país (una vez por mes)"><span>📺</span><small>Cadena nacional</small></button>' +
+      ['congreso:🏛️:Congreso', 'economia:📊:Economía', 'encuestas:📈:Encuestas', 'redes:📱:Redes', 'objetivos:🎯:Objetivos', 'logros:🏆:Logros', 'archivo:📜:Historia', 'menu:⚙️:Menú'].map(x => { const [k, i, l] = x.split(':'); return '<button data-act="screen" data-v="' + k + '" title="' + l + '"><span>' + i + '</span><small>' + (k === 'objetivos' && AR.extras ? 'Objetivos ' + AR.extras.goalCount(S) : l) + '</small></button>'; }).join('') +
       '<button data-act="mute" title="Sonido"><span>' + (SFX.cfg.sfx ? '🔊' : '🔇') + '</span><small>Sonido</small></button></nav></header>';
   }
 
@@ -318,11 +319,13 @@
     return '<h1>⚙️ Menú</h1><div class="menu"><label class="sw"><input type="checkbox" data-act="cfg" data-v="sfx"' + (c.sfx ? ' checked' : '') + '> 🔊 Efectos de sonido</label>' +
       '<label class="sw"><input type="checkbox" data-act="cfg" data-v="voice"' + (c.voice ? ' checked' : '') + '> 🗣️ Voces (locutor y diputados)</label>' +
       '<label class="sw">🎚️ Volumen <input type="range" min="0" max="1" step="0.05" value="' + c.vol + '" data-act="vol"></label>' +
+      (AR.pwa ? AR.pwa.button() : '') + '<button class="big alt" data-act="fullscreen">⛶ Pantalla completa</button>' +
+      '<p class="mut small">Atajo: <b>barra espaciadora</b> = siguiente mes · <b>Esc</b> = cerrar</p>' +
       '<button class="big" data-act="tutorial">❓ Cómo se juega</button><button class="big warn" data-act="newgame">🔄 Nueva partida</button></div>';
   }
   function screen(S) {
     if (!U.screen) return '';
-    const f = { congreso: scrCongreso, economia: scrEconomia, logros: scrLogros, archivo: scrArchivo, menu: scrMenu }[U.screen];
+    const f = Object.assign({ congreso: scrCongreso, economia: scrEconomia, logros: scrLogros, archivo: scrArchivo, menu: scrMenu }, (AR.extras && AR.extras.screens) || {})[U.screen];
     return '<div class="screen"><div class="sbox"><button class="x" data-act="screen" data-v="">✕</button>' + f(S) + '</div></div>';
   }
 

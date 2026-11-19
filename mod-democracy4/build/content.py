@@ -390,7 +390,7 @@ sit('AR_ReservasAgotadas', 'ECONOMY', 'building-bank', 0, 0.57, 0.42,
     ('Depleted reserves', 'The central bank has almost no dollars of its own. It cannot defend the peso, cannot pay for energy and '
      'parts imports, and every debt payment becomes a crisis.'))
 
-sit('AR_RiesgoPaisAlto', 'ECONOMY', 'chart-line', 0, 0.58, 0.40,
+sit('AR_RiesgoPaisAlto', 'ECONOMY', 'chart-line', 0, 0.55, 0.40,
     ['_default_,0.30', '_effectivedebt_,0+(0.30*x)', 'AR_ReservasAgotadas,0+(0.20*x)', 'AR_EmisionTesoro,0+(0.10*x)',
      'AR_AcuerdoFMI,0-(0.15*x)', 'Stability,0-(0.15*x)', 'AR_ReclamoMalvinas,0+(0.04*x)', 'AR_EstabilidadMacro,0-(0.20*x)'],
     ['ForeignInvestment,-0.06-(0.08*x)', 'BusinessConfidence,-0.04-(0.06*x)', 'GDP,-0.01-(0.02*x),4', 'Capitalist,-0.04-(0.06*x)'],
@@ -800,10 +800,15 @@ START_2026 = _ext.START_2026
 import content_intl as _intl
 _intl.extend(_mod)
 
+# Balance probado en el juego (ver content_balance.py)
+import content_balance as _bal
+_bal.apply_start(_mod)
+
 # Sin repetidos: las políticas argentinas que hacían lo mismo que una del juego se fusionan con ella
 import content_merge as _merge
 _merge.extend(_mod)
 MERGED = _merge.MERGE
+_bal.extend(_mod)
 
 # Interacciones con las políticas y situaciones que ya trae Democracy 4
 import content_base as _base

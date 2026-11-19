@@ -23,7 +23,7 @@ Todo lo que pasó después (bandas cambiarias, motosierra, superávit, swap con 
 | Eventos con imagen | 38 | Campeones del mundo, escándalo cripto presidencial, audios de coimas, fentanilo contaminado, temporal en el sur bonaerense, muerte del Papa, rescate del Tesoro de EE.UU., dengue, falta de gas, paro de controladores, caen los homicidios en Rosario, mejora la nota de la deuda, cierra una fábrica emblemática; y del mundo: estalla una guerra en Europa, se cierra el estrecho de Ormuz, aranceles globales, la Fed sube tasas, Brasil devalúa, la soja vuela, pandemia, derrumbe en Wall Street, éxodo venezolano, entra en vigor el acuerdo con la UE, China compra soja récord |
 | Dilemas | 38 | Vetos a discapacidad y universidades, paro en el hospital pediátrico, condiciones del swap, el dólar toca el techo de la banda, privatizar la aerolínea, suspender las PASO, imputabilidad, glaciares, dólares del colchón, la CGT ofrece negociar, los industriales piden frenar importaciones, FMI, paritarias, lockout del campo, fondos buitre; y del mundo: armas para Ucrania, votación en la ONU sobre Medio Oriente, embajada en Jerusalén, refugiados, estación espacial china en Neuquén, 5G, moneda común con Brasil, aviones de combate, cláusulas ambientales de Europa |
 | Rasgos estructurales | 6 | Inercia inflacionaria, evasión, corrupción, grieta, fuga de cerebros, economía informal |
-| Enlaces causales argentinos | 12 | Ver "Efecto dominó" |
+| Enlaces causales argentinos | 11 | Ver "Efecto dominó" |
 | Otras conexiones con el juego | 47 | Ver "Lo que ya trae el juego" |
 
 El detalle de cada política, situación, evento y dilema, con sus efectos, está en el **[catálogo completo](CATALOGO.md)**.
@@ -90,9 +90,13 @@ En otros mods de Argentina pasa que aparecen dos políticas para lo mismo (por e
 
 Las políticas que quedan propias del mod son las que el juego no tiene: retenciones, impuesto PAIS, bandas cambiarias, tasa del BCRA, monotributo, moratoria, planes sociales, subsidios a las tarifas, Malvinas, etc.
 
+## Balance probado en el juego
+
+En la primera partida de prueba (Democracy 4 1.67) el país colapsaba en los turnos de preparación que simula el juego antes de empezar: PBI a cero, desempleo de 77 % y peso a cero. Se corrigió en `build/content_balance.py`: los golpes macro de las crisis argentinas van a la mitad (se suman entre sí y con las del juego), la inercia inflacionaria ya no empuja una espiral, se quitó el enlace dólar-precios que pisaba el del juego y el gasto inicial se parece más al presupuesto nacional real (escuelas y hospitales son sobre todo provinciales).
+
 ## Efecto dominó: todo se encadena
 
-Las decisiones no afectan a una sola cosa. En Argentina, el mod refuerza las cadenas de transmisión del juego con **12 enlaces causales propios** y hace que **unas crisis desencadenen otras**:
+Las decisiones no afectan a una sola cosa. En Argentina, el mod refuerza las cadenas de transmisión del juego con **11 enlaces causales propios** y hace que **unas crisis desencadenen otras**:
 
 ```mermaid
 flowchart LR

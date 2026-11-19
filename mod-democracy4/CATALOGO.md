@@ -34,7 +34,7 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 
 | Política | Nivel inicial | Efectos |
 |---|---|---|
-| **Bonos de emergencia** | 30% | ▲ sectores bajos, jubilados, inflación · ▼ indigencia, empresarios |
+| **Bonos de emergencia** | 5% | ▲ sectores bajos, jubilados, inflación · ▼ indigencia, empresarios |
 | **Moratoria previsional** | 60% | ▲ jubilados, sectores bajos, igualdad, igualdad de género · ▼ empresarios, conservadores |
 | **Planes sociales** | 60% | ▲ sectores bajos, desempleo, corrupción, izquierda · ▼ indigencia, clase media, empresarios |
 | **Subsidios a la luz y el gas** | 67% | ▲ sectores bajos, clase media, Cortes de luz (juego), emisiones de CO2 · ▼ inflación, eficiencia energética, oferta de petróleo, ambientalistas |
@@ -45,7 +45,7 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 |---|---|---|
 | **Cierre de organismos públicos** | — | ▲ empresarios · ▼ estatales, campo, tecnología, burocracia |
 | **Controles sanitarios (ANMAT)** | 50% | ▲ salud, burocracia · ▼ corrupción, confianza empresaria |
-| **Salarios del sector público** | 60% | ▲ estatales, inflación, sindicalistas · ▼ empresarios |
+| **Salarios del sector público** | 50% | ▲ estatales, inflación, sindicalistas · ▼ empresarios |
 | **Transferencias discrecionales a provincias** | 60% | ▲ corrupción, estabilidad, igualdad, todos los votantes |
 
 ### Ley y orden (6)
@@ -361,7 +361,6 @@ Para que no haya dos políticas para lo mismo, estas versiones argentinas no exi
 
 | Causa | Consecuencia |
 |---|---|
-| fortaleza del peso ▲ | inflación ▼ |
 | inflación ▲ | pobreza ▲ |
 | inflación ▲ | sectores bajos ▼ |
 | inflación ▲ | jubilados ▼ |

@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvMigracion
 Texture = AR_EvMigracion.jpg
+GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(AR_CrisisMigratoria,0.55,0.92);CreateGrudge(Immigration,0.04,0.85);
 
 [influences]

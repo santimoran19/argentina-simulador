@@ -145,6 +145,11 @@ GAME_ES = {'CapitalControls': 'Control de capitales', 'QuantitativeEasing': 'Fle
            'Homelessness': 'Personas sin hogar', 'PowerBlackouts': 'Apagones'}
 for _n, _t in list(N.POLICY_NAMES.items()) + list(N.SITUATION_NAMES.items()):
     lines.append('| {} | **{}** |'.format(GAME_ES.get(_n, _n), _t[0][0]))
+lines += ['', '### Eventos del juego con versión argentina', '', '| Evento del juego | En el mod |', '|---|---|']
+for _n, _t in N.EVENT_NAMES.items():
+    if _n.endswith('!') and _n[:-1] in N.EVENT_NAMES:
+        continue
+    lines.append('| `{}` | **{}** |'.format(_n, _t[0][0]))
 lines += ['', '## Políticas argentinas fusionadas con las del juego', '',
           'Para que no haya dos políticas para lo mismo, estas versiones argentinas no existen como política aparte: '
           'se usa la del juego, que ahora mueve todo lo que movía la argentina. "Al revés" quiere decir que subir la del '

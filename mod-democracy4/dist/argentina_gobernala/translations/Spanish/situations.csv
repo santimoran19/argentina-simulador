@@ -36,7 +36,7 @@
 #,AR_CrisisFinancieraGlobal,Crisis financiera global,"Un colapso en Wall Street congela el crédito mundial. Los inversores huyen de todo lo que parezca riesgoso, empezando por Argentina."
 #,AR_CrisisMigratoria,Ola migratoria regional,La crisis en Venezuela y la violencia en otros países empujan a cientos de miles de personas hacia Argentina.
 #,AR_AcuerdoUEVigente,Acuerdo con la Unión Europea en vigor,"Tras 25 años de negociación, el acuerdo Mercosur-UE entra en vigor: carne, vino y limones entran a Europa sin aranceles."
-#,DoctorsStrike,Paro de médicos y residentes,Médicos y residentes de los hospitales públicos paran por salarios.
-#,TeachersStrike,Paro docente,Los gremios docentes paran por salarios y no empiezan las clases.
-#,Homelessness,Personas en situación de calle,Cada vez más gente duerme en la calle en las grandes ciudades.
-#,PowerBlackouts,Cortes de luz,Las olas de calor dejan barrios enteros sin luz durante días.
+#,DoctorsStrike,Paro de médicos y residentes,Médicos y residentes de los hospitales públicos paran por salarios.,Paran los médicos y residentes de los hospitales públicos.,Los médicos levantaron el paro.
+#,TeachersStrike,Paro docente,Los gremios docentes paran por salarios y no empiezan las clases.,Paro docente: las escuelas están cerradas.,Los docentes levantaron el paro y vuelven las clases.
+#,Homelessness,Personas en situación de calle,Cada vez más gente duerme en la calle en las grandes ciudades.,Crece la cantidad de personas que duermen en la calle.,Bajó la cantidad de personas en situación de calle.
+#,PowerBlackouts,Cortes de luz,Las olas de calor dejan barrios enteros sin luz durante días.,Empiezan los cortes de luz.,Se normalizó el suministro eléctrico.

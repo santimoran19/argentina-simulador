@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvFaltanteGas
 Texture = AR_EvFaltanteGas.jpg
+GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(MiddleIncome,-0.02,0.75);CreateGrudge(GDP,-0.01,0.7);
 
 [influences]

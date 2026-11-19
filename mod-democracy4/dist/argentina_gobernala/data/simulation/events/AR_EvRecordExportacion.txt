@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvRecordExportacion
 Texture = AR_EvRecordExportacion.jpg
+GUISound = DM4_Low Corruption Praised.wav
 OnImplement = CreateGrudge(CurrencyStrength,0.04,0.85);CreateGrudge(BusinessConfidence,0.04,0.85);CreateGrudge(GDP,0.01,0.8);
 
 [influences]

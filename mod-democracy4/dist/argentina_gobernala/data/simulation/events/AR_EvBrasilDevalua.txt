@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvBrasilDevalua
 Texture = AR_EvBrasilDevalua.jpg
+GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(AR_CrisisBrasil,0.55,0.92);CreateGrudge(InternationalTrade,-0.03,0.85);CreateGrudge(Unemployment,0.01,0.85);
 
 [influences]

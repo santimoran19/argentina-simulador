@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvTrenes
 Texture = AR_EvTrenes.jpg
+GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(Poor,-0.04,0.75);CreateGrudge(Stability,-0.02,0.75);
 
 [influences]

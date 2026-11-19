@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvMuertePapa
 Texture = AR_EvMuertePapa.jpg
+GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(Religious,-0.05,0.85);CreateGrudge(Poor,0.02,0.85);CreateGrudge(_All_,0.01,0.8);
 
 [influences]

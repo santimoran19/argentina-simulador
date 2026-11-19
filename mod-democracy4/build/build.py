@@ -14,7 +14,7 @@ import content_names as N
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 OUT = os.path.join(ROOT, 'dist', C.MOD_NAME)
 ASSETS = os.path.join(ROOT, 'assets')        # salida de assets.js
-NL = '\r\n'                                  # archivos del juego en formato Windows
+NL = '\n'                                    # fin de línea Unix, igual que los mods publicados que funcionan
 LANGS = {'English': 'en', 'Spanish': 'es'}
 
 
@@ -88,12 +88,17 @@ def build():
     def gate(infl):
         return list(infl)
 
+    POSITIVE_SITS = {x['name'] for x in C.SITUATIONS if x['positive']}
     for e in C.EVENTS:
         grudges = ''.join('CreateGrudge({},{},{});'.format(t, a, d) for t, a, d in e['grudges'])
+        # sonido del juego base, como los eventos de los mods publicados: uno para buenas noticias y otro para malas
+        tone = sum(a for _t, a, _d in e['grudges'] if not _t.startswith('AR_')) - \
+            sum(a for _t, a, _d in e['grudges'] if _t.startswith('AR_') and not _t in POSITIVE_SITS)
+        sound = 'DM4_Low Corruption Praised.wav' if tone > 0 else 'DM4_Credit Rating Downgraded.wav'
         infl = '\n'.join('{} = {}'.format(i, x) for i, x in enumerate(gate(e['influences'])))
         write('data/simulation/events/{}.txt'.format(e['name']),
-              '[config]\nName = {}\nTexture = {}.jpg\nOnImplement = {}\n\n[influences]\n{}\n'.format(
-                  e['name'], e['name'], grudges, infl))
+              '[config]\nName = {}\nTexture = {}.jpg\nGUISound = {}\nOnImplement = {}\n\n[influences]\n{}\n'.format(
+                  e['name'], e['name'], sound, grudges, infl))
 
     # ---------- dilemas ----------
     for d in C.DILEMMAS:
@@ -151,8 +156,10 @@ def build():
         write(base + 'policies.csv', csv_text([['#', p['name'], p[code][0], p[code][1]] for p in C.POLICIES] +
                                               [['#', n, t[k][0], t[k][1]] for n, t in N.POLICY_NAMES.items()]))
         write(base + 'situations.csv', csv_text([['#', s['name'], s[code][0], s[code][1]] for s in C.SITUATIONS] +
-                                                [['#', n, t[k][0], t[k][1]] for n, t in N.SITUATION_NAMES.items()]))
-        write(base + 'events.csv', csv_text([['#', e['name'], e[code][0], e[code][1]] for e in C.EVENTS]))
+                                                [['#', n, t[k][0], t[k][1]] + list(N.SITUATION_NOTICES[n][k])
+                                                 for n, t in N.SITUATION_NAMES.items()]))
+        write(base + 'events.csv', csv_text([['#', e['name'], e[code][0], e[code][1]] for e in C.EVENTS] +
+                                            [['#', n, t[k][0], t[k][1]] for n, t in N.EVENT_NAMES.items()]))
         drows = []
         for d in C.DILEMMAS:
             drows.append(['#', d['name'], d[code][0], d[code][1], ' '])

@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvPlanBandera
 Texture = AR_EvPlanBandera.jpg
+GUISound = DM4_Low Corruption Praised.wav
 OnImplement = CreateGrudge(Organised Crime,-0.05,0.85);CreateGrudge(Conservatives,0.04,0.85);CreateGrudge(_All_,0.02,0.8);
 
 [influences]

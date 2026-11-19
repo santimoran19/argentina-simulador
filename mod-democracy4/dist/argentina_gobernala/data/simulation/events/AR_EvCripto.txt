@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvCripto
 Texture = AR_EvCripto.jpg
+GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(_All_,-0.04,0.85);CreateGrudge(MiddleIncome,-0.04,0.85);CreateGrudge(Corruption,0.03,0.9);CreateGrudge(Liberal,-0.03,0.85);
 
 [influences]

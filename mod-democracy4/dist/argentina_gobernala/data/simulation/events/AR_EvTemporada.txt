@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvTemporada
 Texture = AR_EvTemporada.jpg
+GUISound = DM4_Low Corruption Praised.wav
 OnImplement = CreateGrudge(Tourism,0.04,0.75);CreateGrudge(SelfEmployed,0.03,0.75);CreateGrudge(GDP,0.01,0.7);
 
 [influences]

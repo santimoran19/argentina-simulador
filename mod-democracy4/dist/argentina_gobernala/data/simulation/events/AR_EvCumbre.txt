@@ -1,6 +1,7 @@
 [config]
 Name = AR_EvCumbre
 Texture = AR_EvCumbre.jpg
+GUISound = DM4_Low Corruption Praised.wav
 OnImplement = CreateGrudge(ForeignRelations,0.04,0.85);CreateGrudge(ForeignInvestment,0.02,0.85);
 
 [influences]

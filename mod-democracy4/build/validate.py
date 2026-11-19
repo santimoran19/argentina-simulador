@@ -128,12 +128,18 @@ for d in C.DILEMMAS:
 
 # ---------------- nombres argentinos para cosas del juego ----------------
 import content_names as N
-for kind, table in (('política', N.POLICY_NAMES), ('situación', N.SITUATION_NAMES)):
+REAL_EVENTS = set(json.load(open(os.path.join(os.path.dirname(__file__), 'known_names.json'))).get('events', []))
+for kind, table in (('política', N.POLICY_NAMES), ('situación', N.SITUATION_NAMES), ('evento', N.EVENT_NAMES)):
     for n, (es, en) in table.items():
         if n not in BASE: err('nombre argentino para {} inexistente en el juego: {}'.format(kind, n))
         if not all(es) or not all(en): err('nombre argentino incompleto: ' + n)
-own_titles = {p['es'][0].lower() for p in C.POLICIES} | {s['es'][0].lower() for s in C.SITUATIONS}
-for n, (es, _en) in list(N.POLICY_NAMES.items()) + list(N.SITUATION_NAMES.items()):
+own_titles = ({p['es'][0].lower() for p in C.POLICIES} | {s['es'][0].lower() for s in C.SITUATIONS} |
+              {e['es'][0].lower() for e in C.EVENTS})
+for n in N.SITUATION_NAMES:
+    if n not in N.SITUATION_NOTICES or not all(map(all, N.SITUATION_NOTICES[n])): err('faltan avisos de inicio/fin: ' + n)
+for n in N.EVENT_NAMES:
+    if REAL_EVENTS and n not in REAL_EVENTS: err('evento del juego inexistente: ' + n)
+for n, (es, _en) in list(N.POLICY_NAMES.items()) + list(N.SITUATION_NAMES.items()) + list(N.EVENT_NAMES.items()):
     if es[0].lower() in own_titles: err('nombre repetido con una política o situación del mod: ' + es[0])
 
 # ---------------- escenarios ----------------

@@ -264,6 +264,63 @@ El mod renombra estas políticas y situaciones del juego (sólo el texto; la mec
 | Personas sin hogar | **Personas en situación de calle** |
 | Apagones | **Cortes de luz** |
 
+### Eventos del juego con versión argentina
+
+| Evento del juego | En el mod |
+|---|---|
+| `CryptocurrencyCrash` | **Se derrumba una criptomoneda** |
+| `FlashCrash` | **Desplome relámpago del Merval** |
+| `accidentalshooting` | **Un famoso dispara contra un familiar** |
+| `accountantsbusted` | **Filtración de cuentas offshore** |
+| `affair` | **Escándalo con una vedette** |
+| `centralbankfraud` | **Fraude en el Banco Central** |
+| `civilservantsstrike` | **Paro de estatales** |
+| `coastaloilspill` | **Derrame de petróleo en la costa patagónica** |
+| `corruptionarrests` | **Detenidos por corrupción en Comodoro Py** |
+| `deadlywatercontamination` | **Agua contaminada con plomo** |
+| `dubiousrolemodel` | **Un funcionario elogia a un dictador** |
+| `earthquake` | **Terremoto en Cuyo** |
+| `embezzledfundsrecovered` | **Se recupera la ruta del dinero** |
+| `formermilitaryleaderssentenced` | **Condenas por crímenes de lesa humanidad** |
+| `foodscandal` | **Escándalo en los frigoríficos** |
+| `formerspypoisoned` | **Envenenan a un exespía** |
+| `fuelshortage` | **Faltante de nafta** |
+| `globalhitdrama` | **Una serie argentina arrasa en el mundo** |
+| `governmentshutdown` | **El Congreso te traba los fondos** |
+| `heatwave` | **Ola de calor** |
+| `highcorruptioncriticized` | **Nos castiga el ranking de corrupción** |
+| `highriseblaze` | **Incendio en un monoblock** |
+| `housingmarketboom` | **Boom inmobiliario** |
+| `housingmarketcrash` | **Se desploma el precio de las propiedades** |
+| `illegalimmigrationoutcry` | **Malestar por la inmigración irregular** |
+| `internationalliteraryaward` | **Gran premio para un escritor argentino** |
+| `lowcorruptionpraised` | **Mejoramos en el ranking de transparencia** |
+| `martyrdies` | **Se prende fuego frente a la Casa Rosada** |
+| `militarycontractscandal` | **Escándalo en compras militares** |
+| `minerskilled` | **Derrumbe en una mina** |
+| `multinationalcompanyheadquarters` | **Una multinacional elige Buenos Aires** |
+| `nationalcyberattack` | **Ciberataque masivo** |
+| `nationalteamexitsworldcup` | **La Selección se vuelve temprano del Mundial** |
+| `nobelpeaceprize` | **Nobel de la Paz para un argentino** |
+| `olympichosts` | **Buenos Aires, sede olímpica** |
+| `pipelineprotests` | **Protestas contra un oleoducto** |
+| `planecrash` | **Cae un avión de la aerolínea de bandera** |
+| `policeshooting` | **Gatillo fácil** |
+| `protesterskilled` | **Muertos en una represión** |
+| `richestcompanypaysnotax` | **Una multinacional gigante no paga impuestos** |
+| `scientificbreakthrough` | **Avance científico argentino** |
+| `shareipocancelled` | **Se suspende una salida a la bolsa** |
+| `shareiposuccess` | **Un unicornio argentino sale a la bolsa** |
+| `spousescandal` | **Escándalo por un viaje de tu pareja** |
+| `statevisitcancelled` | **Se cae una visita de Estado** |
+| `stormdestroysrailway` | **Un temporal destruye las vías** |
+| `touristmurdered` | **Asesinan a un turista en un robo** |
+| `unitednationssecretary_general` | **Un argentino al frente de la ONU** |
+| `women_smarch` | **Marcha federal de mujeres** |
+| `worldheritagesite` | **Nuevo Patrimonio de la Humanidad** |
+| `xenophobicattacks` | **Ataques xenófobos** |
+| `CreditRatingDowngraded` | **Bajan la nota de la deuda argentina** |
+
 ## Políticas argentinas fusionadas con las del juego
 
 Para que no haya dos políticas para lo mismo, estas versiones argentinas no existen como política aparte: se usa la del juego, que ahora mueve todo lo que movía la argentina. "Al revés" quiere decir que subir la del juego equivale a bajar la argentina.

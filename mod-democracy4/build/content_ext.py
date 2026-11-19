@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Ampliación 2024-2026 del mod: más políticas, situaciones encadenadas, eventos, dilemas, enlaces causales
-propios de Argentina y un segundo escenario ("Argentina 2026").
+propios de Argentina y una referencia de las políticas de 2026 para calibrar el balance.
 
 Se importa desde content.py, que ya define pol(), sit(), ev() y dil().
 Hechos de referencia: salida del cepo con bandas (abr-2025), swap con EE.UU. (oct-2025), legislativas (oct-2025),
@@ -396,7 +396,7 @@ def extend(C):
        ('Record dengue epidemic', 'The country suffers the worst dengue epidemic in its history: overwhelmed emergency rooms, '
         'repellent shortages and a row over the vaccine.'))
     ev('AR_EvFaltanteGas', 'noche', ['_random_,0,0.05', 'AR_CrisisEnergetica,0+(0.15*x)'],
-       [('_All_', -0.03, 0.75), ('Motorist_freq', -0.02, 0.75), ('GDP', -0.01, 0.70)],
+       [('_All_', -0.03, 0.75), ('MiddleIncome', -0.02, 0.75), ('GDP', -0.01, 0.70)],
        ('Ola polar y falta de gas', 'El frío extremo dispara la demanda: se corta el gas a industrias y estaciones de GNC mientras se '
         'importan barcos de GNL de urgencia.'),
        ('Cold snap and gas shortage', 'Extreme cold sends demand soaring: gas is cut to factories and CNG filling stations while LNG '
@@ -602,7 +602,7 @@ CHAIN_OVERRIDES = [
 ]
 
 # =============================================================================================
-# Segundo escenario: Argentina 2026 (después del ajuste)
+# Referencia 2026: las políticas que aplicó el gobierno entre 2024 y 2026 (para simulate.py)
 # =============================================================================================
 START_2026 = {
     'AR_Cepo': 0.33, 'AR_Retenciones': 0.7, 'AR_AcuerdoFMI': 0.5, 'AR_RIGI': 1.0, 'AR_VacaMuerta': 0.7, 'AR_Litio': 0.6,
@@ -615,36 +615,4 @@ START_2026 = {
     'AR_ControlANMAT': 0.4, 'AR_InocenciaFiscal': 1.0, 'AR_Blanqueo': 0.3, 'AR_Ganancias4ta': 0.5, 'AR_EliminarPASO': 1.0,
     'AR_RegimenPenalJuvenil': 0.5, 'AR_TarjetaAlimentar': 0.7, 'AR_ObraPublicaNacional': 0.15, 'AR_CierreOrganismos': 0.5,
     'AR_LeyGlaciares': 0.6, 'AR_Hidrovia': 0.5, 'AR_ParitariasEstatales': 0.35,
-}
-
-COUNTRY_2026 = {
-    'mission': 'argentina2026', 'guid': 732, 'cycle': 0.35, 'difficulty': 4, 'debt': 360000, 'apathy': 0.30,
-    'base_changes': {'RentControls': None, 'LabourLaws': 0.45, 'StateBroadcaster': 0.35, 'PressFreedom': 0.7,
-                     'CorporationTax': 0.55, 'PayrollTax': 0.65},
-    'text': {
-        'es': {
-            'guiname': 'Argentina 2026 (después del ajuste)',
-            'jobtitle': 'Presidente',
-            'description': ('Después de dos años de motosierra, la inflación bajó del 25 % al 2 % mensual, hay superávit fiscal, el '
-                            'cepo se levantó con bandas cambiarias y un swap con Estados Unidos sostuvo al peso. Pero la industria '
-                            'cierra fábricas, el desempleo sube, los jubilados marchan cada miércoles y la oposición se prepara para '
-                            '2027. ¿Consolidás el modelo o lo corregís?'),
-            'stats': [('Lema', 'En unión y libertad'), ('Población', '47 millones (2026)'), ('Moneda', 'Peso argentino (ARS)'),
-                      ('Inflación', '~1,8 % mensual (2026)'), ('Pobreza', '~32 % (1er semestre 2026)'),
-                      ('Reservas', '~US$ 50.000 millones'), ('Riesgo país', '~850 puntos'), ('Capital', 'Buenos Aires'),
-                      ('Dificultad', 'Alta')],
-        },
-        'en': {
-            'guiname': 'Argentina 2026 (after the austerity)',
-            'jobtitle': 'President',
-            'description': ('After two years of the chainsaw, inflation has fallen from 25% to 2% a month, the budget is in surplus, '
-                            'currency controls were lifted with exchange-rate bands and a US swap propped up the peso. But factories '
-                            'are closing, unemployment is rising, pensioners march every Wednesday and the opposition is gearing up '
-                            'for 2027. Do you consolidate the model or correct course?'),
-            'stats': [('Motto', 'In union and liberty'), ('Population', '47 million (2026)'), ('Currency', 'Argentine peso (ARS)'),
-                      ('Inflation', '~1.8% a month (2026)'), ('Poverty', '~32% (first half of 2026)'),
-                      ('Reserves', '~US$50 billion'), ('Country risk', '~850 basis points'), ('Capital', 'Buenos Aires'),
-                      ('Difficulty', 'Hard')],
-        },
-    },
 }

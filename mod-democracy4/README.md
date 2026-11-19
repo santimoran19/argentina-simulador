@@ -1,18 +1,17 @@
 # Argentina: Gobernala — mod para Democracy 4
 
-Agrega la **República Argentina** como país jugable, con tres escenarios, el contexto internacional y su propia economía política: inflación inercial, cepo y bandas cambiarias, retenciones, el FMI y el swap con Estados Unidos, motosierra y superávit, Vaca Muerta, piquetes, la CGT, los vetos y la grieta. Textos completos en **español e inglés**.
+Agrega la **República Argentina** como país jugable, desde el cambio de gobierno del **10 de diciembre de 2023**, con el contexto internacional y su propia economía política: inflación inercial, cepo y bandas cambiarias, retenciones, el FMI y el swap con Estados Unidos, motosierra y superávit, Vaca Muerta, piquetes, la CGT, los vetos y la grieta. Textos completos en **español e inglés**.
 
 **Descarga directa:** [argentina_gobernala.zip](argentina_gobernala.zip)
 
-## Tres escenarios
+## Cómo arranca
 
-| | Argentina (diciembre de 2023) | Argentina 2026 (después del ajuste) | Argentina 2026: tormenta global |
-|---|---|---|---|
-| Situación inicial | Cepo total, emisión, reservas negativas, inflación de tres dígitos | Bandas cambiarias, superávit, inflación del 2 % mensual, reforma laboral aprobada | Igual que 2026, pero con el mundo en llamas |
-| Crisis activas al arrancar | Brecha, reservas agotadas, riesgo país, salto cambiario, sueldos que no alcanzan, recesión, crisis energética, piquetes, grieta | Atraso cambiario, cierre de pymes, hospitales, marchas de jubilados, paros de la CGT, Congreso en contra, grieta | Además: guerra en Medio Oriente (Ormuz), tasas de la Fed, guerra comercial EE.UU.-China, guerra en Europa |
-| A favor | — | Desinflación, superávit, estabilidad, inversiones | Además: boom energético (Vaca Muerta vende a Asia) |
-| Al borde | Corrida, corralito, default | Discapacidad, universidades, pérdida del poder adquisitivo | Recesión, atraso cambiario |
-| Dificultad | 5 | 4 | 5 |
+Una sola Argentina, que empieza el 10 de diciembre de 2023:
+- **Lo que heredás:** cepo total, emisión para financiar el déficit, retenciones del 26 %, subsidios amplios, reservas negativas, inflación del 25 % mensual y un Congreso en minoría. Dificultad 5.
+- **Crisis activas al arrancar:** brecha cambiaria, reservas agotadas, riesgo país, salto cambiario, sueldos que no alcanzan, recesión, crisis energética, piquetes y la grieta.
+- **Al borde:** corrida, corralito y default.
+
+Todo lo que pasó después (bandas cambiarias, motosierra, superávit, swap con EE.UU., reforma laboral, vetos, escándalos, Ormuz, la Fed…) está disponible como **políticas que podés tomar o no**, y como **eventos, dilemas y crisis que pueden aparecer** según lo que hagas. Si aplicás las políticas que se tomaron en la realidad, el modelo llega a algo parecido a la Argentina de 2026: desinflación, superávit e inversiones, pero con atraso cambiario, cierre de pymes, conflicto en hospitales y marchas de jubilados.
 
 ## Qué trae
 
@@ -24,6 +23,9 @@ Agrega la **República Argentina** como país jugable, con tres escenarios, el c
 | Dilemas | 38 | Vetos a discapacidad y universidades, paro en el hospital pediátrico, condiciones del swap, el dólar toca el techo de la banda, privatizar la aerolínea, suspender las PASO, imputabilidad, glaciares, dólares del colchón, la CGT ofrece negociar, los industriales piden frenar importaciones, FMI, paritarias, lockout del campo, fondos buitre; y del mundo: armas para Ucrania, votación en la ONU sobre Medio Oriente, embajada en Jerusalén, refugiados, estación espacial china en Neuquén, 5G, moneda común con Brasil, aviones de combate, cláusulas ambientales de Europa |
 | Rasgos estructurales | 6 | Inercia inflacionaria, evasión, corrupción, grieta, fuga de cerebros, economía informal |
 | Enlaces causales argentinos | 12 | Ver "Efecto dominó" |
+| Conexiones con el juego base | 39 | Ver "Lo que ya trae el juego" |
+
+El detalle de cada política, situación, evento y dilema, con sus efectos, está en el **[catálogo completo](CATALOGO.md)**.
 
 ## El mundo también juega
 
@@ -35,6 +37,19 @@ Las crisis internacionales las dispara un evento (por ejemplo, "se cierra el est
 - **Superciclo de materias primas o acuerdo con la UE:** entran dólares, mejora el campo y llegan **inversiones**.
 
 Tu política exterior también cuenta: alinearte con EE.UU. te expone a la guerra comercial; acercarte a China trae compras de soja; la postura frente a Israel afecta el riesgo de terrorismo.
+
+## Lo que ya trae el juego
+
+Democracy 4 ya tiene sus propias políticas: jubilaciones, salario mínimo, leyes laborales, aranceles, salud pública, becas universitarias, control de capitales, emisión monetaria, IVA, etc. En Argentina, **esas políticas también mueven las crisis argentinas**, así que da lo mismo por dónde tomes la decisión:
+- Bajar las **jubilaciones** o subir la **edad jubilatoria** del juego alimenta las **marchas de jubilados**.
+- Bajar el **salario mínimo**, las **jubilaciones** o las **asignaciones familiares**, o subir el **IVA**, alimenta "el sueldo no alcanza".
+- Bajar los **aranceles** o subir las **cargas sociales** alimenta el **cierre de pymes**; la **ayuda a pymes** lo frena.
+- Flexibilizar las **leyes laborales** o bajar el **salario mínimo** alimenta los **paros de la CGT**.
+- El **control de capitales** y la **emisión** del juego agrandan la **brecha cambiaria**, igual que el cepo y la emisión del mod.
+- Bajar la **salud pública**, las **becas universitarias** o la **pensión por discapacidad** enciende los conflictos en **hospitales, universidades y discapacidad**.
+- La **independencia judicial** baja el **riesgo país** y los **escándalos de corrupción**, y atrae **inversiones**.
+
+Al arrancar, el país tiene activas las políticas del juego que existían en 2023 (aranceles altos, aerolínea, trenes y petrolera estatales). El control de capitales y la emisión del juego arrancan apagados, porque el mod los representa con más detalle (cepo y asistencia del BCRA al Tesoro).
 
 ## Efecto dominó: todo se encadena
 
@@ -72,27 +87,26 @@ Ejemplos:
    - Windows: `Documentos\My Games\democracy4\mods\`
    - Mac/Linux: la carpeta `democracy4/mods` dentro de tus documentos del juego
 3. Abrí Democracy 4, entrá a **Mods** y activá **Argentina: Gobernala**.
-4. Empezá una partida nueva y elegí **República Argentina**, **Argentina 2026** o **Argentina 2026: tormenta global**.
+4. Empezá una partida nueva y elegí **República Argentina (diciembre de 2023)**.
 
-Es compatible con *D4 Overhaul & Expansion*: usa nombres, prerrequisitos e identificadores propios (`argentina`, `argentina2026`, `argentina2026global`, `_prereq_argentina_gb`, prefijo `AR_`).
+Es compatible con *D4 Overhaul & Expansion*: usa nombres, prerrequisitos e identificadores propios (`argentina`, `_prereq_argentina_gb`, prefijo `AR_`).
 
-El mod está pensado para jugar con Argentina: las políticas y situaciones argentinas sólo aparecen en los tres escenarios argentinos, pero algunos eventos y dilemas pueden aparecer si jugás con otro país.
+El mod está pensado para jugar con Argentina: las políticas y situaciones argentinas sólo aparecen en Argentina, pero algunos eventos y dilemas pueden aparecer si jugás con otro país.
 
 ## Lista de pruebas (primera vez en el juego)
 
 El mod se generó y validó automáticamente, pero **todavía no se probó dentro de Democracy 4**. Revisá, de lo más a lo menos importante:
 
 1. **¿Arranca el juego con el mod activado?** Si no, el error suele indicar el archivo y la fila.
-2. **¿Aparecen los tres escenarios**, con bandera, mapa y descripción?
+2. **¿Aparece "República Argentina (diciembre de 2023)"**, con bandera, mapa y descripción?
 3. **¿Aparecen las 59 políticas**, con íconos y con las etiquetas de los deslizadores?
-4. **En "tormenta global", ¿arrancan activas las cuatro crisis internacionales?**
+4. **Las políticas del juego (jubilaciones, aranceles, salario mínimo…) ¿mueven las situaciones argentinas?**
 5. **Moneda y cifras:** el país usa dólares (US$). Revisá que el PBI, la deuda y el presupuesto se vean razonables.
-6. **Situaciones al arrancar:** deberían coincidir más o menos con la tabla de escenarios.
-7. **Eventos y dilemas:** que aparezcan en los dos escenarios, con imagen y texto.
+6. **Situaciones al arrancar:** deberían coincidir más o menos con "Cómo arranca".
+7. **Eventos y dilemas:** que aparezcan con imagen y texto.
 
 Puntos del formato que no pude confirmar con la documentación oficial:
 - **Eventos y dilemas que afectan situaciones del mod** con `CreateGrudge` (por ejemplo, "se cierra Ormuz" dispara `AR_CrisisMedioOriente`). Es la forma en que arrancan las crisis internacionales. Cada evento también aplica su golpe directo sobre la economía, así que el shock se siente igual aunque esto no funcionara.
-- **Impulsos de situaciones en los overrides de un escenario** (así arranca la tormenta global).
 - **Enlaces causales entre valores distintos** dentro de los overrides de un país. El formato es el mismo que usan los overrides globales de otros mods.
 
 Si algo falla, pasame el mensaje de error o una captura y lo corrijo en el generador.
@@ -103,7 +117,11 @@ Desde el menú **Mods** del juego, elegí el mod y usá la opción para subirlo 
 
 ## Cómo se genera
 
-El contenido está como datos en `build/content.py` (base), `build/content_ext.py` (ampliación 2024-2026, cadenas y escenario 2026) y `build/content_intl.py` (mundo y escenario de tormenta global).
+El contenido está como datos, ordenado por tema:
+- `build/content.py`: el país, las políticas y crisis originales.
+- `build/content_ext.py`: ampliación 2024-2026, cadenas y enlaces causales.
+- `build/content_intl.py`: el mundo (política exterior, crisis globales, eventos y dilemas internacionales).
+- `build/content_base.py`: conexiones con las políticas que ya trae Democracy 4.
 
 ```bash
 # una sola vez: herramientas de gráficos
@@ -115,7 +133,7 @@ python3 -c "import sys,json; sys.path.insert(0,'build'); import content as C; js
 node build/assets.js .tmp && python3 build/trace_icons.py .tmp
 
 # archivos del mod, validación y simulación de balance
-python3 build/build.py && python3 build/validate.py && python3 build/simulate.py
+python3 build/build.py && python3 build/validate.py && python3 build/simulate.py && python3 build/catalog.py
 ```
 
 - `validate.py` revisa:
@@ -126,7 +144,8 @@ python3 build/build.py && python3 build/validate.py && python3 build/simulate.py
   - que no falten traducciones, íconos ni imágenes.
 
   Además mide el efecto dominó y avisa si hay realimentaciones fuertes.
-- `simulate.py` aproxima qué crisis quedan activas al arrancar cada escenario, para calibrar el balance sin abrir el juego.
+- `simulate.py` aproxima qué crisis quedan activas al arrancar y con las políticas de 2024-2026, para calibrar el balance sin abrir el juego.
+- `catalog.py` genera [CATALOGO.md](CATALOGO.md) con todo el contenido en castellano.
 
 ## Fuentes de los hechos 2024-2026
 

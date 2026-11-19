@@ -104,7 +104,7 @@ def build():
         write('data/simulation/dilemmas/{}.txt'.format(d['name']),
               '[dilemma]\nname={}\n\n[influences]\n{}\n{}'.format(d['name'], infl, opts))
 
-    # ---------- países: escenario 2023 y escenario 2026 ----------
+    # ---------- país: la Argentina de diciembre de 2023 ----------
     def mission(name, cfg_over, base_changes, start, text, boosts=()):
         cfg = dict(C.COUNTRY_CONFIG)
         cfg['name '] = name
@@ -138,14 +138,6 @@ def build():
                       name, ct['guiname'], ct['description'], ct['jobtitle'], stats))
 
     mission(C.COUNTRY, {}, {'RentControls': 0.6}, C.START_2023, C.COUNTRY_TEXT)
-    c26 = C.COUNTRY_2026
-    mission(c26['mission'], {'GUID': c26['guid'], 'economic_cycle_start': c26['cycle'], 'difficulty': c26['difficulty'],
-                             'starting_debt': c26['debt'], 'apathy': c26['apathy']},
-            c26['base_changes'], C.START_2026, c26['text'])
-    cg = C.COUNTRY_GLOBAL
-    mission(cg['mission'], {'GUID': cg['guid'], 'economic_cycle_start': cg['cycle'], 'difficulty': cg['difficulty'],
-                            'starting_debt': cg['debt'], 'apathy': cg['apathy']},
-            c26['base_changes'], C.START_2026, cg['text'], cg['boosts'])
 
     # ---------- nombres ----------
     write('data/names/argentinanames_gb.txt', ''.join('[{}]\n{}\n\n'.format(k, '\n'.join(v)) for k, v in C.NAMES.items()))
@@ -177,9 +169,9 @@ def build():
                 shutil.copy2(src, dst)
                 copied += 1
     print('Mod generado en', OUT)
-    print('  {} políticas, {} situaciones, {} eventos, {} dilemas, {} deslizadores, 3 escenarios, {} rasgos y {} enlaces causales '
-          'por escenario, {} gráficos'.format(len(C.POLICIES), len(C.SITUATIONS), len(C.EVENTS), len(C.DILEMMAS), len(C.SLIDERS),
-                                             len(C.COUNTRY_OVERRIDES), len(C.CHAIN_OVERRIDES), copied))
+    print('  {} políticas, {} situaciones, {} eventos, {} dilemas, {} deslizadores, {} rasgos y {} enlaces causales argentinos, '
+          '{} gráficos'.format(len(C.POLICIES), len(C.SITUATIONS), len(C.EVENTS), len(C.DILEMMAS), len(C.SLIDERS),
+                               len(C.COUNTRY_OVERRIDES), len(C.CHAIN_OVERRIDES), copied))
 
 
 if __name__ == '__main__':

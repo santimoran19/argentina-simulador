@@ -1,7 +1,7 @@
 [config]
 name  = argentina
-guiname = "Argentine Republic"
-description = "Argentina has resources to spare: the fertile Pampas, Vaca Muerta shale, lithium and an educated population. It also carries decades of inflation, debt crises, currency controls and a society split in two. You take office with negative reserves, triple-digit inflation and half the country against you. Can you govern Argentina?"
+guiname = "Argentine Republic (December 2023)"
+description = "10 December 2023: you take office. Argentina has resources to spare (the fertile Pampas, Vaca Muerta shale, lithium and an educated population), but you inherit negative reserves, 25% monthly inflation, currency controls, a deficit, half the country below the poverty line and a hostile Congress. Ahead lie the IMF, the unions, vetoes, the markets and a world at war. Can you govern Argentina?"
 
 jobtitle = "President"
 

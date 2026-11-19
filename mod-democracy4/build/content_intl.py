@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Contenido internacional: política exterior, crisis globales encadenadas con la economía argentina,
-eventos y dilemas del mundo, y el escenario "Argentina 2026: tormenta global".
+eventos y dilemas del mundo.
 
 Las crisis globales (situaciones con trigger='evento') arrancan cuando un evento las dispara con CreateGrudge, y se
 apagan solas a medida que el impulso decae. Cada evento también aplica su golpe directo sobre la economía, así el shock
@@ -354,39 +354,3 @@ def extend(C):
                          'AR_Antartida': 0.4, 'AR_PoliticaMigratoria': 0.0})
     C.START_2026.update({'AR_PosturaUcrania': 0.5, 'AR_RelacionIsrael': 0.5, 'AR_RelacionChina': 0.5, 'AR_OCDE': 0.5,
                          'AR_Reequipamiento': 0.4, 'AR_MisionesPaz': 0.3, 'AR_Antartida': 0.4, 'AR_PoliticaMigratoria': 1.0})
-
-
-# =============================================================================================
-# Tercer escenario: Argentina 2026 en una tormenta global (Ormuz, Fed, guerra comercial, Europa)
-# Las crisis internacionales arrancan activas mediante overrides del escenario.
-# =============================================================================================
-COUNTRY_GLOBAL = {
-    'mission': 'argentina2026global', 'guid': 733, 'cycle': 0.35, 'difficulty': 5, 'debt': 360000, 'apathy': 0.30,
-    'boosts': [('Tormenta - Medio Oriente', 'AR_CrisisMedioOriente', '+0.60'),
-               ('Tormenta - Tasas de la Fed', 'AR_TasasFedAltas', '+0.60'),
-               ('Tormenta - Guerra comercial', 'AR_GuerraComercial', '+0.60'),
-               ('Tormenta - Guerra en Europa', 'AR_GuerraEuropa', '+0.60')],
-    'text': {
-        'es': {
-            'guiname': 'Argentina 2026: tormenta global',
-            'jobtitle': 'Presidente',
-            'description': ('El mismo país de 2026, pero en un mundo en llamas: guerra en el golfo Pérsico con el estrecho de Ormuz '
-                            'semicerrado y el petróleo arriba de los 100 dólares, la Reserva Federal subiendo tasas, guerra comercial '
-                            'entre EE.UU. y China y una guerra abierta en Europa. Vaca Muerta y el campo pueden salvarte; la deuda y '
-                            'las tasas pueden hundirte.'),
-            'stats': [('Lema', 'En unión y libertad'), ('Petróleo Brent', 'US$ 90-120'), ('Tasa de la Fed', '3,75-4 %'),
-                      ('Producción de petróleo', 'Récord: 973.700 barriles diarios'), ('Riesgo país', '~800-900 puntos'),
-                      ('Capital', 'Buenos Aires'), ('Dificultad', 'Muy alta')],
-        },
-        'en': {
-            'guiname': 'Argentina 2026: global storm',
-            'jobtitle': 'President',
-            'description': ('The same country as 2026, but in a world on fire: war in the Persian Gulf with the Strait of Hormuz '
-                            'half-closed and oil above 100 dollars, the Federal Reserve raising rates, a US-China trade war and open war '
-                            'in Europe. Vaca Muerta and the farm sector can save you; debt and interest rates can sink you.'),
-            'stats': [('Motto', 'In union and liberty'), ('Brent crude', 'US$90-120'), ('Fed rate', '3.75-4%'),
-                      ('Oil output', 'Record: 973,700 barrels a day'), ('Country risk', '~800-900 basis points'),
-                      ('Capital', 'Buenos Aires'), ('Difficulty', 'Very hard')],
-        },
-    },
-}

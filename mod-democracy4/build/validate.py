@@ -127,16 +127,11 @@ for d in C.DILEMMAS:
         if not es[0] or not en[0]: err(w + ': opción sin texto')
 
 # ---------------- escenarios ----------------
-for label, start in (('2023', C.START_2023), ('2026', C.START_2026)):
+for label, start in (('2023', C.START_2023), ('referencia 2026', C.REFERENCIA_2026)):
     for k, v in start.items():
         if k not in OWN_POL: err('escenario {}: política inexistente {}'.format(label, k))
         if not 0 <= v <= 1: err('escenario {}: valor fuera de 0-1 en {}'.format(label, k))
-for k in C.COUNTRY_2026['base_changes']:
-    if k not in BASE: err('escenario 2026: política base desconocida ' + k)
-for _l, tgt, eq in C.COUNTRY_GLOBAL['boosts']:
-    if tgt not in OWN_SIT: err('escenario global: impulso a una situación inexistente ' + tgt)
-    check_formula('escenario global ' + tgt, eq.lstrip('+'), 0, 1)
-for m in (C.COUNTRY, C.COUNTRY_2026['mission'], C.COUNTRY_GLOBAL['mission']):
+for m in (C.COUNTRY,):
     for f in ('data/missions/{0}/{0}.txt'.format(m), 'translations/English/missions/{}.txt'.format(m),
               'translations/Spanish/missions/{}.txt'.format(m)):
         if not os.path.exists(os.path.join(OUT, f)): err('falta ' + f)

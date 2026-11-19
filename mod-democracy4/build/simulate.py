@@ -56,13 +56,13 @@ def run(label, start, turns=24, boosts=()):
 
 
 if __name__ == '__main__':
-    BASE['global'] = dict(BASE['2026'], Inflation=0.45, CurrencyStrength=0.6)
-    for label, start, boosts in (('2023', C.START_2023, ()), ('2026', C.START_2026, ()),
-                                 ('global', C.START_2026, C.COUNTRY_GLOBAL['boosts'])):
-        on, val, hist = run(label, start, boosts=boosts)
+    casos = (('2023', C.START_2023, 'Arranque: diciembre de 2023 (lo que hereda el jugador)'),
+             ('2026', C.REFERENCIA_2026, 'Referencia: con las políticas de 2024-2026 y la economía de 2026 (para comparar con la realidad)'))
+    for label, start, titulo in casos:
+        on, val, hist = run(label, start)
         good = [n for n in on if next(s for s in C.SITUATIONS if s['name'] == n)['positive']]
         bad = [n for n in on if n not in good]
-        print('Escenario {}: {} situaciones activas tras 2 años de políticas fijas'.format(label, len(on)))
+        print(titulo)
         print('  crisis:   ' + ', '.join(x.replace('AR_', '') for x in bad))
         print('  a favor:  ' + (', '.join(x.replace('AR_', '') for x in good) or '-'))
         near = sorted(((v, n) for n, v in val.items() if n not in on and v > 0.45), reverse=True)[:5]

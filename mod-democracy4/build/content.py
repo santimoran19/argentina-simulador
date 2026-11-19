@@ -730,23 +730,24 @@ DILEMMAS = D
 # ---------------------------------------------------------------------------------------------
 COUNTRY_TEXT = {
     'es': {
-        'guiname': 'República Argentina',
+        'guiname': 'República Argentina (diciembre de 2023)',
         'jobtitle': 'Presidente',
-        'description': ('Argentina tiene recursos de sobra: la pampa húmeda, Vaca Muerta, litio y una población educada. También '
-                        'arrastra décadas de inflación, crisis de deuda, cepo y una sociedad partida en dos. Asumís con '
-                        'reservas negativas, inflación de tres dígitos y la mitad del país en contra. ¿Podés con la Argentina?'),
+        'description': ('10 de diciembre de 2023: asumís la Presidencia. Argentina tiene recursos de sobra (la pampa húmeda, '
+                        'Vaca Muerta, litio y una población educada), pero recibís reservas negativas, una inflación del 25 % '
+                        'mensual, cepo, déficit, la mitad del país bajo la línea de pobreza y un Congreso en contra. En los años '
+                        'que vienen te esperan el FMI, la CGT, los vetos, los mercados y un mundo en guerra. ¿Podés con la Argentina?'),
         'stats': [('Lema', 'En unión y libertad'), ('Himno', 'Himno Nacional Argentino'), ('Población', '46 millones (2023)'),
                   ('Superficie', '2.780.400 km² (continental)'), ('Moneda', 'Peso argentino (ARS)'),
                   ('PBI', 'US$ 640.000 millones (2023)'), ('Inflación', '211 % anual (2023)'), ('Pobreza', '41,7 % (2023)'),
                   ('Capital', 'Buenos Aires'), ('Ciudad más grande', 'Buenos Aires'), ('Dificultad', 'Muy alta')],
     },
     'en': {
-        'guiname': 'Argentine Republic',
+        'guiname': 'Argentine Republic (December 2023)',
         'jobtitle': 'President',
-        'description': ('Argentina has resources to spare: the fertile Pampas, Vaca Muerta shale, lithium and an educated population. It '
-                        'also carries decades of inflation, debt crises, currency controls and a society split in two. You take '
-                        'office with negative reserves, triple-digit inflation and half the country against you. Can you govern '
-                        'Argentina?'),
+        'description': ('10 December 2023: you take office. Argentina has resources to spare (the fertile Pampas, Vaca Muerta '
+                        'shale, lithium and an educated population), but you inherit negative reserves, 25% monthly inflation, '
+                        'currency controls, a deficit, half the country below the poverty line and a hostile Congress. Ahead lie the '
+                        'IMF, the unions, vetoes, the markets and a world at war. Can you govern Argentina?'),
         'stats': [('Motto', 'In union and liberty'), ('National Anthem', 'Argentine National Anthem'),
                   ('Population', '46 million (2023)'), ('Area', '2,780,400 km2 (mainland)'), ('Currency', 'Argentine peso (ARS)'),
                   ('GDP', 'US$640 billion (2023)'), ('Inflation', '211% a year (2023)'), ('Poverty', '41.7% (2023)'),
@@ -784,16 +785,22 @@ START_2023 = {'AR_Cepo': 1.0, 'AR_EmisionTesoro': 0.8, 'AR_Retenciones': 0.75, '
               'AR_ReclamoMalvinas': 0.5, 'AR_Mercosur': 0.0, 'AR_VacaMuerta': 0.4, 'AR_Litio': 0.3,
               'AR_Narcotrafico': 0.3, 'AR_BonoNavidad': 0.3}
 
-# Ampliación 2024-2026 (políticas, situaciones encadenadas, eventos, dilemas, enlaces causales y escenario 2026)
+# Ampliación 2024-2026 (políticas, situaciones encadenadas, eventos, dilemas y enlaces causales)
 import sys as _sys
 _mod = _sys.modules[__name__]
 import content_ext as _ext
 _ext.extend(_mod)
 CHAIN_OVERRIDES = _ext.CHAIN_OVERRIDES
 START_2026 = _ext.START_2026
-COUNTRY_2026 = _ext.COUNTRY_2026
 
-# Contenido internacional (política exterior, crisis globales, eventos y dilemas del mundo, escenario "tormenta global")
+# Contenido internacional (política exterior, crisis globales, eventos y dilemas del mundo)
 import content_intl as _intl
 _intl.extend(_mod)
-COUNTRY_GLOBAL = _intl.COUNTRY_GLOBAL
+
+# Interacciones con las políticas que ya trae Democracy 4
+import content_base as _base
+_base.extend(_mod)
+
+# Un solo país: la Argentina de diciembre de 2023. La configuración de 2026 se conserva sólo como referencia para
+# simulate.py (comprobar que aplicando las políticas de 2024-2026 el modelo llega a algo parecido a la realidad).
+REFERENCIA_2026 = START_2026

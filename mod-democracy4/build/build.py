@@ -36,8 +36,13 @@ def tq(text):
             .replace('\u2014', '-').replace('\u2013', '-').replace('\u2026', '...'))
 
 
-def csv_text(rows):
+def csv_text(rows, pad=False):
     rows = [[tq(c) for c in r] for r in rows]
+    if pad:
+        # Todas las filas con la misma cantidad de columnas: el lector del juego toma la cantidad de la primera fila
+        # (con filas más cortas, los dilemas aparecían sin texto).
+        n = max(len(r) for r in rows)
+        rows = [r + [''] * (n - len(r)) for r in rows]
     buf = io.StringIO()
     w = csv.writer(buf, lineterminator='\n', quoting=csv.QUOTE_MINIMAL)
     for r in rows:
@@ -162,18 +167,20 @@ def build():
         # políticas y situaciones del juego con nombre argentino (content_names.py)
         write(base + 'policies.csv', csv_text([['#', p['name'], p[code][0], p[code][1]] for p in C.POLICIES] +
                                               [['#', n, t[k][0], t[k][1]] for n, t in N.POLICY_NAMES.items()]))
-        write(base + 'situations.csv', csv_text([['#', s['name'], s[code][0], s[code][1]] for s in C.SITUATIONS] +
+        notice = (('Comenzó: {}.', 'Terminó: {}.') if code == 'es' else ('Started: {}.', 'Ended: {}.'))
+        write(base + 'situations.csv', csv_text([['#', s['name'], s[code][0], s[code][1], notice[0].format(s[code][0]),
+                                                  notice[1].format(s[code][0])] for s in C.SITUATIONS] +
                                                 [['#', n, t[k][0], t[k][1]] + list(N.SITUATION_NOTICES[n][k])
-                                                 for n, t in N.SITUATION_NAMES.items()]))
+                                                 for n, t in N.SITUATION_NAMES.items()], pad=True))
         write(base + 'events.csv', csv_text([['#', e['name'], e[code][0], e[code][1]] for e in C.EVENTS] +
                                             [['#', n, t[k][0], t[k][1]] for n, t in N.EVENT_NAMES.items()]))
         drows = []
         for d in C.DILEMMAS:
-            drows.append(['#', d['name'], d[code][0], d[code][1], ' '])
+            drows.append(['#', d['name'], d[code][0], d[code][1], ''])
             for i, opt in enumerate(d['options']):
                 t = opt[1] if code == 'es' else opt[2]
                 drows.append(['#', '{}_{}'.format(d['name'], i), t[0], t[1]])
-        write(base + 'dilemmas.csv', csv_text(drows))
+        write(base + 'dilemmas.csv', csv_text(drows, pad=True))
         write(base + 'sliders.csv', csv_text([['#', k] + v[code] for k, v in C.SLIDERS.items()]))
 
     # ---------- gráficos ----------

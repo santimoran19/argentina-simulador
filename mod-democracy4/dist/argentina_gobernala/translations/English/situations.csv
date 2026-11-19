@@ -1,41 +1,41 @@
-#,AR_BrechaCambiaria,Exchange-rate gap,"The parallel («blue») dollar trades far above the official rate. Exporters hold back their harvest, importers rush their purchases and prices adjust to the dearer dollar."
-#,AR_ReservasAgotadas,Depleted reserves,"The central bank has almost no dollars of its own. It cannot defend the peso, cannot pay for energy and parts imports, and every debt payment becomes a crisis."
-#,AR_RiesgoPaisAlto,Sky-high country risk,"Argentine bonds yield thousands of basis points above US Treasuries. Nobody lends, companies cannot get credit and the debt becomes unpayable."
-#,AR_CorridaCambiaria,Run on the peso,"Everyone wants dollars at once. The price jumps day after day, shops mark up prices and the central bank burns reserves to stop the stampede."
-#,AR_Corralito,Bank freeze («corralito»),Banks cap withdrawals of deposits. Savers bang pots on bank shutters and the economy grinds to a halt.
-#,AR_Default,Sovereign default,The country stops paying its foreign debt. International credit is cut off for years and a long renegotiation with bondholders and holdout funds begins.
-#,AR_Piquetes,Pickets and road blockades,"Grassroots groups and the unemployed block roads, bridges and avenues every day to demand jobs, food and welfare."
-#,AR_ParoCGT,General strikes,"The labour federation calls general strikes and mass marches. Transport stops, factories close and the government gets a clear message."
-#,AR_CrisisEnergetica,Energy crisis,Gas runs short in winter and power in summer. The country imports LNG cargoes at a fortune and industry faces scheduled cuts.
-#,AR_Grieta,«La grieta» (the great divide),The country is split into two halves that do not listen to each other. Every measure is a battle and half the electorate will never vote for you.
-#,AR_SuperCosecha,Record harvest,"Good weather and good prices: soybeans, corn and wheat yield like never before and dollars pour in through the port of Rosario."
-#,AR_BoomEnergetico,Energy boom,"Vaca Muerta is producing at full tilt. Argentina goes from importing gas to exporting energy, and the energy balance brings in dollars for the first time in years."
-#,AR_EstabilidadMacro,Macroeconomic stability,"Low inflation, a steady dollar and rising reserves. For the first time in a long while, Argentines can plan more than a month ahead."
-#,AR_SaltoCambiario,Currency jump,"The official dollar jumps overnight. Shelf prices are marked up within days: food, medicine and rents adjust to the new exchange rate."
-#,AR_PerdidaPoderAdquisitivo,Wages do not stretch,"Wages and pensions trail prices. Families cut back on meat, outings and medicine, and run up credit card debt to reach the end of the month."
-#,AR_Recesion,Economic slump,"Shops sell less, factories run at half capacity and construction has stalled. The economy slides into recession."
-#,AR_AtrasoCambiario,Argentina is expensive in dollars,"With a strong peso, the country becomes pricey in dollar terms: holidays in Brazil and shopping in Chile are cheaper, cheap imports pour in and local industry loses competitiveness."
-#,AR_CierrePymes,Small businesses closing,"Workshops, textile mills and shops close their doors. They cannot compete with imports or pay utility bills, interest and rent while sales fall."
-#,AR_DesempleoCreciente,Rising unemployment,"Formal jobs are lost every month. Odd jobs, delivery apps and despair in poor neighbourhoods grow."
-#,AR_Desinflacion,Disinflation,"Monthly inflation falls month after month. Instalment credit, mortgages and the ability to compare prices come back."
-#,AR_SuperavitFiscal,Fiscal surplus,"For the first time in years, the state spends less than it collects. There is no longer a need to print money to pay salaries."
-#,AR_InversionRecord,Investment boom,"Big projects arrive: pipelines, copper and lithium mines, data centres and ports. The provinces compete to attract them."
-#,AR_ConflictoSalud,Hospital conflict,Residents and specialists at national hospitals strike over pay. Surgeries are rescheduled and patients' families march alongside the doctors.
-#,AR_CrisisDiscapacidad,Disability care crisis,"Providers paid months late, pensions cancelled and centres closing. Families rally outside Congress."
-#,AR_ConflictoUniversitario,Universities up in arms,"Lecturers on rock-bottom pay, open-air classes in squares and faculty occupations. The university community becomes the main hub of opposition."
-#,AR_MarchasJubilados,Wednesday marches,"Every Wednesday, pensioners march to Congress over pensions that do not stretch. Images of police crackdowns travel around the world."
-#,AR_BloqueoLegislativo,Hostile Congress,"The opposition and the governors join forces: they override vetoes, reject decrees and block the budget."
-#,AR_EscandaloCorrupcion,Government mired in scandal,"Leaked audio, court cases and raids every week. Each new revelation erodes support even among the government's own voters."
-#,AR_GuerraEuropa,War in Europe,"A high-intensity war in Eastern Europe sends oil, gas and grain prices soaring. Argentine farmers sell at higher prices; imported inflation hits household budgets."
-#,AR_CrisisMedioOriente,Middle East crisis,War in the Persian Gulf partly closes the Strait of Hormuz. Oil soars: Asia scrambles for suppliers and Vaca Muerta finds buyers.
-#,AR_GuerraComercial,Global trade war,"The US and China trade tariffs. Argentine steel and aluminium face surcharges, but China buys more South American soybeans to avoid depending on the US."
-#,AR_TasasFedAltas,High US interest rates,"The Federal Reserve raises rates. Capital flows back to Wall Street, emerging markets pay more to borrow and Argentine country risk rebounds."
-#,AR_CrisisBrasil,Crisis in Brazil,"Brazil, the main buyer of Argentine cars and manufactures, devalues the real and slides into recession. Car plants suspend shifts."
-#,AR_Superciclo,Commodity supercycle,"Soybeans, corn, lithium and copper trade at highs. Dollars pour in as in 2008."
-#,AR_PandemiaGlobal,New pandemic,"A new virus spreads around the world. Closed borders, overwhelmed hospitals and an economy on hold."
-#,AR_CrisisFinancieraGlobal,Global financial crisis,"A Wall Street crash freezes world credit. Investors flee anything that looks risky, starting with Argentina."
-#,AR_CrisisMigratoria,Regional migration wave,The crisis in Venezuela and violence elsewhere push hundreds of thousands of people towards Argentina.
-#,AR_AcuerdoUEVigente,EU agreement in force,"After 25 years of talks, the Mercosur-EU agreement takes effect: beef, wine and lemons enter Europe tariff-free."
+#,AR_BrechaCambiaria,Exchange-rate gap,"The parallel («blue») dollar trades far above the official rate. Exporters hold back their harvest, importers rush their purchases and prices adjust to the dearer dollar.",Started: Exchange-rate gap.,Ended: Exchange-rate gap.
+#,AR_ReservasAgotadas,Depleted reserves,"The central bank has almost no dollars of its own. It cannot defend the peso, cannot pay for energy and parts imports, and every debt payment becomes a crisis.",Started: Depleted reserves.,Ended: Depleted reserves.
+#,AR_RiesgoPaisAlto,Sky-high country risk,"Argentine bonds yield thousands of basis points above US Treasuries. Nobody lends, companies cannot get credit and the debt becomes unpayable.",Started: Sky-high country risk.,Ended: Sky-high country risk.
+#,AR_CorridaCambiaria,Run on the peso,"Everyone wants dollars at once. The price jumps day after day, shops mark up prices and the central bank burns reserves to stop the stampede.",Started: Run on the peso.,Ended: Run on the peso.
+#,AR_Corralito,Bank freeze («corralito»),Banks cap withdrawals of deposits. Savers bang pots on bank shutters and the economy grinds to a halt.,Started: Bank freeze («corralito»).,Ended: Bank freeze («corralito»).
+#,AR_Default,Sovereign default,The country stops paying its foreign debt. International credit is cut off for years and a long renegotiation with bondholders and holdout funds begins.,Started: Sovereign default.,Ended: Sovereign default.
+#,AR_Piquetes,Pickets and road blockades,"Grassroots groups and the unemployed block roads, bridges and avenues every day to demand jobs, food and welfare.",Started: Pickets and road blockades.,Ended: Pickets and road blockades.
+#,AR_ParoCGT,General strikes,"The labour federation calls general strikes and mass marches. Transport stops, factories close and the government gets a clear message.",Started: General strikes.,Ended: General strikes.
+#,AR_CrisisEnergetica,Energy crisis,Gas runs short in winter and power in summer. The country imports LNG cargoes at a fortune and industry faces scheduled cuts.,Started: Energy crisis.,Ended: Energy crisis.
+#,AR_Grieta,«La grieta» (the great divide),The country is split into two halves that do not listen to each other. Every measure is a battle and half the electorate will never vote for you.,Started: «La grieta» (the great divide).,Ended: «La grieta» (the great divide).
+#,AR_SuperCosecha,Record harvest,"Good weather and good prices: soybeans, corn and wheat yield like never before and dollars pour in through the port of Rosario.",Started: Record harvest.,Ended: Record harvest.
+#,AR_BoomEnergetico,Energy boom,"Vaca Muerta is producing at full tilt. Argentina goes from importing gas to exporting energy, and the energy balance brings in dollars for the first time in years.",Started: Energy boom.,Ended: Energy boom.
+#,AR_EstabilidadMacro,Macroeconomic stability,"Low inflation, a steady dollar and rising reserves. For the first time in a long while, Argentines can plan more than a month ahead.",Started: Macroeconomic stability.,Ended: Macroeconomic stability.
+#,AR_SaltoCambiario,Currency jump,"The official dollar jumps overnight. Shelf prices are marked up within days: food, medicine and rents adjust to the new exchange rate.",Started: Currency jump.,Ended: Currency jump.
+#,AR_PerdidaPoderAdquisitivo,Wages do not stretch,"Wages and pensions trail prices. Families cut back on meat, outings and medicine, and run up credit card debt to reach the end of the month.",Started: Wages do not stretch.,Ended: Wages do not stretch.
+#,AR_Recesion,Economic slump,"Shops sell less, factories run at half capacity and construction has stalled. The economy slides into recession.",Started: Economic slump.,Ended: Economic slump.
+#,AR_AtrasoCambiario,Argentina is expensive in dollars,"With a strong peso, the country becomes pricey in dollar terms: holidays in Brazil and shopping in Chile are cheaper, cheap imports pour in and local industry loses competitiveness.",Started: Argentina is expensive in dollars.,Ended: Argentina is expensive in dollars.
+#,AR_CierrePymes,Small businesses closing,"Workshops, textile mills and shops close their doors. They cannot compete with imports or pay utility bills, interest and rent while sales fall.",Started: Small businesses closing.,Ended: Small businesses closing.
+#,AR_DesempleoCreciente,Rising unemployment,"Formal jobs are lost every month. Odd jobs, delivery apps and despair in poor neighbourhoods grow.",Started: Rising unemployment.,Ended: Rising unemployment.
+#,AR_Desinflacion,Disinflation,"Monthly inflation falls month after month. Instalment credit, mortgages and the ability to compare prices come back.",Started: Disinflation.,Ended: Disinflation.
+#,AR_SuperavitFiscal,Fiscal surplus,"For the first time in years, the state spends less than it collects. There is no longer a need to print money to pay salaries.",Started: Fiscal surplus.,Ended: Fiscal surplus.
+#,AR_InversionRecord,Investment boom,"Big projects arrive: pipelines, copper and lithium mines, data centres and ports. The provinces compete to attract them.",Started: Investment boom.,Ended: Investment boom.
+#,AR_ConflictoSalud,Hospital conflict,Residents and specialists at national hospitals strike over pay. Surgeries are rescheduled and patients' families march alongside the doctors.,Started: Hospital conflict.,Ended: Hospital conflict.
+#,AR_CrisisDiscapacidad,Disability care crisis,"Providers paid months late, pensions cancelled and centres closing. Families rally outside Congress.",Started: Disability care crisis.,Ended: Disability care crisis.
+#,AR_ConflictoUniversitario,Universities up in arms,"Lecturers on rock-bottom pay, open-air classes in squares and faculty occupations. The university community becomes the main hub of opposition.",Started: Universities up in arms.,Ended: Universities up in arms.
+#,AR_MarchasJubilados,Wednesday marches,"Every Wednesday, pensioners march to Congress over pensions that do not stretch. Images of police crackdowns travel around the world.",Started: Wednesday marches.,Ended: Wednesday marches.
+#,AR_BloqueoLegislativo,Hostile Congress,"The opposition and the governors join forces: they override vetoes, reject decrees and block the budget.",Started: Hostile Congress.,Ended: Hostile Congress.
+#,AR_EscandaloCorrupcion,Government mired in scandal,"Leaked audio, court cases and raids every week. Each new revelation erodes support even among the government's own voters.",Started: Government mired in scandal.,Ended: Government mired in scandal.
+#,AR_GuerraEuropa,War in Europe,"A high-intensity war in Eastern Europe sends oil, gas and grain prices soaring. Argentine farmers sell at higher prices; imported inflation hits household budgets.",Started: War in Europe.,Ended: War in Europe.
+#,AR_CrisisMedioOriente,Middle East crisis,War in the Persian Gulf partly closes the Strait of Hormuz. Oil soars: Asia scrambles for suppliers and Vaca Muerta finds buyers.,Started: Middle East crisis.,Ended: Middle East crisis.
+#,AR_GuerraComercial,Global trade war,"The US and China trade tariffs. Argentine steel and aluminium face surcharges, but China buys more South American soybeans to avoid depending on the US.",Started: Global trade war.,Ended: Global trade war.
+#,AR_TasasFedAltas,High US interest rates,"The Federal Reserve raises rates. Capital flows back to Wall Street, emerging markets pay more to borrow and Argentine country risk rebounds.",Started: High US interest rates.,Ended: High US interest rates.
+#,AR_CrisisBrasil,Crisis in Brazil,"Brazil, the main buyer of Argentine cars and manufactures, devalues the real and slides into recession. Car plants suspend shifts.",Started: Crisis in Brazil.,Ended: Crisis in Brazil.
+#,AR_Superciclo,Commodity supercycle,"Soybeans, corn, lithium and copper trade at highs. Dollars pour in as in 2008.",Started: Commodity supercycle.,Ended: Commodity supercycle.
+#,AR_PandemiaGlobal,New pandemic,"A new virus spreads around the world. Closed borders, overwhelmed hospitals and an economy on hold.",Started: New pandemic.,Ended: New pandemic.
+#,AR_CrisisFinancieraGlobal,Global financial crisis,"A Wall Street crash freezes world credit. Investors flee anything that looks risky, starting with Argentina.",Started: Global financial crisis.,Ended: Global financial crisis.
+#,AR_CrisisMigratoria,Regional migration wave,The crisis in Venezuela and violence elsewhere push hundreds of thousands of people towards Argentina.,Started: Regional migration wave.,Ended: Regional migration wave.
+#,AR_AcuerdoUEVigente,EU agreement in force,"After 25 years of talks, the Mercosur-EU agreement takes effect: beef, wine and lemons enter Europe tariff-free.",Started: EU agreement in force.,Ended: EU agreement in force.
 #,DoctorsStrike,Doctors' and residents' strike,Doctors and residents in public hospitals strike over pay.,Public hospital doctors and residents are on strike.,The doctors have called off the strike.
 #,TeachersStrike,Teachers' strike,Teachers' unions strike over pay and classes do not start.,Teachers are on strike: schools are closed.,Teachers have ended the strike and classes resume.
 #,Homelessness,Homelessness,More and more people sleep rough in the big cities.,More and more people are sleeping rough.,The number of homeless people has fallen.

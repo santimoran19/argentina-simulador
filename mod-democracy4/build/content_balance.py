@@ -111,7 +111,7 @@ ARG_ON_TOP = {
     'SalesTax': 0.8,   # IVA 21 %
     'ScienceFunding': 0.35,   # CONICET
     'StateEnergy': 0.35,   # YPF/ENARSA
-    'StateHealthService': 0.75,
+    'StateHealthService': 0.6,   # hospitales nacionales; el grueso es provincial
     'StateHousing': 0.2,
     'StateSchools': 0.8,
     'UnemployedBenefit': 0.63,

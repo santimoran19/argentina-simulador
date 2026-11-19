@@ -119,6 +119,8 @@ Cuarta partida de prueba: la trayectoria ya se parece a la real (recesión al em
 
 Quinta partida de prueba: ya salen eventos y dilemas argentinos (Mundial, visita del Papa, escándalo cripto, guerra en Europa, pandemia; dilemas de la CGT, 5G, PASO, colectivo, FMI y glaciares). Dos arreglos: los dilemas aparecían en blanco porque el juego no dibuja las comillas tipográficas (“ ”) que usaban todas sus opciones; ahora los textos usan comillas castellanas (« ») y ningún carácter fuera de Latin-1. Y el delito (0,96) y la salud (0,41) arrancaban fuera de lo real: se suman políticas argentinas que faltaban (policía de cercanía, etiquetado frontal, salud sexual y procreación responsable, comedores escolares, ART, educación física obligatoria, impuestos internos al alcohol).
 
+Sexta partida de prueba: arranque muy cerca de lo real (pobreza 0,42 contra 41,7 %, aprobación inicial 53 %), recesión, desinflación (0,56 a 0,07) y recuperación del PBI hasta 0,49, con 48 % de aprobación al turno 16. Los dilemas seguían sin texto: en el archivo de traducciones de dilemas la primera fila tenía 5 columnas y las de las opciones 4; ahora todas las filas de cada archivo tienen la misma cantidad de columnas, como en los mods publicados, y las situaciones del mod traen avisos de inicio y fin como las del juego. La salud arrancaba en 1,0: la salud pública nacional baja a 0,6 (el grueso del sistema es provincial).
+
 Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
 
 ## Efecto dominó: todo se encadena

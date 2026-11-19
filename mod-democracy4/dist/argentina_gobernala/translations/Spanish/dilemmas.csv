@@ -1,114 +1,114 @@
-#,AR_DilDeudaFMI,Vence la deuda con el FMI,Llega un vencimiento de miles de millones con el Fondo y las reservas no alcanzan., 
-#,AR_DilDeudaFMI_0,Refinanciar con un nuevo programa,"La ministra de Economía: «Firmemos un nuevo acuerdo. Es amargo, pero evita el default.»"
-#,AR_DilDeudaFMI_1,Pagar con reservas y no firmar nada,El jefe de Gabinete: «Pagamos con lo que tenemos. No vamos a entregar la soberanía.»
-#,AR_DilParitarias,Paritarias en tensión,Los gremios piden aumentos por encima de la inflación. Las empresas dicen que no pueden pagar., 
-#,AR_DilParitarias_0,Homologar aumentos altos,El ministro de Trabajo: «Los salarios vienen perdiendo. Firmemos y evitemos el paro.»
-#,AR_DilParitarias_1,Poner un techo a los aumentos,"La ministra de Economía: «Si convalidamos esto, la inflación no baja nunca.»"
-#,AR_DilTomaDeTierras,Toma de tierras,Miles de familias ocupan un predio en el conurbano. El dueño pide el desalojo inmediato., 
-#,AR_DilTomaDeTierras_0,Desalojar con fuerzas federales,El ministro de Seguridad: «La propiedad privada se respeta. Desalojamos hoy.»
-#,AR_DilTomaDeTierras_1,Negociar y urbanizar,La ministra de Desarrollo Social: «Ofrezcamos lotes con servicios. Nadie toma tierras por gusto.»
-#,AR_DilParoDocente,Paro docente nacional,Los gremios docentes anuncian un paro por tiempo indeterminado. Las clases no empiezan., 
-#,AR_DilParoDocente_0,Aumentar el fondo de incentivo docente,El ministro de Educación: «Sin docentes no hay país. Pongamos los fondos.»
-#,AR_DilParoDocente_1,Descontar los días de paro,"El jefe de Gabinete: «El que para, no cobra. Los chicos tienen que estar en el aula.»"
-#,AR_DilTarifazo,Las distribuidoras exigen aumentos,Las empresas de energía dicen que sin tarifas actualizadas no pueden invertir., 
-#,AR_DilTarifazo_0,Autorizar el aumento,"El secretario de Energía: «O pagamos la luz, o nos quedamos a oscuras.»"
-#,AR_DilTarifazo_1,Congelar las tarifas,El jefe de Gabinete: «Un tarifazo ahora sería un suicidio político.»
-#,AR_DilHoldouts,Fallo de un juez de Nueva York,Un tribunal de Nueva York ordena pagar el total a los fondos que no entraron al canje., 
-#,AR_DilHoldouts_0,Negociar y pagar,"La ministra de Economía: «Pagar es caro, pero volvemos a los mercados.»"
-#,AR_DilHoldouts_1,Patria o buitres,El jefe de Gabinete: «No le vamos a pagar a los buitres lo que no pagan los demás acreedores.»
-#,AR_DilCampo,El campo para,Las entidades rurales anuncian un lockout y cortan rutas contra las retenciones., 
-#,AR_DilCampo_0,Bajar retenciones,El ministro de Agricultura: «Sin el campo no hay dólares. Hay que escucharlos.»
-#,AR_DilCampo_1,Sostener la medida,La ministra de Economía: «No podemos ceder ante un lockout patronal.»
-#,AR_DilMalvinas,Exploración petrolera en Malvinas,Una empresa británica anuncia exploración de petróleo en aguas de Malvinas., 
-#,AR_DilMalvinas_0,Sanciones a la empresa y reclamo en la ONU,El canciller: «Es nuestro territorio. Llevamos el caso a Naciones Unidas.»
-#,AR_DilMalvinas_1,Protesta formal y cooperación,"El vicecanciller: «Protestemos, pero sin romper puentes con Londres.»"
-#,AR_DilDolarBlue,El dólar blue se dispara,El paralelo sube un 20 % en una semana y las cuevas no dan abasto., 
-#,AR_DilDolarBlue_0,Devaluar el oficial,El presidente del Banco Central: «Hay que cerrar la brecha aunque duela.»
-#,AR_DilDolarBlue_1,Allanar las cuevas,El ministro de Seguridad: «Vamos contra los especuladores.»
-#,AR_DilNarcoRosario,Balaceras en Rosario,Las bandas narco amenazan al gobernador y atacan comercios. La ciudad vive con miedo., 
-#,AR_DilNarcoRosario_0,Enviar al Ejército,La ministra de Seguridad: «Hace falta todo el poder del Estado.»
-#,AR_DilNarcoRosario_1,Inteligencia y lavado de dinero,"El fiscal general: «Sigamos la plata, no sólo a los soldaditos.»"
-#,AR_DilVeto,El Congreso aprueba un aumento a jubilados,La oposición sanciona una ley de movilidad generosa. ¿La vetás?, 
-#,AR_DilVeto_0,Vetar la ley,La ministra de Economía: «No hay plata. El equilibrio fiscal no se negocia.»
-#,AR_DilVeto_1,Promulgarla,El jefe de Gabinete: «No podemos pelearnos con los jubilados en año electoral.»
-#,AR_DilGobernadores,Los gobernadores piden fondos,Un grupo de gobernadores condiciona sus votos en el Congreso a recibir obras y transferencias., 
-#,AR_DilGobernadores_0,Firmar los acuerdos,El ministro del Interior: «Con los votos de las provincias sacamos las leyes.»
-#,AR_DilGobernadores_1,Negarse,La ministra de Economía: «Se terminó la caja política.»
-#,AR_DilSubsidioColectivo,Paro de colectivos,Las empresas de transporte dejan de circular: dicen que los subsidios no alcanzan para pagar sueldos., 
-#,AR_DilSubsidioColectivo_0,Pagar más subsidios,El secretario de Transporte: «Millones no pueden ir a trabajar.»
-#,AR_DilSubsidioColectivo_1,Liberar el boleto,La ministra de Economía: «Que el precio refleje el costo.»
-#,AR_DilFutbol,Sociedades anónimas deportivas,Un grupo inversor ofrece comprar un club grande si se permiten las sociedades anónimas en el fútbol., 
-#,AR_DilFutbol_0,Habilitarlas,El ministro de Deporte: «Los clubes necesitan capital para competir.»
-#,AR_DilFutbol_1,Los clubes son de los socios,El jefe de Gabinete: «No vamos a tocar el corazón del fútbol argentino.»
-#,AR_DilAborto,Proyecto para derogar la ley del aborto,Diputados oficialistas proponen derogar la interrupción voluntaria del embarazo., 
-#,AR_DilAborto_0,Apoyar la derogación,El secretario de Culto: «Defendamos la vida desde la concepción.»
-#,AR_DilAborto_1,Rechazar el proyecto,La ministra de la Mujer: «Es un derecho conquistado en las calles.»
-#,AR_DilEmisionFinDeAnio,Aguinaldos sin fondos,En diciembre faltan pesos para pagar aguinaldos a estatales y jubilados., 
-#,AR_DilEmisionFinDeAnio_0,Pedirle pesos al Banco Central,El jefe de Gabinete: «Se paga. Después vemos.»
-#,AR_DilEmisionFinDeAnio_1,Pagar en cuotas,La ministra de Economía: «No vamos a emitir. Se paga en dos cuotas.»
-#,AR_DilVetoDiscapacidad,Ley de emergencia en discapacidad,El Congreso aprobó aumentos para prestadores y pensiones por discapacidad., 
-#,AR_DilVetoDiscapacidad_0,Vetarla,La ministra de Economía: «El superávit no se toca. Revisemos primero las pensiones mal otorgadas.»
-#,AR_DilVetoDiscapacidad_1,Promulgarla,El jefe de Gabinete: «No vale la pena pagar este costo político.»
-#,AR_DilFinanciamientoUniversitario,Ley de financiamiento universitario,"Tras una marcha masiva, el Congreso sanciona fondos para universidades y salarios docentes.", 
-#,AR_DilFinanciamientoUniversitario_0,Veto total,El jefe de Gabinete: «Primero que las universidades acepten auditorías.»
-#,AR_DilFinanciamientoUniversitario_1,Promulgar y negociar,El ministro de Educación: «La universidad pública es un orgullo nacional.»
-#,AR_DilGarrahan,Paro en el hospital pediátrico,Los residentes del principal hospital de niños del país paran por salarios., 
-#,AR_DilGarrahan_0,Otorgar un aumento especial,El ministro de Salud: «No podemos perder a los mejores pediatras del país.»
-#,AR_DilGarrahan_1,Sostener la pauta salarial,"La ministra de Economía: «Si cedemos acá, mañana piden todos.»"
-#,AR_DilSwapEEUU,Condiciones del swap con EE.UU.,"Washington ofrece un swap millonario, pero pide limitar la presencia de China en infraestructura estratégica.", 
-#,AR_DilSwapEEUU_0,Aceptar,El canciller: «Es el respaldo que necesitamos para que no haya corrida.»
-#,AR_DilSwapEEUU_1,Rechazar las condiciones,El ministro de Economía: «China es nuestro segundo socio comercial. No podemos elegir.»
-#,AR_DilTechoBanda,El dólar toca el techo de la banda,La presión preelectoral lleva al dólar al límite superior de la banda., 
-#,AR_DilTechoBanda_0,Vender reservas para defenderla,El presidente del Banco Central: «La banda se defiende. Es nuestra palabra.»
-#,AR_DilTechoBanda_1,Dejarlo subir y ampliar la banda,La ministra de Economía: «Que el mercado encuentre su precio.»
-#,AR_DilAerolineas,Privatizar la aerolínea de bandera,"Un grupo inversor ofrece comprar la línea aérea estatal, que pierde dinero.", 
-#,AR_DilAerolineas_0,Venderla,"El ministro de Desregulación: «Que la paguen los que vuelan, no todos los argentinos.»"
-#,AR_DilAerolineas_1,Mantenerla estatal,El jefe de Gabinete: «Conecta a provincias que ninguna empresa privada quiere volar.»
-#,AR_DilPASO,Suspender las primarias,El oficialismo propone suspender las PASO para ahorrar y ordenar la elección., 
-#,AR_DilPASO_0,Suspenderlas,El ministro del Interior: «Es un gasto inútil que los votantes no quieren.»
-#,AR_DilPASO_1,Mantenerlas,El vocero: «No vamos a cambiar las reglas a meses de votar.»
-#,AR_DilImputabilidad,Crimen cometido por un menor,Un adolescente de 15 años mata a un comerciante en un robo. El país discute bajar la edad de imputabilidad., 
-#,AR_DilImputabilidad_0,Impulsar la baja a 14 años,"La ministra de Seguridad: «El que las hace, las paga, tenga la edad que tenga.»"
-#,AR_DilImputabilidad_1,Programa de prevención juvenil,La ministra de Desarrollo Humano: «La cárcel no recupera a un chico de 14 años.»
-#,AR_DilGlaciares,Gobernadores mineros piden cambiar la ley de glaciares,Provincias cordilleranas reclaman flexibilizar la ley para habilitar proyectos de cobre por miles de millones., 
-#,AR_DilGlaciares_0,Flexibilizarla,El secretario de Minería: «El cobre es el próximo Vaca Muerta.»
-#,AR_DilGlaciares_1,Mantenerla,La secretaria de Ambiente: «El agua vale más que el cobre.»
-#,AR_DilDolaresColchon,Los dólares del colchón,Los argentinos guardan más de 200.000 millones de dólares fuera del sistema. ¿Cómo atraerlos?, 
-#,AR_DilDolaresColchon_0,Que se usen sin preguntas,La ministra de Economía: «Cada dólar que sale del colchón es inversión y consumo.»
-#,AR_DilDolaresColchon_1,Exigir declarar el origen,El titular del organismo antilavado: «No podemos ser una lavandería.»
-#,AR_DilCierreINTA,Cierre del instituto agropecuario,El plan de ajuste incluye cerrar estaciones experimentales del INTA en el interior., 
-#,AR_DilCierreINTA_0,Cerrarlas,El ministro de Desregulación: «Que la investigación la pague quien la aprovecha.»
-#,AR_DilCierreINTA_1,Mantenerlas,"El secretario de Agricultura: «Sin el INTA, los pequeños productores quedan solos.»"
-#,AR_DilReformaCGT,La CGT ofrece negociar la reforma laboral,La central obrera promete no hacer paros si se mantienen las cuotas sindicales y los convenios por actividad., 
-#,AR_DilReformaCGT_0,Negociar con la CGT,El ministro del Interior: «Una reforma con acuerdo dura más.»
-#,AR_DilReformaCGT_1,Avanzar sin ellos,La ministra de Capital Humano: «Los privilegios sindicales se terminan.»
-#,AR_DilImportaciones,Los industriales piden frenar las importaciones,"Textiles, metalúrgicas y fabricantes de electrodomésticos denuncian competencia desleal de productos importados.", 
-#,AR_DilImportaciones_0,Subir aranceles,El secretario de Industria: «Sin industria no hay empleo.»
-#,AR_DilImportaciones_1,Mantener la apertura,El ministro de Economía: «Los argentinos merecen precios internacionales.»
-#,AR_DilArmasUcrania,Ucrania pide armas,Kiev pide a la Argentina material militar y apoyo en la ONU. Rusia advierte represalias comerciales., 
-#,AR_DilArmasUcrania_0,Enviar ayuda y votar con Occidente,El canciller: «Estamos del lado de la libertad.»
-#,AR_DilArmasUcrania_1,Mantener la neutralidad,El vicecanciller: «No es nuestra guerra.»
-#,AR_DilVotoONU,Votación en la ONU sobre Medio Oriente,La Asamblea General vota un alto el fuego que Israel y EE.UU. rechazan., 
-#,AR_DilVotoONU_0,Votar a favor del alto el fuego,La embajadora ante la ONU: «La vida de los civiles está primero.»
-#,AR_DilVotoONU_1,Votar con EE.UU. e Israel,El canciller: «Somos aliados y lo vamos a demostrar.»
-#,AR_DilEmbajada,Mudar la embajada a Jerusalén,El Gobierno evalúa trasladar la embajada argentina en Israel a Jerusalén., 
-#,AR_DilEmbajada_0,Mudarla,El Presidente: «Es una promesa y la vamos a cumplir.»
-#,AR_DilEmbajada_1,Postergar la decisión,El canciller: «No es el momento: arriesgamos el comercio con los países árabes.»
-#,AR_DilRefugiados,Miles de migrantes en la frontera,Familias venezolanas esperan en la frontera norte sin documentos., 
-#,AR_DilRefugiados_0,Darles residencia humanitaria,La ministra de Desarrollo Humano: «Argentina siempre fue tierra de inmigrantes.»
-#,AR_DilRefugiados_1,Cerrar el paso,La ministra de Seguridad: «Primero los argentinos.»
-#,AR_DilEstacionEspacial,La estación espacial china en Neuquén,EE.UU. pide revisar el acuerdo que permite a China operar una antena espacial en la Patagonia., 
-#,AR_DilEstacionEspacial_0,Inspeccionarla y limitarla,El ministro de Defensa: «Nadie opera en territorio argentino sin control.»
-#,AR_DilEstacionEspacial_1,Respetar el acuerdo,El canciller: «China es nuestro cliente. No rompamos contratos.»
-#,AR_Dil5G,El 5G y las empresas chinas,Washington pide excluir a proveedores chinos de la red 5G argentina., 
-#,AR_Dil5G_0,Excluirlas,El secretario de Innovación: «La seguridad de la red no se negocia.»
-#,AR_Dil5G_1,Licitación abierta,La ministra de Economía: «Que gane la mejor oferta.»
-#,AR_DilMonedaComun,Brasil propone una moneda común,El gobierno brasileño propone una moneda común para el comercio del Mercosur., 
-#,AR_DilMonedaComun_0,Estudiarla,El canciller: «Comerciar sin dólares nos ahorra reservas.»
-#,AR_DilMonedaComun_1,Rechazarla,El presidente del Banco Central: «Ya tenemos bastantes problemas con una moneda.»
-#,AR_DilAviones,Compra de aviones de combate,Hay dos ofertas: cazas estadounidenses usados o aviones chinos nuevos y más baratos., 
-#,AR_DilAviones_0,Aviones estadounidenses,El jefe de la Fuerza Aérea: «Nos integra a la OTAN como aliado.»
-#,AR_DilAviones_1,Aviones chinos,El ministro de Economía: «Son más nuevos y los pagamos en cuotas.»
-#,AR_DilClausulaAmbiental,Europa exige cláusulas ambientales,Productores europeos presionan para frenar la carne argentina por deforestación en el norte del país., 
-#,AR_DilClausulaAmbiental_0,Aceptar controles de trazabilidad,La secretaria de Ambiente: «Es una oportunidad para frenar los desmontes.»
-#,AR_DilClausulaAmbiental_1,Denunciar proteccionismo,El secretario de Agricultura: «Es proteccionismo disfrazado de ecología.»
+#,AR_DilDeudaFMI,Vence la deuda con el FMI,Llega un vencimiento de miles de millones con el Fondo y las reservas no alcanzan.,
+#,AR_DilDeudaFMI_0,Refinanciar con un nuevo programa,"La ministra de Economía: «Firmemos un nuevo acuerdo. Es amargo, pero evita el default.»",
+#,AR_DilDeudaFMI_1,Pagar con reservas y no firmar nada,El jefe de Gabinete: «Pagamos con lo que tenemos. No vamos a entregar la soberanía.»,
+#,AR_DilParitarias,Paritarias en tensión,Los gremios piden aumentos por encima de la inflación. Las empresas dicen que no pueden pagar.,
+#,AR_DilParitarias_0,Homologar aumentos altos,El ministro de Trabajo: «Los salarios vienen perdiendo. Firmemos y evitemos el paro.»,
+#,AR_DilParitarias_1,Poner un techo a los aumentos,"La ministra de Economía: «Si convalidamos esto, la inflación no baja nunca.»",
+#,AR_DilTomaDeTierras,Toma de tierras,Miles de familias ocupan un predio en el conurbano. El dueño pide el desalojo inmediato.,
+#,AR_DilTomaDeTierras_0,Desalojar con fuerzas federales,El ministro de Seguridad: «La propiedad privada se respeta. Desalojamos hoy.»,
+#,AR_DilTomaDeTierras_1,Negociar y urbanizar,La ministra de Desarrollo Social: «Ofrezcamos lotes con servicios. Nadie toma tierras por gusto.»,
+#,AR_DilParoDocente,Paro docente nacional,Los gremios docentes anuncian un paro por tiempo indeterminado. Las clases no empiezan.,
+#,AR_DilParoDocente_0,Aumentar el fondo de incentivo docente,El ministro de Educación: «Sin docentes no hay país. Pongamos los fondos.»,
+#,AR_DilParoDocente_1,Descontar los días de paro,"El jefe de Gabinete: «El que para, no cobra. Los chicos tienen que estar en el aula.»",
+#,AR_DilTarifazo,Las distribuidoras exigen aumentos,Las empresas de energía dicen que sin tarifas actualizadas no pueden invertir.,
+#,AR_DilTarifazo_0,Autorizar el aumento,"El secretario de Energía: «O pagamos la luz, o nos quedamos a oscuras.»",
+#,AR_DilTarifazo_1,Congelar las tarifas,El jefe de Gabinete: «Un tarifazo ahora sería un suicidio político.»,
+#,AR_DilHoldouts,Fallo de un juez de Nueva York,Un tribunal de Nueva York ordena pagar el total a los fondos que no entraron al canje.,
+#,AR_DilHoldouts_0,Negociar y pagar,"La ministra de Economía: «Pagar es caro, pero volvemos a los mercados.»",
+#,AR_DilHoldouts_1,Patria o buitres,El jefe de Gabinete: «No le vamos a pagar a los buitres lo que no pagan los demás acreedores.»,
+#,AR_DilCampo,El campo para,Las entidades rurales anuncian un lockout y cortan rutas contra las retenciones.,
+#,AR_DilCampo_0,Bajar retenciones,El ministro de Agricultura: «Sin el campo no hay dólares. Hay que escucharlos.»,
+#,AR_DilCampo_1,Sostener la medida,La ministra de Economía: «No podemos ceder ante un lockout patronal.»,
+#,AR_DilMalvinas,Exploración petrolera en Malvinas,Una empresa británica anuncia exploración de petróleo en aguas de Malvinas.,
+#,AR_DilMalvinas_0,Sanciones a la empresa y reclamo en la ONU,El canciller: «Es nuestro territorio. Llevamos el caso a Naciones Unidas.»,
+#,AR_DilMalvinas_1,Protesta formal y cooperación,"El vicecanciller: «Protestemos, pero sin romper puentes con Londres.»",
+#,AR_DilDolarBlue,El dólar blue se dispara,El paralelo sube un 20 % en una semana y las cuevas no dan abasto.,
+#,AR_DilDolarBlue_0,Devaluar el oficial,El presidente del Banco Central: «Hay que cerrar la brecha aunque duela.»,
+#,AR_DilDolarBlue_1,Allanar las cuevas,El ministro de Seguridad: «Vamos contra los especuladores.»,
+#,AR_DilNarcoRosario,Balaceras en Rosario,Las bandas narco amenazan al gobernador y atacan comercios. La ciudad vive con miedo.,
+#,AR_DilNarcoRosario_0,Enviar al Ejército,La ministra de Seguridad: «Hace falta todo el poder del Estado.»,
+#,AR_DilNarcoRosario_1,Inteligencia y lavado de dinero,"El fiscal general: «Sigamos la plata, no sólo a los soldaditos.»",
+#,AR_DilVeto,El Congreso aprueba un aumento a jubilados,La oposición sanciona una ley de movilidad generosa. ¿La vetás?,
+#,AR_DilVeto_0,Vetar la ley,La ministra de Economía: «No hay plata. El equilibrio fiscal no se negocia.»,
+#,AR_DilVeto_1,Promulgarla,El jefe de Gabinete: «No podemos pelearnos con los jubilados en año electoral.»,
+#,AR_DilGobernadores,Los gobernadores piden fondos,Un grupo de gobernadores condiciona sus votos en el Congreso a recibir obras y transferencias.,
+#,AR_DilGobernadores_0,Firmar los acuerdos,El ministro del Interior: «Con los votos de las provincias sacamos las leyes.»,
+#,AR_DilGobernadores_1,Negarse,La ministra de Economía: «Se terminó la caja política.»,
+#,AR_DilSubsidioColectivo,Paro de colectivos,Las empresas de transporte dejan de circular: dicen que los subsidios no alcanzan para pagar sueldos.,
+#,AR_DilSubsidioColectivo_0,Pagar más subsidios,El secretario de Transporte: «Millones no pueden ir a trabajar.»,
+#,AR_DilSubsidioColectivo_1,Liberar el boleto,La ministra de Economía: «Que el precio refleje el costo.»,
+#,AR_DilFutbol,Sociedades anónimas deportivas,Un grupo inversor ofrece comprar un club grande si se permiten las sociedades anónimas en el fútbol.,
+#,AR_DilFutbol_0,Habilitarlas,El ministro de Deporte: «Los clubes necesitan capital para competir.»,
+#,AR_DilFutbol_1,Los clubes son de los socios,El jefe de Gabinete: «No vamos a tocar el corazón del fútbol argentino.»,
+#,AR_DilAborto,Proyecto para derogar la ley del aborto,Diputados oficialistas proponen derogar la interrupción voluntaria del embarazo.,
+#,AR_DilAborto_0,Apoyar la derogación,El secretario de Culto: «Defendamos la vida desde la concepción.»,
+#,AR_DilAborto_1,Rechazar el proyecto,La ministra de la Mujer: «Es un derecho conquistado en las calles.»,
+#,AR_DilEmisionFinDeAnio,Aguinaldos sin fondos,En diciembre faltan pesos para pagar aguinaldos a estatales y jubilados.,
+#,AR_DilEmisionFinDeAnio_0,Pedirle pesos al Banco Central,El jefe de Gabinete: «Se paga. Después vemos.»,
+#,AR_DilEmisionFinDeAnio_1,Pagar en cuotas,La ministra de Economía: «No vamos a emitir. Se paga en dos cuotas.»,
+#,AR_DilVetoDiscapacidad,Ley de emergencia en discapacidad,El Congreso aprobó aumentos para prestadores y pensiones por discapacidad.,
+#,AR_DilVetoDiscapacidad_0,Vetarla,La ministra de Economía: «El superávit no se toca. Revisemos primero las pensiones mal otorgadas.»,
+#,AR_DilVetoDiscapacidad_1,Promulgarla,El jefe de Gabinete: «No vale la pena pagar este costo político.»,
+#,AR_DilFinanciamientoUniversitario,Ley de financiamiento universitario,"Tras una marcha masiva, el Congreso sanciona fondos para universidades y salarios docentes.",
+#,AR_DilFinanciamientoUniversitario_0,Veto total,El jefe de Gabinete: «Primero que las universidades acepten auditorías.»,
+#,AR_DilFinanciamientoUniversitario_1,Promulgar y negociar,El ministro de Educación: «La universidad pública es un orgullo nacional.»,
+#,AR_DilGarrahan,Paro en el hospital pediátrico,Los residentes del principal hospital de niños del país paran por salarios.,
+#,AR_DilGarrahan_0,Otorgar un aumento especial,El ministro de Salud: «No podemos perder a los mejores pediatras del país.»,
+#,AR_DilGarrahan_1,Sostener la pauta salarial,"La ministra de Economía: «Si cedemos acá, mañana piden todos.»",
+#,AR_DilSwapEEUU,Condiciones del swap con EE.UU.,"Washington ofrece un swap millonario, pero pide limitar la presencia de China en infraestructura estratégica.",
+#,AR_DilSwapEEUU_0,Aceptar,El canciller: «Es el respaldo que necesitamos para que no haya corrida.»,
+#,AR_DilSwapEEUU_1,Rechazar las condiciones,El ministro de Economía: «China es nuestro segundo socio comercial. No podemos elegir.»,
+#,AR_DilTechoBanda,El dólar toca el techo de la banda,La presión preelectoral lleva al dólar al límite superior de la banda.,
+#,AR_DilTechoBanda_0,Vender reservas para defenderla,El presidente del Banco Central: «La banda se defiende. Es nuestra palabra.»,
+#,AR_DilTechoBanda_1,Dejarlo subir y ampliar la banda,La ministra de Economía: «Que el mercado encuentre su precio.»,
+#,AR_DilAerolineas,Privatizar la aerolínea de bandera,"Un grupo inversor ofrece comprar la línea aérea estatal, que pierde dinero.",
+#,AR_DilAerolineas_0,Venderla,"El ministro de Desregulación: «Que la paguen los que vuelan, no todos los argentinos.»",
+#,AR_DilAerolineas_1,Mantenerla estatal,El jefe de Gabinete: «Conecta a provincias que ninguna empresa privada quiere volar.»,
+#,AR_DilPASO,Suspender las primarias,El oficialismo propone suspender las PASO para ahorrar y ordenar la elección.,
+#,AR_DilPASO_0,Suspenderlas,El ministro del Interior: «Es un gasto inútil que los votantes no quieren.»,
+#,AR_DilPASO_1,Mantenerlas,El vocero: «No vamos a cambiar las reglas a meses de votar.»,
+#,AR_DilImputabilidad,Crimen cometido por un menor,Un adolescente de 15 años mata a un comerciante en un robo. El país discute bajar la edad de imputabilidad.,
+#,AR_DilImputabilidad_0,Impulsar la baja a 14 años,"La ministra de Seguridad: «El que las hace, las paga, tenga la edad que tenga.»",
+#,AR_DilImputabilidad_1,Programa de prevención juvenil,La ministra de Desarrollo Humano: «La cárcel no recupera a un chico de 14 años.»,
+#,AR_DilGlaciares,Gobernadores mineros piden cambiar la ley de glaciares,Provincias cordilleranas reclaman flexibilizar la ley para habilitar proyectos de cobre por miles de millones.,
+#,AR_DilGlaciares_0,Flexibilizarla,El secretario de Minería: «El cobre es el próximo Vaca Muerta.»,
+#,AR_DilGlaciares_1,Mantenerla,La secretaria de Ambiente: «El agua vale más que el cobre.»,
+#,AR_DilDolaresColchon,Los dólares del colchón,Los argentinos guardan más de 200.000 millones de dólares fuera del sistema. ¿Cómo atraerlos?,
+#,AR_DilDolaresColchon_0,Que se usen sin preguntas,La ministra de Economía: «Cada dólar que sale del colchón es inversión y consumo.»,
+#,AR_DilDolaresColchon_1,Exigir declarar el origen,El titular del organismo antilavado: «No podemos ser una lavandería.»,
+#,AR_DilCierreINTA,Cierre del instituto agropecuario,El plan de ajuste incluye cerrar estaciones experimentales del INTA en el interior.,
+#,AR_DilCierreINTA_0,Cerrarlas,El ministro de Desregulación: «Que la investigación la pague quien la aprovecha.»,
+#,AR_DilCierreINTA_1,Mantenerlas,"El secretario de Agricultura: «Sin el INTA, los pequeños productores quedan solos.»",
+#,AR_DilReformaCGT,La CGT ofrece negociar la reforma laboral,La central obrera promete no hacer paros si se mantienen las cuotas sindicales y los convenios por actividad.,
+#,AR_DilReformaCGT_0,Negociar con la CGT,El ministro del Interior: «Una reforma con acuerdo dura más.»,
+#,AR_DilReformaCGT_1,Avanzar sin ellos,La ministra de Capital Humano: «Los privilegios sindicales se terminan.»,
+#,AR_DilImportaciones,Los industriales piden frenar las importaciones,"Textiles, metalúrgicas y fabricantes de electrodomésticos denuncian competencia desleal de productos importados.",
+#,AR_DilImportaciones_0,Subir aranceles,El secretario de Industria: «Sin industria no hay empleo.»,
+#,AR_DilImportaciones_1,Mantener la apertura,El ministro de Economía: «Los argentinos merecen precios internacionales.»,
+#,AR_DilArmasUcrania,Ucrania pide armas,Kiev pide a la Argentina material militar y apoyo en la ONU. Rusia advierte represalias comerciales.,
+#,AR_DilArmasUcrania_0,Enviar ayuda y votar con Occidente,El canciller: «Estamos del lado de la libertad.»,
+#,AR_DilArmasUcrania_1,Mantener la neutralidad,El vicecanciller: «No es nuestra guerra.»,
+#,AR_DilVotoONU,Votación en la ONU sobre Medio Oriente,La Asamblea General vota un alto el fuego que Israel y EE.UU. rechazan.,
+#,AR_DilVotoONU_0,Votar a favor del alto el fuego,La embajadora ante la ONU: «La vida de los civiles está primero.»,
+#,AR_DilVotoONU_1,Votar con EE.UU. e Israel,El canciller: «Somos aliados y lo vamos a demostrar.»,
+#,AR_DilEmbajada,Mudar la embajada a Jerusalén,El Gobierno evalúa trasladar la embajada argentina en Israel a Jerusalén.,
+#,AR_DilEmbajada_0,Mudarla,El Presidente: «Es una promesa y la vamos a cumplir.»,
+#,AR_DilEmbajada_1,Postergar la decisión,El canciller: «No es el momento: arriesgamos el comercio con los países árabes.»,
+#,AR_DilRefugiados,Miles de migrantes en la frontera,Familias venezolanas esperan en la frontera norte sin documentos.,
+#,AR_DilRefugiados_0,Darles residencia humanitaria,La ministra de Desarrollo Humano: «Argentina siempre fue tierra de inmigrantes.»,
+#,AR_DilRefugiados_1,Cerrar el paso,La ministra de Seguridad: «Primero los argentinos.»,
+#,AR_DilEstacionEspacial,La estación espacial china en Neuquén,EE.UU. pide revisar el acuerdo que permite a China operar una antena espacial en la Patagonia.,
+#,AR_DilEstacionEspacial_0,Inspeccionarla y limitarla,El ministro de Defensa: «Nadie opera en territorio argentino sin control.»,
+#,AR_DilEstacionEspacial_1,Respetar el acuerdo,El canciller: «China es nuestro cliente. No rompamos contratos.»,
+#,AR_Dil5G,El 5G y las empresas chinas,Washington pide excluir a proveedores chinos de la red 5G argentina.,
+#,AR_Dil5G_0,Excluirlas,El secretario de Innovación: «La seguridad de la red no se negocia.»,
+#,AR_Dil5G_1,Licitación abierta,La ministra de Economía: «Que gane la mejor oferta.»,
+#,AR_DilMonedaComun,Brasil propone una moneda común,El gobierno brasileño propone una moneda común para el comercio del Mercosur.,
+#,AR_DilMonedaComun_0,Estudiarla,El canciller: «Comerciar sin dólares nos ahorra reservas.»,
+#,AR_DilMonedaComun_1,Rechazarla,El presidente del Banco Central: «Ya tenemos bastantes problemas con una moneda.»,
+#,AR_DilAviones,Compra de aviones de combate,Hay dos ofertas: cazas estadounidenses usados o aviones chinos nuevos y más baratos.,
+#,AR_DilAviones_0,Aviones estadounidenses,El jefe de la Fuerza Aérea: «Nos integra a la OTAN como aliado.»,
+#,AR_DilAviones_1,Aviones chinos,El ministro de Economía: «Son más nuevos y los pagamos en cuotas.»,
+#,AR_DilClausulaAmbiental,Europa exige cláusulas ambientales,Productores europeos presionan para frenar la carne argentina por deforestación en el norte del país.,
+#,AR_DilClausulaAmbiental_0,Aceptar controles de trazabilidad,La secretaria de Ambiente: «Es una oportunidad para frenar los desmontes.»,
+#,AR_DilClausulaAmbiental_1,Denunciar proteccionismo,El secretario de Agricultura: «Es proteccionismo disfrazado de ecología.»,

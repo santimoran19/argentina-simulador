@@ -1,9 +1,8 @@
 [dilemma]
 name=AR_DilFutbol
-country_specific = argentina
 
 [influences]
-0 = _random_,0,0.06
+0 = AR_Grieta,0+(0.06*x)
 
 [option0]
 OnImplement = CreateGrudge(Capitalist,0.04,0.9);CreateGrudge(Patriot,-0.04,0.9);CreateGrudge(Young,-0.03,0.9);

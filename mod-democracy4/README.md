@@ -1,20 +1,57 @@
 # Argentina: Gobernala — mod para Democracy 4
 
-Agrega la **República Argentina** como país jugable, con su propia economía política: inflación inercial, cepo y brecha cambiaria, retenciones, el FMI, Vaca Muerta, piquetes, la CGT y la grieta. Textos completos en **español e inglés**.
+Agrega la **República Argentina** como país jugable, con dos escenarios y su propia economía política: inflación inercial, cepo y bandas cambiarias, retenciones, el FMI y el swap con Estados Unidos, motosierra y superávit, Vaca Muerta, piquetes, la CGT, los vetos y la grieta. Textos completos en **español e inglés**.
 
 **Descarga directa:** [argentina_gobernala.zip](argentina_gobernala.zip)
+
+## Dos escenarios
+
+| | Argentina (diciembre de 2023) | Argentina 2026 (después del ajuste) |
+|---|---|---|
+| Situación inicial | Cepo total, emisión, reservas negativas, inflación de tres dígitos | Bandas cambiarias, superávit, inflación del 2 % mensual, reforma laboral aprobada |
+| Crisis activas al arrancar | Brecha, reservas agotadas, riesgo país, salto cambiario, sueldos que no alcanzan, recesión, crisis energética, piquetes, grieta | Atraso cambiario, cierre de pymes, hospitales, marchas de jubilados, paros de la CGT, Congreso en contra, grieta |
+| Al borde | Corrida, corralito, default | Discapacidad, universidades, pérdida del poder adquisitivo |
+| Dificultad | 5 | 4 |
 
 ## Qué trae
 
 | | Cantidad | Ejemplos |
 |---|---|---|
-| Políticas exclusivas de Argentina | 28 | Cepo, Asistencia del BCRA al Tesoro, Retenciones, Impuesto PAIS, Programa con el FMI, RIGI, Vaca Muerta, Litio, Movilidad jubilatoria, Moratoria, Planes sociales, Protocolo antipiquetes, Reforma laboral, Monotributo, Universidad pública, CONICET, Malvinas, Mercosur, Dolarización |
-| Situaciones exclusivas | 13 | Brecha cambiaria, Reservas agotadas, Riesgo país, Corrida cambiaria, Corralito, Default, Piquetes, Paros de la CGT, Crisis energética, La grieta, Cosecha récord, Boom energético, Estabilidad macro |
-| Eventos con imagen | 15 | Campeones del mundo, sequía, apagón, visita del Papa, escándalo de corrupción, saqueos, marcha universitaria |
-| Dilemas | 16 | Vencimiento con el FMI, paritarias, lockout del campo, fondos buitre, Malvinas, dólar blue, narco en Rosario, veto a jubilados, aguinaldos sin fondos |
-| Rasgos estructurales del país | 6 | Inercia inflacionaria, evasión, corrupción, grieta, fuga de cerebros, economía informal |
+| Políticas exclusivas | 50 | Cepo, bandas cambiarias, tasa del BCRA, emisión, retenciones, impuesto PAIS, FMI, alineamiento con EE.UU., motosierra, déficit cero, privatizaciones, desregulación, facultades delegadas, RIGI, Vaca Muerta, litio, inocencia fiscal, blanqueo, Ganancias, movilidad jubilatoria, moratoria, discapacidad, hospitales nacionales, ANMAT, AUH y Tarjeta Alimentar, planes sociales, protocolo antipiquetes, reforma laboral, PASO, imputabilidad, ley de glaciares, Hidrovía, Malvinas, dolarización… |
+| Situaciones exclusivas | 28 | Brecha, reservas agotadas, riesgo país, corrida, salto cambiario, corralito, default, sueldos que no alcanzan, recesión, atraso cambiario, cierre de pymes, desempleo, piquetes, paros de la CGT, conflicto en hospitales, crisis de discapacidad, universidades, marchas de jubilados, Congreso en contra, escándalos, crisis energética, grieta; y a favor: desinflación, superávit, inversiones, boom energético, cosecha récord, estabilidad |
+| Eventos con imagen | 27 | Campeones del mundo, escándalo cripto presidencial, audios de coimas, fentanilo contaminado, temporal en el sur bonaerense, muerte del Papa, rescate del Tesoro de EE.UU., dengue, falta de gas, paro de controladores, caen los homicidios en Rosario, mejora la nota de la deuda, cierra una fábrica emblemática… |
+| Dilemas | 29 | Vetos a discapacidad y universidades, paro en el hospital pediátrico, condiciones del swap, el dólar toca el techo de la banda, privatizar la aerolínea, suspender las PASO, imputabilidad, glaciares, dólares del colchón, la CGT ofrece negociar, los industriales piden frenar importaciones, FMI, paritarias, lockout del campo, fondos buitre… |
+| Rasgos estructurales | 6 | Inercia inflacionaria, evasión, corrupción, grieta, fuga de cerebros, economía informal |
+| Enlaces causales argentinos | 12 | Ver "Efecto dominó" |
 
-El país arranca como Argentina a fines de 2023: cepo total, emisión alta, retenciones del 26 %, subsidios amplios, reservas negativas y una inflación muy alta. Dificultad 5.
+## Efecto dominó: todo se encadena
+
+Las decisiones no afectan a una sola cosa. En Argentina, el mod refuerza las cadenas de transmisión del juego con **12 enlaces causales propios** y hace que **unas crisis desencadenen otras**:
+
+```mermaid
+flowchart LR
+  E[Emisión] --> B[Brecha cambiaria]
+  R[Reservas agotadas] --> C[Corrida]
+  B --> C --> S[Salto cambiario]
+  S --> I[Inflación]
+  I --> P[Sueldos que no alcanzan]
+  P --> Po[Pobreza] --> Bajos[Enojo de los sectores bajos]
+  P --> Rec[Recesión] --> Py[Cierre de pymes] --> D[Desempleo]
+  D --> Pi[Piquetes]
+  P --> CGT[Paros de la CGT]
+  P --> J[Marchas de jubilados]
+  R --> RP[Riesgo país] --> Def[Default]
+  RP --> Cor[Corralito]
+  M[Motosierra] --> Sup[Superávit] --> Des[Desinflación]
+  M --> H[Conflicto en hospitales] & U[Universidades] & Disc[Discapacidad]
+  T[Tasa alta + bandas] --> A[Atraso cambiario] --> Py
+```
+
+Ejemplos:
+- Un **peso débil** sube la **inflación**. La inflación sube la **pobreza** y enoja a los **sectores bajos, jubilados y sindicatos**. La pobreza sube el **delito**.
+- Las **reservas agotadas** pueden desencadenar hasta **16 crisis** distintas: corrida, salto cambiario, recesión, pymes, desempleo, piquetes, default, corralito…
+- La **motosierra** baja la inflación y genera **superávit**, que calma el **riesgo país**. Pero también enciende los conflictos en **hospitales, universidades y discapacidad**.
+- Un **peso fuerte** abarata los viajes (contenta a la **clase media**), pero castiga al **campo** y al **turismo** y trae **importaciones** que cierran **pymes**.
 
 ## Instalación
 
@@ -23,35 +60,36 @@ El país arranca como Argentina a fines de 2023: cepo total, emisión alta, rete
    - Windows: `Documentos\My Games\democracy4\mods\`
    - Mac/Linux: la carpeta `democracy4/mods` dentro de tus documentos del juego
 3. Abrí Democracy 4, entrá a **Mods** y activá **Argentina: Gobernala**.
-4. Empezá una partida nueva y elegí **República Argentina**.
+4. Empezá una partida nueva y elegí **República Argentina** o **Argentina 2026**.
 
-Es compatible con *D4 Overhaul & Expansion*: usa nombres, prerrequisitos e identificadores propios (`argentina`, `_prereq_argentina_gb`, prefijo `AR_`), así que los dos mods pueden convivir. Si usás los dos, vas a ver dos Argentinas: la de ese mod (`arg`) y esta.
+Es compatible con *D4 Overhaul & Expansion*: usa nombres, prerrequisitos e identificadores propios (`argentina`, `argentina2026`, `_prereq_argentina_gb`, prefijo `AR_`).
 
 ## Lista de pruebas (primera vez en el juego)
 
-El mod se generó y validó automáticamente, pero **todavía no se probó dentro de Democracy 4**. Estas son las cosas a revisar, de la más a la menos importante:
+El mod se generó y validó automáticamente, pero **todavía no se probó dentro de Democracy 4**. Revisá, de lo más a lo menos importante:
 
 1. **¿Arranca el juego con el mod activado?** Si no, el error suele indicar el archivo y la fila.
-2. **¿Aparece "República Argentina" en la lista de países**, con su bandera, su mapa y su descripción?
-3. **¿Aparecen las 28 políticas propias**, con íconos y con las etiquetas de los deslizadores (por ejemplo, el cepo: "Restricciones mínimas" a "Cepo total")?
-4. **¿Las políticas propias NO aparecen jugando con otro país?** (Tienen que estar limitadas a Argentina.)
+2. **¿Aparecen los dos países**, con bandera, mapa y descripción?
+3. **¿Aparecen las 50 políticas**, con íconos y con las etiquetas de los deslizadores?
+4. **¿Las políticas, situaciones, eventos y dilemas argentinos NO aparecen con otro país?**
 5. **Moneda y cifras:** el país usa dólares (US$). Revisá que el PBI, la deuda y el presupuesto se vean razonables.
-6. **Situaciones:** en las primeras semanas deberían activarse "Brecha cambiaria", "Reservas agotadas" y "Riesgo país por las nubes".
-7. **Eventos y dilemas:** que aparezcan sólo jugando con Argentina y que muestren su imagen y su texto.
+6. **Situaciones al arrancar:** deberían coincidir más o menos con la tabla de escenarios.
+7. **Eventos y dilemas:** que aparezcan en los dos escenarios, con imagen y texto.
 
-Hay dos puntos del formato que no pude confirmar con la documentación oficial y que conviene mirar:
-- `country_specific = argentina` en los **eventos**: está confirmado para dilemas; en eventos es una suposición razonable. Si un evento aparece con otro país, hay que quitar su `_random_` y dejar sólo influencias de políticas argentinas.
-- `CreateGrudge` apuntando a **situaciones del mod** (por ejemplo, `AR_ReservasAgotadas`) desde eventos y dilemas.
+Puntos del formato que no pude confirmar con la documentación oficial:
+- **Eventos y dilemas exclusivos de Argentina.** No usan `country_specific` (admitiría un solo país y dejaría afuera el escenario 2026). En su lugar, todas sus causas son políticas o situaciones argentinas, y el azar está atado a "La grieta", que sólo existe en Argentina. Si alguno aparece con otro país, avisame.
+- **Eventos y dilemas que afectan situaciones del mod** (por ejemplo, `AR_ReservasAgotadas`).
+- **Enlaces causales entre valores distintos** dentro de los overrides de un país. El formato es el mismo que usan los overrides globales de otros mods.
 
 Si algo falla, pasame el mensaje de error o una captura y lo corrijo en el generador.
 
 ## Subirlo a Steam Workshop
 
-Desde el menú **Mods** del juego, elegí el mod y usá la opción para subirlo al Workshop. Como imagen de portada usá `preview.jpg`, que está dentro de la carpeta del mod.
+Desde el menú **Mods** del juego, elegí el mod y usá la opción para subirlo al Workshop. Como imagen de portada usá `preview.jpg`, dentro de la carpeta del mod.
 
 ## Cómo se genera
 
-Todo el contenido está como datos en `build/content.py`. Para regenerar el mod después de un cambio:
+El contenido está como datos en `build/content.py` (base) y `build/content_ext.py` (ampliación 2024-2026, cadenas y escenario 2026).
 
 ```bash
 # una sola vez: herramientas de gráficos
@@ -62,11 +100,33 @@ pip install potracer pillow numpy
 python3 -c "import sys,json; sys.path.insert(0,'build'); import content as C; json.dump({'policies':[{'name':p['name'],'icon':p['icon']} for p in C.POLICIES],'situations':[{'name':s['name'],'icon':s['icon']} for s in C.SITUATIONS],'events':[{'name':e['name'],'scene':e['scene']} for e in C.EVENTS],'dilemmas':len(C.DILEMMAS)},open('.tmp/content.json','w'))"
 node build/assets.js .tmp && python3 build/trace_icons.py .tmp
 
-# archivos del mod y validación
-python3 build/build.py && python3 build/validate.py
+# archivos del mod, validación y simulación de balance
+python3 build/build.py && python3 build/validate.py && python3 build/simulate.py
 ```
 
-`validate.py` revisa que cada nombre usado exista en el juego base o en el mod, que las fórmulas se puedan evaluar y den valores razonables, que cada situación pueda activarse, y que no falten traducciones, íconos ni imágenes.
+- `validate.py` revisa:
+  - que todo nombre usado exista;
+  - que las fórmulas sean válidas y den valores razonables;
+  - que cada situación pueda activarse;
+  - que ningún evento ni dilema dependa de valores de otros países;
+  - que no falten traducciones, íconos ni imágenes.
+
+  Además mide el efecto dominó y avisa si hay realimentaciones fuertes.
+- `simulate.py` aproxima qué crisis quedan activas al arrancar cada escenario, para calibrar el balance sin abrir el juego.
+
+## Fuentes de los hechos 2024-2026
+
+Datos y hechos tomados de prensa argentina e internacional, entre otros:
+- Inflación, dólar, bandas, reservas y riesgo país a noviembre de 2026: Infobae (REM del BCRA), Valor Local, Impacto Castex.
+- Salida del cepo, FMI, swap con EE.UU. y elecciones de 2025: Real Instituto Elcano, Infobae, CNN en Español.
+- Reforma laboral de 2026: Bloomberg, La Nación, SWI swissinfo.ch.
+- Vetos y conflictos de 2025: Infobae, La Nación, Buenos Aires Times.
+- Casos $LIBRA, ANDIS y fentanilo: El Sol, France 24, Expansión.
+- Pobreza, actividad y pymes en 2026: Perfil (INDEC), MDZ, El Ancasti.
+- Incendios en la Patagonia en 2026: Mongabay, Agrofy.
+- Privatizaciones y PASO: El Cronista, Infobae, Perfil.
+
+Los personajes de dilemas y eventos son cargos genéricos ("la ministra de Economía", "el jefe de Gabinete"): no se nombra a personas reales.
 
 ## Créditos
 

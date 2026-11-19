@@ -376,8 +376,9 @@ sit('AR_BrechaCambiaria', 'ECONOMY', 'arrows-exchange', 0, 0.55, 0.40,
      'rush their purchases and prices adjust to the dearer dollar.'))
 
 sit('AR_ReservasAgotadas', 'ECONOMY', 'building-bank', 0, 0.60, 0.42,
-    ['_default_,0.40', 'AR_EmisionTesoro,0+(0.15*x)', 'AR_Retenciones,0+(0.08*x)', 'AR_SubsidiosEnergia,0+(0.06*x)',
-     'AR_AcuerdoFMI,0-(0.22*x)', 'AR_VacaMuerta,0-(0.12*x)', 'AR_Litio,0-(0.06*x)', 'AR_RIGI,0-(0.08*x)', 'AR_Cepo,0-(0.10*x)',
+    ['_default_,0.55', 'AR_EmisionTesoro,0+(0.15*x)', 'AR_Retenciones,0+(0.08*x)', 'AR_SubsidiosEnergia,0+(0.06*x)',
+     'AR_AcuerdoFMI,0-(0.22*x)', 'AR_VacaMuerta,0-(0.12*x)', 'AR_Litio,0-(0.06*x)', 'AR_RIGI,0-(0.08*x)', 'AR_Cepo,0-(0.05*x)',
+     '_effectivedebt_,0+(0.15*x)', 'CurrencyStrength,0.20-(0.20*x)',
      'InternationalTrade,0-(0.20*x)', 'AR_SuperCosecha,0-(0.15*x)', 'AR_BoomEnergetico,0-(0.15*x)'],
     ['CurrencyStrength,-0.08-(0.10*x)', 'Inflation,0.03+(0.05*x),2', 'BusinessConfidence,-0.05-(0.06*x)', 'GDP,-0.01-(0.02*x),3',
      'Capitalist,-0.05-(0.05*x)'],
@@ -444,7 +445,7 @@ sit('AR_ParoCGT', 'ECONOMY', 'flag', 0, 0.65, 0.45,
     ('General strikes', 'The labour federation calls general strikes and mass marches. Transport stops, factories close and the '
      'government gets a clear message.'))
 
-sit('AR_CrisisEnergetica', 'ECONOMY', 'bulb', 0, 0.62, 0.42,
+sit('AR_CrisisEnergetica', 'ECONOMY', 'bulb', 0, 0.60, 0.42,
     ['_default_,0.25', 'AR_SubsidiosEnergia,0+(0.25*x)', 'AR_VacaMuerta,0.20-(0.30*x)', 'AR_ReservasAgotadas,0+(0.10*x)',
      'OilSupply,0.15-(0.15*x)'],
     ['PowerBlackouts,0.05+(0.05*x)', 'GDP,-0.01-(0.02*x)', '_All_,-0.01-(0.02*x)', 'Inflation,0.01+(0.02*x)'],
@@ -506,7 +507,7 @@ ev('AR_EvSequia', 'seco', ['_random_,0,0.15', 'AR_Retenciones,0+(0.02*x)'],
    [('GDP', -0.03, 0.80), ('Farmers', -0.06, 0.80), ('AR_ReservasAgotadas', 0.08, 0.85)],
    ('Sequía histórica', 'La peor sequía en sesenta años arrasa la cosecha. Se pierden miles de millones de dólares en exportaciones.'),
    ('Historic drought', 'The worst drought in sixty years wipes out the harvest. Billions of dollars in exports are lost.'))
-ev('AR_EvInundacion', 'agua', ['_random_,0,0.10', 'RoadBuilding,0-(0.05*x)'],
+ev('AR_EvInundacion', 'agua', ['_random_,0,0.10', 'AR_ObraPublicaNacional,0.05-(0.05*x)'],
    [('_All_', -0.02, 0.75), ('Poor', -0.04, 0.75), ('GDP', -0.01, 0.70)],
    ('Inundaciones en el litoral', 'Lluvias extraordinarias desbordan ríos y arroyos. Miles de evacuados y barrios enteros bajo el agua.'),
    ('Floods in the north-east', 'Extraordinary rains burst rivers and streams. Thousands evacuated and whole neighbourhoods under water.'))
@@ -522,7 +523,7 @@ ev('AR_EvVisitaPapal', 'vaticano', ['_random_,0,0.06'],
     'un mensaje sobre la pobreza que nadie puede ignorar.'),
    ('The Pope visits Argentina', 'For the first time since his election, the Argentine Pope tours the country. Huge crowds and a '
     'message about poverty no one can ignore.'))
-ev('AR_EvEscandalo', 'corte', ['_random_,0,0.08', 'Corruption,0+(0.15*x)', 'AR_Coparticipacion,0+(0.04*x)'],
+ev('AR_EvEscandalo', 'corte', ['_random_,0,0.08', 'AR_EscandaloCorrupcion,0+(0.15*x)', 'AR_Coparticipacion,0+(0.04*x)'],
    [('_All_', -0.05, 0.80), ('MiddleIncome', -0.05, 0.80), ('Democracy', -0.02, 0.85)],
    ('Escándalo de corrupción', 'Una investigación periodística revela sobornos en la obra pública. Los cuadernos de un chofer anotan '
     'cada bolso con dinero.'),
@@ -537,7 +538,7 @@ ev('AR_EvTemporada', 'campo', ['_random_,0,0.10', 'AR_BrechaCambiaria,0+(0.06*x)
     'Buenos Aires están llenos.'),
    ('Record foreign tourists', 'With the country cheap in dollars, tourists arrive from all over the world. Bariloche, Iguazú and '
     'Buenos Aires are packed.'))
-ev('AR_EvSaqueos', 'fuego', ['_random_,0,0.03', 'ExtremePoverty,0+(0.15*x)', 'Inflation,0+(0.12*x)', 'AR_PlanesSociales,0-(0.05*x)'],
+ev('AR_EvSaqueos', 'fuego', ['_random_,0,0.03', 'AR_PerdidaPoderAdquisitivo,0+(0.15*x)', 'AR_SaltoCambiario,0+(0.10*x)', 'AR_PlanesSociales,0-(0.05*x)'],
    [('_All_', -0.05, 0.80), ('SelfEmployed', -0.06, 0.80), ('Stability', -0.05, 0.80)],
    ('Saqueos a supermercados', 'Con los precios disparados, grupos saquean supermercados en el conurbano, Rosario y Córdoba.'),
    ('Supermarket looting', 'With prices soaring, crowds loot supermarkets in Greater Buenos Aires, Rosario and Córdoba.'))
@@ -551,7 +552,7 @@ ev('AR_EvPremioCine', 'cine', ['_random_,0,0.05'],
    [('_All_', 0.02, 0.80), ('Liberal', 0.03, 0.80)],
    ('Una película argentina gana el Oscar', 'El cine nacional vuelve a ganar el premio a mejor película internacional.'),
    ('An Argentine film wins the Oscar', 'Argentine cinema wins the award for best international feature once again.'))
-ev('AR_EvIncendios', 'bosque', ['_random_,0,0.07', 'PollutionControls,0-(0.04*x)'],
+ev('AR_EvIncendios', 'bosque', ['_random_,0,0.07', 'AR_LeyGlaciares,0.04-(0.04*x)'],
    [('Environment', -0.03, 0.85), ('Environmentalist', -0.05, 0.80), ('Tourism', -0.02, 0.80)],
    ('Incendios en la Patagonia', 'El fuego avanza sobre bosques nativos de la cordillera. Brigadistas de todo el país combaten las '
     'llamas.'),
@@ -565,7 +566,7 @@ ev('AR_EvTrenes', 'tren', ['_random_,0,0.05', 'AR_SubsidiosTransporte,0.06-(0.06
    [('_All_', -0.03, 0.75), ('Poor', -0.04, 0.75), ('Stability', -0.02, 0.75)],
    ('Accidente ferroviario', 'Un tren sin frenos choca en una estación cabecera. La falta de mantenimiento queda expuesta.'),
    ('Train crash', 'A train with failed brakes crashes into a terminal station. Years of poor maintenance are exposed.'))
-ev('AR_EvCumbre', 'mundo', ['_random_,0,0.06', 'ForeignRelations,0+(0.06*x)'],
+ev('AR_EvCumbre', 'mundo', ['_random_,0,0.06', 'AR_AcuerdoEEUU,0+(0.06*x)'],
    [('ForeignRelations', 0.04, 0.85), ('ForeignInvestment', 0.02, 0.85)],
    ('Cumbre internacional en Buenos Aires', 'Jefes de Estado de todo el mundo llegan a Buenos Aires para una cumbre del G20.'),
    ('International summit in Buenos Aires', 'Heads of state from around the world arrive in Buenos Aires for a G20 summit.'))
@@ -587,7 +588,7 @@ dil('AR_DilDeudaFMI', ['_random_,0,0.15', 'AR_ReservasAgotadas,0+(0.20*x)'],
      ([('AR_ReservasAgotadas', 0.08), ('Patriot', 0.04), ('Capitalist', -0.05), ('ForeignRelations', -0.05)],
       ('Pagar con reservas y no firmar nada', 'El jefe de Gabinete: "Pagamos con lo que tenemos. No vamos a entregar la soberanía."'),
       ('Pay with reserves and sign nothing', 'The chief of staff: "We pay with what we have. We will not hand over our sovereignty."'))])
-dil('AR_DilParitarias', ['_random_,0,0.15', 'Inflation,0+(0.12*x)'],
+dil('AR_DilParitarias', ['_random_,0,0.15', 'AR_PerdidaPoderAdquisitivo,0+(0.12*x)'],
     ('Paritarias en tensión', 'Los gremios piden aumentos por encima de la inflación. Las empresas dicen que no pueden pagar.'),
     ('Tense wage talks', 'Unions demand raises above inflation. Employers say they cannot pay.'),
     [([('TradeUnionist', 0.06), ('Inflation', 0.04), ('Capitalist', -0.04)],
@@ -596,7 +597,7 @@ dil('AR_DilParitarias', ['_random_,0,0.15', 'Inflation,0+(0.12*x)'],
      ([('TradeUnionist', -0.06), ('Inflation', -0.02), ('AR_ParoCGT', 0.06)],
       ('Poner un techo a los aumentos', 'La ministra de Economía: "Si convalidamos esto, la inflación no baja nunca."'),
       ('Cap wage increases', 'The economy minister: "If we approve this, inflation will never come down."'))])
-dil('AR_DilTomaDeTierras', ['_random_,0,0.10', 'PovertyRate,0+(0.10*x)'],
+dil('AR_DilTomaDeTierras', ['_random_,0,0.10', 'AR_PerdidaPoderAdquisitivo,0+(0.10*x)'],
     ('Toma de tierras', 'Miles de familias ocupan un predio en el conurbano. El dueño pide el desalojo inmediato.'),
     ('Land occupation', 'Thousands of families occupy a plot on the outskirts of Buenos Aires. The owner demands immediate eviction.'),
     [([('Conservatives', 0.05), ('Socialist', -0.05), ('Poor', -0.04)],
@@ -659,7 +660,7 @@ dil('AR_DilDolarBlue', ['_random_,0,0.10', 'AR_BrechaCambiaria,0+(0.20*x)'],
      ([('AR_BrechaCambiaria', 0.05), ('BlackMarket', 0.04), ('Wealthy', -0.03)],
       ('Allanar las cuevas', 'El ministro de Seguridad: "Vamos contra los especuladores."'),
       ('Raid the black-market dealers', 'The security minister: "We are going after the speculators."'))])
-dil('AR_DilNarcoRosario', ['_random_,0,0.10', 'Organised Crime,0+(0.15*x)'],
+dil('AR_DilNarcoRosario', ['_random_,0,0.10', 'AR_Narcotrafico,0.15-(0.15*x)'],
     ('Balaceras en Rosario', 'Las bandas narco amenazan al gobernador y atacan comercios. La ciudad vive con miedo.'),
     ('Shootings in Rosario', 'Drug gangs threaten the governor and attack shops. The city lives in fear.'),
     [([('Organised Crime', -0.06), ('Conservatives', 0.05), ('Liberal', -0.04)],
@@ -771,3 +772,23 @@ NAMES = {
                  'Quiroga', 'Ramírez', 'Ríos', 'Rodríguez', 'Rojas', 'Romero', 'Rossi', 'Ruiz', 'Sánchez', 'Sosa', 'Suárez',
                  'Torres', 'Vázquez', 'Villalba', 'Ferreyra', 'Ledesma', 'Coria'],
 }
+
+
+# ---------------------------------------------------------------------------------------------
+# Valores iniciales de las políticas propias en el escenario 2023 (las no listadas arrancan sin implementar)
+# ---------------------------------------------------------------------------------------------
+START_2023 = {'AR_Cepo': 1.0, 'AR_EmisionTesoro': 0.8, 'AR_Retenciones': 0.75, 'AR_ImpuestoPAIS': 0.6, 'AR_AcuerdoFMI': 0.5,
+              'AR_ControlPrecios': 0.4, 'AR_Coparticipacion': 0.6, 'AR_SubsidiosEnergia': 0.67, 'AR_SubsidiosTransporte': 0.7,
+              'AR_Moratoria': 0.6, 'AR_MovilidadJubilatoria': 0.33, 'AR_PlanesSociales': 0.6, 'AR_ModeloSindical': 0.8,
+              'AR_Monotributo': 0.5, 'AR_BienesPersonales': 0.5, 'AR_UniversidadPublica': 0.6, 'AR_CONICET': 0.5,
+              'AR_ReclamoMalvinas': 0.5, 'AR_Mercosur': 0.0, 'AR_VacaMuerta': 0.4, 'AR_Litio': 0.3,
+              'AR_Narcotrafico': 0.3, 'AR_BonoNavidad': 0.3}
+
+# Ampliación 2024-2026 (políticas, situaciones encadenadas, eventos, dilemas, enlaces causales y escenario 2026)
+import sys as _sys
+_mod = _sys.modules[__name__]
+import content_ext as _ext
+_ext.extend(_mod)
+CHAIN_OVERRIDES = _ext.CHAIN_OVERRIDES
+START_2026 = _ext.START_2026
+COUNTRY_2026 = _ext.COUNTRY_2026

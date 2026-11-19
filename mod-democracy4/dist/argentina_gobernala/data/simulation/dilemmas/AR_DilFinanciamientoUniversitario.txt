@@ -1,0 +1,12 @@
+[dilemma]
+name=AR_DilFinanciamientoUniversitario
+
+[influences]
+0 = AR_Grieta,0+(0.08*x)
+1 = AR_ConflictoUniversitario,0+(0.20*x)
+
+[option0]
+OnImplement = CreateGrudge(Young,-0.06,0.9);CreateGrudge(Liberal,-0.04,0.9);CreateGrudge(AR_ConflictoUniversitario,0.08,0.9);CreateGrudge(Capitalist,0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Young,0.05,0.9);CreateGrudge(Liberal,0.04,0.9);CreateGrudge(AR_ConflictoUniversitario,-0.1,0.9);CreateGrudge(Inflation,0.01,0.9);

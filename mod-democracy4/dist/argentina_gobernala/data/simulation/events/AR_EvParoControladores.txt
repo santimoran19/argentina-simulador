@@ -1,0 +1,8 @@
+[config]
+Name = AR_EvParoControladores
+Texture = AR_EvParoControladores.jpg
+OnImplement = CreateGrudge(Tourism,-0.03,0.75);CreateGrudge(MiddleIncome,-0.02,0.75);CreateGrudge(TradeUnionist,0.02,0.75);
+
+[influences]
+0 = AR_Grieta,0+(0.05*x)
+1 = AR_ParitariasEstatales,0.04-(0.04*x)

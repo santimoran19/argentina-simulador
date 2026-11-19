@@ -1,10 +1,9 @@
 [dilemma]
 name=AR_DilTomaDeTierras
-country_specific = argentina
 
 [influences]
-0 = _random_,0,0.10
-1 = PovertyRate,0+(0.10*x)
+0 = AR_Grieta,0+(0.1*x)
+1 = AR_PerdidaPoderAdquisitivo,0+(0.10*x)
 
 [option0]
 OnImplement = CreateGrudge(Conservatives,0.05,0.9);CreateGrudge(Socialist,-0.05,0.9);CreateGrudge(Poor,-0.04,0.9);

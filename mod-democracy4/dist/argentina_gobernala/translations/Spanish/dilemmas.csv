@@ -46,3 +46,42 @@
 #,AR_DilEmisionFinDeAnio,Aguinaldos sin fondos,En diciembre faltan pesos para pagar aguinaldos a estatales y jubilados., 
 #,AR_DilEmisionFinDeAnio_0,Pedirle pesos al Banco Central,El jefe de Gabinete: “Se paga. Después vemos.”
 #,AR_DilEmisionFinDeAnio_1,Pagar en cuotas,La ministra de Economía: “No vamos a emitir. Se paga en dos cuotas.”
+#,AR_DilVetoDiscapacidad,Ley de emergencia en discapacidad,El Congreso aprobó aumentos para prestadores y pensiones por discapacidad., 
+#,AR_DilVetoDiscapacidad_0,Vetarla,La ministra de Economía: “El superávit no se toca. Revisemos primero las pensiones mal otorgadas.”
+#,AR_DilVetoDiscapacidad_1,Promulgarla,El jefe de Gabinete: “No vale la pena pagar este costo político.”
+#,AR_DilFinanciamientoUniversitario,Ley de financiamiento universitario,"Tras una marcha masiva, el Congreso sanciona fondos para universidades y salarios docentes.", 
+#,AR_DilFinanciamientoUniversitario_0,Veto total,El jefe de Gabinete: “Primero que las universidades acepten auditorías.”
+#,AR_DilFinanciamientoUniversitario_1,Promulgar y negociar,El ministro de Educación: “La universidad pública es un orgullo nacional.”
+#,AR_DilGarrahan,Paro en el hospital pediátrico,Los residentes del principal hospital de niños del país paran por salarios., 
+#,AR_DilGarrahan_0,Otorgar un aumento especial,El ministro de Salud: “No podemos perder a los mejores pediatras del país.”
+#,AR_DilGarrahan_1,Sostener la pauta salarial,"La ministra de Economía: “Si cedemos acá, mañana piden todos.”"
+#,AR_DilSwapEEUU,Condiciones del swap con EE.UU.,"Washington ofrece un swap millonario, pero pide limitar la presencia de China en infraestructura estratégica.", 
+#,AR_DilSwapEEUU_0,Aceptar,El canciller: “Es el respaldo que necesitamos para que no haya corrida.”
+#,AR_DilSwapEEUU_1,Rechazar las condiciones,El ministro de Economía: “China es nuestro segundo socio comercial. No podemos elegir.”
+#,AR_DilTechoBanda,El dólar toca el techo de la banda,La presión preelectoral lleva al dólar al límite superior de la banda., 
+#,AR_DilTechoBanda_0,Vender reservas para defenderla,El presidente del Banco Central: “La banda se defiende. Es nuestra palabra.”
+#,AR_DilTechoBanda_1,Dejarlo subir y ampliar la banda,La ministra de Economía: “Que el mercado encuentre su precio.”
+#,AR_DilAerolineas,Privatizar la aerolínea de bandera,"Un grupo inversor ofrece comprar la línea aérea estatal, que pierde dinero.", 
+#,AR_DilAerolineas_0,Venderla,"El ministro de Desregulación: “Que la paguen los que vuelan, no todos los argentinos.”"
+#,AR_DilAerolineas_1,Mantenerla estatal,El jefe de Gabinete: “Conecta a provincias que ninguna empresa privada quiere volar.”
+#,AR_DilPASO,Suspender las primarias,El oficialismo propone suspender las PASO para ahorrar y ordenar la elección., 
+#,AR_DilPASO_0,Suspenderlas,El ministro del Interior: “Es un gasto inútil que los votantes no quieren.”
+#,AR_DilPASO_1,Mantenerlas,El vocero: “No vamos a cambiar las reglas a meses de votar.”
+#,AR_DilImputabilidad,Crimen cometido por un menor,Un adolescente de 15 años mata a un comerciante en un robo. El país discute bajar la edad de imputabilidad., 
+#,AR_DilImputabilidad_0,Impulsar la baja a 14 años,"La ministra de Seguridad: “El que las hace, las paga, tenga la edad que tenga.”"
+#,AR_DilImputabilidad_1,Programa de prevención juvenil,La ministra de Desarrollo Humano: “La cárcel no recupera a un chico de 14 años.”
+#,AR_DilGlaciares,Gobernadores mineros piden cambiar la ley de glaciares,Provincias cordilleranas reclaman flexibilizar la ley para habilitar proyectos de cobre por miles de millones., 
+#,AR_DilGlaciares_0,Flexibilizarla,El secretario de Minería: “El cobre es el próximo Vaca Muerta.”
+#,AR_DilGlaciares_1,Mantenerla,La secretaria de Ambiente: “El agua vale más que el cobre.”
+#,AR_DilDolaresColchon,Los dólares del colchón,Los argentinos guardan más de 200.000 millones de dólares fuera del sistema. ¿Cómo atraerlos?, 
+#,AR_DilDolaresColchon_0,Que se usen sin preguntas,La ministra de Economía: “Cada dólar que sale del colchón es inversión y consumo.”
+#,AR_DilDolaresColchon_1,Exigir declarar el origen,El titular del organismo antilavado: “No podemos ser una lavandería.”
+#,AR_DilCierreINTA,Cierre del instituto agropecuario,El plan de ajuste incluye cerrar estaciones experimentales del INTA en el interior., 
+#,AR_DilCierreINTA_0,Cerrarlas,El ministro de Desregulación: “Que la investigación la pague quien la aprovecha.”
+#,AR_DilCierreINTA_1,Mantenerlas,"El secretario de Agricultura: “Sin el INTA, los pequeños productores quedan solos.”"
+#,AR_DilReformaCGT,La CGT ofrece negociar la reforma laboral,La central obrera promete no hacer paros si se mantienen las cuotas sindicales y los convenios por actividad., 
+#,AR_DilReformaCGT_0,Negociar con la CGT,El ministro del Interior: “Una reforma con acuerdo dura más.”
+#,AR_DilReformaCGT_1,Avanzar sin ellos,La ministra de Capital Humano: “Los privilegios sindicales se terminan.”
+#,AR_DilImportaciones,Los industriales piden frenar las importaciones,"Textiles, metalúrgicas y fabricantes de electrodomésticos denuncian competencia desleal de productos importados.", 
+#,AR_DilImportaciones_0,Subir aranceles,El secretario de Industria: “Sin industria no hay empleo.”
+#,AR_DilImportaciones_1,Mantener la apertura,El ministro de Economía: “Los argentinos merecen precios internacionales.”

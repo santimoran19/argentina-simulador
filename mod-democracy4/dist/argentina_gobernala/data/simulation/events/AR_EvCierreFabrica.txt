@@ -1,0 +1,9 @@
+[config]
+Name = AR_EvCierreFabrica
+Texture = AR_EvCierreFabrica.jpg
+OnImplement = CreateGrudge(TradeUnionist,-0.04,0.8);CreateGrudge(Unemployment,0.02,0.85);CreateGrudge(_All_,-0.02,0.8);
+
+[influences]
+0 = AR_Grieta,0+(0.04*x)
+1 = AR_CierrePymes,0+(0.15*x)
+2 = AR_AtrasoCambiario,0+(0.06*x)

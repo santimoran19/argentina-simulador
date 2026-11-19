@@ -1,0 +1,7 @@
+[config]
+Name = AR_EvMuertePapa
+Texture = AR_EvMuertePapa.jpg
+OnImplement = CreateGrudge(Religious,-0.05,0.85);CreateGrudge(Poor,0.02,0.85);CreateGrudge(_All_,0.01,0.8);
+
+[influences]
+0 = AR_Grieta,0+(0.03*x)

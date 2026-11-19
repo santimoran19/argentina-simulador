@@ -1,9 +1,8 @@
 [dilemma]
 name=AR_DilDolarBlue
-country_specific = argentina
 
 [influences]
-0 = _random_,0,0.10
+0 = AR_Grieta,0+(0.1*x)
 1 = AR_BrechaCambiaria,0+(0.20*x)
 
 [option0]

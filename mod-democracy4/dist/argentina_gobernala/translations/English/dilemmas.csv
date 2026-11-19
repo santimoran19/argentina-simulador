@@ -46,3 +46,42 @@
 #,AR_DilEmisionFinDeAnio,No money for year-end bonuses,In December there are not enough pesos to pay the thirteenth-month bonus to state workers and pensioners., 
 #,AR_DilEmisionFinDeAnio_0,Ask the central bank for pesos,The chief of staff: “We pay. We will deal with it later.”
 #,AR_DilEmisionFinDeAnio_1,Pay in instalments,The economy minister: “We will not print money. It will be paid in two instalments.”
+#,AR_DilVetoDiscapacidad,Disability emergency law,Congress has passed increases for disability care providers and pensions., 
+#,AR_DilVetoDiscapacidad_0,Veto it,The economy minister: “The surplus is untouchable. Let us first review the wrongly granted pensions.”
+#,AR_DilVetoDiscapacidad_1,Sign it,The chief of staff: “This political cost is not worth paying.”
+#,AR_DilFinanciamientoUniversitario,University funding law,"After a huge march, Congress passes funds for universities and lecturers' salaries.", 
+#,AR_DilFinanciamientoUniversitario_0,Full veto,The chief of staff: “First the universities must accept audits.”
+#,AR_DilFinanciamientoUniversitario_1,Sign it and negotiate,The education minister: “Public universities are a source of national pride.”
+#,AR_DilGarrahan,Strike at the children's hospital,Residents at the country's main children's hospital strike over pay., 
+#,AR_DilGarrahan_0,Grant a special raise,The health minister: “We cannot lose the country's best paediatricians.”
+#,AR_DilGarrahan_1,Hold the pay guideline,"The economy minister: “If we give in here, everyone will ask tomorrow.”"
+#,AR_DilSwapEEUU,Terms of the US swap,"Washington offers a huge swap line, but asks to limit China's presence in strategic infrastructure.", 
+#,AR_DilSwapEEUU_0,Accept,The foreign minister: “It is the backing we need to prevent a run.”
+#,AR_DilSwapEEUU_1,Reject the terms,The economy minister: “China is our second trading partner. We cannot pick sides.”
+#,AR_DilTechoBanda,The dollar hits the band ceiling,Pre-election pressure pushes the dollar to the top of the band., 
+#,AR_DilTechoBanda_0,Sell reserves to defend it,The central bank governor: “The band will be defended. Our word is at stake.”
+#,AR_DilTechoBanda_1,Let it rise and widen the band,The economy minister: “Let the market find its price.”
+#,AR_DilAerolineas,Privatise the flag carrier,An investor group offers to buy the loss-making state airline., 
+#,AR_DilAerolineas_0,Sell it,"The deregulation minister: “Let those who fly pay for it, not every Argentine.”"
+#,AR_DilAerolineas_1,Keep it state-owned,The chief of staff: “It connects provinces no private airline wants to serve.”
+#,AR_DilPASO,Suspend the primaries,The governing party proposes suspending the open primaries to save money and simplify the election., 
+#,AR_DilPASO_0,Suspend them,The interior minister: “It is a pointless expense voters do not want.”
+#,AR_DilPASO_1,Keep them,The spokesman: “We will not change the rules months before a vote.”
+#,AR_DilImputabilidad,Crime committed by a minor,A 15-year-old kills a shopkeeper in a robbery. The country debates lowering the age of criminal responsibility., 
+#,AR_DilImputabilidad_0,Push to lower it to 14,"The security minister: “Whoever commits the crime pays for it, whatever their age.”"
+#,AR_DilImputabilidad_1,Youth prevention programme,The human development minister: “Prison does not reform a 14-year-old.”
+#,AR_DilGlaciares,Mining governors want the glacier law changed,Andean provinces demand the law be relaxed to allow multi-billion copper projects., 
+#,AR_DilGlaciares_0,Relax it,The mining secretary: “Copper is the next Vaca Muerta.”
+#,AR_DilGlaciares_1,Keep it,The environment secretary: “Water is worth more than copper.”
+#,AR_DilDolaresColchon,Mattress dollars,Argentines keep over 200 billion dollars outside the banking system. How do you lure them in?, 
+#,AR_DilDolaresColchon_0,"Let them be spent, no questions asked",The economy minister: “Every dollar out of the mattress means investment and spending.”
+#,AR_DilDolaresColchon_1,Require the source to be declared,The anti-money-laundering chief: “We cannot become a laundromat.”
+#,AR_DilCierreINTA,Closing the farm research institute,The austerity plan includes closing agricultural research stations in the provinces., 
+#,AR_DilCierreINTA_0,Close them,The deregulation minister: “Let those who benefit from research pay for it.”
+#,AR_DilCierreINTA_1,Keep them,"The agriculture secretary: “Without the institute, small farmers are on their own.”"
+#,AR_DilReformaCGT,The union federation offers to negotiate,The labour federation promises no strikes if union dues and sector-wide agreements are kept., 
+#,AR_DilReformaCGT_0,Negotiate with the unions,The interior minister: “A reform with consensus lasts longer.”
+#,AR_DilReformaCGT_1,Push ahead without them,The human capital minister: “Union privileges are over.”
+#,AR_DilImportaciones,Manufacturers demand curbs on imports,"Textile mills, metalworkers and appliance makers complain of unfair competition from imports.", 
+#,AR_DilImportaciones_0,Raise tariffs,The industry secretary: “Without industry there are no jobs.”
+#,AR_DilImportaciones_1,Keep markets open,The economy minister: “Argentines deserve international prices.”

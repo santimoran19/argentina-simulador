@@ -1,0 +1,17 @@
+[config]
+name  = argentina2026
+guiname = "Argentina 2026 (después del ajuste)"
+description = "Después de dos años de motosierra, la inflación bajó del 25 % al 2 % mensual, hay superávit fiscal, el cepo se levantó con bandas cambiarias y un swap con Estados Unidos sostuvo al peso. Pero la industria cierra fábricas, el desempleo sube, los jubilados marchan cada miércoles y la oposición se prepara para 2027. ¿Consolidás el modelo o lo corregís?"
+
+jobtitle = "Presidente"
+
+[stats]
+Lema: = "En unión y libertad"
+Población: = "47 millones (2026)"
+Moneda: = "Peso argentino (ARS)"
+Inflación: = "~1,8 % mensual (2026)"
+Pobreza: = "~32 % (1er semestre 2026)"
+Reservas: = "~US$ 50.000 millones"
+Riesgo país: = "~850 puntos"
+Capital: = "Buenos Aires"
+Dificultad: = "Alta"

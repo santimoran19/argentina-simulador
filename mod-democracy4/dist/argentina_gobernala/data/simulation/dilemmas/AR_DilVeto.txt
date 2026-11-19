@@ -1,9 +1,8 @@
 [dilemma]
 name=AR_DilVeto
-country_specific = argentina
 
 [influences]
-0 = _random_,0,0.10
+0 = AR_Grieta,0+(0.1*x)
 1 = AR_MovilidadJubilatoria,0.08-(0.08*x)
 
 [option0]

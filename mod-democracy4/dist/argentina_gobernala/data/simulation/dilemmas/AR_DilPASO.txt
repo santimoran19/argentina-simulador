@@ -1,0 +1,12 @@
+[dilemma]
+name=AR_DilPASO
+
+[influences]
+0 = AR_Grieta,0+(0.05*x)
+1 = AR_EliminarPASO,0+(0.05*x)
+
+[option0]
+OnImplement = CreateGrudge(Democracy,-0.03,0.9);CreateGrudge(Liberal,-0.03,0.9);CreateGrudge(Capitalist,0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Democracy,0.02,0.9);CreateGrudge(Liberal,0.02,0.9);CreateGrudge(AR_BloqueoLegislativo,-0.04,0.9);

@@ -1,8 +1,7 @@
 [config]
 Name = AR_EvPremioCine
 Texture = AR_EvPremioCine.jpg
-country_specific = argentina
 OnImplement = CreateGrudge(_All_,0.02,0.8);CreateGrudge(Liberal,0.03,0.8);
 
 [influences]
-0 = _random_,0,0.05
+0 = AR_Grieta,0+(0.05*x)

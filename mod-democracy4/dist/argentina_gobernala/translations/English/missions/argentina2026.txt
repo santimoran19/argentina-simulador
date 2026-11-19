@@ -1,0 +1,17 @@
+[config]
+name  = argentina2026
+guiname = "Argentina 2026 (after the austerity)"
+description = "After two years of the chainsaw, inflation has fallen from 25% to 2% a month, the budget is in surplus, currency controls were lifted with exchange-rate bands and a US swap propped up the peso. But factories are closing, unemployment is rising, pensioners march every Wednesday and the opposition is gearing up for 2027. Do you consolidate the model or correct course?"
+
+jobtitle = "President"
+
+[stats]
+Motto: = "In union and liberty"
+Population: = "47 million (2026)"
+Currency: = "Argentine peso (ARS)"
+Inflation: = "~1.8% a month (2026)"
+Poverty: = "~32% (first half of 2026)"
+Reserves: = "~US$50 billion"
+Country risk: = "~850 basis points"
+Capital: = "Buenos Aires"
+Difficulty: = "Hard"

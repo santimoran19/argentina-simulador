@@ -1,0 +1,12 @@
+[dilemma]
+name=AR_DilReformaCGT
+
+[influences]
+0 = AR_Grieta,0+(0.06*x)
+1 = AR_ReformaLaboral,0+(0.10*x)
+
+[option0]
+OnImplement = CreateGrudge(TradeUnionist,0.05,0.9);CreateGrudge(AR_ParoCGT,-0.08,0.9);CreateGrudge(Capitalist,-0.04,0.9);
+
+[option1]
+OnImplement = CreateGrudge(TradeUnionist,-0.06,0.9);CreateGrudge(AR_ParoCGT,0.08,0.9);CreateGrudge(Capitalist,0.05,0.9);

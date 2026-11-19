@@ -1,9 +1,8 @@
 [dilemma]
 name=AR_DilGobernadores
-country_specific = argentina
 
 [influences]
-0 = _random_,0,0.12
+0 = AR_Grieta,0+(0.12*x)
 
 [option0]
 OnImplement = CreateGrudge(Corruption,0.03,0.9);CreateGrudge(Stability,0.04,0.9);CreateGrudge(Capitalist,-0.02,0.9);

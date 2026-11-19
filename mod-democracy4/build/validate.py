@@ -61,6 +61,8 @@ def check_influence(where, i):
     if parts[0] == '_random_':
         if len(parts) != 3: err('{}: _random_ necesita mínimo y máximo'.format(where))
         return
+    if parts[0] not in OWN_POL | OWN_SIT:
+        err('{}: la influencia {!r} no es exclusiva de Argentina (aparecería con otros países)'.format(where, parts[0]))
     check_effect(where, i, -0.5, 0.5)
 
 
@@ -120,6 +122,45 @@ for d in C.DILEMMAS:
             if t not in KNOWN: err(w + ': nombre desconocido ' + t)
         if not es[0] or not en[0]: err(w + ': opción sin texto')
 
+# ---------------- escenarios ----------------
+for label, start in (('2023', C.START_2023), ('2026', C.START_2026)):
+    for k, v in start.items():
+        if k not in OWN_POL: err('escenario {}: política inexistente {}'.format(label, k))
+        if not 0 <= v <= 1: err('escenario {}: valor fuera de 0-1 en {}'.format(label, k))
+for k in C.COUNTRY_2026['base_changes']:
+    if k not in BASE: err('escenario 2026: política base desconocida ' + k)
+for m in (C.COUNTRY, C.COUNTRY_2026['mission']):
+    for f in ('data/missions/{0}/{0}.txt'.format(m), 'translations/English/missions/{}.txt'.format(m),
+              'translations/Spanish/missions/{}.txt'.format(m)):
+        if not os.path.exists(os.path.join(OUT, f)): err('falta ' + f)
+for label, host, tgt, eq, inertia in C.CHAIN_OVERRIDES:
+    if host not in BASE or tgt not in BASE: err('enlace {}: nombre desconocido'.format(label))
+    if host == tgt: err('enlace {}: usa el mismo valor como causa y efecto'.format(label))
+    check_formula('enlace ' + label, eq, -0.5, 0.5)
+for e in C.EVENTS + C.DILEMMAS:
+    if not any(i.split(',')[0] in OWN_POL | OWN_SIT for i in e['influences']) and not any(i.startswith('_random_') for i in e['influences']):
+        err('{}: sin ninguna influencia'.format(e['name']))
+
+# ---------------- cadenas entre situaciones ----------------
+edges = {}
+for st in C.SITUATIONS:
+    for c in st['causes'][1:]:
+        src, f = c.split(',')[0], c.split(',')[1]
+        if src in OWN_SIT:
+            gain = eval(f.replace('^', '**'), {'__builtins__': {}}, {'x': 1}) - eval(f.replace('^', '**'), {'__builtins__': {}}, {'x': 0})
+            edges.setdefault(src, []).append((st['name'], gain))
+for a, outs in edges.items():
+    for b, g1 in outs:
+        for c2, g2 in edges.get(b, []):
+            if c2 == a and g1 > 0.15 and g2 > 0.15:
+                warn('realimentación fuerte entre {} y {} ({:+.2f} / {:+.2f})'.format(a, b, g1, g2))
+def reach(n, seen):
+    for b, g in edges.get(n, []):
+        if g > 0 and b not in seen:
+            seen.add(b); reach(b, seen)
+    return seen
+CHAINS = {n: sorted(reach(n, set()) - {n}) for n in OWN_SIT}
+
 # ---------------- país ----------------
 for k in C.COUNTRY_POLICIES:
     if k not in BASE and not k.startswith('_prereq_'): err('país: política inicial desconocida ' + k)
@@ -149,5 +190,8 @@ for lang in ('English', 'Spanish'):
 print('Validación del mod {}'.format(C.MOD_NAME))
 for w in warnings: print('  AVISO  ', w)
 for e in errors: print('  ERROR  ', e)
+print('Cadenas: cuántas situaciones puede desencadenar cada una (efecto dominó)')
+for n, r in sorted(CHAINS.items(), key=lambda kv: -len(kv[1]))[:8]:
+    print('  {:<28} -> {:2d}: {}'.format(n, len(r), ', '.join(x.replace('AR_', '') for x in r[:7]) + (' ...' if len(r) > 7 else '')))
 print('{} errores, {} avisos'.format(len(errors), len(warnings)))
 sys.exit(1 if errors else 0)

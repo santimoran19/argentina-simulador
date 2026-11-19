@@ -1,0 +1,9 @@
+[config]
+Name = AR_EvRescateEEUU
+Texture = AR_EvRescateEEUU.jpg
+OnImplement = CreateGrudge(CurrencyStrength,0.06,0.85);CreateGrudge(AR_CorridaCambiaria,-0.1,0.85);CreateGrudge(Patriot,-0.03,0.8);CreateGrudge(Capitalist,0.04,0.85);
+
+[influences]
+0 = AR_Grieta,0+(0.04*x)
+1 = AR_AcuerdoEEUU,0+(0.10*x)
+2 = AR_CorridaCambiaria,0+(0.10*x)

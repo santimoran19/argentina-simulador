@@ -1,9 +1,8 @@
 [dilemma]
 name=AR_DilParoDocente
-country_specific = argentina
 
 [influences]
-0 = _random_,0,0.12
+0 = AR_Grieta,0+(0.12*x)
 1 = AR_UniversidadPublica,0.06-(0.06*x)
 
 [option0]

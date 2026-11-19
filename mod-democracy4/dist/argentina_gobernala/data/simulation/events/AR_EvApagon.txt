@@ -1,10 +1,9 @@
 [config]
 Name = AR_EvApagon
 Texture = AR_EvApagon.jpg
-country_specific = argentina
 OnImplement = CreateGrudge(_All_,-0.04,0.7);CreateGrudge(MiddleIncome,-0.04,0.7);CreateGrudge(GDP,-0.01,0.6);
 
 [influences]
-0 = _random_,0,0.06
+0 = AR_Grieta,0+(0.06*x)
 1 = AR_CrisisEnergetica,0+(0.20*x)
 2 = AR_SubsidiosEnergia,0+(0.04*x)

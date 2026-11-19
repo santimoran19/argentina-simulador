@@ -1,9 +1,8 @@
 [dilemma]
 name=AR_DilTarifazo
-country_specific = argentina
 
 [influences]
-0 = _random_,0,0.12
+0 = AR_Grieta,0+(0.12*x)
 1 = AR_SubsidiosEnergia,0+(0.10*x)
 
 [option0]

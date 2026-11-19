@@ -92,6 +92,7 @@ TobaccoTax = 0.7
 UnemployedBenefit = 0.35
 UniversityGrants = 0.65
 WorkSafetyLaw = 0.6
+RentControls = 0.6
 _prereq_argentina_gb = 1
 AR_Cepo = 1.0
 AR_EmisionTesoro = 0.8
@@ -116,6 +117,19 @@ AR_VacaMuerta = 0.4
 AR_Litio = 0.3
 AR_Narcotrafico = 0.3
 AR_BonoNavidad = 0.3
+AR_AcuerdoEEUU = 0.2
+AR_LeyDiscapacidad = 0.6
+AR_EmergenciaPediatrica = 0.6
+AR_ControlANMAT = 0.5
+AR_Ganancias4ta = 0.1
+AR_EliminarPASO = 1.0
+AR_TarjetaAlimentar = 0.7
+AR_ObraPublicaNacional = 0.6
+AR_LeyGlaciares = 0.6
+AR_Hidrovia = 0.3
+AR_TasaBCRA = 0.9
+AR_ParitariasEstatales = 0.6
+AR_Desregulacion = 0.1
 
 [options]
 MULTIPLEPARTIES

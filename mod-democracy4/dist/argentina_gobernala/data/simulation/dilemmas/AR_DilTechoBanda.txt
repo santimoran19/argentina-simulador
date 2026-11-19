@@ -1,0 +1,13 @@
+[dilemma]
+name=AR_DilTechoBanda
+
+[influences]
+0 = AR_Grieta,0+(0.08*x)
+1 = AR_BandasCambiarias,0+(0.10*x)
+2 = AR_BrechaCambiaria,0+(0.10*x)
+
+[option0]
+OnImplement = CreateGrudge(AR_ReservasAgotadas,0.08,0.9);CreateGrudge(Inflation,-0.02,0.9);CreateGrudge(CurrencyStrength,0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(AR_SaltoCambiario,0.1,0.9);CreateGrudge(Inflation,0.04,0.9);CreateGrudge(Farmers,0.03,0.9);

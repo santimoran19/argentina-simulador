@@ -82,40 +82,71 @@ def build():
     write('data/simulation/situations.csv', csv_text(rows))
 
     # ---------- eventos ----------
+    # El azar se ata a "La grieta" (situación que sólo existe en Argentina y nunca baja de 0,4): así los eventos y
+    # dilemas aparecen en los dos escenarios argentinos y nunca en partidas de otros países.
+    def gate(infl):
+        out = []
+        for x in infl:
+            if x.startswith('_random_,'):
+                _r, lo, hi = x.split(',')
+                lo, hi = float(lo), float(hi)
+                out.append('AR_Grieta,{:g}+({:g}*x)'.format(lo, hi - lo))
+            else:
+                out.append(x)
+        return out
+
     for e in C.EVENTS:
         grudges = ''.join('CreateGrudge({},{},{});'.format(t, a, d) for t, a, d in e['grudges'])
-        infl = '\n'.join('{} = {}'.format(i, x) for i, x in enumerate(e['influences']))
+        infl = '\n'.join('{} = {}'.format(i, x) for i, x in enumerate(gate(e['influences'])))
         write('data/simulation/events/{}.txt'.format(e['name']),
-              '[config]\nName = {}\nTexture = {}.jpg\ncountry_specific = {}\nOnImplement = {}\n\n[influences]\n{}\n'.format(
-                  e['name'], e['name'], C.COUNTRY, grudges, infl))
+              '[config]\nName = {}\nTexture = {}.jpg\nOnImplement = {}\n\n[influences]\n{}\n'.format(
+                  e['name'], e['name'], grudges, infl))
 
     # ---------- dilemas ----------
     for d in C.DILEMMAS:
-        infl = '\n'.join('{} = {}'.format(i, x) for i, x in enumerate(d['influences']))
+        infl = '\n'.join('{} = {}'.format(i, x) for i, x in enumerate(gate(d['influences'])))
         opts = ''
         for i, (grudges, _es, _en) in enumerate(d['options']):
             g = ''.join('CreateGrudge({},{},0.9);'.format(t, a) for t, a in grudges)
             opts += '\n[option{}]\nOnImplement = {}\n'.format(i, g)
         write('data/simulation/dilemmas/{}.txt'.format(d['name']),
-              '[dilemma]\nname={}\ncountry_specific = {}\n\n[influences]\n{}\n{}'.format(d['name'], C.COUNTRY, infl, opts))
+              '[dilemma]\nname={}\n\n[influences]\n{}\n{}'.format(d['name'], infl, opts))
 
-    # ---------- país ----------
-    cfg = '\n'.join('{} = {}'.format(k, v) for k, v in C.COUNTRY_CONFIG.items())
-    pols = {**C.COUNTRY_POLICIES, C.PREREQ: 1}
-    # Las políticas propias arrancan como en Argentina a fines de 2023
-    start = {'AR_Cepo': 1.0, 'AR_EmisionTesoro': 0.8, 'AR_Retenciones': 0.75, 'AR_ImpuestoPAIS': 0.6, 'AR_AcuerdoFMI': 0.5,
-             'AR_ControlPrecios': 0.4, 'AR_Coparticipacion': 0.6, 'AR_SubsidiosEnergia': 0.67, 'AR_SubsidiosTransporte': 0.7,
-             'AR_Moratoria': 0.6, 'AR_MovilidadJubilatoria': 0.33, 'AR_PlanesSociales': 0.6, 'AR_ModeloSindical': 0.8,
-             'AR_Monotributo': 0.5, 'AR_BienesPersonales': 0.5, 'AR_UniversidadPublica': 0.6, 'AR_CONICET': 0.5,
-             'AR_ReclamoMalvinas': 0.5, 'AR_Mercosur': 0.0, 'AR_VacaMuerta': 0.4, 'AR_Litio': 0.3,
-             'AR_Narcotrafico': 0.3, 'AR_BonoNavidad': 0.3}
-    pols.update(start)
-    pol_txt = '\n'.join('{} = {}'.format(k, v) for k, v in pols.items())
-    write('data/missions/{0}/{0}.txt'.format(C.COUNTRY),
-          '[config]\n{}\n\n[policies]\n{}\n\n[options]\nMULTIPLEPARTIES\n'.format(cfg, pol_txt))
-    for label, target, eq in C.COUNTRY_OVERRIDES:
-        write('data/missions/{}/overrides/{}.ini'.format(C.COUNTRY, label),
-              '[override]\nTargetName = "{0}"\nHostName = "{0}"\nEquation = "{1}"\nInertia = 0\n'.format(target, eq))
+    # ---------- países: escenario 2023 y escenario 2026 ----------
+    def mission(name, cfg_over, base_changes, start, text):
+        cfg = dict(C.COUNTRY_CONFIG)
+        cfg['name '] = name
+        cfg.update(cfg_over)
+        pols = dict(C.COUNTRY_POLICIES)
+        for k, v in base_changes.items():
+            if v is None:
+                pols.pop(k, None)
+            else:
+                pols[k] = v
+        pols[C.PREREQ] = 1
+        pols.update(start)
+        write('data/missions/{0}/{0}.txt'.format(name),
+              '[config]\n{}\n\n[policies]\n{}\n\n[options]\nMULTIPLEPARTIES\n'.format(
+                  '\n'.join('{} = {}'.format(k, v) for k, v in cfg.items()),
+                  '\n'.join('{} = {}'.format(k, v) for k, v in pols.items())))
+        for label, target, eq in C.COUNTRY_OVERRIDES:
+            write('data/missions/{}/overrides/{}.ini'.format(name, label),
+                  '[override]\nTargetName = "{0}"\nHostName = "{0}"\nEquation = "{1}"\nInertia = 0\n'.format(target, eq))
+        for label, host, target, eq, inertia in C.CHAIN_OVERRIDES:
+            write('data/missions/{}/overrides/{}.ini'.format(name, label),
+                  '[override]\nTargetName = "{}"\nHostName = "{}"\nEquation = "{}"\nInertia = {}\n'.format(target, host, eq, inertia))
+        for lang, code in LANGS.items():
+            ct = text[code]
+            stats = '\n'.join('{}: = "{}"'.format(k, v) for k, v in ct['stats'])
+            write('translations/{}/missions/{}.txt'.format(lang, name),
+                  '[config]\nname  = {}\nguiname = "{}"\ndescription = "{}"\n\njobtitle = "{}"\n\n[stats]\n{}\n'.format(
+                      name, ct['guiname'], ct['description'], ct['jobtitle'], stats))
+
+    mission(C.COUNTRY, {}, {'RentControls': 0.6}, C.START_2023, C.COUNTRY_TEXT)
+    c26 = C.COUNTRY_2026
+    mission(c26['mission'], {'GUID': c26['guid'], 'economic_cycle_start': c26['cycle'], 'difficulty': c26['difficulty'],
+                             'starting_debt': c26['debt'], 'apathy': c26['apathy']},
+            c26['base_changes'], C.START_2026, c26['text'])
 
     # ---------- nombres ----------
     write('data/names/argentinanames_gb.txt', ''.join('[{}]\n{}\n\n'.format(k, '\n'.join(v)) for k, v in C.NAMES.items()))
@@ -134,11 +165,6 @@ def build():
                 drows.append(['#', '{}_{}'.format(d['name'], i), t[0], t[1]])
         write(base + 'dilemmas.csv', csv_text(drows))
         write(base + 'sliders.csv', csv_text([['#', k] + v[code] for k, v in C.SLIDERS.items()]))
-        ct = C.COUNTRY_TEXT[code]
-        stats = '\n'.join('{}: = "{}"'.format(k, v) for k, v in ct['stats'])
-        write(base + 'missions/{}.txt'.format(C.COUNTRY),
-              '[config]\nname  = {}\nguiname = "{}"\ndescription = "{}"\n\njobtitle = "{}"\n\n[stats]\n{}\n'.format(
-                  C.COUNTRY, ct['guiname'], ct['description'], ct['jobtitle'], stats))
 
     # ---------- gráficos ----------
     copied = 0
@@ -152,8 +178,9 @@ def build():
                 shutil.copy2(src, dst)
                 copied += 1
     print('Mod generado en', OUT)
-    print('  {} políticas, {} situaciones, {} eventos, {} dilemas, {} deslizadores, {} overrides del país, {} gráficos'.format(
-        len(C.POLICIES), len(C.SITUATIONS), len(C.EVENTS), len(C.DILEMMAS), len(C.SLIDERS), len(C.COUNTRY_OVERRIDES), copied))
+    print('  {} políticas, {} situaciones, {} eventos, {} dilemas, {} deslizadores, 2 escenarios, {} rasgos y {} enlaces causales '
+          'por escenario, {} gráficos'.format(len(C.POLICIES), len(C.SITUATIONS), len(C.EVENTS), len(C.DILEMMAS), len(C.SLIDERS),
+                                             len(C.COUNTRY_OVERRIDES), len(C.CHAIN_OVERRIDES), copied))
 
 
 if __name__ == '__main__':

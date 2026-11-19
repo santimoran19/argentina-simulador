@@ -1,0 +1,8 @@
+[config]
+Name = AR_EvAranceles
+Texture = AR_EvAranceles.jpg
+OnImplement = CreateGrudge(AR_GuerraComercial,0.55,0.92);CreateGrudge(InternationalTrade,-0.04,0.85);CreateGrudge(Farmers,0.03,0.85);CreateGrudge(GDP,-0.01,0.8);
+
+[influences]
+0 = _random_,0,0.05
+1 = AR_AcuerdoEEUU,0+(0.02*x)

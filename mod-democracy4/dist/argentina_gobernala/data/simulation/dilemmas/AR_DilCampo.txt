@@ -2,7 +2,7 @@
 name=AR_DilCampo
 
 [influences]
-0 = AR_Grieta,0+(0.1*x)
+0 = _random_,0,0.10
 1 = AR_Retenciones,0+(0.15*x)
 
 [option0]

@@ -1,0 +1,8 @@
+[config]
+Name = AR_EvOrmuz
+Texture = AR_EvOrmuz.jpg
+OnImplement = CreateGrudge(AR_CrisisMedioOriente,0.55,0.92);CreateGrudge(OilPrice,0.08,0.85);CreateGrudge(Inflation,0.03,0.8);CreateGrudge(AR_BoomEnergetico,0.15,0.88);
+
+[influences]
+0 = _random_,0,0.04
+1 = AR_RelacionIsrael,0+(0.02*x)

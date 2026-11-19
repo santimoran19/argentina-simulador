@@ -4,5 +4,5 @@ Texture = AR_EvLitio.jpg
 OnImplement = CreateGrudge(ForeignInvestment,0.04,0.85);CreateGrudge(GDP,0.01,0.85);CreateGrudge(Environmentalist,-0.03,0.8);
 
 [influences]
-0 = AR_Grieta,0+(0.06*x)
+0 = _random_,0,0.06
 1 = AR_Litio,0+(0.12*x)

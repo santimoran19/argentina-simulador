@@ -1,0 +1,8 @@
+[config]
+Name = AR_EvChinaSoja
+Texture = AR_EvChinaSoja.jpg
+OnImplement = CreateGrudge(Farmers,0.05,0.85);CreateGrudge(CurrencyStrength,0.03,0.85);CreateGrudge(AR_ReservasAgotadas,-0.05,0.85);
+
+[influences]
+0 = _random_,0,0.04
+1 = AR_RelacionChina,0+(0.05*x)

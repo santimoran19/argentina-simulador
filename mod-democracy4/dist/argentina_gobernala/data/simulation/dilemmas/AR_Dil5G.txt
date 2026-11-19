@@ -1,0 +1,12 @@
+[dilemma]
+name=AR_Dil5G
+
+[influences]
+0 = _random_,0,0.04
+1 = AR_RelacionChina,0+(0.03*x)
+
+[option0]
+OnImplement = CreateGrudge(ForeignRelations,0.03,0.9);CreateGrudge(Technology,-0.01,0.9);CreateGrudge(Capitalist,0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Technology,0.02,0.9);CreateGrudge(ForeignRelations,-0.03,0.9);CreateGrudge(MiddleIncome,0.01,0.9);

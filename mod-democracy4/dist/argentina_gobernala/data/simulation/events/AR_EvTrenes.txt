@@ -4,5 +4,5 @@ Texture = AR_EvTrenes.jpg
 OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(Poor,-0.04,0.75);CreateGrudge(Stability,-0.02,0.75);
 
 [influences]
-0 = AR_Grieta,0+(0.05*x)
+0 = _random_,0,0.05
 1 = AR_SubsidiosTransporte,0.06-(0.06*x)

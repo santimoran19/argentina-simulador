@@ -1,0 +1,8 @@
+[config]
+Name = AR_EvWallStreet
+Texture = AR_EvWallStreet.jpg
+OnImplement = CreateGrudge(AR_CrisisFinancieraGlobal,0.55,0.92);CreateGrudge(ForeignInvestment,-0.05,0.85);CreateGrudge(GDP,-0.02,0.85);
+
+[influences]
+0 = _random_,0,0.03
+1 = AR_TasasFedAltas,0+(0.05*x)

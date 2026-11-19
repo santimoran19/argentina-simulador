@@ -25,7 +25,8 @@ def f(expr, x):
     return eval(expr.replace('^', '**'), {'__builtins__': {}}, {'x': x})
 
 
-def run(label, start, turns=24):
+def run(label, start, turns=24, boosts=()):
+    boost = {t: float(eq) for _l, t, eq in boosts}
     pol = {p['name']: 0.0 for p in C.POLICIES}
     pol.update(start)
     val = {s['name']: 0.0 for s in C.SITUATIONS}
@@ -34,7 +35,7 @@ def run(label, start, turns=24):
     for _ in range(turns):
         new = {}
         for s in C.SITUATIONS:
-            v = float(s['causes'][0].split(',')[1])
+            v = float(s['causes'][0].split(',')[1]) + boost.get(s['name'], 0.0)
             for c in s['causes'][1:]:
                 src, ex = c.split(',')[0], c.split(',')[1]
                 x = pol.get(src, val.get(src, BASE[label].get(src)))
@@ -55,8 +56,10 @@ def run(label, start, turns=24):
 
 
 if __name__ == '__main__':
-    for label, start in (('2023', C.START_2023), ('2026', C.START_2026)):
-        on, val, hist = run(label, start)
+    BASE['global'] = dict(BASE['2026'], Inflation=0.45, CurrencyStrength=0.6)
+    for label, start, boosts in (('2023', C.START_2023, ()), ('2026', C.START_2026, ()),
+                                 ('global', C.START_2026, C.COUNTRY_GLOBAL['boosts'])):
+        on, val, hist = run(label, start, boosts=boosts)
         good = [n for n in on if next(s for s in C.SITUATIONS if s['name'] == n)['positive']]
         bad = [n for n in on if n not in good]
         print('Escenario {}: {} situaciones activas tras 2 años de políticas fijas'.format(label, len(on)))

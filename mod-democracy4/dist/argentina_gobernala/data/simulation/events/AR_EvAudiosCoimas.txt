@@ -4,6 +4,6 @@ Texture = AR_EvAudiosCoimas.jpg
 OnImplement = CreateGrudge(_All_,-0.06,0.85);CreateGrudge(Parents,-0.06,0.85);CreateGrudge(AR_EscandaloCorrupcion,0.1,0.9);
 
 [influences]
-0 = AR_Grieta,0+(0.05*x)
+0 = _random_,0,0.05
 1 = AR_LeyDiscapacidad,0+(0.04*x)
 2 = AR_EscandaloCorrupcion,0+(0.10*x)

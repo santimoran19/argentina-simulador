@@ -2,7 +2,7 @@
 name=AR_DilDeudaFMI
 
 [influences]
-0 = AR_Grieta,0+(0.15*x)
+0 = _random_,0,0.15
 1 = AR_ReservasAgotadas,0+(0.20*x)
 
 [option0]

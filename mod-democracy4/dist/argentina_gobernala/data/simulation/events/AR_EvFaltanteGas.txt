@@ -4,5 +4,5 @@ Texture = AR_EvFaltanteGas.jpg
 OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(Motorist_freq,-0.02,0.75);CreateGrudge(GDP,-0.01,0.7);
 
 [influences]
-0 = AR_Grieta,0+(0.05*x)
+0 = _random_,0,0.05
 1 = AR_CrisisEnergetica,0+(0.15*x)

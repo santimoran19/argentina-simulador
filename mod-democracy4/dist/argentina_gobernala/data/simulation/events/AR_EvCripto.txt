@@ -4,5 +4,5 @@ Texture = AR_EvCripto.jpg
 OnImplement = CreateGrudge(_All_,-0.04,0.85);CreateGrudge(MiddleIncome,-0.04,0.85);CreateGrudge(Corruption,0.03,0.9);CreateGrudge(Liberal,-0.03,0.85);
 
 [influences]
-0 = AR_Grieta,0+(0.05*x)
+0 = _random_,0,0.05
 1 = AR_Desregulacion,0+(0.03*x)

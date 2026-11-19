@@ -4,7 +4,7 @@ Texture = AR_EvSaqueos.jpg
 OnImplement = CreateGrudge(_All_,-0.05,0.8);CreateGrudge(SelfEmployed,-0.06,0.8);CreateGrudge(Stability,-0.05,0.8);
 
 [influences]
-0 = AR_Grieta,0+(0.03*x)
+0 = _random_,0,0.03
 1 = AR_PerdidaPoderAdquisitivo,0+(0.15*x)
 2 = AR_SaltoCambiario,0+(0.10*x)
 3 = AR_PlanesSociales,0-(0.05*x)

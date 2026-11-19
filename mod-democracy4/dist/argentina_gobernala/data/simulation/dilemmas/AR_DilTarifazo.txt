@@ -2,7 +2,7 @@
 name=AR_DilTarifazo
 
 [influences]
-0 = AR_Grieta,0+(0.12*x)
+0 = _random_,0,0.12
 1 = AR_SubsidiosEnergia,0+(0.10*x)
 
 [option0]

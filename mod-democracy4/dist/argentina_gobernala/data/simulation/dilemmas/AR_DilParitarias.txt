@@ -2,7 +2,7 @@
 name=AR_DilParitarias
 
 [influences]
-0 = AR_Grieta,0+(0.15*x)
+0 = _random_,0,0.15
 1 = AR_PerdidaPoderAdquisitivo,0+(0.12*x)
 
 [option0]

@@ -82,18 +82,10 @@ def build():
     write('data/simulation/situations.csv', csv_text(rows))
 
     # ---------- eventos ----------
-    # El azar se ata a "La grieta" (situación que sólo existe en Argentina y nunca baja de 0,4): así los eventos y
-    # dilemas aparecen en los dos escenarios argentinos y nunca en partidas de otros países.
+    # El mod está pensado para jugar con Argentina: los eventos usan el azar del juego tal cual y pueden depender de
+    # valores globales. (Si algún día hace falta limitarlos a Argentina, este es el lugar.)
     def gate(infl):
-        out = []
-        for x in infl:
-            if x.startswith('_random_,'):
-                _r, lo, hi = x.split(',')
-                lo, hi = float(lo), float(hi)
-                out.append('AR_Grieta,{:g}+({:g}*x)'.format(lo, hi - lo))
-            else:
-                out.append(x)
-        return out
+        return list(infl)
 
     for e in C.EVENTS:
         grudges = ''.join('CreateGrudge({},{},{});'.format(t, a, d) for t, a, d in e['grudges'])
@@ -113,7 +105,7 @@ def build():
               '[dilemma]\nname={}\n\n[influences]\n{}\n{}'.format(d['name'], infl, opts))
 
     # ---------- países: escenario 2023 y escenario 2026 ----------
-    def mission(name, cfg_over, base_changes, start, text):
+    def mission(name, cfg_over, base_changes, start, text, boosts=()):
         cfg = dict(C.COUNTRY_CONFIG)
         cfg['name '] = name
         cfg.update(cfg_over)
@@ -135,6 +127,9 @@ def build():
         for label, host, target, eq, inertia in C.CHAIN_OVERRIDES:
             write('data/missions/{}/overrides/{}.ini'.format(name, label),
                   '[override]\nTargetName = "{}"\nHostName = "{}"\nEquation = "{}"\nInertia = {}\n'.format(target, host, eq, inertia))
+        for label, target, eq in boosts:
+            write('data/missions/{}/overrides/{}.ini'.format(name, label),
+                  '[override]\nTargetName = "{0}"\nHostName = "{0}"\nEquation = "{1}"\nInertia = 0\n'.format(target, eq))
         for lang, code in LANGS.items():
             ct = text[code]
             stats = '\n'.join('{}: = "{}"'.format(k, v) for k, v in ct['stats'])
@@ -147,6 +142,10 @@ def build():
     mission(c26['mission'], {'GUID': c26['guid'], 'economic_cycle_start': c26['cycle'], 'difficulty': c26['difficulty'],
                              'starting_debt': c26['debt'], 'apathy': c26['apathy']},
             c26['base_changes'], C.START_2026, c26['text'])
+    cg = C.COUNTRY_GLOBAL
+    mission(cg['mission'], {'GUID': cg['guid'], 'economic_cycle_start': cg['cycle'], 'difficulty': cg['difficulty'],
+                            'starting_debt': cg['debt'], 'apathy': cg['apathy']},
+            c26['base_changes'], C.START_2026, cg['text'], cg['boosts'])
 
     # ---------- nombres ----------
     write('data/names/argentinanames_gb.txt', ''.join('[{}]\n{}\n\n'.format(k, '\n'.join(v)) for k, v in C.NAMES.items()))
@@ -178,7 +177,7 @@ def build():
                 shutil.copy2(src, dst)
                 copied += 1
     print('Mod generado en', OUT)
-    print('  {} políticas, {} situaciones, {} eventos, {} dilemas, {} deslizadores, 2 escenarios, {} rasgos y {} enlaces causales '
+    print('  {} políticas, {} situaciones, {} eventos, {} dilemas, {} deslizadores, 3 escenarios, {} rasgos y {} enlaces causales '
           'por escenario, {} gráficos'.format(len(C.POLICIES), len(C.SITUATIONS), len(C.EVENTS), len(C.DILEMMAS), len(C.SLIDERS),
                                              len(C.COUNTRY_OVERRIDES), len(C.CHAIN_OVERRIDES), copied))
 

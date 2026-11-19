@@ -792,3 +792,8 @@ _ext.extend(_mod)
 CHAIN_OVERRIDES = _ext.CHAIN_OVERRIDES
 START_2026 = _ext.START_2026
 COUNTRY_2026 = _ext.COUNTRY_2026
+
+# Contenido internacional (política exterior, crisis globales, eventos y dilemas del mundo, escenario "tormenta global")
+import content_intl as _intl
+_intl.extend(_mod)
+COUNTRY_GLOBAL = _intl.COUNTRY_GLOBAL

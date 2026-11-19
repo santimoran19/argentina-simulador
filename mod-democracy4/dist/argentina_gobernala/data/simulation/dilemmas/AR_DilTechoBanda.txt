@@ -2,7 +2,7 @@
 name=AR_DilTechoBanda
 
 [influences]
-0 = AR_Grieta,0+(0.08*x)
+0 = _random_,0,0.08
 1 = AR_BandasCambiarias,0+(0.10*x)
 2 = AR_BrechaCambiaria,0+(0.10*x)
 

@@ -2,7 +2,7 @@
 name=AR_DilMalvinas
 
 [influences]
-0 = AR_Grieta,0+(0.06*x)
+0 = _random_,0,0.06
 1 = AR_ReclamoMalvinas,0+(0.05*x)
 
 [option0]

@@ -1,0 +1,8 @@
+[config]
+Name = AR_EvMigracion
+Texture = AR_EvMigracion.jpg
+OnImplement = CreateGrudge(AR_CrisisMigratoria,0.55,0.92);CreateGrudge(Immigration,0.04,0.85);
+
+[influences]
+0 = _random_,0,0.04
+1 = AR_PoliticaMigratoria,0.03-(0.03*x)

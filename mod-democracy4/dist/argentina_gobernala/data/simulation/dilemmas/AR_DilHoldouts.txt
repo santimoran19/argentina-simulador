@@ -2,7 +2,7 @@
 name=AR_DilHoldouts
 
 [influences]
-0 = AR_Grieta,0+(0.08*x)
+0 = _random_,0,0.08
 1 = AR_Default,0+(0.25*x)
 
 [option0]

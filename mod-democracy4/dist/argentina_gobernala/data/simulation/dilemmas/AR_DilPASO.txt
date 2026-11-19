@@ -2,7 +2,7 @@
 name=AR_DilPASO
 
 [influences]
-0 = AR_Grieta,0+(0.05*x)
+0 = _random_,0,0.05
 1 = AR_EliminarPASO,0+(0.05*x)
 
 [option0]

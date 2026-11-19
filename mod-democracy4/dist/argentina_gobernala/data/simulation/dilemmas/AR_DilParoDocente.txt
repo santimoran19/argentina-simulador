@@ -2,7 +2,7 @@
 name=AR_DilParoDocente
 
 [influences]
-0 = AR_Grieta,0+(0.12*x)
+0 = _random_,0,0.12
 1 = AR_UniversidadPublica,0.06-(0.06*x)
 
 [option0]

@@ -4,5 +4,5 @@ Texture = AR_EvSequia.jpg
 OnImplement = CreateGrudge(GDP,-0.03,0.8);CreateGrudge(Farmers,-0.06,0.8);CreateGrudge(AR_ReservasAgotadas,0.08,0.85);
 
 [influences]
-0 = AR_Grieta,0+(0.15*x)
+0 = _random_,0,0.15
 1 = AR_Retenciones,0+(0.02*x)

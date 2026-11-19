@@ -130,6 +130,12 @@ AR_Hidrovia = 0.3
 AR_TasaBCRA = 0.9
 AR_ParitariasEstatales = 0.6
 AR_Desregulacion = 0.1
+AR_PosturaUcrania = 0.0
+AR_RelacionIsrael = 0.0
+AR_RelacionChina = 1.0
+AR_MisionesPaz = 0.4
+AR_Antartida = 0.4
+AR_PoliticaMigratoria = 0.0
 
 [options]
 MULTIPLEPARTIES

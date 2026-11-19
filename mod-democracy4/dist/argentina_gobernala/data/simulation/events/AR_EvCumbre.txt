@@ -4,5 +4,5 @@ Texture = AR_EvCumbre.jpg
 OnImplement = CreateGrudge(ForeignRelations,0.04,0.85);CreateGrudge(ForeignInvestment,0.02,0.85);
 
 [influences]
-0 = AR_Grieta,0+(0.06*x)
+0 = _random_,0,0.06
 1 = AR_AcuerdoEEUU,0+(0.06*x)

@@ -137,6 +137,14 @@ AR_CierreOrganismos = 0.5
 AR_LeyGlaciares = 0.6
 AR_Hidrovia = 0.5
 AR_ParitariasEstatales = 0.35
+AR_PosturaUcrania = 0.5
+AR_RelacionIsrael = 0.5
+AR_RelacionChina = 0.5
+AR_OCDE = 0.5
+AR_Reequipamiento = 0.4
+AR_MisionesPaz = 0.3
+AR_Antartida = 0.4
+AR_PoliticaMigratoria = 1.0
 
 [options]
 MULTIPLEPARTIES

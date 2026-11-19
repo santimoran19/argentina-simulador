@@ -61,8 +61,6 @@ def check_influence(where, i):
     if parts[0] == '_random_':
         if len(parts) != 3: err('{}: _random_ necesita mínimo y máximo'.format(where))
         return
-    if parts[0] not in OWN_POL | OWN_SIT:
-        err('{}: la influencia {!r} no es exclusiva de Argentina (aparecería con otros países)'.format(where, parts[0]))
     check_effect(where, i, -0.5, 0.5)
 
 
@@ -103,7 +101,12 @@ for s in C.SITUATIONS:
     for c in s['causes'][1:]:
         f = c.split(',')[1]
         mx += max(0, max(eval(f.replace('^', '**'), {'__builtins__': {}}, {'x': x}) for x in (0, 1)))
-    if mx < s['start']: err(w + ': nunca puede activarse (máximo {:.2f} < inicio {})'.format(mx, s['start']))
+    if mx < s['start']:
+        if s.get('trigger') == 'evento':
+            kick = [e['name'] for e in C.EVENTS for t, a, d in e['grudges'] if t == s['name'] and a >= 0.4]
+            if not kick: err(w + ': crisis disparada por eventos, pero ningún evento la dispara con fuerza suficiente')
+        else:
+            err(w + ': nunca puede activarse (máximo {:.2f} < inicio {})'.format(mx, s['start']))
 
 # ---------------- eventos y dilemas ----------------
 for e in C.EVENTS:
@@ -111,7 +114,8 @@ for e in C.EVENTS:
     for i in e['influences']: check_influence(w, i)
     for t, a, d in e['grudges']:
         if t not in KNOWN: err(w + ': nombre desconocido ' + t)
-        if not (-0.2 <= a <= 0.2 and 0 < d < 1): warn(w + ': grudge fuera de rango ' + t)
+        lim = 0.7 if t in OWN_SIT else 0.2
+        if not (-lim <= a <= lim and 0 < d < 1): warn(w + ': grudge fuera de rango ' + t)
     if not os.path.exists(os.path.join(OUT, 'data/bitmaps/events/{}.jpg'.format(e['name']))): err(w + ': falta la imagen')
 for d in C.DILEMMAS:
     w = 'dilema ' + d['name']
@@ -129,7 +133,10 @@ for label, start in (('2023', C.START_2023), ('2026', C.START_2026)):
         if not 0 <= v <= 1: err('escenario {}: valor fuera de 0-1 en {}'.format(label, k))
 for k in C.COUNTRY_2026['base_changes']:
     if k not in BASE: err('escenario 2026: política base desconocida ' + k)
-for m in (C.COUNTRY, C.COUNTRY_2026['mission']):
+for _l, tgt, eq in C.COUNTRY_GLOBAL['boosts']:
+    if tgt not in OWN_SIT: err('escenario global: impulso a una situación inexistente ' + tgt)
+    check_formula('escenario global ' + tgt, eq.lstrip('+'), 0, 1)
+for m in (C.COUNTRY, C.COUNTRY_2026['mission'], C.COUNTRY_GLOBAL['mission']):
     for f in ('data/missions/{0}/{0}.txt'.format(m), 'translations/English/missions/{}.txt'.format(m),
               'translations/Spanish/missions/{}.txt'.format(m)):
         if not os.path.exists(os.path.join(OUT, f)): err('falta ' + f)

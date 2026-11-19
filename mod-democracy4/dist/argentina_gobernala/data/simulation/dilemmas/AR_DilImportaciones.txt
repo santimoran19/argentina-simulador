@@ -2,7 +2,7 @@
 name=AR_DilImportaciones
 
 [influences]
-0 = AR_Grieta,0+(0.06*x)
+0 = _random_,0,0.06
 1 = AR_CierrePymes,0+(0.12*x)
 2 = AR_AtrasoCambiario,0+(0.06*x)
 

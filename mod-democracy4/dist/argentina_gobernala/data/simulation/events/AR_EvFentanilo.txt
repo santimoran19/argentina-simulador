@@ -4,5 +4,5 @@ Texture = AR_EvFentanilo.jpg
 OnImplement = CreateGrudge(Health,-0.03,0.85);CreateGrudge(_All_,-0.04,0.85);CreateGrudge(Parents,-0.04,0.85);
 
 [influences]
-0 = AR_Grieta,0+(0.04*x)
+0 = _random_,0,0.04
 1 = AR_ControlANMAT,0.08-(0.08*x)

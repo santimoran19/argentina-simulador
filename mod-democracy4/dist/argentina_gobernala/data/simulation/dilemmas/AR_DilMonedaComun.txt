@@ -1,0 +1,12 @@
+[dilemma]
+name=AR_DilMonedaComun
+
+[influences]
+0 = _random_,0,0.03
+1 = AR_Mercosur,0+(0.03*x)
+
+[option0]
+OnImplement = CreateGrudge(InternationalTrade,0.03,0.9);CreateGrudge(Socialist,0.03,0.9);CreateGrudge(Capitalist,-0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Capitalist,0.03,0.9);CreateGrudge(Socialist,-0.02,0.9);

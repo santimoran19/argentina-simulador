@@ -1,0 +1,15 @@
+[config]
+name  = argentina2026global
+guiname = "Argentina 2026: global storm"
+description = "The same country as 2026, but in a world on fire: war in the Persian Gulf with the Strait of Hormuz half-closed and oil above 100 dollars, the Federal Reserve raising rates, a US-China trade war and open war in Europe. Vaca Muerta and the farm sector can save you; debt and interest rates can sink you."
+
+jobtitle = "President"
+
+[stats]
+Motto: = "In union and liberty"
+Brent crude: = "US$90-120"
+Fed rate: = "3.75-4%"
+Oil output: = "Record: 973,700 barrels a day"
+Country risk: = "~800-900 basis points"
+Capital: = "Buenos Aires"
+Difficulty: = "Very hard"

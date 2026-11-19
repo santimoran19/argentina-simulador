@@ -50,7 +50,8 @@ def build():
 
     # ---------- config.txt ----------
     write('config.txt', '[config]\nname = {}\nguiname = {}\nauthor = {}\ndescription = {}\n'.format(
-        C.MOD_NAME, C.MOD_CONFIG['guiname'], C.MOD_CONFIG['author'], C.MOD_CONFIG['description_es']))
+        C.MOD_NAME, C.MOD_CONFIG['guiname'], C.MOD_CONFIG['author'], C.MOD_CONFIG['description_es'].format(
+            pol=len(C.POLICIES), sit=len(C.SITUATIONS), ev=len(C.EVENTS), dil=len(C.DILEMMAS))))
 
     # ---------- prerrequisito del país ----------
     write('data/simulation/prereqs.txt', '[config]\n{} = {}\n'.format(C.PREREQ_ID, C.PREREQ))

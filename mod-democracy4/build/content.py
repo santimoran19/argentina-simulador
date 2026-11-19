@@ -20,9 +20,12 @@ COUNTRY_GUID = 731
 MOD_CONFIG = {
     'guiname': 'Argentina: Gobernala',
     'author': 'santimoran19',
-    'description_es': ('Argentina completa para Democracy 4: inflación inercial, cepo, brecha cambiaria, retenciones, '
-                       'FMI, Vaca Muerta, piquetes, sindicatos y la grieta. 28 políticas propias, 13 situaciones, '
-                       '15 eventos y 16 dilemas basados en la historia económica argentina. Textos en español e inglés.'),
+    # {pol}, {sit}, {ev}, {dil}: los completa build.py con las cantidades reales
+    'description_es': ('La Argentina desde el 10 de diciembre de 2023: cepo, brecha, inflación inercial, retenciones, FMI, '
+                       'bandas cambiarias, motosierra, piquetes, la CGT, el Congreso y la grieta, más guerras y crisis '
+                       'del mundo. {pol} políticas propias, {sit} situaciones, {ev} eventos y {dil} dilemas, con crisis '
+                       'que se encadenan. Políticas, situaciones y eventos del juego con nombres argentinos y sin '
+                       'repetidos. Textos en español e inglés. Jugá con República Argentina (diciembre de 2023).'),
 }
 
 # ---------------------------------------------------------------------------------------------

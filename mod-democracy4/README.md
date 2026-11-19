@@ -94,6 +94,8 @@ Las políticas que quedan propias del mod son las que el juego no tiene: retenci
 
 En la primera partida de prueba (Democracy 4 1.67) el país colapsaba en los turnos de preparación que simula el juego antes de empezar: PBI a cero, desempleo de 77 % y peso a cero. Se corrigió en `build/content_balance.py`: los golpes macro de las crisis argentinas van a la mitad (se suman entre sí y con las del juego), la inercia inflacionaria ya no empuja una espiral, se quitó el enlace dólar-precios que pisaba el del juego y el gasto inicial se parece más al presupuesto nacional real (escuelas y hospitales son sobre todo provinciales).
 
+En la segunda partida de prueba el colapso seguía: en el primer turno de preparación el delito saltaba de 0,23 a 0,95 y la salud de 0,86 a 0,45 por la combinación de políticas del juego con que arrancaba el país. Ahora el país arranca con los niveles de políticas del juego de una partida argentina que sí funcionaba en Democracy 4, más los ajustes argentinos (cepo, universidad gratuita, CONICET, YPF), y con menos emisión inicial.
+
 ## Efecto dominó: todo se encadena
 
 Las decisiones no afectan a una sola cosa. En Argentina, el mod refuerza las cadenas de transmisión del juego con **11 enlaces causales propios** y hace que **unas crisis desencadenen otras**:

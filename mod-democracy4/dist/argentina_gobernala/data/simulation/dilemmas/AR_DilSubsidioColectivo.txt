@@ -3,7 +3,7 @@ name=AR_DilSubsidioColectivo
 
 [influences]
 0 = _random_,0,0.2
-1 = BusSubsidies,0+(0.2*x)
+1 = BusSubsidies,0.09+(0.2*x)
 
 [option0]
 OnImplement = CreateGrudge(Poor,0.03,0.9);CreateGrudge(Inflation,0.01,0.9);CreateGrudge(Farmers,-0.02,0.9);

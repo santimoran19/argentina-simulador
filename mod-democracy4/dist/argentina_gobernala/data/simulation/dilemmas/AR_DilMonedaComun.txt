@@ -3,7 +3,7 @@ name=AR_DilMonedaComun
 
 [influences]
 0 = _random_,0,0.075
-1 = ImportTarrifs,0.075-(0.075*x)
+1 = ImportTarrifs,0.06-(0.075*x)
 
 [option0]
 OnImplement = CreateGrudge(InternationalTrade,0.03,0.9);CreateGrudge(Socialist,0.03,0.9);CreateGrudge(Capitalist,-0.03,0.9);

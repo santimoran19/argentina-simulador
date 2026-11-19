@@ -35,8 +35,49 @@ DILEMMA_INFLUENCE_SCALE = 2.5
 
 DROP_CHAINS = {'Dolar a precios'}   # reemplazaba el enlace dólar->inflación del juego por uno mucho más fuerte
 
-# Gasto inicial más parecido al presupuesto nacional real
-COUNTRY_POLICY_FIX = {
+# Segunda partida de prueba: con la configuración anterior de políticas del juego, en el primer turno de preparación
+# el delito saltaba de 0,23 a 0,95, la salud de 0,86 a 0,45 y el PBI caía a la mitad, sin que ningún efecto del mod
+# lo explicara: era la combinación de políticas base. Se reemplaza por los niveles de arranque de una partida
+# argentina que sí funcionaba en este juego (partida guardada del jugador con otro mod de Argentina; sólo políticas
+# del juego base, no las de ese mod). Encima van los ajustes argentinos de ARG_ON_TOP.
+LATAM_BASELINE = {
+    'AbortionLaw': 0.75, 'AdultEducationSubsidies': 0.6, 'AgricultureSubsidies': 0.1, 'AirlineTax': 0.5, 'AlcoholLaw': 0.4,
+    'AlcoholTax': 0.25, 'AntiCorruptionAgency': 0.15, 'AntibioticsBan': 0.6, 'ArtsSubsidies': 0.35, 'BicycleSubsidies': 0.1,
+    'BorderControls': 0.5, 'BusLanes': 0.6, 'BusSubsidies': 0.25, 'CCTVCameras': 0.5, 'CapitalControls': 0.25,
+    'CapitalGainsTax': 0.6, 'CarTax': 0.25, 'ChildBenefit': 0.9, 'ChildcareProvision': 0.6, 'CleanEnergySubsidies': 0.1,
+    'CompulsoryForeignLanguageClasses': 0.35, 'ConsumerRights': 0.6, 'CorporationTax': 0.7, 'Creationism': 0.5, 'DisabilityBenefit': 0.83,
+    'DivertedProfitsTax': 0.52, 'DrugEnforcement': 0.5, 'DrugTreatment': 0.75, 'ElectricCarsInitiative': 0.1, 'ExecutiveTermLength': 0.25,
+    'ExecutiveTermLimit': 1.0, 'FamilyPlanning': 0.15, 'FinancialTransactionsTax': 0.25, 'FoodStamps': 0.8, 'FoodStandards': 0.5,
+    'ForeignAid': 0.35, 'ForeignInvestmentRestrictions': 0.35, 'FreeSchoolMeals': 0.25, 'Gambling': 0.8, 'GameHunting': 0.5,
+    'GayMarriage': 1.0, 'GenderDiscriminationAct': 0.75, 'GenderTransition': 0.75, 'GovernmentSubsidiesForUnions': 0.8, 'HandgunLaws': 0.5,
+    'HelicopterMoney': 0.6, 'IDCards': 0.5, 'ImmigrationRules': 0.78, 'ImportTarrifs': 0.6, 'IncomeTax': 0.62,
+    'InheritanceTax': 0.4, 'IntellectualPropertyRights': 0.68, 'IntelligenceServices': 0.52, 'JudiciaryIndependence': 0.2, 'LaborDayBankHoliday': 0.5,
+    'LabourLaws': 0.95, 'LegalAid': 0.75, 'LegaliseProstitution': 0.0, 'LimitAutomatedTrading': 0.0, 'LuxuryGoodsTax': 0.05,
+    'MansionTax': 0.1, 'MarriedTaxAllowance': 0.25, 'MaternityLeave': 0.3, 'MicrogenerationGrants': 0.5, 'MilitarySpending': 0.1,
+    'MinimumWage': 0.25, 'Narcotics': 0.17, 'NuclearFission': 0.5, 'OrganDonation': 0.5, 'OrganicSubsidy': 0.75,
+    'PayrollTax': 0.85, 'PetrolTax': 0.51, 'PoliceForce': 0.62, 'PollutionControls': 0.5, 'PressFreedom': 0.72,
+    'PrisonRegime': 0.45, 'PrisonerTagging': 0.32, 'PrisonerVoting': 0.8, 'Prisons': 0.5, 'PropertyTax': 0.88,
+    'PublicLibraries': 0.34, 'Punitivewealthtax': 0.7, 'RaceDiscriminationAct': 0.5, 'RacialProfiling': 0.25, 'RefugeePolicy': 0.8,
+    'RentControls': 0.28, 'RetirementAge': 0.47, 'RightToPrivacy': 0.5, 'RoadBuilding': 0.48, 'RubberBullets': 0.5,
+    'SalesTax': 0.45, 'SchoolBuses': 0.61, 'ScienceFunding': 0.22, 'SelectiveSchooling': 0.5, 'SmallBusinessGrants': 0.1,
+    'SmartMeterProgram': 0.81, 'StateAirline': 0.6, 'StateBroadcaster': 0.7, 'StateHealthService': 0.65, 'StateHousing': 0.45,
+    'StatePensions': 0.62, 'StatePostService': 0.5, 'StateRail': 0.45, 'StateSchools': 0.75, 'StateWater': 0.8,
+    'StemCells': 0.25, 'TearGas': 0.2, 'TobaccoTax': 0.35, 'TollRoads': 0.66, 'UnemployedBenefit': 0.75,
+    'UniversityGrants': 0.2, 'competitionlaw': 0.5,
+}
+
+DROP_FROM_BASELINE = {'HelicopterMoney',   # la emisión la representa la política de emisión del juego (cepo/BCRA)
+                      'Creationism'}
+ARG_ON_TOP = {
+    'CapitalControls': 0.6,       # cepo: fuerte, pero no al máximo (al máximo hundía el comercio)
+    'UniversityGrants': 0.6,      # universidad pública y gratuita
+    'ScienceFunding': 0.35,       # CONICET
+    'StateEnergy': 0.35,          # YPF/ENARSA
+    'ForeignInvestorTaxBreaks': 0.1,
+}
+
+# (ya no se usa: reemplazado por LATAM_BASELINE + ARG_ON_TOP)
+COUNTRY_POLICY_FIX_OLD = {
     'StateHealthService': 0.55,   # hospitales: sobre todo provinciales
     'StateSchools': 0.50,         # escuelas: provinciales
     'MilitarySpending': 0.10,     # Defensa ~0,5 % del PBI
@@ -47,7 +88,7 @@ COUNTRY_POLICY_FIX = {
 }
 START_FIX = {
     'AR_VacaMuerta': 0.15,        # en 2023 el desarrollo era privado; el subsidio estatal, chico
-    'AR_EmisionTesoro': 0.6,
+    'AR_EmisionTesoro': 0.35,     # la emisión del juego hundía el peso en pocos turnos
     'AR_Mercosur': 0.2,           # aranceles altos (0,8), no al máximo
     'AR_BonoNavidad': 0.05,
     'AR_ParitariasEstatales': 0.5,
@@ -62,13 +103,17 @@ def _scale(formula, k):
 
 
 def apply_start(C):
-    """Antes de content_merge: valores de arranque de las políticas argentinas."""
+    """Antes de content_merge: arranque de las políticas del juego y de las argentinas."""
+    keep = {k: v for k, v in C.COUNTRY_POLICIES.items() if k.startswith('_')}
+    C.COUNTRY_POLICIES.clear()
+    C.COUNTRY_POLICIES.update(keep)
+    C.COUNTRY_POLICIES.update({k: v for k, v in LATAM_BASELINE.items() if k not in DROP_FROM_BASELINE})
+    C.COUNTRY_POLICIES.update(ARG_ON_TOP)
     C.START_2023.update(START_FIX)
 
 
 def extend(C):
     """Después de content_merge, antes de content_base."""
-    C.COUNTRY_POLICIES.update(COUNTRY_POLICY_FIX)
     import content_base as B
     B.BASE_START_2023.update(BASE_START_FIX)
     for s in C.SITUATIONS:

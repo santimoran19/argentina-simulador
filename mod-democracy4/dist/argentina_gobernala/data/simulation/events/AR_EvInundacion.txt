@@ -6,4 +6,4 @@ OnImplement = CreateGrudge(_All_,-0.02,0.75);CreateGrudge(Poor,-0.04,0.75);Creat
 
 [influences]
 0 = _random_,0,0.4
-1 = RoadBuilding,0.15-(0.2*x)
+1 = RoadBuilding,0.176-(0.2*x)

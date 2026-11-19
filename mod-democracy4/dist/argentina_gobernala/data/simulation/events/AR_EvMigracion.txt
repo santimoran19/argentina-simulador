@@ -6,4 +6,4 @@ OnImplement = CreateGrudge(AR_CrisisMigratoria,0.55,0.92);CreateGrudge(Immigrati
 
 [influences]
 0 = _random_,0,0.16
-1 = BorderControls,0.168-(0.12*x)
+1 = BorderControls,0.18-(0.12*x)

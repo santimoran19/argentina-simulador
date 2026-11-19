@@ -6,4 +6,4 @@ OnImplement = CreateGrudge(Organised Crime,-0.05,0.85);CreateGrudge(Conservative
 
 [influences]
 0 = _random_,0,0.16
-1 = DrugEnforcement,0+(0.48*x)
+1 = DrugEnforcement,-0.096+(0.48*x)

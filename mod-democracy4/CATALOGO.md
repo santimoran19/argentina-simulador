@@ -372,3 +372,4 @@ Para que no haya dos políticas para lo mismo, estas versiones argentinas no exi
 | fortaleza del peso ▲ | clase media ▲ |
 | fortaleza del peso ▲ | campo ▼ |
 | pobreza ▲ | sectores bajos ▼ |
+| huelga general (juego) ▲ | PBI ▼ |

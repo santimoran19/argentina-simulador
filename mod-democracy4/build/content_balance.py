@@ -95,7 +95,7 @@ ARG_ON_TOP = {
     'MinimumWage': 0.25,   # salario mínimo licuado por la inflación
     'PayrollTax': 0.67,   # cargas sociales altas
     'PhoneTapping': 0.3,   # escuchas con orden judicial
-    'PoliceForce': 0.6,
+    'PoliceForce': 0.72,   # Argentina tiene muchos policías por habitante
     'PrisonRegime': 0.49,
     'PrisonerTagging': 0.34,
     'PropertyTax': 0.4,
@@ -111,6 +111,15 @@ ARG_ON_TOP = {
 }
 NOT_IN_ARGENTINA = {'InheritanceTax',   # no hay impuesto a la herencia nacional
                     'LuxuryGoodsTax', 'MansionTax'}   # el patrimonio lo grava Bienes Personales
+# Tercera partida de prueba: al empezar el ajuste se activó la huelga general del juego, que resta 0,3-0,5 de PBI por
+# turno mientras dura, y el PBI pasó de 0,37 a 0 en dos turnos. En la realidad la CGT hizo tres paros generales de un
+# día en dos años: se reemplaza ese efecto, sólo en Argentina, por uno del tamaño de un paro real.
+BASE_EFFECT_OVERRIDES = [
+    ('Paro general de un dia', 'GeneralStrike', 'GDP', '-0.03-(0.04*x)', 2),
+]
+# La deuda "efectiva" del juego baja la confianza empresaria y la estabilidad y dispara la crisis de deuda. Se cuenta
+# la deuda con privados y organismos (FMI), no la intra-sector público (BCRA, ANSES), que no presiona igual.
+STARTING_DEBT = 240000
 ECONOMIC_CYCLE_START = 0.4   # la economía mundial en 2023 no estaba en recesión (la recesión era argentina)
 
 # (ya no se usa: reemplazado por LATAM_BASELINE + ARG_ON_TOP)
@@ -151,6 +160,7 @@ def apply_start(C):
     for k in NOT_IN_ARGENTINA:
         C.COUNTRY_POLICIES.pop(k, None)
     C.COUNTRY_CONFIG['economic_cycle_start'] = ECONOMIC_CYCLE_START
+    C.COUNTRY_CONFIG['starting_debt'] = STARTING_DEBT
     C.START_2023.update(START_FIX)
 
 
@@ -191,4 +201,4 @@ def extend(C):
                 out.append(','.join(parts))
             it['influences'] = out
     C.COUNTRY_OVERRIDES[:] = [(l, t, TRAITS.get(t, eq)) for l, t, eq in C.COUNTRY_OVERRIDES]
-    C.CHAIN_OVERRIDES[:] = [c for c in C.CHAIN_OVERRIDES if c[0] not in DROP_CHAINS]
+    C.CHAIN_OVERRIDES[:] = [c for c in C.CHAIN_OVERRIDES if c[0] not in DROP_CHAINS] + BASE_EFFECT_OVERRIDES

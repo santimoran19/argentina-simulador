@@ -113,6 +113,8 @@ Con los archivos `data/simulation` de Democracy 4 (1.67) se armó un simulador (
 
 Valores argentinos que salen de ahí: cepo fuerte, emisión alta, aranceles y licencias SIRA, IVA alto, Ganancias bajo (eliminado para casi todos los asalariados en septiembre de 2023), salario mínimo licuado, AUH y Tarjeta Alimentar, DNI obligatorio, policía armada, sin impuesto a la herencia nacional. Si después se aplican las políticas de 2024-2026, el modelo baja la inflación, aprecia el peso, hunde y después recupera el PBI, baja la pobreza y sube la confianza empresaria, como pasó.
 
+Tercera partida de prueba: al empezar el ajuste el PBI se iba a cero. El simulador lo reprodujo y mostró dos causas: la deuda inicial (con 390.000 la "deuda efectiva" del juego quedaba alrededor de 1,3, lo que deja la confianza empresaria y la estabilidad en cero y dispara la crisis de deuda) y la huelga general del juego (−0,3 a −0,5 de PBI por turno mientras dura). Ahora la deuda inicial cuenta sólo la deuda con privados y organismos (240.000; la intra-sector público con el BCRA y la ANSES no presiona igual) y, sólo en Argentina, la huelga general cuesta lo que un paro real. Con las mismas jugadas de esa partida, el simulador da recesión al principio, desinflación y recuperación después.
+
 Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
 
 ## Efecto dominó: todo se encadena

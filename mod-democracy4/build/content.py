@@ -55,7 +55,7 @@ COUNTRY_POLICIES = {
     '_prereq_has_coast': 1, '_prereq_sovereign_currency': 1, '_prereq_land_border': 1,
     'AirlineTax': 0.3, 'AlcoholTax': 0.35, 'ArmedPolice': 0.5, 'BorderControls': 0.4, 'BusLanes': 0.35,
     'CCTVCameras': 0.45, 'CapitalGainsTax': 0.15, 'CarEmmissionsLimits': 0.3, 'CarTax': 0.45, 'ChildBenefit': 0.7,
-    'CorporationTax': 0.6, 'ChildcareProvision': 0.3, 'CompulsorySchoolSports': 0.5, 'CompulsoryLanguageLessons': 0.4,
+    'CorporationTax': 0.6, 'ChildcareProvision': 0.3, 'CompulsorySchoolSports': 0.5, 'Compulsorylanguagelessons': 0.4,
     'CompulsoryForeignLanguageClasses': 0.5, 'DisabilityBenefit': 0.55, 'DetentionWithoutTrial': 0.0,
     'DiplomaticService': 0.4, 'ExecutiveTermLimit': 0.5, 'ExecutiveTermLength': 0.3, 'FoodStandards': 0.6,
     'ForeignAid': 0.05, 'ForeignInvestorTaxBreaks': 0.2, 'Gambling': 0.45, 'GameHunting': 0.3, 'GayMarriage': 1.0,
@@ -67,7 +67,7 @@ COUNTRY_POLICIES = {
     'PhoneTapping': 0.25, 'RaceDiscriminationAct': 0.8, 'Recycling': 0.3, 'RetirementAge': 0.5, 'RoadBuilding': 0.35,
     'RubberBullets': 0.3, 'SalesTax': 0.75, 'ScienceFunding': 0.35, 'SelectiveSchooling': 0.2, 'SpeedCameras': 0.4,
     'SocialCare': 0.3, 'StateBroadcaster': 0.6, 'StateHealthService': 0.75, 'StateHousing': 0.35,
-    'StatePensions': 0.65, 'StateSchools': 0.75, 'StatePostalService': 0.6, 'TobaccoTax': 0.7,
+    'StatePensions': 0.65, 'StateSchools': 0.75, 'StatePostService': 0.6, 'TobaccoTax': 0.7,
     'UnemployedBenefit': 0.35, 'UniversityGrants': 0.65, 'WorkSafetyLaw': 0.6,
 }
 

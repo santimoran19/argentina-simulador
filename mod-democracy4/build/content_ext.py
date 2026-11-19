@@ -67,7 +67,7 @@ def extend(C):
         ('Economic deregulation', 'Hundreds of rules repealed by decree: rents, private health plans, retail, aviation. It frees '
          'competition and investment, but leaves many sectors unprotected.'),
         ['BusinessConfidence,0+(0.10*x)', 'SelfEmployed,0+(0.08*x)', 'Bureaucracy,0-(0.15*x)', 'TradeUnionist,0-(0.10*x)',
-         'Democracy,0-(0.03*x)', 'Competitiveness,0+(0.06*x),4', 'Capitalist,0+(0.08*x)', 'Poor,0-(0.03*x)'],
+         'Democracy,0-(0.03*x)', 'WorkerProductivity,0+(0.06*x),4', 'Capitalist,0+(0.08*x)', 'Poor,0-(0.03*x)'],
         pc=(15, 10, 8, 6), impl=2, cost=(0, 0))
 
     pol('AR_FacultadesDelegadas', 'LAWANDORDER', 'writing-sign',

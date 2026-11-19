@@ -19,7 +19,7 @@ ES = {
     'PowerBlackouts': 'cortes de luz', 'EnergyEfficiency': 'eficiencia energética', 'CO2Emissions': 'emisiones de CO2',
     'Pollution': 'contaminación', 'Environment': 'ambiente', 'Watershortage': 'escasez de agua', 'Health': 'salud',
     'HealthcareDemand': 'demanda en hospitales', 'Education': 'educación', 'Technology': 'tecnología', 'BrainDrain': 'fuga de cerebros',
-    'Bureaucracy': 'burocracia', 'Competitiveness': 'competitividad', 'GigEconomy': 'trabajo por aplicaciones',
+    'Bureaucracy': 'burocracia', 'WorkerProductivity': 'productividad', 'GigEconomy': 'trabajo por aplicaciones',
     'Democracy': 'calidad democrática', 'Stability': 'estabilidad', 'Polarization': 'polarización', 'CrimeRate': 'delito',
     'ViolentCrimeRate': 'delito violento', 'Organised Crime': 'crimen organizado', 'PrisonOvercrowding': 'hacinamiento carcelario',
     'TrafficCongestion': 'tránsito', 'RailUsage': 'uso del tren', 'CarUsage': 'uso del auto', 'Immigration': 'inmigración',
@@ -40,6 +40,8 @@ ES = {
     'SalesTax': 'IVA (juego)', 'RetirementAge': 'edad jubilatoria (juego)', 'ChildBenefit': 'asignaciones familiares (juego)',
     'ScienceFunding': 'financiamiento científico (juego)', 'BorderControls': 'controles fronterizos (juego)',
     'ArmedPolice': 'policía armada (juego)', 'SmallBusinessGrants': 'ayuda a pymes (juego)',
+    'Hyperinflation': 'hiperinflación (juego)', 'HighInflation': 'inflación alta (juego)', 'GeneralStrike': 'huelga general (juego)',
+    'DoctorsStrike': 'paro de médicos (juego)', 'TeachersStrike': 'paro docente (juego)', 'CorporateExodus': 'éxodo de empresas (juego)',
     'EnterpriseInvestmentScheme': 'incentivo a la inversión (juego)', 'AgricultureSubsidies': 'subsidios agrícolas (juego)',
 }
 DEPT = {'ECONOMY': 'Economía', 'TAX': 'Impuestos', 'WELFARE': 'Bienestar social', 'PUBLICSERVICES': 'Servicios públicos',

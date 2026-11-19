@@ -37,6 +37,19 @@ BASE_LINKS = {
     'AR_CrisisMigratoria': ['BorderControls,0.05-(0.05*x)'],
 }
 
+# Situaciones del juego base que alimentan las crisis argentinas equivalentes, así las dos versiones van juntas
+# en vez de contradecirse (por ejemplo, la hiperinflación del juego empuja el salto cambiario argentino).
+BASE_SITUATION_LINKS = {
+    'AR_SaltoCambiario': ['Hyperinflation,0+(0.10*x)', 'HighInflation,0+(0.05*x)'],
+    'AR_PerdidaPoderAdquisitivo': ['Hyperinflation,0+(0.10*x)', 'HighInflation,0+(0.06*x)'],
+    'AR_CorridaCambiaria': ['Hyperinflation,0+(0.08*x)'],
+    'AR_ConflictoSalud': ['DoctorsStrike,0+(0.10*x)'],
+    'AR_ConflictoUniversitario': ['TeachersStrike,0+(0.08*x)'],
+    'AR_ParoCGT': ['GeneralStrike,0+(0.10*x)'],
+    'AR_InversionRecord': ['CorporateExodus,0-(0.10*x)'],
+    'AR_CierrePymes': ['CorporateExodus,0+(0.05*x)'],
+}
+
 # Políticas del juego base que la Argentina de diciembre de 2023 tenía activas
 BASE_START_2023 = {
     'ImportTarrifs': 0.7,          # licencias de importación (SIRA) y aranceles altos
@@ -50,6 +63,7 @@ BASE_START_2023 = {
 
 def extend(C):
     by = {s['name']: s for s in C.SITUATIONS}
-    for name, causes in BASE_LINKS.items():
-        by[name]['causes'].extend(causes)
+    for links in (BASE_LINKS, BASE_SITUATION_LINKS):
+        for name, causes in links.items():
+            by[name]['causes'].extend(causes)
     C.COUNTRY_POLICIES.update(BASE_START_2023)

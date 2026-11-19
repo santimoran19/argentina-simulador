@@ -23,7 +23,7 @@ Todo lo que pasó después (bandas cambiarias, motosierra, superávit, swap con 
 | Dilemas | 38 | Vetos a discapacidad y universidades, paro en el hospital pediátrico, condiciones del swap, el dólar toca el techo de la banda, privatizar la aerolínea, suspender las PASO, imputabilidad, glaciares, dólares del colchón, la CGT ofrece negociar, los industriales piden frenar importaciones, FMI, paritarias, lockout del campo, fondos buitre; y del mundo: armas para Ucrania, votación en la ONU sobre Medio Oriente, embajada en Jerusalén, refugiados, estación espacial china en Neuquén, 5G, moneda común con Brasil, aviones de combate, cláusulas ambientales de Europa |
 | Rasgos estructurales | 6 | Inercia inflacionaria, evasión, corrupción, grieta, fuga de cerebros, economía informal |
 | Enlaces causales argentinos | 12 | Ver "Efecto dominó" |
-| Conexiones con el juego base | 39 | Ver "Lo que ya trae el juego" |
+| Conexiones con el juego base | 47 | Ver "Lo que ya trae el juego" |
 
 El detalle de cada política, situación, evento y dilema, con sus efectos, está en el **[catálogo completo](CATALOGO.md)**.
 
@@ -48,6 +48,9 @@ Democracy 4 ya tiene sus propias políticas: jubilaciones, salario mínimo, leye
 - El **control de capitales** y la **emisión** del juego agrandan la **brecha cambiaria**, igual que el cepo y la emisión del mod.
 - Bajar la **salud pública**, las **becas universitarias** o la **pensión por discapacidad** enciende los conflictos en **hospitales, universidades y discapacidad**.
 - La **independencia judicial** baja el **riesgo país** y los **escándalos de corrupción**, y atrae **inversiones**.
+- Las **situaciones del juego** también empujan a sus equivalentes argentinas: la **hiperinflación** y la **inflación alta** del juego alimentan el salto cambiario y "el sueldo no alcanza"; la **huelga general**, el **paro de médicos** y el **paro docente** alimentan los paros de la CGT y los conflictos en hospitales y universidades; el **éxodo de empresas** frena las inversiones.
+
+Los nombres internos se comprobaron contra partidas guardadas reales de Democracy 4 (versión 1.65).
 
 Al arrancar, el país tiene activas las políticas del juego que existían en 2023 (aranceles altos, aerolínea, trenes y petrolera estatales). El control de capitales y la emisión del juego arrancan apagados, porque el mod los representa con más detalle (cepo y asistencia del BCRA al Tesoro).
 

@@ -419,3 +419,9 @@ EVENT_NAMES = {
         ('Argentina\'s credit rating cut', 'Rating agencies have downgraded the debt. Country risk rises and investors will '
          'think twice before coming.')),
 }
+
+
+# Políticas del juego que usan los programas de otros espacios (content_parties.py)
+import content_parties as _p
+for _k, (_tes, _des, _ten, _den) in _p.BASE_RENAMES.items():
+    POLICY_NAMES[_k] = ((_tes, _des), (_ten, _den))

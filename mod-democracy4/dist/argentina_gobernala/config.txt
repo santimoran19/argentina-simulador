@@ -2,4 +2,4 @@
 name = argentina_gobernala
 guiname = Argentina: Gobernala
 author = santimoran19
-description = La Argentina desde el 10 de diciembre de 2023: cepo, brecha, inflación inercial, retenciones, FMI, bandas cambiarias, motosierra, piquetes, la CGT, el Congreso y la grieta, más guerras y crisis del mundo. 39 políticas propias, 38 situaciones, 38 eventos y 38 dilemas, con crisis que se encadenan. Políticas, situaciones y eventos del juego con nombres argentinos y sin repetidos. Textos en español e inglés. Jugá con República Argentina (diciembre de 2023).
+description = La Argentina desde el 10 de diciembre de 2023: cepo, brecha, inflación inercial, retenciones, FMI, bandas cambiarias, motosierra, piquetes, la CGT, el Congreso y la grieta, más guerras y crisis del mundo. 54 políticas propias, 38 situaciones, 38 eventos y 38 dilemas, con crisis que se encadenan. Políticas, situaciones y eventos del juego con nombres argentinos y sin repetidos. Textos en español e inglés. Jugá con República Argentina (diciembre de 2023).

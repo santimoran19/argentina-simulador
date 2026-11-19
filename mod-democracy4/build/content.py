@@ -800,6 +800,10 @@ START_2026 = _ext.START_2026
 import content_intl as _intl
 _intl.extend(_mod)
 
+# Políticas de los otros espacios políticos (Unión por la Patria, PRO, Frente de Izquierda)
+import content_parties as _parties
+_parties.extend(_mod)
+
 # Balance probado en el juego (ver content_balance.py)
 import content_balance as _bal
 _bal.apply_start(_mod)

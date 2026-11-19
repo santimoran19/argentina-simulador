@@ -75,8 +75,11 @@ DROP_FROM_BASELINE = {'HelicopterMoney',   # la emisión la representa la polít
 # salud 0,62, igualdad 0,45 (Gini ~0,45), confianza empresaria 0,30. Resultado simulado: 0,45 / 0,43 / 0,71 / 0,08 /
 # (ver warmup.py), estable 8 turnos sin tocar nada (el peso se sigue debilitando, como en la realidad).
 ARG_ON_TOP = {
+    # Todo realista (pedido del jugador): impuestos que existían en dic-2023
+    'FinancialTransactionsTax': 0.6,   # impuesto al cheque
+    'LuxuryGoodsTax': 0.3,             # impuestos internos
     # Quinta partida: el delito arrancaba en 0,96 y la salud en 0,41. Políticas argentinas reales que faltaban:
-    'CommunityPolicing': 0.5,          # policía de cercanía / cuadrantes
+    'CommunityPolicing': 0.3,          # policía de cercanía / cuadrantes (cobertura parcial)
     'CompulsoryFoodLabelling': 0.8,    # Ley de Etiquetado Frontal (2021)
     'FamilyPlanning': 0.6,             # Salud sexual y procreación responsable (Ley 25.673)
     'FreeSchoolMeals': 0.4,            # comedores escolares
@@ -118,7 +121,7 @@ ARG_ON_TOP = {
     'UniversityGrants': 0.6,   # universidad pública y gratuita
 }
 NOT_IN_ARGENTINA = {'InheritanceTax',   # no hay impuesto a la herencia nacional
-                    'LuxuryGoodsTax', 'MansionTax'}   # el patrimonio lo grava Bienes Personales
+                    'MansionTax'}   # el patrimonio lo grava Bienes Personales
 # Tercera partida de prueba: al empezar el ajuste se activó la huelga general del juego, que resta 0,3-0,5 de PBI por
 # turno mientras dura, y el PBI pasó de 0,37 a 0 en dos turnos. En la realidad la CGT hizo tres paros generales de un
 # día en dos años: se reemplaza ese efecto, sólo en Argentina, por uno del tamaño de un paro real.
@@ -127,7 +130,7 @@ BASE_EFFECT_OVERRIDES = [
 ]
 # La deuda "efectiva" del juego baja la confianza empresaria y la estabilidad y dispara la crisis de deuda. Se cuenta
 # la deuda con privados y organismos (FMI), no la intra-sector público (BCRA, ANSES), que no presiona igual.
-STARTING_DEBT = 240000
+STARTING_DEBT = 370000   # deuda bruta real del Estado nacional a dic-2023: US$ 370.700 millones
 ECONOMIC_CYCLE_START = 0.4   # la economía mundial en 2023 no estaba en recesión (la recesión era argentina)
 
 # (ya no se usa: reemplazado por LATAM_BASELINE + ARG_ON_TOP)

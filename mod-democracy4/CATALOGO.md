@@ -2,28 +2,37 @@
 
 Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube, ▼ baja, al aumentar la política o la intensidad de la situación. En los grupos de votantes, ▲ significa que te aprueban más.
 
-- 39 políticas · 38 situaciones · 38 eventos · 38 dilemas
+- 54 políticas · 38 situaciones · 38 eventos · 38 dilemas
 
 ## Políticas
 
-### Economía (9)
+### Economía (17)
 
 | Política | Nivel inicial | Efectos |
 |---|---|---|
 | **Aportes sindicales y obras sociales** | 80% | ▲ sindicalistas, corrupción, salarios, desempleo · ▼ empresarios |
 | **Bandas cambiarias** | — | ▲ fortaleza del peso, confianza empresaria, empresarios · ▼ inflación, campo |
+| **Bimonetarismo** | — | ▲ fortaleza del peso, confianza empresaria, clase media · ▼ inflación, nacionalistas, izquierda |
+| **Compre Argentino y sustitución de importaciones** | — | ▲ sindicalistas, nacionalistas, inflación · ▼ desempleo, comercio exterior, empresarios, clase media |
 | **Control de precios** | 40% | ▲ inflación, mercado negro, sectores bajos · ▼ inflación, confianza empresaria, empresarios, cuentapropistas, precio de los alimentos |
 | **Desregulación de la economía** | 10% | ▲ confianza empresaria, cuentapropistas, productividad, empresarios · ▼ burocracia, sindicalistas, calidad democrática, sectores bajos |
 | **Dolarización** | — | ▲ empresarios, desempleo, confianza empresaria, fortaleza del peso · ▼ inflación, nacionalistas, izquierda, estatales |
+| **Dólares diferenciales (dólar soja, dólar agro)** | — | ▲ campo, comercio exterior, inflación, empresarios, mercado negro · ▼ fortaleza del peso |
 | **Explotación de litio** | 30% | ▲ inversión extranjera, tecnología, PBI, escasez de agua · ▼ ambientalistas |
+| **Expropiación de empresas estratégicas** | — | ▲ izquierda, nacionalistas, estatales · ▼ empresarios, inversión extranjera, confianza empresaria |
+| **Independencia del Banco Central** | — | ▲ confianza empresaria, inversión extranjera, empresarios · ▼ inflación, izquierda |
+| **Nacionalización de la banca y del comercio exterior** | — | ▲ izquierda, corrupción, mercado negro, estatales · ▼ empresarios, clase alta, inversión extranjera, confianza empresaria, comercio exterior |
+| **Prohibición de despidos y doble indemnización** | — | ▲ sindicalistas, mercado negro · ▼ empresarios, cuentapropistas, desempleo, confianza empresaria, inversión extranjera |
 | **Recorte del gasto público ("motosierra")** | — | ▲ desempleo, empresarios · ▼ estatales, inflación, PBI, izquierda, burocracia, sectores bajos, jubilados |
+| **Reducción de la jornada laboral** | — | ▲ sindicalistas, jóvenes, salud · ▼ WorkingWeek, empresarios, cuentapropistas, PBI, confianza empresaria |
 | **Regla de déficit cero** | — | ▲ confianza empresaria, empresarios · ▼ inflación, jubilados, estatales, izquierda |
 | **Tasa de interés del Banco Central** | 63% | ▲ fortaleza del peso, desempleo, clase alta · ▼ inflación, PBI, cuentapropistas, clase media |
 
-### Impuestos (5)
+### Impuestos (6)
 
 | Política | Nivel inicial | Efectos |
 |---|---|---|
+| **Aporte solidario de las grandes fortunas** | — | ▲ izquierda, igualdad · ▼ clase alta, empresarios, inversión extranjera, confianza empresaria |
 | **Blanqueo de capitales** | — | ▲ corrupción, clase alta, confianza empresaria · ▼ evasión, clase media |
 | **Derechos de exportación (retenciones)** | 75% | ▲ igualdad, izquierda · ▼ campo, ingresos del campo, comercio exterior, PBI, precio de los alimentos, empresarios |
 | **Impuesto PAIS** | 60% | ▲ turismo, evasión · ▼ clase media, clase alta |
@@ -39,27 +48,32 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 | **Planes sociales** | 60% | ▲ sectores bajos, desempleo, corrupción, izquierda · ▼ indigencia, clase media, empresarios |
 | **Subsidios a la luz y el gas** | 67% | ▲ sectores bajos, clase media, Cortes de luz (juego), emisiones de CO2 · ▼ inflación, eficiencia energética, oferta de petróleo, ambientalistas |
 
-### Servicios públicos (4)
+### Servicios públicos (5)
 
 | Política | Nivel inicial | Efectos |
 |---|---|---|
 | **Cierre de organismos públicos** | — | ▲ empresarios · ▼ estatales, campo, tecnología, burocracia |
 | **Controles sanitarios (ANMAT)** | 50% | ▲ salud, burocracia · ▼ corrupción, confianza empresaria |
+| **Educación como servicio esencial** | — | ▲ educación, familias · ▼ sindicalistas, estatales |
 | **Salarios del sector público** | 50% | ▲ estatales, inflación, sindicalistas · ▼ empresarios |
 | **Transferencias discrecionales a provincias** | 60% | ▲ corrupción, estabilidad, igualdad, todos los votantes |
 
-### Ley y orden (6)
+### Ley y orden (10)
 
 | Política | Nivel inicial | Efectos |
 |---|---|---|
 | **Baja de la edad de imputabilidad** | — | ▲ conservadores, hacinamiento carcelario · ▼ progresistas, delito, jóvenes |
+| **Boleta Única de Papel** | — | ▲ calidad democrática, progresistas · ▼ corrupción |
 | **Facultades delegadas y gobierno por decreto** | — | ▲ empresarios · ▼ calidad democrática, progresistas, burocracia, estabilidad |
 | **Ficha Limpia** | — | ▲ calidad democrática, progresistas, clase media · ▼ corrupción |
 | **Ley de glaciares** | 60% | ▲ ambientalistas, ambiente · ▼ inversión extranjera, empresarios, escasez de agua |
+| **Ley de medios (desmonopolización)** | — | ▲ izquierda, polarización · ▼ empresarios, progresistas |
+| **Ley de reiterancia** | — | ▲ conservadores, jubilados · ▼ delito, progresistas |
 | **Primarias abiertas (PASO)** | 100% | ▲ calidad democrática, progresistas, burocracia |
 | **Protocolo antipiquetes** | — | ▲ conservadores, clase media, estabilidad · ▼ tránsito, progresistas, izquierda, sindicalistas, calidad democrática |
+| **Reforma judicial y ampliación de la Corte** | — | ▲ izquierda, corrupción · ▼ progresistas, conservadores, calidad democrática, inversión extranjera |
 
-### Política exterior (10)
+### Política exterior (11)
 
 | Política | Nivel inicial | Efectos |
 |---|---|---|
@@ -67,6 +81,7 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 | **Alineamiento con Estados Unidos** | 20% | ▲ relaciones exteriores, inversión extranjera, fortaleza del peso, empresarios, comercio exterior · ▼ nacionalistas, izquierda, campo |
 | **Antártida y control del Mar Argentino** | 40% | ▲ nacionalistas, ambiente, ambientalistas · ▼ crimen organizado |
 | **Cuestión Malvinas** | 50% | ▲ nacionalistas · ▼ relaciones exteriores, inversión extranjera, progresistas |
+| **Desconocer la deuda y romper con el FMI** | — | ▲ izquierda, sindicalistas · ▼ empresarios, clase alta, relaciones exteriores, inversión extranjera, confianza empresaria, fortaleza del peso |
 | **Ingreso a los BRICS** | — | ▲ izquierda, comercio exterior, nacionalistas · ▼ empresarios, relaciones exteriores, inversión extranjera |
 | **Misiones de paz de la ONU** | 40% | ▲ relaciones exteriores, progresistas, nacionalistas |
 | **Postura ante la guerra en Ucrania** | 0% | ▲ relaciones exteriores, progresistas · ▼ izquierda, campo, comercio exterior |
@@ -88,28 +103,28 @@ Qué las enciende (causas) y qué provocan mientras están activas (efectos). La
 
 | Situación | La encienden | La apagan | Provoca |
 |---|---|---|---|
-| **Brecha cambiaria** | Cepo cambiario (juego), Impuesto PAIS, Emisión del Banco Central para el Tesoro (juego), inflación | fortaleza del peso, Dolarización, Programa con el FMI, Bandas cambiarias, Tasa de interés del Banco Central | ▲ evasión, mercado negro, inflación · ▼ inversión extranjera, clase media, empresarios, PBI |
-| **Reservas agotadas** | Emisión del Banco Central para el Tesoro (juego), Derechos de exportación (retenciones), Subsidios a la luz y el gas, peso de la deuda, Bandas cambiarias, Tasas altas en EE.UU., Crisis financiera global | Programa con el FMI, Desarrollo de Vaca Muerta (juego), Explotación de litio, RIGI: incentivo a grandes inversiones (juego), Cepo cambiario (juego), fortaleza del peso, comercio exterior, Cosecha récord, Boom energético, Alineamiento con Estados Unidos, Inocencia fiscal ("dólares del colchón"), Blanqueo de capitales, Lluvia de inversiones, Superciclo de materias primas, Crisis en Medio Oriente | ▲ inflación · ▼ fortaleza del peso, confianza empresaria, PBI, empresarios |
-| **Riesgo país por las nubes** | peso de la deuda, Reservas agotadas, Emisión del Banco Central para el Tesoro (juego), Cuestión Malvinas, Congreso en contra, Tasas altas en EE.UU., Crisis financiera global | Programa con el FMI, estabilidad, Estabilidad macroeconómica, Superávit fiscal, independencia judicial (juego) | ▼ inversión extranjera, confianza empresaria, PBI, empresarios |
-| **Corrida cambiaria** | Brecha cambiaria, Reservas agotadas, inflación, Gobierno salpicado por la corrupción, Tasas altas en EE.UU., Crisis financiera global, hiperinflación (juego) | Cepo cambiario (juego), Programa con el FMI, Estabilidad macroeconómica, Tasa de interés del Banco Central, Alineamiento con Estados Unidos | ▲ inflación · ▼ PBI, clase media, clase alta, fortaleza del peso, todos los votantes |
-| **Corralito** | Reservas agotadas, Riesgo país por las nubes, Corrida cambiaria, Dolarización | estabilidad | ▼ clase media, clase alta, estabilidad, PBI, todos los votantes, jubilados |
-| **Default** | Riesgo país por las nubes, peso de la deuda, Reservas agotadas | Programa con el FMI | ▼ inversión extranjera, comercio exterior, relaciones exteriores, PBI, empresarios |
+| **Brecha cambiaria** | Cepo cambiario (juego), Impuesto PAIS, Emisión del Banco Central para el Tesoro (juego), inflación, Dólares diferenciales (dólar soja, dólar agro), Nacionalización de la banca y del comercio exterior | fortaleza del peso, Dolarización, Programa con el FMI, Bandas cambiarias, Tasa de interés del Banco Central, Bimonetarismo | ▲ evasión, mercado negro, inflación · ▼ inversión extranjera, clase media, empresarios, PBI |
+| **Reservas agotadas** | Emisión del Banco Central para el Tesoro (juego), Derechos de exportación (retenciones), Subsidios a la luz y el gas, peso de la deuda, Bandas cambiarias, Tasas altas en EE.UU., Crisis financiera global | Programa con el FMI, Desarrollo de Vaca Muerta (juego), Explotación de litio, RIGI: incentivo a grandes inversiones (juego), Cepo cambiario (juego), fortaleza del peso, comercio exterior, Cosecha récord, Boom energético, Alineamiento con Estados Unidos, Inocencia fiscal ("dólares del colchón"), Blanqueo de capitales, Lluvia de inversiones, Superciclo de materias primas, Crisis en Medio Oriente, Dólares diferenciales (dólar soja, dólar agro), Desconocer la deuda y romper con el FMI | ▲ inflación · ▼ fortaleza del peso, confianza empresaria, PBI, empresarios |
+| **Riesgo país por las nubes** | peso de la deuda, Reservas agotadas, Emisión del Banco Central para el Tesoro (juego), Cuestión Malvinas, Congreso en contra, Tasas altas en EE.UU., Crisis financiera global, Desconocer la deuda y romper con el FMI, Expropiación de empresas estratégicas, Reforma judicial y ampliación de la Corte, Nacionalización de la banca y del comercio exterior | Programa con el FMI, estabilidad, Estabilidad macroeconómica, Superávit fiscal, Independencia del Banco Central, independencia judicial (juego) | ▼ inversión extranjera, confianza empresaria, PBI, empresarios |
+| **Corrida cambiaria** | Brecha cambiaria, Reservas agotadas, inflación, Gobierno salpicado por la corrupción, Tasas altas en EE.UU., Crisis financiera global, Nacionalización de la banca y del comercio exterior, Desconocer la deuda y romper con el FMI, hiperinflación (juego) | Cepo cambiario (juego), Programa con el FMI, Estabilidad macroeconómica, Tasa de interés del Banco Central, Alineamiento con Estados Unidos, Bimonetarismo | ▲ inflación · ▼ PBI, clase media, clase alta, fortaleza del peso, todos los votantes |
+| **Corralito** | Reservas agotadas, Riesgo país por las nubes, Corrida cambiaria, Dolarización, Nacionalización de la banca y del comercio exterior | estabilidad | ▼ clase media, clase alta, estabilidad, PBI, todos los votantes, jubilados |
+| **Default** | Riesgo país por las nubes, peso de la deuda, Reservas agotadas, Desconocer la deuda y romper con el FMI | Programa con el FMI | ▼ inversión extranjera, comercio exterior, relaciones exteriores, PBI, empresarios |
 | **Piquetes y cortes de calle** | pobreza, desempleo, inflación, Desempleo en alza, El sueldo no alcanza | Planes sociales, Protocolo antipiquetes, Jubilaciones y movilidad (ANSES) (juego), Seguro de desempleo (juego), policía armada (juego) | ▲ tránsito, izquierda · ▼ estabilidad, clase media, turismo |
-| **Paros generales de la CGT** | inflación, desempleo, Programa con el FMI, El sueldo no alcanza, Desempleo en alza, Recorte del gasto público ("motosierra"), huelga general (juego) | Ley de Contrato de Trabajo (juego), Aportes sindicales y obras sociales, Salario mínimo, vital y móvil (juego) | ▲ sindicalistas · ▼ PBI, empresarios, estabilidad |
+| **Paros generales de la CGT** | inflación, desempleo, Programa con el FMI, El sueldo no alcanza, Desempleo en alza, Recorte del gasto público ("motosierra"), Educación como servicio esencial, huelga general (juego) | Ley de Contrato de Trabajo (juego), Aportes sindicales y obras sociales, Reducción de la jornada laboral, Prohibición de despidos y doble indemnización, Salario mínimo, vital y móvil (juego) | ▲ sindicalistas · ▼ PBI, empresarios, estabilidad |
 | **Crisis energética** | Subsidios a la luz y el gas, Reservas agotadas, Guerra en Europa, Crisis en Medio Oriente | Desarrollo de Vaca Muerta (juego), oferta de petróleo, Lluvia de inversiones | ▲ Cortes de luz (juego), inflación · ▼ PBI, todos los votantes |
-| **La grieta** | polarización, Protocolo antipiquetes, Planes sociales, Gobierno salpicado por la corrupción, Las marchas de los miércoles | Cuestión Malvinas, Transferencias discrecionales a provincias | ▲ participación electoral · ▼ estabilidad, calidad democrática |
+| **La grieta** | polarización, Protocolo antipiquetes, Planes sociales, Gobierno salpicado por la corrupción, Las marchas de los miércoles, Ley de medios (desmonopolización), Reforma judicial y ampliación de la Corte, Expropiación de empresas estratégicas | Cuestión Malvinas, Transferencias discrecionales a provincias | ▲ participación electoral · ▼ estabilidad, calidad democrática |
 | **Salto cambiario** | Brecha cambiaria, Reservas agotadas, Corrida cambiaria, Riesgo país por las nubes, Crisis en Brasil, Tasas altas en EE.UU., hiperinflación (juego) | Bandas cambiarias, Alineamiento con Estados Unidos, Tasa de interés del Banco Central | ▲ inflación, turismo, campo · ▼ fortaleza del peso, clase media, sectores bajos |
-| **El sueldo no alcanza** | inflación, Salto cambiario, Impuesto a las Ganancias (juego), Guerra en Europa, Crisis en Medio Oriente, IVA (juego), hiperinflación (juego) | salarios, Jubilaciones y movilidad (ANSES) (juego), Salarios del sector público, Desinflación, Salario mínimo, vital y móvil (juego), AUH y asignaciones familiares (juego) | ▲ pobreza · ▼ sectores bajos, jubilados, sindicalistas, clase media, PBI |
+| **El sueldo no alcanza** | inflación, Salto cambiario, Impuesto a las Ganancias (juego), Guerra en Europa, Crisis en Medio Oriente, Dólares diferenciales (dólar soja, dólar agro), IVA (juego), hiperinflación (juego) | salarios, Jubilaciones y movilidad (ANSES) (juego), Salarios del sector público, Desinflación, Salario mínimo, vital y móvil (juego), AUH y asignaciones familiares (juego) | ▲ pobreza · ▼ sectores bajos, jubilados, sindicalistas, clase media, PBI |
 | **Caída de la actividad** | El sueldo no alcanza, Recorte del gasto público ("motosierra"), Tasa de interés del Banco Central, Riesgo país por las nubes, Crisis en Brasil, Nueva pandemia, Crisis financiera global, Guerra comercial global, IVA (juego), Impuesto a las Ganancias (juego), Ganancias de sociedades (juego) | PBI, Obra pública vial (juego), Lluvia de inversiones, ayuda a pymes (juego) | ▲ desempleo · ▼ cuentapropistas, empresarios, PBI |
 | **Argentina cara en dólares** | fortaleza del peso, Bandas cambiarias, Tasa de interés del Banco Central, Alineamiento con Estados Unidos | Salto cambiario | ▲ clase media · ▼ turismo, campo, inflación, comercio exterior |
-| **Cierre de pymes** | Caída de la actividad, Argentina cara en dólares, Tasa de interés del Banco Central, Crisis energética, Crisis en Brasil, Acuerdo con la Unión Europea en vigor, Guerra comercial global, Cargas sociales (juego), éxodo de empresas (juego) | Aranceles y licencias de importación (juego), Subsidios a la luz y el gas, ayuda a pymes (juego), incentivo a la inversión (juego) | ▲ desempleo, comercio exterior · ▼ cuentapropistas, sindicalistas |
-| **Desempleo en alza** | desempleo, Cierre de pymes, Caída de la actividad, Recorte del gasto público ("motosierra"), Ley de Contrato de Trabajo (juego), Cargas sociales (juego) | Lluvia de inversiones | ▲ delito, fuga de cerebros · ▼ sectores bajos, jóvenes, sindicalistas |
+| **Cierre de pymes** | Caída de la actividad, Argentina cara en dólares, Tasa de interés del Banco Central, Crisis energética, Crisis en Brasil, Acuerdo con la Unión Europea en vigor, Guerra comercial global, Prohibición de despidos y doble indemnización, Reducción de la jornada laboral, Cargas sociales (juego), éxodo de empresas (juego) | Aranceles y licencias de importación (juego), Subsidios a la luz y el gas, Compre Argentino y sustitución de importaciones, ayuda a pymes (juego), incentivo a la inversión (juego) | ▲ desempleo, comercio exterior · ▼ cuentapropistas, sindicalistas |
+| **Desempleo en alza** | desempleo, Cierre de pymes, Caída de la actividad, Recorte del gasto público ("motosierra"), Ley de Contrato de Trabajo (juego), Cargas sociales (juego) | Lluvia de inversiones, Prohibición de despidos y doble indemnización | ▲ delito, fuga de cerebros · ▼ sectores bajos, jóvenes, sindicalistas |
 | **Conflicto en los hospitales** | Recorte del gasto público ("motosierra"), Nueva pandemia, Paro de médicos y residentes (juego) | Hospitales públicos (juego), Salarios del sector público, salud | ▼ salud, familias, estatales, progresistas |
 | **Crisis en el sistema de discapacidad** | Recorte del gasto público ("motosierra"), El sueldo no alcanza | Pensiones y prestaciones por discapacidad (juego) | ▼ familias, sectores bajos, todos los votantes, progresistas |
-| **Universidades en pie de guerra** | Recorte del gasto público ("motosierra"), Paro docente (juego) | Universidad pública y gratuita (juego), CONICET y ciencia (juego) | ▲ fuga de cerebros · ▼ jóvenes, progresistas, educación |
+| **Universidades en pie de guerra** | Recorte del gasto público ("motosierra"), Educación como servicio esencial, Paro docente (juego) | Universidad pública y gratuita (juego), CONICET y ciencia (juego) | ▲ fuga de cerebros · ▼ jóvenes, progresistas, educación |
 | **Las marchas de los miércoles** | El sueldo no alcanza, Protocolo antipiquetes, edad jubilatoria (juego) | Jubilaciones y movilidad (ANSES) (juego), Moratoria previsional | ▼ jubilados, estabilidad, todos los votantes, progresistas |
-| **Congreso en contra** | Facultades delegadas y gobierno por decreto, polarización, La grieta, Gobierno salpicado por la corrupción | Transferencias discrecionales a provincias | ▼ estabilidad, confianza empresaria, calidad democrática |
-| **Gobierno salpicado por la corrupción** | corrupción, Transferencias discrecionales a provincias, Inocencia fiscal ("dólares del colchón"), Obra pública vial (juego) | Ficha Limpia, Controles sanitarios (ANMAT), independencia judicial (juego) | ▼ todos los votantes, clase media, calidad democrática, confianza empresaria |
+| **Congreso en contra** | Facultades delegadas y gobierno por decreto, polarización, La grieta, Gobierno salpicado por la corrupción, Reforma judicial y ampliación de la Corte, Desconocer la deuda y romper con el FMI | Transferencias discrecionales a provincias | ▼ estabilidad, confianza empresaria, calidad democrática |
+| **Gobierno salpicado por la corrupción** | corrupción, Transferencias discrecionales a provincias, Inocencia fiscal ("dólares del colchón"), Obra pública vial (juego) | Ficha Limpia, Controles sanitarios (ANMAT), Boleta Única de Papel, independencia judicial (juego) | ▼ todos los votantes, clase media, calidad democrática, confianza empresaria |
 
 ### Logros (6)
 
@@ -117,10 +132,10 @@ Qué las enciende (causas) y qué provocan mientras están activas (efectos). La
 |---|---|---|---|
 | **Cosecha récord** | Superciclo de materias primas, Guerra en Europa, subsidios agrícolas (juego) | Derechos de exportación (retenciones), Aranceles y licencias de importación (juego), Brecha cambiaria | ▲ PBI, campo, comercio exterior, fortaleza del peso |
 | **Boom energético** | Desarrollo de Vaca Muerta (juego), RIGI: incentivo a grandes inversiones (juego), Crisis en Medio Oriente, Guerra en Europa | Subsidios a la luz y el gas | ▲ PBI, fortaleza del peso, empresarios · ▼ desempleo |
-| **Estabilidad macroeconómica** | Programa con el FMI, Dolarización, Superávit fiscal, Desinflación | inflación, Brecha cambiaria, Reservas agotadas, Emisión del Banco Central para el Tesoro (juego) | ▲ confianza empresaria, inversión extranjera, todos los votantes, clase media |
-| **Desinflación** | Recorte del gasto público ("motosierra"), Regla de déficit cero, Bandas cambiarias | inflación, Emisión del Banco Central para el Tesoro (juego), Salto cambiario | ▲ clase media, sectores bajos, confianza empresaria, todos los votantes |
+| **Estabilidad macroeconómica** | Programa con el FMI, Dolarización, Superávit fiscal, Desinflación, Independencia del Banco Central, Bimonetarismo | inflación, Brecha cambiaria, Reservas agotadas, Emisión del Banco Central para el Tesoro (juego) | ▲ confianza empresaria, inversión extranjera, todos los votantes, clase media |
+| **Desinflación** | Recorte del gasto público ("motosierra"), Regla de déficit cero, Bandas cambiarias, Independencia del Banco Central, Bimonetarismo | inflación, Emisión del Banco Central para el Tesoro (juego), Salto cambiario | ▲ clase media, sectores bajos, confianza empresaria, todos los votantes |
 | **Superávit fiscal** | Recorte del gasto público ("motosierra"), Regla de déficit cero | Aerolíneas Argentinas estatal (juego), Emisión del Banco Central para el Tesoro (juego), Subsidios a la luz y el gas, Jubilaciones y movilidad (ANSES) (juego), Obra pública vial (juego) | ▲ empresarios, confianza empresaria, inversión extranjera |
-| **Lluvia de inversiones** | RIGI: incentivo a grandes inversiones (juego), Alineamiento con Estados Unidos, Estabilidad macroeconómica, Desregulación de la economía, Crisis en Medio Oriente, Acuerdo con la Unión Europea en vigor, independencia judicial (juego) | Riesgo país por las nubes, Cepo cambiario (juego), Tasas altas en EE.UU., Ganancias de sociedades (juego), éxodo de empresas (juego) | ▲ inversión extranjera, PBI, fortaleza del peso · ▼ desempleo |
+| **Lluvia de inversiones** | RIGI: incentivo a grandes inversiones (juego), Alineamiento con Estados Unidos, Estabilidad macroeconómica, Desregulación de la economía, Crisis en Medio Oriente, Acuerdo con la Unión Europea en vigor, Independencia del Banco Central, independencia judicial (juego) | Riesgo país por las nubes, Cepo cambiario (juego), Tasas altas en EE.UU., Expropiación de empresas estratégicas, Desconocer la deuda y romper con el FMI, Aporte solidario de las grandes fortunas, Nacionalización de la banca y del comercio exterior, Ganancias de sociedades (juego), éxodo de empresas (juego) | ▲ inversión extranjera, PBI, fortaleza del peso · ▼ desempleo |
 
 ### Mundo (las dispara un evento) (10)
 
@@ -259,6 +274,12 @@ El mod renombra estas políticas y situaciones del juego (sólo el texto; la mec
 | Servicio postal estatal | **Correo Argentino** |
 | Radiotelevisión estatal | **Medios públicos** |
 | Servicios de inteligencia | **SIDE** |
+| UniversalBasicIncome | **Salario Básico Universal** |
+| RentControls | **Ley de Alquileres** |
+| StateHousing | **Procrear y vivienda social** |
+| WorkersOnBoards | **Participación de los trabajadores en las ganancias** |
+| FinancialTransactionsTax | **Impuesto al cheque** |
+| LuxuryGoodsTax | **Impuestos internos** |
 | Huelga de médicos | **Paro de médicos y residentes** |
 | Huelga de profesores | **Paro docente** |
 | Personas sin hogar | **Personas en situación de calle** |

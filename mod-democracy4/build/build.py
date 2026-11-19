@@ -94,7 +94,7 @@ def build():
         grudges = ''.join('CreateGrudge({},{},{});'.format(t, a, d) for t, a, d in e['grudges'])
         # sonido del juego base, como los eventos de los mods publicados: uno para buenas noticias y otro para malas
         tone = sum(a for _t, a, _d in e['grudges'] if not _t.startswith('AR_')) - \
-            sum(a for _t, a, _d in e['grudges'] if _t.startswith('AR_') and not _t in POSITIVE_SITS)
+            sum(a for _t, a, _d in e['grudges'] if _t.startswith('AR_') and _t not in POSITIVE_SITS and _t != e['name'])
         sound = 'DM4_Low Corruption Praised.wav' if tone > 0 else 'DM4_Credit Rating Downgraded.wav'
         infl = '\n'.join('{} = {}'.format(i, x) for i, x in enumerate(gate(e['influences'])))
         write('data/simulation/events/{}.txt'.format(e['name']),

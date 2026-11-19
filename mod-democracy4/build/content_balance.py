@@ -186,19 +186,38 @@ def extend(C):
                 parts[1] = _scale(parts[1], POLICY_GDP_SCALE)
             out.append(','.join(parts))
         p['effects'] = out
-    for items, k in ((C.EVENTS, EVENT_INFLUENCE_SCALE), (C.DILEMMAS, DILEMMA_INFLUENCE_SCALE)):
+    # Eventos y dilemas con la mecánica del juego (ver archivos data/simulation/events y dilemmas):
+    # - un evento ocurre cuando su valor llega a 1; los del juego llevan azar y condiciones que lo llevan ahí cuando
+    #   corresponde, y se castigan a sí mismos (-0,9) para no repetirse enseguida. Los del mod llegaban como mucho a
+    #   0,67: nunca podían ocurrir.
+    # - los dilemas del juego usan azar de 0,2 a 0,8.
+    import content_merge as M
+    def reshape(items, rnd, cond_max, rnd_only):
         for it in items:
-            out = []
+            conds, out = [], []
             for i in it['influences']:
                 parts = i.split(',')
-                if parts[0] == '_random_':
-                    parts[2] = '{:g}'.format(min(0.6, float(parts[2]) * k))
-                else:
-                    import content_merge as M
-                    a0, b0 = M.linear(parts[1])
-                    top = max(abs(a0), abs(a0 + b0)) * k
-                    parts[1] = _scale(parts[1], k * min(1.0, 0.5 / top) if top else k)   # tope 0,5 por término
-                out.append(','.join(parts))
+                if parts[0] != '_random_':
+                    conds.append(parts)
+            tops = []
+            for parts in conds:
+                a0, b0 = M.linear(parts[1])
+                tops.append(max(a0, a0 + b0, 0.0))
+            total = sum(tops)
+            if conds and total > 0:
+                out.append('_random_,{:g},{:g}'.format(*rnd))
+                k = cond_max / total
+                for parts in conds:
+                    parts = list(parts)
+                    parts[1] = _scale(parts[1], k)
+                    out.append(','.join(parts))
+            else:
+                out.append('_random_,{:g},{:g}'.format(*rnd_only))
             it['influences'] = out
+    reshape(C.EVENTS, (0.3, 0.8), 0.35, (0.4, 1.04))
+    reshape(C.DILEMMAS, (0.2, 0.8), 0.3, (0.2, 0.8))
+    for e in C.EVENTS:
+        if not any(t == e['name'] for t, _a, _d in e['grudges']):
+            e['grudges'].append((e['name'], -0.9, 0.83))
     C.COUNTRY_OVERRIDES[:] = [(l, t, TRAITS.get(t, eq)) for l, t, eq in C.COUNTRY_OVERRIDES]
     C.CHAIN_OVERRIDES[:] = [c for c in C.CHAIN_OVERRIDES if c[0] not in DROP_CHAINS] + BASE_EFFECT_OVERRIDES

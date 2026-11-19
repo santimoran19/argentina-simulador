@@ -2,9 +2,9 @@
 Name = AR_EvCierreFabrica
 Texture = AR_EvCierreFabrica.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(TradeUnionist,-0.04,0.8);CreateGrudge(Unemployment,0.02,0.85);CreateGrudge(_All_,-0.02,0.8);
+OnImplement = CreateGrudge(TradeUnionist,-0.04,0.8);CreateGrudge(Unemployment,0.02,0.85);CreateGrudge(_All_,-0.02,0.8);CreateGrudge(AR_EvCierreFabrica,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.16
-1 = AR_CierrePymes,0+(0.5*x)
-2 = AR_AtrasoCambiario,0+(0.24*x)
+0 = _random_,0.3,0.8
+1 = AR_CierrePymes,0+(0.25*x)
+2 = AR_AtrasoCambiario,0+(0.1*x)

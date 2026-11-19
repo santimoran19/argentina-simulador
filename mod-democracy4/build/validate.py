@@ -113,6 +113,9 @@ for e in C.EVENTS:
     w = 'evento ' + e['name']
     for i in e['influences']: check_influence(w, i)
     for t, a, d in e['grudges']:
+        if t == e['name']:          # castigo sobre sí mismo para no repetirse (como los eventos del juego)
+            if not (-1 <= a < 0 and 0 < d < 1): err(w + ': autocastigo mal formado')
+            continue
         if t not in KNOWN: err(w + ': nombre desconocido ' + t)
         lim = 0.7 if t in OWN_SIT else 0.2
         if not (-lim <= a <= lim and 0 < d < 1): warn(w + ': grudge fuera de rango ' + t)

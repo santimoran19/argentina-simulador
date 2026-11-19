@@ -2,8 +2,8 @@
 Name = AR_EvOrmuz
 Texture = AR_EvOrmuz.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(AR_CrisisMedioOriente,0.55,0.92);CreateGrudge(OilPrice,0.08,0.85);CreateGrudge(Inflation,0.03,0.8);CreateGrudge(AR_BoomEnergetico,0.15,0.88);
+OnImplement = CreateGrudge(AR_CrisisMedioOriente,0.55,0.92);CreateGrudge(OilPrice,0.08,0.85);CreateGrudge(Inflation,0.03,0.8);CreateGrudge(AR_BoomEnergetico,0.15,0.88);CreateGrudge(AR_EvOrmuz,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.16
-1 = AR_RelacionIsrael,0+(0.08*x)
+0 = _random_,0.3,0.8
+1 = AR_RelacionIsrael,0+(0.35*x)

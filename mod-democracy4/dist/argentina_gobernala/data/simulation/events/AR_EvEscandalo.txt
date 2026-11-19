@@ -2,9 +2,9 @@
 Name = AR_EvEscandalo
 Texture = AR_EvEscandalo.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(_All_,-0.05,0.8);CreateGrudge(MiddleIncome,-0.05,0.8);CreateGrudge(Democracy,-0.02,0.85);
+OnImplement = CreateGrudge(_All_,-0.05,0.8);CreateGrudge(MiddleIncome,-0.05,0.8);CreateGrudge(Democracy,-0.02,0.85);CreateGrudge(AR_EvEscandalo,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.32
-1 = AR_EscandaloCorrupcion,0+(0.5*x)
-2 = AR_Coparticipacion,0+(0.16*x)
+0 = _random_,0.3,0.8
+1 = AR_EscandaloCorrupcion,0+(0.2763*x)
+2 = AR_Coparticipacion,0+(0.0737*x)

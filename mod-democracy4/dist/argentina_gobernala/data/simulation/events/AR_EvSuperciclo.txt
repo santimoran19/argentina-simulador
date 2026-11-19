@@ -2,8 +2,8 @@
 Name = AR_EvSuperciclo
 Texture = AR_EvSuperciclo.jpg
 GUISound = DM4_Low Corruption Praised.wav
-OnImplement = CreateGrudge(AR_Superciclo,0.55,0.92);CreateGrudge(Farmers,0.05,0.85);CreateGrudge(GDP,0.01,0.85);
+OnImplement = CreateGrudge(AR_Superciclo,0.55,0.92);CreateGrudge(Farmers,0.05,0.85);CreateGrudge(GDP,0.01,0.85);CreateGrudge(AR_EvSuperciclo,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.2
-1 = AR_RelacionChina,0+(0.12*x)
+0 = _random_,0.3,0.8
+1 = AR_RelacionChina,0+(0.35*x)

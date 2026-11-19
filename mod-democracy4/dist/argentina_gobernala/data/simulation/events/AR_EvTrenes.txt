@@ -2,8 +2,8 @@
 Name = AR_EvTrenes
 Texture = AR_EvTrenes.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(Poor,-0.04,0.75);CreateGrudge(Stability,-0.02,0.75);
+OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(Poor,-0.04,0.75);CreateGrudge(Stability,-0.02,0.75);CreateGrudge(AR_EvTrenes,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.2
-1 = BusSubsidies,0.132-(0.24*x)
+0 = _random_,0.3,0.8
+1 = BusSubsidies,0.35-(0.6364*x)

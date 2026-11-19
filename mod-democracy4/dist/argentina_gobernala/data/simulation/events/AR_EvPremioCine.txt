@@ -2,7 +2,7 @@
 Name = AR_EvPremioCine
 Texture = AR_EvPremioCine.jpg
 GUISound = DM4_Low Corruption Praised.wav
-OnImplement = CreateGrudge(_All_,0.02,0.8);CreateGrudge(Liberal,0.03,0.8);
+OnImplement = CreateGrudge(_All_,0.02,0.8);CreateGrudge(Liberal,0.03,0.8);CreateGrudge(AR_EvPremioCine,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.2
+0 = _random_,0.4,1.04

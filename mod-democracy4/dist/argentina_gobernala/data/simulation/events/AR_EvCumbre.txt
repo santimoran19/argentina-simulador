@@ -2,8 +2,8 @@
 Name = AR_EvCumbre
 Texture = AR_EvCumbre.jpg
 GUISound = DM4_Low Corruption Praised.wav
-OnImplement = CreateGrudge(ForeignRelations,0.04,0.85);CreateGrudge(ForeignInvestment,0.02,0.85);
+OnImplement = CreateGrudge(ForeignRelations,0.04,0.85);CreateGrudge(ForeignInvestment,0.02,0.85);CreateGrudge(AR_EvCumbre,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.24
-1 = AR_AcuerdoEEUU,0+(0.24*x)
+0 = _random_,0.3,0.8
+1 = AR_AcuerdoEEUU,0+(0.35*x)

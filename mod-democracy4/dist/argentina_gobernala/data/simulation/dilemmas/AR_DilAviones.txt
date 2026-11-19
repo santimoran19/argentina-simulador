@@ -2,8 +2,8 @@
 name=AR_DilAviones
 
 [influences]
-0 = _random_,0,0.1
-1 = MilitarySpending,0+(0.15*x)
+0 = _random_,0.2,0.8
+1 = MilitarySpending,0+(0.3*x)
 
 [option0]
 OnImplement = CreateGrudge(ForeignRelations,0.04,0.9);CreateGrudge(Patriot,0.03,0.9);CreateGrudge(Socialist,-0.02,0.9);

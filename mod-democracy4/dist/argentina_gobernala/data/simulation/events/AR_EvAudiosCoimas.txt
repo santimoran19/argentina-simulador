@@ -2,9 +2,9 @@
 Name = AR_EvAudiosCoimas
 Texture = AR_EvAudiosCoimas.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(_All_,-0.06,0.85);CreateGrudge(Parents,-0.06,0.85);CreateGrudge(AR_EscandaloCorrupcion,0.1,0.9);
+OnImplement = CreateGrudge(_All_,-0.06,0.85);CreateGrudge(Parents,-0.06,0.85);CreateGrudge(AR_EscandaloCorrupcion,0.1,0.9);CreateGrudge(AR_EvAudiosCoimas,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.2
-1 = DisabilityBenefit,0.032+(0.16*x)
-2 = AR_EscandaloCorrupcion,0+(0.4*x)
+0 = _random_,0.3,0.8
+1 = DisabilityBenefit,0.0189+(0.0946*x)
+2 = AR_EscandaloCorrupcion,0+(0.2365*x)

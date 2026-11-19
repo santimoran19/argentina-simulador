@@ -2,8 +2,8 @@
 Name = AR_EvDengue
 Texture = AR_EvDengue.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(Health,-0.03,0.8);CreateGrudge(_All_,-0.02,0.8);CreateGrudge(HealthcareDemand,0.04,0.8);
+OnImplement = CreateGrudge(Health,-0.03,0.8);CreateGrudge(_All_,-0.02,0.8);CreateGrudge(HealthcareDemand,0.04,0.8);CreateGrudge(AR_EvDengue,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.24
-1 = StateHealthService,0.138-(0.12*x)
+0 = _random_,0.3,0.8
+1 = StateHealthService,0.35-(0.3043*x)

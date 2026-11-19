@@ -2,7 +2,7 @@
 name=AR_DilGobernadores
 
 [influences]
-0 = _random_,0,0.3
+0 = _random_,0.2,0.8
 
 [option0]
 OnImplement = CreateGrudge(Corruption,0.03,0.9);CreateGrudge(Stability,0.04,0.9);CreateGrudge(Capitalist,-0.02,0.9);

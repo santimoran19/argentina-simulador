@@ -2,9 +2,9 @@
 Name = AR_EvCalificadora
 Texture = AR_EvCalificadora.jpg
 GUISound = DM4_Low Corruption Praised.wav
-OnImplement = CreateGrudge(ForeignInvestment,0.04,0.85);CreateGrudge(AR_RiesgoPaisAlto,-0.08,0.85);CreateGrudge(Capitalist,0.03,0.85);
+OnImplement = CreateGrudge(ForeignInvestment,0.04,0.85);CreateGrudge(AR_RiesgoPaisAlto,-0.08,0.85);CreateGrudge(Capitalist,0.03,0.85);CreateGrudge(AR_EvCalificadora,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.16
-1 = AR_SuperavitFiscal,0+(0.4*x)
-2 = AR_EstabilidadMacro,0+(0.4*x)
+0 = _random_,0.3,0.8
+1 = AR_SuperavitFiscal,0+(0.175*x)
+2 = AR_EstabilidadMacro,0+(0.175*x)

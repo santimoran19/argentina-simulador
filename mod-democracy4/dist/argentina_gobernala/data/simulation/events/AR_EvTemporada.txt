@@ -2,8 +2,8 @@
 Name = AR_EvTemporada
 Texture = AR_EvTemporada.jpg
 GUISound = DM4_Low Corruption Praised.wav
-OnImplement = CreateGrudge(Tourism,0.04,0.75);CreateGrudge(SelfEmployed,0.03,0.75);CreateGrudge(GDP,0.01,0.7);
+OnImplement = CreateGrudge(Tourism,0.04,0.75);CreateGrudge(SelfEmployed,0.03,0.75);CreateGrudge(GDP,0.01,0.7);CreateGrudge(AR_EvTemporada,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.4
-1 = AR_BrechaCambiaria,0+(0.24*x)
+0 = _random_,0.3,0.8
+1 = AR_BrechaCambiaria,0+(0.35*x)

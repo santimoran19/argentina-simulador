@@ -141,44 +141,44 @@ Qué las enciende (causas) y qué provocan mientras están activas (efectos). La
 
 | Evento | Qué hace |
 |---|---|
-| **¡Argentina campeón del mundo!** | ▲ todos los votantes, ▲ nacionalistas, ▲ jóvenes |
-| **Sequía histórica** | ▼ PBI, ▼ campo, ▲ Reservas agotadas |
-| **Inundaciones en el litoral** | ▼ todos los votantes, ▼ sectores bajos, ▼ PBI |
-| **Apagón masivo** | ▼ todos los votantes, ▼ clase media, ▼ PBI |
-| **El Papa visita la Argentina** | ▲ religiosos, ▲ todos los votantes, ▲ sectores bajos |
-| **Escándalo de corrupción** | ▼ todos los votantes, ▼ clase media, ▼ calidad democrática |
-| **Megainversión en litio** | ▲ inversión extranjera, ▲ PBI, ▼ ambientalistas |
-| **Récord de turistas extranjeros** | ▲ turismo, ▲ cuentapropistas, ▲ PBI |
-| **Saqueos a supermercados** | ▼ todos los votantes, ▼ cuentapropistas, ▼ estabilidad |
-| **Marcha federal universitaria** | ▼ jóvenes, ▼ progresistas, ▼ izquierda |
-| **Una película argentina gana el Oscar** | ▲ todos los votantes, ▲ progresistas |
-| **Incendios en la Patagonia** | ▼ ambiente, ▼ ambientalistas, ▼ turismo |
-| **Exportaciones récord** | ▲ fortaleza del peso, ▲ confianza empresaria, ▲ PBI |
-| **Accidente ferroviario** | ▼ todos los votantes, ▼ sectores bajos, ▼ estabilidad |
-| **Cumbre internacional en Buenos Aires** | ▲ relaciones exteriores, ▲ inversión extranjera |
-| **Escándalo cripto presidencial** | ▼ todos los votantes, ▼ clase media, ▲ corrupción, ▼ progresistas |
-| **Audios de coimas en discapacidad** | ▼ todos los votantes, ▼ familias, ▲ Gobierno salpicado por la corrupción |
-| **Fentanilo contaminado** | ▼ salud, ▼ todos los votantes, ▼ familias |
-| **Temporal devastador en una ciudad del sur bonaerense** | ▼ todos los votantes, ▼ sectores bajos, ▼ PBI |
-| **Muere el Papa argentino** | ▼ religiosos, ▲ sectores bajos, ▲ todos los votantes |
-| **El Tesoro de EE.UU. sale al rescate** | ▲ fortaleza del peso, ▼ Corrida cambiaria, ▼ nacionalistas, ▲ empresarios |
-| **Epidemia récord de dengue** | ▼ salud, ▼ todos los votantes, ▲ demanda en hospitales |
-| **Ola polar y falta de gas** | ▼ todos los votantes, ▼ clase media, ▼ PBI |
-| **Paro de controladores aéreos** | ▼ turismo, ▼ clase media, ▲ sindicalistas |
-| **Caen los homicidios en Rosario** | ▼ crimen organizado, ▲ conservadores, ▲ todos los votantes |
-| **Mejora la nota de la deuda** | ▲ inversión extranjera, ▼ Riesgo país por las nubes, ▲ empresarios |
-| **Cierra una fábrica emblemática** | ▼ sindicalistas, ▲ desempleo, ▼ todos los votantes |
-| **Estalla una guerra en Europa** | ▲ Guerra en Europa, ▲ precio del petróleo, ▲ precio de los alimentos, ▲ campo, ▲ inflación |
-| **Se cierra el estrecho de Ormuz** | ▲ Crisis en Medio Oriente, ▲ precio del petróleo, ▲ inflación, ▲ Boom energético |
-| **EE.UU. impone aranceles globales** | ▲ Guerra comercial global, ▼ comercio exterior, ▲ campo, ▼ PBI |
-| **La Fed sube las tasas** | ▲ Tasas altas en EE.UU., ▲ Riesgo país por las nubes, ▼ fortaleza del peso |
-| **Brasil devalúa el real** | ▲ Crisis en Brasil, ▼ comercio exterior, ▲ desempleo |
-| **La soja vuela** | ▲ Superciclo de materias primas, ▲ campo, ▲ PBI |
-| **La OMS declara una pandemia** | ▲ Nueva pandemia, ▼ salud, ▼ PBI, ▼ turismo |
-| **Derrumbe en Wall Street** | ▲ Crisis financiera global, ▼ inversión extranjera, ▼ PBI |
-| **Éxodo venezolano** | ▲ Ola migratoria regional, ▲ inmigración |
-| **Entra en vigor el acuerdo con la UE** | ▲ Acuerdo con la Unión Europea en vigor, ▲ comercio exterior, ▲ campo, ▼ sindicalistas |
-| **China compra soja argentina récord** | ▲ campo, ▲ fortaleza del peso, ▼ Reservas agotadas |
+| **¡Argentina campeón del mundo!** | ▲ todos los votantes, ▲ nacionalistas, ▲ jóvenes, ▼ AR_EvMundial |
+| **Sequía histórica** | ▼ PBI, ▼ campo, ▲ Reservas agotadas, ▼ AR_EvSequia |
+| **Inundaciones en el litoral** | ▼ todos los votantes, ▼ sectores bajos, ▼ PBI, ▼ AR_EvInundacion |
+| **Apagón masivo** | ▼ todos los votantes, ▼ clase media, ▼ PBI, ▼ AR_EvApagon |
+| **El Papa visita la Argentina** | ▲ religiosos, ▲ todos los votantes, ▲ sectores bajos, ▼ AR_EvVisitaPapal |
+| **Escándalo de corrupción** | ▼ todos los votantes, ▼ clase media, ▼ calidad democrática, ▼ AR_EvEscandalo |
+| **Megainversión en litio** | ▲ inversión extranjera, ▲ PBI, ▼ ambientalistas, ▼ AR_EvLitio |
+| **Récord de turistas extranjeros** | ▲ turismo, ▲ cuentapropistas, ▲ PBI, ▼ AR_EvTemporada |
+| **Saqueos a supermercados** | ▼ todos los votantes, ▼ cuentapropistas, ▼ estabilidad, ▼ AR_EvSaqueos |
+| **Marcha federal universitaria** | ▼ jóvenes, ▼ progresistas, ▼ izquierda, ▼ AR_EvMarchaUniversitaria |
+| **Una película argentina gana el Oscar** | ▲ todos los votantes, ▲ progresistas, ▼ AR_EvPremioCine |
+| **Incendios en la Patagonia** | ▼ ambiente, ▼ ambientalistas, ▼ turismo, ▼ AR_EvIncendios |
+| **Exportaciones récord** | ▲ fortaleza del peso, ▲ confianza empresaria, ▲ PBI, ▼ AR_EvRecordExportacion |
+| **Accidente ferroviario** | ▼ todos los votantes, ▼ sectores bajos, ▼ estabilidad, ▼ AR_EvTrenes |
+| **Cumbre internacional en Buenos Aires** | ▲ relaciones exteriores, ▲ inversión extranjera, ▼ AR_EvCumbre |
+| **Escándalo cripto presidencial** | ▼ todos los votantes, ▼ clase media, ▲ corrupción, ▼ progresistas, ▼ AR_EvCripto |
+| **Audios de coimas en discapacidad** | ▼ todos los votantes, ▼ familias, ▲ Gobierno salpicado por la corrupción, ▼ AR_EvAudiosCoimas |
+| **Fentanilo contaminado** | ▼ salud, ▼ todos los votantes, ▼ familias, ▼ AR_EvFentanilo |
+| **Temporal devastador en una ciudad del sur bonaerense** | ▼ todos los votantes, ▼ sectores bajos, ▼ PBI, ▼ AR_EvTemporal |
+| **Muere el Papa argentino** | ▼ religiosos, ▲ sectores bajos, ▲ todos los votantes, ▼ AR_EvMuertePapa |
+| **El Tesoro de EE.UU. sale al rescate** | ▲ fortaleza del peso, ▼ Corrida cambiaria, ▼ nacionalistas, ▲ empresarios, ▼ AR_EvRescateEEUU |
+| **Epidemia récord de dengue** | ▼ salud, ▼ todos los votantes, ▲ demanda en hospitales, ▼ AR_EvDengue |
+| **Ola polar y falta de gas** | ▼ todos los votantes, ▼ clase media, ▼ PBI, ▼ AR_EvFaltanteGas |
+| **Paro de controladores aéreos** | ▼ turismo, ▼ clase media, ▲ sindicalistas, ▼ AR_EvParoControladores |
+| **Caen los homicidios en Rosario** | ▼ crimen organizado, ▲ conservadores, ▲ todos los votantes, ▼ AR_EvPlanBandera |
+| **Mejora la nota de la deuda** | ▲ inversión extranjera, ▼ Riesgo país por las nubes, ▲ empresarios, ▼ AR_EvCalificadora |
+| **Cierra una fábrica emblemática** | ▼ sindicalistas, ▲ desempleo, ▼ todos los votantes, ▼ AR_EvCierreFabrica |
+| **Estalla una guerra en Europa** | ▲ Guerra en Europa, ▲ precio del petróleo, ▲ precio de los alimentos, ▲ campo, ▲ inflación, ▼ AR_EvGuerraEuropa |
+| **Se cierra el estrecho de Ormuz** | ▲ Crisis en Medio Oriente, ▲ precio del petróleo, ▲ inflación, ▲ Boom energético, ▼ AR_EvOrmuz |
+| **EE.UU. impone aranceles globales** | ▲ Guerra comercial global, ▼ comercio exterior, ▲ campo, ▼ PBI, ▼ AR_EvAranceles |
+| **La Fed sube las tasas** | ▲ Tasas altas en EE.UU., ▲ Riesgo país por las nubes, ▼ fortaleza del peso, ▼ AR_EvFedSube |
+| **Brasil devalúa el real** | ▲ Crisis en Brasil, ▼ comercio exterior, ▲ desempleo, ▼ AR_EvBrasilDevalua |
+| **La soja vuela** | ▲ Superciclo de materias primas, ▲ campo, ▲ PBI, ▼ AR_EvSuperciclo |
+| **La OMS declara una pandemia** | ▲ Nueva pandemia, ▼ salud, ▼ PBI, ▼ turismo, ▼ AR_EvPandemia |
+| **Derrumbe en Wall Street** | ▲ Crisis financiera global, ▼ inversión extranjera, ▼ PBI, ▼ AR_EvWallStreet |
+| **Éxodo venezolano** | ▲ Ola migratoria regional, ▲ inmigración, ▼ AR_EvMigracion |
+| **Entra en vigor el acuerdo con la UE** | ▲ Acuerdo con la Unión Europea en vigor, ▲ comercio exterior, ▲ campo, ▼ sindicalistas, ▼ AR_EvAcuerdoUE |
+| **China compra soja argentina récord** | ▲ campo, ▲ fortaleza del peso, ▼ Reservas agotadas, ▼ AR_EvChinaSoja |
 
 ## Dilemas
 

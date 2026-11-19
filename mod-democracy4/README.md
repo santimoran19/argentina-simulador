@@ -115,6 +115,8 @@ Valores argentinos que salen de ahí: cepo fuerte, emisión alta, aranceles y li
 
 Tercera partida de prueba: al empezar el ajuste el PBI se iba a cero. El simulador lo reprodujo y mostró dos causas: la deuda inicial (con 390.000 la "deuda efectiva" del juego quedaba alrededor de 1,3, lo que deja la confianza empresaria y la estabilidad en cero y dispara la crisis de deuda) y la huelga general del juego (−0,3 a −0,5 de PBI por turno mientras dura). Ahora la deuda inicial cuenta sólo la deuda con privados y organismos (240.000; la intra-sector público con el BCRA y la ANSES no presiona igual) y, sólo en Argentina, la huelga general cuesta lo que un paro real. Con las mismas jugadas de esa partida, el simulador da recesión al principio, desinflación y recuperación después.
 
+Cuarta partida de prueba: la trayectoria ya se parece a la real (recesión al empezar el ajuste, después desinflación, superávit y recuperación; la confianza empresaria pasó de 0 a 0,76). Pero en tres partidas no había salido ni un evento argentino: en el juego un evento ocurre cuando su valor llega a 1, y los del mod llegaban como mucho a 0,67. Ahora usan la mecánica de los del juego: azar de 0,3 a 0,8 más condiciones argentinas que lo llevan a 1 cuando corresponden (los que son sólo azar, ~6 % de los turnos) y un castigo sobre sí mismos para no repetirse enseguida. Los dilemas usan el azar de los del juego (0,2 a 0,8) más sus condiciones.
+
 Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
 
 ## Efecto dominó: todo se encadena

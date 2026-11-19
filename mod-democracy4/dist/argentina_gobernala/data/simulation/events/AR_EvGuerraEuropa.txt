@@ -2,7 +2,7 @@
 Name = AR_EvGuerraEuropa
 Texture = AR_EvGuerraEuropa.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(AR_GuerraEuropa,0.55,0.92);CreateGrudge(OilPrice,0.05,0.85);CreateGrudge(FoodPrice,0.04,0.85);CreateGrudge(Farmers,0.04,0.85);CreateGrudge(Inflation,0.02,0.8);
+OnImplement = CreateGrudge(AR_GuerraEuropa,0.55,0.92);CreateGrudge(OilPrice,0.05,0.85);CreateGrudge(FoodPrice,0.04,0.85);CreateGrudge(Farmers,0.04,0.85);CreateGrudge(Inflation,0.02,0.8);CreateGrudge(AR_EvGuerraEuropa,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.16
+0 = _random_,0.4,1.04

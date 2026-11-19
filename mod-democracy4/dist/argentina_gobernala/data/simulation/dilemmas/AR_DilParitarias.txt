@@ -2,7 +2,7 @@
 name=AR_DilParitarias
 
 [influences]
-0 = _random_,0,0.375
+0 = _random_,0.2,0.8
 1 = AR_PerdidaPoderAdquisitivo,0+(0.3*x)
 
 [option0]

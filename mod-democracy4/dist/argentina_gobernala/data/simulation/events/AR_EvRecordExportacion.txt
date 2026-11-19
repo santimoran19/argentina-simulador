@@ -2,9 +2,9 @@
 Name = AR_EvRecordExportacion
 Texture = AR_EvRecordExportacion.jpg
 GUISound = DM4_Low Corruption Praised.wav
-OnImplement = CreateGrudge(CurrencyStrength,0.04,0.85);CreateGrudge(BusinessConfidence,0.04,0.85);CreateGrudge(GDP,0.01,0.8);
+OnImplement = CreateGrudge(CurrencyStrength,0.04,0.85);CreateGrudge(BusinessConfidence,0.04,0.85);CreateGrudge(GDP,0.01,0.8);CreateGrudge(AR_EvRecordExportacion,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.2
-1 = AR_BoomEnergetico,0+(0.5*x)
-2 = AR_SuperCosecha,0+(0.5*x)
+0 = _random_,0.3,0.8
+1 = AR_BoomEnergetico,0+(0.2*x)
+2 = AR_SuperCosecha,0+(0.15*x)

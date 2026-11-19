@@ -2,7 +2,7 @@
 Name = AR_EvVisitaPapal
 Texture = AR_EvVisitaPapal.jpg
 GUISound = DM4_Low Corruption Praised.wav
-OnImplement = CreateGrudge(Religious,0.08,0.85);CreateGrudge(_All_,0.02,0.8);CreateGrudge(Poor,0.03,0.8);
+OnImplement = CreateGrudge(Religious,0.08,0.85);CreateGrudge(_All_,0.02,0.8);CreateGrudge(Poor,0.03,0.8);CreateGrudge(AR_EvVisitaPapal,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.24
+0 = _random_,0.4,1.04

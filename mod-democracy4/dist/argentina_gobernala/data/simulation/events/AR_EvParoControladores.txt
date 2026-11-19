@@ -2,8 +2,8 @@
 Name = AR_EvParoControladores
 Texture = AR_EvParoControladores.jpg
 GUISound = DM4_Credit Rating Downgraded.wav
-OnImplement = CreateGrudge(Tourism,-0.03,0.75);CreateGrudge(MiddleIncome,-0.02,0.75);CreateGrudge(TradeUnionist,0.02,0.75);
+OnImplement = CreateGrudge(Tourism,-0.03,0.75);CreateGrudge(MiddleIncome,-0.02,0.75);CreateGrudge(TradeUnionist,0.02,0.75);CreateGrudge(AR_EvParoControladores,-0.9,0.83);
 
 [influences]
-0 = _random_,0,0.2
-1 = AR_ParitariasEstatales,0.16-(0.16*x)
+0 = _random_,0.3,0.8
+1 = AR_ParitariasEstatales,0.35-(0.35*x)

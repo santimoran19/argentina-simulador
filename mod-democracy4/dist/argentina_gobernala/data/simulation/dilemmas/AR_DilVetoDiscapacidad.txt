@@ -2,8 +2,8 @@
 name=AR_DilVetoDiscapacidad
 
 [influences]
-0 = _random_,0,0.2
-1 = AR_CrisisDiscapacidad,0+(0.5*x)
+0 = _random_,0.2,0.8
+1 = AR_CrisisDiscapacidad,0+(0.3*x)
 
 [option0]
 OnImplement = CreateGrudge(Parents,-0.06,0.9);CreateGrudge(AR_CrisisDiscapacidad,0.08,0.9);CreateGrudge(Capitalist,0.03,0.9);

@@ -37,3 +37,33 @@
 #,AR_OCDE,OECD accession,"Adopting the standards of the developed-country club: transparency, competition and fiscal rules. It improves the country's reputation, but demands uncomfortable reforms."
 #,AR_MisionesPaz,UN peacekeeping missions,"Argentine blue helmets on UN missions, such as Cyprus and Haiti. Economic aid to other countries goes through the game's foreign aid policy."
 #,AR_Antartida,Antarctica and the Argentine Sea,"Antarctic bases, icebreakers and patrols against illegal fishing by hundreds of foreign vessels at the edge of the exclusive economic zone."
+#,CapitalControls,Currency controls (“cepo”),"Restrictions on buying US dollars and moving money abroad. They protect reserves in the short run, but widen the gap with the “blue” dollar, scare off investment and feed the black market."
+#,QuantitativeEasing,Central Bank financing of the Treasury,"The Central Bank prints pesos to finance the deficit. It provides quick funds, but it is the classic source of Argentine inflation and weakens the peso."
+#,StatePensions,Pensions and indexation (ANSES),"The level of state pensions and the formula that updates them. If they lag inflation, retirees lose out and march every Wednesday; if they rise, spending soars."
+#,ChildBenefit,Universal Child Allowance (AUH),"Child allowance for informal and unemployed workers, plus family allowances for formal ones. It is the main safety net against child poverty."
+#,DisabilityBenefit,Disability pensions and services,"Non-contributory pensions and payments to providers, transport and therapy centres. If they fall behind, treatments stop and families take to the streets."
+#,UniversityGrants,Free public universities,"Funding for national universities, free and open to all. An Argentine tradition that trains professionals and brings out huge crowds when it is cut."
+#,ScienceFunding,CONICET and science,"Grants and salaries for researchers in the national science system. It keeps talent at home and builds technology in the long run; if cut, scientists emigrate."
+#,StateHealthService,Public hospitals,"National and provincial hospitals, free for everyone, such as the Garrahan children's hospital. They treat people without health insurance; underfunding brings strikes and shortages."
+#,IncomeTax,Income tax (“Ganancias”),"Paid by higher-wage workers and professionals. It raises a lot, but it is unpopular with the middle class and the unions of the best-paid workers."
+#,Punitivewealthtax,Personal assets tax,"Annual wealth tax. It is paid by the richest, but it also pushes savings abroad or off the books."
+#,ForeignInvestorTaxBreaks,RIGI: large investment incentive,"Tax, customs and currency benefits for decades for projects above two hundred million dollars. It attracts mining and energy, but gives up revenue."
+#,OilDrillingSubsidy,Vaca Muerta development,"Investment and pipelines to tap the world's second-largest shale gas reserve. It can turn the energy balance around, but it worries environmentalists."
+#,BusSubsidies,Public transport subsidies,"Cheap bus and train fares paid for by national funds, concentrated in Greater Buenos Aires. They ease household budgets, but the provinces complain of paying more."
+#,RoadBuilding,Public road works,"Highways funded by the national government. They create jobs and connect provinces, but they are expensive and often at the centre of corruption cases."
+#,MilitarySpending,Defence budget,"Salaries and new equipment for armed forces that have gone decades without investment: fighter jets, patrol ships and radars."
+#,DrugEnforcement,Anti drug-trafficking plan,"Federal forces, criminal intelligence and control of the Paraná river ports, with Rosario as the priority."
+#,BorderControls,Migration and border controls,Argentina has taken in millions of immigrants from neighbouring countries and Venezuela. Tighter controls and charging foreigners for services divide society.
+#,StateAirline,State-owned Aerolíneas Argentinas,"The flag carrier in state hands. It serves unprofitable provinces, but loses money. Lowering it means privatising it."
+#,LabourLaws,Employment protection law,"Severance pay, probation periods, collective agreements. Lowering it is the labour reform: business says it creates formal jobs; the CGT unions say it erodes rights."
+#,ImportTarrifs,Tariffs and import licences,"High tariffs and import permits protect domestic industry, but raise prices. Lowering them opens the economy, as the Mercosur-EU deal requires."
+#,SalesTax,VAT,"The 21 % value added tax. The biggest source of revenue, and it hits the poorest hardest."
+#,PayrollTax,Payroll contributions,"Contributions on wages. They fund pensions and health insurance, but make formal hiring expensive."
+#,CorporationTax,Corporate income tax,Tax on company profits.
+#,MinimumWage,Minimum wage,"Set by the Wage Council of government, business and unions. It is a benchmark for welfare plans and informal workers."
+#,UnemployedBenefit,Unemployment insurance,Temporary benefit for workers who lose a registered job.
+#,StateRail,State railways,State-owned passenger and freight trains.
+#,StateEnergy,YPF and state energy,State stakes in the YPF oil company and in energy firms.
+#,StatePostService,Correo Argentino,The state-owned national postal service.
+#,StateBroadcaster,Public media,"Public TV, National Radio and the national news agency."
+#,IntelligenceServices,SIDE intelligence,The State Intelligence Secretariat.

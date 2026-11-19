@@ -9,6 +9,7 @@ import csv, io, os, re, shutil, sys
 
 sys.path.insert(0, os.path.dirname(__file__))
 import content as C
+import content_names as N
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 OUT = os.path.join(ROOT, 'dist', C.MOD_NAME)
@@ -145,8 +146,12 @@ def build():
     # ---------- traducciones ----------
     for lang, code in LANGS.items():
         base = 'translations/{}/'.format(lang)
-        write(base + 'policies.csv', csv_text([['#', p['name'], p[code][0], p[code][1]] for p in C.POLICIES]))
-        write(base + 'situations.csv', csv_text([['#', s['name'], s[code][0], s[code][1]] for s in C.SITUATIONS]))
+        k = 0 if code == 'es' else 1
+        # políticas y situaciones del juego con nombre argentino (content_names.py)
+        write(base + 'policies.csv', csv_text([['#', p['name'], p[code][0], p[code][1]] for p in C.POLICIES] +
+                                              [['#', n, t[k][0], t[k][1]] for n, t in N.POLICY_NAMES.items()]))
+        write(base + 'situations.csv', csv_text([['#', s['name'], s[code][0], s[code][1]] for s in C.SITUATIONS] +
+                                                [['#', n, t[k][0], t[k][1]] for n, t in N.SITUATION_NAMES.items()]))
         write(base + 'events.csv', csv_text([['#', e['name'], e[code][0], e[code][1]] for e in C.EVENTS]))
         drows = []
         for d in C.DILEMMAS:

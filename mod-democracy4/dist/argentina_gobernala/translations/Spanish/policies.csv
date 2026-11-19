@@ -37,3 +37,33 @@
 #,AR_OCDE,Adhesión a la OCDE,"Adoptar los estándares del club de países desarrollados: transparencia, competencia y reglas fiscales. Mejora la reputación, pero exige reformas incómodas."
 #,AR_MisionesPaz,Misiones de paz de la ONU,"Cascos azules argentinos en misiones de la ONU, como Chipre y Haití. La ayuda económica a otros países va por la política de ayuda exterior del juego."
 #,AR_Antartida,Antártida y control del Mar Argentino,"Bases antárticas, rompehielos y patrullaje contra la pesca ilegal de cientos de buques extranjeros en el borde de la zona económica exclusiva."
+#,CapitalControls,Cepo cambiario,"Restricciones para comprar dólares y girar divisas al exterior. Protege las reservas en el corto plazo, pero agranda la brecha con el dólar blue, ahuyenta inversiones y alimenta el mercado negro."
+#,QuantitativeEasing,Emisión del Banco Central para el Tesoro,"El Banco Central imprime pesos para financiar el déficit. Da recursos rápidos, pero es la fuente clásica de la inflación argentina y debilita el peso."
+#,StatePensions,Jubilaciones y movilidad (ANSES),"El nivel de las jubilaciones y la fórmula que las actualiza. Si quedan por debajo de la inflación los jubilados pierden y salen a marchar los miércoles; si suben, el gasto se dispara."
+#,ChildBenefit,AUH y asignaciones familiares,"Asignación Universal por Hijo para trabajadores informales y desocupados, y asignaciones familiares para los formales. Es la principal red contra la pobreza infantil."
+#,DisabilityBenefit,Pensiones y prestaciones por discapacidad,"Pensiones no contributivas y pagos a prestadores, transportistas y centros terapéuticos. Si se atrasan, se cortan tratamientos y las familias salen a protestar."
+#,UniversityGrants,Universidad pública y gratuita,"Financiamiento de las universidades nacionales, gratuitas y con ingreso irrestricto. Una tradición argentina que forma profesionales y moviliza multitudes cuando se recorta."
+#,ScienceFunding,CONICET y ciencia,"Becas y salarios para investigadores del sistema científico nacional. Retiene talento y genera tecnología a largo plazo; si se recorta, los científicos emigran."
+#,StateHealthService,Hospitales públicos,"Hospitales nacionales y provinciales, gratuitos para todos, como el Garrahan o el Posadas. Atienden a quienes no tienen obra social ni prepaga; si se desfinancian, hay paros y faltan insumos."
+#,IncomeTax,Impuesto a las Ganancias,"Lo pagan los trabajadores de sueldos altos y los profesionales. Recauda mucho, pero es impopular en la clase media y entre los gremios de los trabajadores mejor pagos."
+#,Punitivewealthtax,Bienes Personales,"Impuesto anual al patrimonio. Lo pagan los que más tienen, pero también empuja a sacar los ahorros del país o a no declararlos."
+#,ForeignInvestorTaxBreaks,RIGI: incentivo a grandes inversiones,"Beneficios impositivos, aduaneros y cambiarios por décadas para proyectos de más de doscientos millones de dólares. Atrae minería y energía, pero resigna recaudación."
+#,OilDrillingSubsidy,Desarrollo de Vaca Muerta,"Inversión, oleoductos y gasoductos para explotar la segunda reserva de gas no convencional del mundo. Puede dar vuelta la balanza energética, pero preocupa a los ambientalistas."
+#,BusSubsidies,Subsidios al transporte,"Boletos de colectivo y tren baratos gracias a fondos nacionales, concentrados en el Área Metropolitana. Alivian el bolsillo, pero el interior se queja de pagar más."
+#,RoadBuilding,Obra pública vial,"Rutas y autovías financiadas por la Nación a través de Vialidad. Genera empleo y conecta provincias, pero es cara y suele estar en el centro de las causas por corrupción."
+#,MilitarySpending,Presupuesto de Defensa,"Sueldos y reequipamiento de unas Fuerzas Armadas que llevan décadas sin inversión: aviones de combate, patrulleros y radares."
+#,DrugEnforcement,Plan contra el narcotráfico,"Fuerzas federales, inteligencia criminal y control de los puertos del río Paraná, con Rosario como prioridad."
+#,BorderControls,Controles migratorios y de frontera,Argentina recibió a millones de inmigrantes de países vecinos y de Venezuela. Más controles y el cobro de servicios a extranjeros dividen a la sociedad.
+#,StateAirline,Aerolíneas Argentinas estatal,"La aerolínea de bandera en manos del Estado. Conecta provincias que no son rentables, pero da pérdidas. Bajarla es privatizarla."
+#,LabourLaws,Ley de Contrato de Trabajo,"Indemnizaciones, período de prueba, convenios colectivos. Bajarla es la reforma laboral: los empresarios dicen que crea empleo formal; la CGT, que precariza."
+#,ImportTarrifs,Aranceles y licencias de importación,"Aranceles altos y permisos para importar protegen a la industria nacional, pero encarecen los precios. Bajarlos es abrir la economía, como pide el acuerdo Mercosur-UE."
+#,SalesTax,IVA,Impuesto al valor agregado del 21 %. Es la mayor fuente de recaudación y pega más en los que menos tienen.
+#,PayrollTax,Cargas sociales,"Aportes y contribuciones sobre los sueldos. Financian jubilaciones y obras sociales, pero encarecen contratar en blanco."
+#,CorporationTax,Ganancias de sociedades,Impuesto sobre las utilidades de las empresas.
+#,MinimumWage,"Salario mínimo, vital y móvil","Lo fija el Consejo del Salario entre gobierno, empresarios y CGT. Es referencia para planes sociales y para los trabajadores informales."
+#,UnemployedBenefit,Seguro de desempleo,Ayuda temporal de la ANSES para quienes pierden un empleo registrado.
+#,StateRail,Trenes Argentinos,Trenes de pasajeros y de carga del Estado.
+#,StateEnergy,YPF y energía estatal,Participación estatal en la petrolera YPF y en empresas de energía.
+#,StatePostService,Correo Argentino,El correo nacional en manos del Estado.
+#,StateBroadcaster,Medios públicos,"TV Pública, Radio Nacional y la agencia Télam."
+#,IntelligenceServices,SIDE,La Secretaría de Inteligencia del Estado.

@@ -51,6 +51,9 @@ ES = {
 DEPT = {'ECONOMY': 'Economía', 'TAX': 'Impuestos', 'WELFARE': 'Bienestar social', 'PUBLICSERVICES': 'Servicios públicos',
         'LAWANDORDER': 'Ley y orden', 'FOREIGNPOLICY': 'Política exterior', 'TRANSPORT': 'Transporte'}
 NAME = {p['name']: p['es'][0] for p in C.POLICIES}
+import content_names as N
+for _n, _t in list(N.POLICY_NAMES.items()) + list(N.SITUATION_NAMES.items()):
+    ES[_n] = _t[0][0] + ' (juego)'
 NAME.update({s['name']: s['es'][0] for s in C.SITUATIONS})
 
 
@@ -123,6 +126,25 @@ for d in C.DILEMMAS:
         opts.append('{}: {}'.format(es[0], ', '.join('{} {}'.format('▲' if a > 0 else '▼', label(t)) for t, a in grudges)))
     lines.append('| **{}** | {} | {} |'.format(d['es'][0], opts[0], opts[1]))
 
+lines += ['', '## Nombres argentinos para cosas del juego', '',
+          'El mod renombra estas políticas y situaciones del juego (sólo el texto; la mecánica es la del juego más lo que '
+          'el mod le conecta). Mientras el mod esté activo, el nombre cambia en cualquier país.', '',
+          '| En el juego (nombre aproximado) | En el mod |', '|---|---|']
+GAME_ES = {'CapitalControls': 'Control de capitales', 'QuantitativeEasing': 'Flexibilización cuantitativa',
+           'StatePensions': 'Pensiones estatales', 'ChildBenefit': 'Prestación por hijo', 'DisabilityBenefit': 'Prestación por discapacidad',
+           'UniversityGrants': 'Becas universitarias', 'ScienceFunding': 'Financiamiento científico', 'StateHealthService': 'Sanidad pública',
+           'IncomeTax': 'Impuesto sobre la renta', 'Punitivewealthtax': 'Impuesto a la riqueza',
+           'ForeignInvestorTaxBreaks': 'Desgravaciones a inversores extranjeros', 'OilDrillingSubsidy': 'Subvención a la perforación petrolera',
+           'BusSubsidies': 'Subvenciones al autobús', 'RoadBuilding': 'Construcción de carreteras', 'MilitarySpending': 'Gasto militar',
+           'DrugEnforcement': 'Lucha antidroga', 'BorderControls': 'Controles fronterizos', 'StateAirline': 'Aerolínea estatal',
+           'LabourLaws': 'Leyes laborales', 'ImportTarrifs': 'Aranceles a la importación', 'SalesTax': 'Impuesto sobre las ventas',
+           'PayrollTax': 'Impuesto sobre la nómina', 'CorporationTax': 'Impuesto de sociedades', 'MinimumWage': 'Salario mínimo',
+           'UnemployedBenefit': 'Subsidio de desempleo', 'StateRail': 'Ferrocarril estatal', 'StateEnergy': 'Energía estatal',
+           'StatePostService': 'Servicio postal estatal', 'StateBroadcaster': 'Radiotelevisión estatal',
+           'IntelligenceServices': 'Servicios de inteligencia', 'DoctorsStrike': 'Huelga de médicos', 'TeachersStrike': 'Huelga de profesores',
+           'Homelessness': 'Personas sin hogar', 'PowerBlackouts': 'Apagones'}
+for _n, _t in list(N.POLICY_NAMES.items()) + list(N.SITUATION_NAMES.items()):
+    lines.append('| {} | **{}** |'.format(GAME_ES.get(_n, _n), _t[0][0]))
 lines += ['', '## Políticas argentinas fusionadas con las del juego', '',
           'Para que no haya dos políticas para lo mismo, estas versiones argentinas no existen como política aparte: '
           'se usa la del juego, que ahora mueve todo lo que movía la argentina. "Al revés" quiere decir que subir la del '

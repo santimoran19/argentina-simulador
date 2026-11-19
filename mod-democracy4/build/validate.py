@@ -126,6 +126,16 @@ for d in C.DILEMMAS:
             if t not in KNOWN: err(w + ': nombre desconocido ' + t)
         if not es[0] or not en[0]: err(w + ': opción sin texto')
 
+# ---------------- nombres argentinos para cosas del juego ----------------
+import content_names as N
+for kind, table in (('política', N.POLICY_NAMES), ('situación', N.SITUATION_NAMES)):
+    for n, (es, en) in table.items():
+        if n not in BASE: err('nombre argentino para {} inexistente en el juego: {}'.format(kind, n))
+        if not all(es) or not all(en): err('nombre argentino incompleto: ' + n)
+own_titles = {p['es'][0].lower() for p in C.POLICIES} | {s['es'][0].lower() for s in C.SITUATIONS}
+for n, (es, _en) in list(N.POLICY_NAMES.items()) + list(N.SITUATION_NAMES.items()):
+    if es[0].lower() in own_titles: err('nombre repetido con una política o situación del mod: ' + es[0])
+
 # ---------------- escenarios ----------------
 for label, start in (('2023', C.START_2023), ('referencia 2026', C.REFERENCIA_2026)):
     for k, v in start.items():

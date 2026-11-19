@@ -49,11 +49,15 @@ Democracy 4 ya tiene sus propias políticas: jubilaciones, salario mínimo, leye
 - El **control de capitales** (el cepo) y la **emisión** agrandan la **brecha cambiaria**.
 - Bajar la **salud pública**, las **becas universitarias** o la **pensión por discapacidad** enciende los conflictos en **hospitales, universidades y discapacidad**.
 - La **independencia judicial** baja el **riesgo país** y los **escándalos de corrupción**, y atrae **inversiones**.
-- Las **situaciones del juego** también empujan a sus equivalentes argentinas: la **hiperinflación** y la **inflación alta** del juego alimentan el salto cambiario y "el sueldo no alcanza"; la **huelga general**, el **paro de médicos** y el **paro docente** alimentan los paros de la CGT y los conflictos en hospitales y universidades; el **éxodo de empresas** frena las inversiones.
+- Las **situaciones del juego** también empujan a sus equivalentes argentinas: la **hiperinflación** del juego alimenta el salto cambiario y "el sueldo no alcanza"; la **huelga general**, el **paro de médicos** y el **paro docente** alimentan los paros de la CGT y los conflictos en hospitales y universidades; el **éxodo de empresas** frena las inversiones.
 
 Los nombres internos se comprobaron contra partidas guardadas reales de Democracy 4 (versión 1.65).
 
 Al arrancar, el país tiene activas las políticas del juego que existían en 2023 (aranceles altos, aerolínea, trenes y petrolera estatales, control de capitales al máximo, emisión, impuesto a la riqueza).
+
+## Nombres argentinos
+
+El mod también **renombra 30 políticas y 4 situaciones del juego** para que se lean como en Argentina: el control de capitales es el **Cepo cambiario**, el impuesto sobre la renta es **Impuesto a las Ganancias**, el de ventas es el **IVA**, la nómina son las **Cargas sociales**, la aerolínea estatal es **Aerolíneas Argentinas**, los ferrocarriles son **Trenes Argentinos**, la energía estatal es **YPF**, el correo es **Correo Argentino**, los servicios de inteligencia son la **SIDE**, la huelga de profesores es el **Paro docente**, etc. Es sólo el texto (nombre y descripción, en castellano y en inglés): la mecánica sigue siendo la del juego más lo que le conecta el mod. Mientras el mod esté activo, esos nombres cambian también si jugás con otro país. La lista completa está en el [catálogo](CATALOGO.md).
 
 ## Sin políticas repetidas
 
@@ -155,6 +159,7 @@ El contenido está como datos, ordenado por tema:
 - `build/content_ext.py`: ampliación 2024-2026, cadenas y enlaces causales.
 - `build/content_intl.py`: el mundo (política exterior, crisis globales, eventos y dilemas internacionales).
 - `build/content_base.py`: conexiones con las políticas que ya trae Democracy 4.
+- `build/content_names.py`: nombres y descripciones argentinas para políticas y situaciones del juego.
 - `build/content_merge.py`: fusiona con las del juego las políticas argentinas que hacían lo mismo (sin repetidos).
 
 ```bash

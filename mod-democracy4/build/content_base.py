@@ -40,8 +40,8 @@ BASE_LINKS = {
 # Situaciones del juego base que alimentan las crisis argentinas equivalentes, así las dos versiones van juntas
 # en vez de contradecirse (por ejemplo, la hiperinflación del juego empuja el salto cambiario argentino).
 BASE_SITUATION_LINKS = {
-    'AR_SaltoCambiario': ['Hyperinflation,0+(0.10*x)', 'HighInflation,0+(0.05*x)'],
-    'AR_PerdidaPoderAdquisitivo': ['Hyperinflation,0+(0.10*x)', 'HighInflation,0+(0.06*x)'],
+    'AR_SaltoCambiario': ['Hyperinflation,0+(0.10*x)'],
+    'AR_PerdidaPoderAdquisitivo': ['Hyperinflation,0+(0.10*x)'],
     'AR_CorridaCambiaria': ['Hyperinflation,0+(0.08*x)'],
     'AR_ConflictoSalud': ['DoctorsStrike,0+(0.10*x)'],
     'AR_ConflictoUniversitario': ['TeachersStrike,0+(0.08*x)'],

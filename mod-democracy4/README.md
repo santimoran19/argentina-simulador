@@ -117,6 +117,8 @@ Tercera partida de prueba: al empezar el ajuste el PBI se iba a cero. El simulad
 
 Cuarta partida de prueba: la trayectoria ya se parece a la real (recesión al empezar el ajuste, después desinflación, superávit y recuperación; la confianza empresaria pasó de 0 a 0,76). Pero en tres partidas no había salido ni un evento argentino: en el juego un evento ocurre cuando su valor llega a 1, y los del mod llegaban como mucho a 0,67. Ahora usan la mecánica de los del juego: azar de 0,3 a 0,8 más condiciones argentinas que lo llevan a 1 cuando corresponden (los que son sólo azar, ~6 % de los turnos) y un castigo sobre sí mismos para no repetirse enseguida. Los dilemas usan el azar de los del juego (0,2 a 0,8) más sus condiciones.
 
+Quinta partida de prueba: ya salen eventos y dilemas argentinos (Mundial, visita del Papa, escándalo cripto, guerra en Europa, pandemia; dilemas de la CGT, 5G, PASO, colectivo, FMI y glaciares). Dos arreglos: los dilemas aparecían en blanco porque el juego no dibuja las comillas tipográficas (“ ”) que usaban todas sus opciones; ahora los textos usan comillas castellanas (« ») y ningún carácter fuera de Latin-1. Y el delito (0,96) y la salud (0,41) arrancaban fuera de lo real: se suman políticas argentinas que faltaban (policía de cercanía, etiquetado frontal, salud sexual y procreación responsable, comedores escolares, ART, educación física obligatoria, impuestos internos al alcohol).
+
 Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
 
 ## Efecto dominó: todo se encadena

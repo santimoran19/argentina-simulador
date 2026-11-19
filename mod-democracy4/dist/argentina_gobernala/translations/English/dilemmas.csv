@@ -1,114 +1,114 @@
 #,AR_DilDeudaFMI,IMF debt payment due,A multi-billion payment to the Fund falls due and reserves are not enough., 
-#,AR_DilDeudaFMI_0,Refinance with a new program,"The economy minister: “Let us sign a new agreement. It is bitter, but it avoids default.”"
-#,AR_DilDeudaFMI_1,Pay with reserves and sign nothing,The chief of staff: “We pay with what we have. We will not hand over our sovereignty.”
+#,AR_DilDeudaFMI_0,Refinance with a new program,"The economy minister: «Let us sign a new agreement. It is bitter, but it avoids default.»"
+#,AR_DilDeudaFMI_1,Pay with reserves and sign nothing,The chief of staff: «We pay with what we have. We will not hand over our sovereignty.»
 #,AR_DilParitarias,Tense wage talks,Unions demand raises above inflation. Employers say they cannot pay., 
-#,AR_DilParitarias_0,Approve large raises,The labour minister: “Wages have been losing ground. Let us sign and avoid a strike.”
-#,AR_DilParitarias_1,Cap wage increases,"The economy minister: “If we approve this, inflation will never come down.”"
+#,AR_DilParitarias_0,Approve large raises,The labour minister: «Wages have been losing ground. Let us sign and avoid a strike.»
+#,AR_DilParitarias_1,Cap wage increases,"The economy minister: «If we approve this, inflation will never come down.»"
 #,AR_DilTomaDeTierras,Land occupation,Thousands of families occupy a plot on the outskirts of Buenos Aires. The owner demands immediate eviction., 
-#,AR_DilTomaDeTierras_0,Evict with federal forces,The security minister: “Private property must be respected. We evict today.”
-#,AR_DilTomaDeTierras_1,Negotiate and build housing,The social development minister: “Let us offer serviced plots. Nobody occupies land for fun.”
+#,AR_DilTomaDeTierras_0,Evict with federal forces,The security minister: «Private property must be respected. We evict today.»
+#,AR_DilTomaDeTierras_1,Negotiate and build housing,The social development minister: «Let us offer serviced plots. Nobody occupies land for fun.»
 #,AR_DilParoDocente,National teachers' strike,Teachers' unions announce an open-ended strike. The school year does not start., 
-#,AR_DilParoDocente_0,Raise teacher pay from national funds,"The education minister: “No teachers, no country. Let us put up the money.”"
-#,AR_DilParoDocente_1,Dock pay for strike days,"The chief of staff: “No work, no pay. The children must be in the classroom.”"
+#,AR_DilParoDocente_0,Raise teacher pay from national funds,"The education minister: «No teachers, no country. Let us put up the money.»"
+#,AR_DilParoDocente_1,Dock pay for strike days,"The chief of staff: «No work, no pay. The children must be in the classroom.»"
 #,AR_DilTarifazo,Utilities demand tariff increases,Energy companies say they cannot invest without updated tariffs., 
-#,AR_DilTarifazo_0,Approve the increase,The energy secretary: “Either we pay for power or we sit in the dark.”
-#,AR_DilTarifazo_1,Freeze tariffs,The chief of staff: “A tariff hike now would be political suicide.”
+#,AR_DilTarifazo_0,Approve the increase,The energy secretary: «Either we pay for power or we sit in the dark.»
+#,AR_DilTarifazo_1,Freeze tariffs,The chief of staff: «A tariff hike now would be political suicide.»
 #,AR_DilHoldouts,A New York court ruling,A New York court orders full payment to the funds that rejected the debt swap., 
-#,AR_DilHoldouts_0,Negotiate and pay,"The economy minister: “Paying is expensive, but we get back into the markets.”"
-#,AR_DilHoldouts_1,Homeland or vultures,The chief of staff: “We will not pay the vultures what other creditors did not get.”
+#,AR_DilHoldouts_0,Negotiate and pay,"The economy minister: «Paying is expensive, but we get back into the markets.»"
+#,AR_DilHoldouts_1,Homeland or vultures,The chief of staff: «We will not pay the vultures what other creditors did not get.»
 #,AR_DilCampo,Farmers strike,Rural associations announce a lockout and block highways against export duties., 
-#,AR_DilCampo_0,Lower export duties,The agriculture minister: “Without farmers there are no dollars. We have to listen.”
-#,AR_DilCampo_1,Hold firm,The economy minister: “We cannot give in to an employers' lockout.”
+#,AR_DilCampo_0,Lower export duties,The agriculture minister: «Without farmers there are no dollars. We have to listen.»
+#,AR_DilCampo_1,Hold firm,The economy minister: «We cannot give in to an employers' lockout.»
 #,AR_DilMalvinas,Oil exploration off the Malvinas,A British company announces oil exploration in waters off the islands., 
-#,AR_DilMalvinas_0,Sanctions and a UN complaint,The foreign minister: “It is our territory. We take the case to the United Nations.”
-#,AR_DilMalvinas_1,Formal protest and cooperation,"The deputy foreign minister: “We protest, but without burning bridges with London.”"
+#,AR_DilMalvinas_0,Sanctions and a UN complaint,The foreign minister: «It is our territory. We take the case to the United Nations.»
+#,AR_DilMalvinas_1,Formal protest and cooperation,"The deputy foreign minister: «We protest, but without burning bridges with London.»"
 #,AR_DilDolarBlue,The blue dollar soars,The parallel dollar jumps 20% in a week and black-market exchange houses cannot keep up., 
-#,AR_DilDolarBlue_0,Devalue the official rate,The central bank governor: “We must close the gap even if it hurts.”
-#,AR_DilDolarBlue_1,Raid the black-market dealers,The security minister: “We are going after the speculators.”
+#,AR_DilDolarBlue_0,Devalue the official rate,The central bank governor: «We must close the gap even if it hurts.»
+#,AR_DilDolarBlue_1,Raid the black-market dealers,The security minister: «We are going after the speculators.»
 #,AR_DilNarcoRosario,Shootings in Rosario,Drug gangs threaten the governor and attack shops. The city lives in fear., 
-#,AR_DilNarcoRosario_0,Send in the army,The security minister: “We need the full power of the state.”
-#,AR_DilNarcoRosario_1,Intelligence and money laundering,"The attorney general: “Follow the money, not just the foot soldiers.”"
+#,AR_DilNarcoRosario_0,Send in the army,The security minister: «We need the full power of the state.»
+#,AR_DilNarcoRosario_1,Intelligence and money laundering,"The attorney general: «Follow the money, not just the foot soldiers.»"
 #,AR_DilVeto,Congress passes a pension rise,The opposition passes a generous pension law. Do you veto it?, 
-#,AR_DilVeto_0,Veto the bill,The economy minister: “There is no money. Fiscal balance is not negotiable.”
-#,AR_DilVeto_1,Sign it into law,The chief of staff: “We cannot fight pensioners in an election year.”
+#,AR_DilVeto_0,Veto the bill,The economy minister: «There is no money. Fiscal balance is not negotiable.»
+#,AR_DilVeto_1,Sign it into law,The chief of staff: «We cannot fight pensioners in an election year.»
 #,AR_DilGobernadores,Governors demand funds,A group of provincial governors make their votes in Congress conditional on public works and transfers., 
-#,AR_DilGobernadores_0,Sign the deals,The interior minister: “With the provinces' votes we get our laws through.”
-#,AR_DilGobernadores_1,Refuse,The economy minister: “The political slush fund is over.”
+#,AR_DilGobernadores_0,Sign the deals,The interior minister: «With the provinces' votes we get our laws through.»
+#,AR_DilGobernadores_1,Refuse,The economy minister: «The political slush fund is over.»
 #,AR_DilSubsidioColectivo,Bus strike,Bus companies stop running: they say subsidies do not cover wages., 
-#,AR_DilSubsidioColectivo_0,Pay more subsidies,The transport secretary: “Millions cannot get to work.”
-#,AR_DilSubsidioColectivo_1,Free up fares,The economy minister: “Let fares reflect the real cost.”
+#,AR_DilSubsidioColectivo_0,Pay more subsidies,The transport secretary: «Millions cannot get to work.»
+#,AR_DilSubsidioColectivo_1,Free up fares,The economy minister: «Let fares reflect the real cost.»
 #,AR_DilFutbol,Football clubs as companies,An investor group offers to buy a big club if football clubs may become private companies., 
-#,AR_DilFutbol_0,Allow it,The sports minister: “Clubs need capital to compete.”
-#,AR_DilFutbol_1,Clubs belong to their members,The chief of staff: “We will not touch the heart of Argentine football.”
+#,AR_DilFutbol_0,Allow it,The sports minister: «Clubs need capital to compete.»
+#,AR_DilFutbol_1,Clubs belong to their members,The chief of staff: «We will not touch the heart of Argentine football.»
 #,AR_DilAborto,Bill to repeal the abortion law,Governing-party deputies propose repealing the law on voluntary termination of pregnancy., 
-#,AR_DilAborto_0,Back the repeal,The religious affairs secretary: “Let us defend life from conception.”
-#,AR_DilAborto_1,Reject the bill,The women's affairs minister: “It is a right won on the streets.”
+#,AR_DilAborto_0,Back the repeal,The religious affairs secretary: «Let us defend life from conception.»
+#,AR_DilAborto_1,Reject the bill,The women's affairs minister: «It is a right won on the streets.»
 #,AR_DilEmisionFinDeAnio,No money for year-end bonuses,In December there are not enough pesos to pay the thirteenth-month bonus to state workers and pensioners., 
-#,AR_DilEmisionFinDeAnio_0,Ask the central bank for pesos,The chief of staff: “We pay. We will deal with it later.”
-#,AR_DilEmisionFinDeAnio_1,Pay in instalments,The economy minister: “We will not print money. It will be paid in two instalments.”
+#,AR_DilEmisionFinDeAnio_0,Ask the central bank for pesos,The chief of staff: «We pay. We will deal with it later.»
+#,AR_DilEmisionFinDeAnio_1,Pay in instalments,The economy minister: «We will not print money. It will be paid in two instalments.»
 #,AR_DilVetoDiscapacidad,Disability emergency law,Congress has passed increases for disability care providers and pensions., 
-#,AR_DilVetoDiscapacidad_0,Veto it,The economy minister: “The surplus is untouchable. Let us first review the wrongly granted pensions.”
-#,AR_DilVetoDiscapacidad_1,Sign it,The chief of staff: “This political cost is not worth paying.”
+#,AR_DilVetoDiscapacidad_0,Veto it,The economy minister: «The surplus is untouchable. Let us first review the wrongly granted pensions.»
+#,AR_DilVetoDiscapacidad_1,Sign it,The chief of staff: «This political cost is not worth paying.»
 #,AR_DilFinanciamientoUniversitario,University funding law,"After a huge march, Congress passes funds for universities and lecturers' salaries.", 
-#,AR_DilFinanciamientoUniversitario_0,Full veto,The chief of staff: “First the universities must accept audits.”
-#,AR_DilFinanciamientoUniversitario_1,Sign it and negotiate,The education minister: “Public universities are a source of national pride.”
+#,AR_DilFinanciamientoUniversitario_0,Full veto,The chief of staff: «First the universities must accept audits.»
+#,AR_DilFinanciamientoUniversitario_1,Sign it and negotiate,The education minister: «Public universities are a source of national pride.»
 #,AR_DilGarrahan,Strike at the children's hospital,Residents at the country's main children's hospital strike over pay., 
-#,AR_DilGarrahan_0,Grant a special raise,The health minister: “We cannot lose the country's best paediatricians.”
-#,AR_DilGarrahan_1,Hold the pay guideline,"The economy minister: “If we give in here, everyone will ask tomorrow.”"
+#,AR_DilGarrahan_0,Grant a special raise,The health minister: «We cannot lose the country's best paediatricians.»
+#,AR_DilGarrahan_1,Hold the pay guideline,"The economy minister: «If we give in here, everyone will ask tomorrow.»"
 #,AR_DilSwapEEUU,Terms of the US swap,"Washington offers a huge swap line, but asks to limit China's presence in strategic infrastructure.", 
-#,AR_DilSwapEEUU_0,Accept,The foreign minister: “It is the backing we need to prevent a run.”
-#,AR_DilSwapEEUU_1,Reject the terms,The economy minister: “China is our second trading partner. We cannot pick sides.”
+#,AR_DilSwapEEUU_0,Accept,The foreign minister: «It is the backing we need to prevent a run.»
+#,AR_DilSwapEEUU_1,Reject the terms,The economy minister: «China is our second trading partner. We cannot pick sides.»
 #,AR_DilTechoBanda,The dollar hits the band ceiling,Pre-election pressure pushes the dollar to the top of the band., 
-#,AR_DilTechoBanda_0,Sell reserves to defend it,The central bank governor: “The band will be defended. Our word is at stake.”
-#,AR_DilTechoBanda_1,Let it rise and widen the band,The economy minister: “Let the market find its price.”
+#,AR_DilTechoBanda_0,Sell reserves to defend it,The central bank governor: «The band will be defended. Our word is at stake.»
+#,AR_DilTechoBanda_1,Let it rise and widen the band,The economy minister: «Let the market find its price.»
 #,AR_DilAerolineas,Privatise the flag carrier,An investor group offers to buy the loss-making state airline., 
-#,AR_DilAerolineas_0,Sell it,"The deregulation minister: “Let those who fly pay for it, not every Argentine.”"
-#,AR_DilAerolineas_1,Keep it state-owned,The chief of staff: “It connects provinces no private airline wants to serve.”
+#,AR_DilAerolineas_0,Sell it,"The deregulation minister: «Let those who fly pay for it, not every Argentine.»"
+#,AR_DilAerolineas_1,Keep it state-owned,The chief of staff: «It connects provinces no private airline wants to serve.»
 #,AR_DilPASO,Suspend the primaries,The governing party proposes suspending the open primaries to save money and simplify the election., 
-#,AR_DilPASO_0,Suspend them,The interior minister: “It is a pointless expense voters do not want.”
-#,AR_DilPASO_1,Keep them,The spokesman: “We will not change the rules months before a vote.”
+#,AR_DilPASO_0,Suspend them,The interior minister: «It is a pointless expense voters do not want.»
+#,AR_DilPASO_1,Keep them,The spokesman: «We will not change the rules months before a vote.»
 #,AR_DilImputabilidad,Crime committed by a minor,A 15-year-old kills a shopkeeper in a robbery. The country debates lowering the age of criminal responsibility., 
-#,AR_DilImputabilidad_0,Push to lower it to 14,"The security minister: “Whoever commits the crime pays for it, whatever their age.”"
-#,AR_DilImputabilidad_1,Youth prevention programme,The human development minister: “Prison does not reform a 14-year-old.”
+#,AR_DilImputabilidad_0,Push to lower it to 14,"The security minister: «Whoever commits the crime pays for it, whatever their age.»"
+#,AR_DilImputabilidad_1,Youth prevention programme,The human development minister: «Prison does not reform a 14-year-old.»
 #,AR_DilGlaciares,Mining governors want the glacier law changed,Andean provinces demand the law be relaxed to allow multi-billion copper projects., 
-#,AR_DilGlaciares_0,Relax it,The mining secretary: “Copper is the next Vaca Muerta.”
-#,AR_DilGlaciares_1,Keep it,The environment secretary: “Water is worth more than copper.”
+#,AR_DilGlaciares_0,Relax it,The mining secretary: «Copper is the next Vaca Muerta.»
+#,AR_DilGlaciares_1,Keep it,The environment secretary: «Water is worth more than copper.»
 #,AR_DilDolaresColchon,Mattress dollars,Argentines keep over 200 billion dollars outside the banking system. How do you lure them in?, 
-#,AR_DilDolaresColchon_0,"Let them be spent, no questions asked",The economy minister: “Every dollar out of the mattress means investment and spending.”
-#,AR_DilDolaresColchon_1,Require the source to be declared,The anti-money-laundering chief: “We cannot become a laundromat.”
+#,AR_DilDolaresColchon_0,"Let them be spent, no questions asked",The economy minister: «Every dollar out of the mattress means investment and spending.»
+#,AR_DilDolaresColchon_1,Require the source to be declared,The anti-money-laundering chief: «We cannot become a laundromat.»
 #,AR_DilCierreINTA,Closing the farm research institute,The austerity plan includes closing agricultural research stations in the provinces., 
-#,AR_DilCierreINTA_0,Close them,The deregulation minister: “Let those who benefit from research pay for it.”
-#,AR_DilCierreINTA_1,Keep them,"The agriculture secretary: “Without the institute, small farmers are on their own.”"
+#,AR_DilCierreINTA_0,Close them,The deregulation minister: «Let those who benefit from research pay for it.»
+#,AR_DilCierreINTA_1,Keep them,"The agriculture secretary: «Without the institute, small farmers are on their own.»"
 #,AR_DilReformaCGT,The union federation offers to negotiate,The labour federation promises no strikes if union dues and sector-wide agreements are kept., 
-#,AR_DilReformaCGT_0,Negotiate with the unions,The interior minister: “A reform with consensus lasts longer.”
-#,AR_DilReformaCGT_1,Push ahead without them,The human capital minister: “Union privileges are over.”
+#,AR_DilReformaCGT_0,Negotiate with the unions,The interior minister: «A reform with consensus lasts longer.»
+#,AR_DilReformaCGT_1,Push ahead without them,The human capital minister: «Union privileges are over.»
 #,AR_DilImportaciones,Manufacturers demand curbs on imports,"Textile mills, metalworkers and appliance makers complain of unfair competition from imports.", 
-#,AR_DilImportaciones_0,Raise tariffs,The industry secretary: “Without industry there are no jobs.”
-#,AR_DilImportaciones_1,Keep markets open,The economy minister: “Argentines deserve international prices.”
+#,AR_DilImportaciones_0,Raise tariffs,The industry secretary: «Without industry there are no jobs.»
+#,AR_DilImportaciones_1,Keep markets open,The economy minister: «Argentines deserve international prices.»
 #,AR_DilArmasUcrania,Ukraine asks for weapons,Kyiv asks Argentina for military equipment and support at the UN. Russia warns of trade reprisals., 
-#,AR_DilArmasUcrania_0,Send aid and vote with the West,The foreign minister: “We stand on the side of freedom.”
-#,AR_DilArmasUcrania_1,Stay neutral,The deputy foreign minister: “It is not our war.”
+#,AR_DilArmasUcrania_0,Send aid and vote with the West,The foreign minister: «We stand on the side of freedom.»
+#,AR_DilArmasUcrania_1,Stay neutral,The deputy foreign minister: «It is not our war.»
 #,AR_DilVotoONU,UN vote on the Middle East,The General Assembly votes on a ceasefire that Israel and the US reject., 
-#,AR_DilVotoONU_0,Vote for the ceasefire,The UN ambassador: “Civilian lives come first.”
-#,AR_DilVotoONU_1,Vote with the US and Israel,The foreign minister: “We are allies and we will show it.”
+#,AR_DilVotoONU_0,Vote for the ceasefire,The UN ambassador: «Civilian lives come first.»
+#,AR_DilVotoONU_1,Vote with the US and Israel,The foreign minister: «We are allies and we will show it.»
 #,AR_DilEmbajada,Move the embassy to Jerusalem,The government considers moving the Argentine embassy in Israel to Jerusalem., 
-#,AR_DilEmbajada_0,Move it,The President: “It is a promise and we will keep it.”
-#,AR_DilEmbajada_1,Postpone the decision,The foreign minister: “Now is not the time: we would risk trade with Arab countries.”
+#,AR_DilEmbajada_0,Move it,The President: «It is a promise and we will keep it.»
+#,AR_DilEmbajada_1,Postpone the decision,The foreign minister: «Now is not the time: we would risk trade with Arab countries.»
 #,AR_DilRefugiados,Thousands of migrants at the border,Venezuelan families wait at the northern border without papers., 
-#,AR_DilRefugiados_0,Grant humanitarian residence,The human development minister: “Argentina has always been a land of immigrants.”
-#,AR_DilRefugiados_1,Close the crossing,The security minister: “Argentines first.”
+#,AR_DilRefugiados_0,Grant humanitarian residence,The human development minister: «Argentina has always been a land of immigrants.»
+#,AR_DilRefugiados_1,Close the crossing,The security minister: «Argentines first.»
 #,AR_DilEstacionEspacial,The Chinese space station in Neuquén,The US asks Argentina to review the agreement that lets China run a space antenna in Patagonia., 
-#,AR_DilEstacionEspacial_0,Inspect and restrict it,The defence minister: “No one operates on Argentine soil without oversight.”
-#,AR_DilEstacionEspacial_1,Honour the agreement,The foreign minister: “China is our customer. Let us not break contracts.”
+#,AR_DilEstacionEspacial_0,Inspect and restrict it,The defence minister: «No one operates on Argentine soil without oversight.»
+#,AR_DilEstacionEspacial_1,Honour the agreement,The foreign minister: «China is our customer. Let us not break contracts.»
 #,AR_Dil5G,5G and Chinese companies,Washington asks Argentina to exclude Chinese suppliers from its 5G network., 
-#,AR_Dil5G_0,Exclude them,The innovation secretary: “Network security is not negotiable.”
-#,AR_Dil5G_1,Open tender,The economy minister: “May the best offer win.”
+#,AR_Dil5G_0,Exclude them,The innovation secretary: «Network security is not negotiable.»
+#,AR_Dil5G_1,Open tender,The economy minister: «May the best offer win.»
 #,AR_DilMonedaComun,Brazil proposes a common currency,The Brazilian government proposes a common currency for Mercosur trade., 
-#,AR_DilMonedaComun_0,Study it,The foreign minister: “Trading without dollars saves reserves.”
-#,AR_DilMonedaComun_1,Reject it,The central bank governor: “We have enough trouble with one currency.”
+#,AR_DilMonedaComun_0,Study it,The foreign minister: «Trading without dollars saves reserves.»
+#,AR_DilMonedaComun_1,Reject it,The central bank governor: «We have enough trouble with one currency.»
 #,AR_DilAviones,Fighter jet purchase,"There are two offers: used US fighters or newer, cheaper Chinese jets.", 
-#,AR_DilAviones_0,US jets,The air force chief: “It ties us to NATO as an ally.”
-#,AR_DilAviones_1,Chinese jets,The economy minister: “They are newer and we pay in instalments.”
+#,AR_DilAviones_0,US jets,The air force chief: «It ties us to NATO as an ally.»
+#,AR_DilAviones_1,Chinese jets,The economy minister: «They are newer and we pay in instalments.»
 #,AR_DilClausulaAmbiental,Europe demands environmental clauses,European farmers push to block Argentine beef over deforestation in the north., 
-#,AR_DilClausulaAmbiental_0,Accept traceability controls,The environment secretary: “It is a chance to stop forest clearing.”
-#,AR_DilClausulaAmbiental_1,Denounce protectionism,The agriculture secretary: “It is protectionism dressed up as ecology.”
+#,AR_DilClausulaAmbiental_0,Accept traceability controls,The environment secretary: «It is a chance to stop forest clearing.»
+#,AR_DilClausulaAmbiental_1,Denounce protectionism,The agriculture secretary: «It is protectionism dressed up as ecology.»

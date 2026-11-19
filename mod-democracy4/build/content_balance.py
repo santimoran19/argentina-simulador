@@ -42,7 +42,7 @@ DROP_CHAINS = {'Dolar a precios'}   # reemplazaba el enlace dólar->inflación d
 # del juego base, no las de ese mod). Encima van los ajustes argentinos de ARG_ON_TOP.
 LATAM_BASELINE = {
     'AbortionLaw': 0.75, 'AdultEducationSubsidies': 0.6, 'AgricultureSubsidies': 0.1, 'AirlineTax': 0.5, 'AlcoholLaw': 0.4,
-    'AlcoholTax': 0.25, 'AntiCorruptionAgency': 0.15, 'AntibioticsBan': 0.6, 'ArtsSubsidies': 0.35, 'BicycleSubsidies': 0.1,
+    'AlcoholTax': 0.45,   # impuestos internos al alcohol 'AntiCorruptionAgency': 0.15, 'AntibioticsBan': 0.6, 'ArtsSubsidies': 0.35, 'BicycleSubsidies': 0.1,
     'BorderControls': 0.5, 'BusLanes': 0.6, 'BusSubsidies': 0.25, 'CCTVCameras': 0.5, 'CapitalControls': 0.25,
     'CapitalGainsTax': 0.6, 'CarTax': 0.25, 'ChildBenefit': 0.9, 'ChildcareProvision': 0.6, 'CleanEnergySubsidies': 0.1,
     'CompulsoryForeignLanguageClasses': 0.35, 'ConsumerRights': 0.6, 'CorporationTax': 0.7, 'Creationism': 0.5, 'DisabilityBenefit': 0.83,
@@ -75,7 +75,15 @@ DROP_FROM_BASELINE = {'HelicopterMoney',   # la emisión la representa la polít
 # salud 0,62, igualdad 0,45 (Gini ~0,45), confianza empresaria 0,30. Resultado simulado: 0,45 / 0,43 / 0,71 / 0,08 /
 # (ver warmup.py), estable 8 turnos sin tocar nada (el peso se sigue debilitando, como en la realidad).
 ARG_ON_TOP = {
-    'AlcoholTax': 0.23,
+    # Quinta partida: el delito arrancaba en 0,96 y la salud en 0,41. Políticas argentinas reales que faltaban:
+    'CommunityPolicing': 0.5,          # policía de cercanía / cuadrantes
+    'CompulsoryFoodLabelling': 0.8,    # Ley de Etiquetado Frontal (2021)
+    'FamilyPlanning': 0.6,             # Salud sexual y procreación responsable (Ley 25.673)
+    'FreeSchoolMeals': 0.4,            # comedores escolares
+    'WorkSafetyLaw': 0.6,              # riesgos del trabajo (ART)
+    'CompulsorySchoolSports': 0.5,     # educación física obligatoria
+    'FoodStandards': 0.6,              # ANMAT / SENASA
+    'AlcoholTax': 0.45,   # impuestos internos al alcohol
     'ArmedPolice': 0.8,   # la policía argentina anda armada
     'CCTVCameras': 0.6,
     'CapitalControls': 0.75,   # cepo

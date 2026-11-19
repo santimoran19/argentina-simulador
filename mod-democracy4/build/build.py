@@ -27,7 +27,13 @@ def write(rel, text):
 
 def tq(text):
     """Comillas tipográficas: evita comillas dobles escapadas dentro del CSV."""
-    return re.sub(r'"([^"]*)"', '\u201c\\1\u201d', str(text)) if isinstance(text, str) else text
+    # Comillas castellanas « »: el juego no dibuja las tipográficas “ ” (dejaban los dilemas en blanco) y las comillas
+    # dobles escapadas rompen su lector de CSV.
+    if not isinstance(text, str):
+        return text
+    text = re.sub(r'"([^"]*)"', '\u00ab\\1\u00bb', text)
+    return (text.replace('\u201c', '\u00ab').replace('\u201d', '\u00bb').replace('\u2018', "'").replace('\u2019', "'")
+            .replace('\u2014', '-').replace('\u2013', '-').replace('\u2026', '...'))
 
 
 def csv_text(rows):

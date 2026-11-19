@@ -5,4 +5,4 @@ OnImplement = CreateGrudge(AR_CrisisBrasil,0.55,0.92);CreateGrudge(International
 
 [influences]
 0 = _random_,0,0.05
-1 = AR_Mercosur,0+(0.02*x)
+1 = ImportTarrifs,0.02-(0.02*x)

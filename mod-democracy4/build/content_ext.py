@@ -241,7 +241,7 @@ def extend(C):
         ('Economic slump', 'Shops sell less, factories run at half capacity and construction has stalled. The economy slides into '
          'recession.'))
 
-    sit('AR_AtrasoCambiario', 'ECONOMY', 'currency-dollar', 0, 0.58, 0.44,
+    sit('AR_AtrasoCambiario', 'ECONOMY', 'currency-dollar', 0, 0.54, 0.42,
         ['_default_,0.15', 'CurrencyStrength,0+(0.40*x)', 'AR_BandasCambiarias,0+(0.15*x)', 'AR_TasaBCRA,0+(0.10*x)',
          'AR_AcuerdoEEUU,0+(0.05*x)', 'AR_SaltoCambiario,0-(0.30*x)'],
         ['Tourism,-0.04-(0.04*x)', 'Farmers,-0.04-(0.04*x)', 'MiddleIncome,0.03+(0.03*x)', 'Inflation,-0.02-(0.03*x)',
@@ -270,7 +270,7 @@ def extend(C):
          'desesperación en los barrios.'),
         ('Rising unemployment', 'Formal jobs are lost every month. Odd jobs, delivery apps and despair in poor neighbourhoods grow.'))
 
-    sit('AR_Desinflacion', 'ECONOMY', 'snowflake', 1, 0.60, 0.45,
+    sit('AR_Desinflacion', 'ECONOMY', 'snowflake', 1, 0.53, 0.42,
         ['_default_,0.10', 'Inflation,0.40-(0.40*x)', 'AR_Motosierra,0+(0.10*x)', 'AR_DeficitCero,0+(0.10*x)',
          'AR_EmisionTesoro,0.10-(0.10*x)', 'AR_BandasCambiarias,0+(0.05*x)', 'AR_SaltoCambiario,0-(0.25*x)'],
         ['MiddleIncome,0.04+(0.04*x)', 'Poor,0.02+(0.03*x)', 'BusinessConfidence,0.03+(0.03*x)', '_All_,0.01+(0.02*x)'],

@@ -3,7 +3,7 @@ name=AR_DilVeto
 
 [influences]
 0 = _random_,0,0.10
-1 = AR_MovilidadJubilatoria,0.08-(0.08*x)
+1 = StatePensions,0.1056-(0.08*x)
 
 [option0]
 OnImplement = CreateGrudge(Retired,-0.07,0.9);CreateGrudge(Capitalist,0.04,0.9);CreateGrudge(Inflation,-0.02,0.9);

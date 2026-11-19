@@ -375,7 +375,7 @@ sit('AR_BrechaCambiaria', 'ECONOMY', 'arrows-exchange', 0, 0.55, 0.40,
     ('Exchange-rate gap', 'The parallel ("blue") dollar trades far above the official rate. Exporters hold back their harvest, importers '
      'rush their purchases and prices adjust to the dearer dollar.'))
 
-sit('AR_ReservasAgotadas', 'ECONOMY', 'building-bank', 0, 0.60, 0.42,
+sit('AR_ReservasAgotadas', 'ECONOMY', 'building-bank', 0, 0.57, 0.42,
     ['_default_,0.55', 'AR_EmisionTesoro,0+(0.15*x)', 'AR_Retenciones,0+(0.08*x)', 'AR_SubsidiosEnergia,0+(0.06*x)',
      'AR_AcuerdoFMI,0-(0.22*x)', 'AR_VacaMuerta,0-(0.12*x)', 'AR_Litio,0-(0.06*x)', 'AR_RIGI,0-(0.08*x)', 'AR_Cepo,0-(0.05*x)',
      '_effectivedebt_,0+(0.15*x)', 'CurrencyStrength,0.20-(0.20*x)',
@@ -797,7 +797,12 @@ START_2026 = _ext.START_2026
 import content_intl as _intl
 _intl.extend(_mod)
 
-# Interacciones con las políticas que ya trae Democracy 4
+# Sin repetidos: las políticas argentinas que hacían lo mismo que una del juego se fusionan con ella
+import content_merge as _merge
+_merge.extend(_mod)
+MERGED = _merge.MERGE
+
+# Interacciones con las políticas y situaciones que ya trae Democracy 4
 import content_base as _base
 _base.extend(_mod)
 

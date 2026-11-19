@@ -5,4 +5,4 @@ OnImplement = CreateGrudge(Health,-0.03,0.8);CreateGrudge(_All_,-0.02,0.8);Creat
 
 [influences]
 0 = _random_,0,0.06
-1 = AR_EmergenciaPediatrica,0.03-(0.03*x)
+1 = StateHealthService,0.0345-(0.03*x)

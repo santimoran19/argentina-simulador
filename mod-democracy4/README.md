@@ -1,6 +1,6 @@
 # Argentina: Gobernala — mod para Democracy 4
 
-Agrega la **República Argentina** como país jugable, desde el cambio de gobierno del **10 de diciembre de 2023**, con el contexto internacional y su propia economía política: inflación inercial, cepo y bandas cambiarias, retenciones, el FMI y el swap con Estados Unidos, motosierra y superávit, Vaca Muerta, piquetes, la CGT, los vetos y la grieta. Textos completos en **español e inglés**.
+Agrega la **República Argentina** como país jugable, desde el cambio de gobierno del **10 de diciembre de 2023**, con el contexto internacional y su propia economía política: inflación inercial, cepo (con el control de capitales del juego) y bandas cambiarias, retenciones, el FMI y el swap con Estados Unidos, motosierra y superávit, Vaca Muerta, piquetes, la CGT, los vetos y la grieta. Textos completos en **español e inglés**.
 
 **Descarga directa:** [argentina_gobernala.zip](argentina_gobernala.zip)
 
@@ -17,13 +17,14 @@ Todo lo que pasó después (bandas cambiarias, motosierra, superávit, swap con 
 
 | | Cantidad | Ejemplos |
 |---|---|---|
-| Políticas | 59 | Cepo, bandas cambiarias, tasa del BCRA, emisión, retenciones, impuesto PAIS, FMI, alineamiento con EE.UU., motosierra, déficit cero, privatizaciones, desregulación, facultades delegadas, RIGI, Vaca Muerta, litio, inocencia fiscal, blanqueo, Ganancias, movilidad jubilatoria, moratoria, discapacidad, hospitales nacionales, ANMAT, AUH y Tarjeta Alimentar, planes sociales, protocolo antipiquetes, reforma laboral, PASO, imputabilidad, ley de glaciares, Hidrovía, Malvinas, dolarización; y exterior: Ucrania, Israel, China, BRICS, OCDE, reequipamiento militar, misiones de paz, Antártida, migración |
+| Políticas propias | 39 | Bandas cambiarias, tasa del BCRA, retenciones, impuesto PAIS, FMI, alineamiento con EE.UU., motosierra, déficit cero, desregulación, facultades delegadas, cierre de organismos, litio, inocencia fiscal, blanqueo, monotributo, moratoria, planes sociales, bonos, subsidios a la luz y el gas, salarios estatales, ANMAT, protocolo antipiquetes, aportes sindicales, PASO, Ficha Limpia, imputabilidad, ley de glaciares, Hidrovía, Malvinas, dolarización; y exterior: Ucrania, Israel, China, BRICS, OCDE, misiones de paz, Antártida |
+| Políticas del juego con efectos argentinos | 20 | El cepo es el control de capitales del juego, la emisión es su emisión monetaria, la AUH son las asignaciones familiares, el CONICET es el financiamiento científico, etc. Ver "Sin políticas repetidas" |
 | Situaciones | 38 | Brecha, reservas agotadas, riesgo país, corrida, salto cambiario, corralito, default, sueldos que no alcanzan, recesión, atraso cambiario, cierre de pymes, desempleo, piquetes, paros de la CGT, conflicto en hospitales, crisis de discapacidad, universidades, marchas de jubilados, Congreso en contra, escándalos, crisis energética, grieta; y a favor: desinflación, superávit, inversiones, boom energético, cosecha récord, estabilidad. Internacionales: guerra en Europa, crisis en Medio Oriente, guerra comercial, tasas altas en EE.UU., crisis en Brasil, superciclo de materias primas, pandemia, crisis financiera global, ola migratoria, acuerdo con la UE en vigor |
 | Eventos con imagen | 38 | Campeones del mundo, escándalo cripto presidencial, audios de coimas, fentanilo contaminado, temporal en el sur bonaerense, muerte del Papa, rescate del Tesoro de EE.UU., dengue, falta de gas, paro de controladores, caen los homicidios en Rosario, mejora la nota de la deuda, cierra una fábrica emblemática; y del mundo: estalla una guerra en Europa, se cierra el estrecho de Ormuz, aranceles globales, la Fed sube tasas, Brasil devalúa, la soja vuela, pandemia, derrumbe en Wall Street, éxodo venezolano, entra en vigor el acuerdo con la UE, China compra soja récord |
 | Dilemas | 38 | Vetos a discapacidad y universidades, paro en el hospital pediátrico, condiciones del swap, el dólar toca el techo de la banda, privatizar la aerolínea, suspender las PASO, imputabilidad, glaciares, dólares del colchón, la CGT ofrece negociar, los industriales piden frenar importaciones, FMI, paritarias, lockout del campo, fondos buitre; y del mundo: armas para Ucrania, votación en la ONU sobre Medio Oriente, embajada en Jerusalén, refugiados, estación espacial china en Neuquén, 5G, moneda común con Brasil, aviones de combate, cláusulas ambientales de Europa |
 | Rasgos estructurales | 6 | Inercia inflacionaria, evasión, corrupción, grieta, fuga de cerebros, economía informal |
 | Enlaces causales argentinos | 12 | Ver "Efecto dominó" |
-| Conexiones con el juego base | 47 | Ver "Lo que ya trae el juego" |
+| Otras conexiones con el juego | 47 | Ver "Lo que ya trae el juego" |
 
 El detalle de cada política, situación, evento y dilema, con sus efectos, está en el **[catálogo completo](CATALOGO.md)**.
 
@@ -45,14 +46,43 @@ Democracy 4 ya tiene sus propias políticas: jubilaciones, salario mínimo, leye
 - Bajar el **salario mínimo**, las **jubilaciones** o las **asignaciones familiares**, o subir el **IVA**, alimenta "el sueldo no alcanza".
 - Bajar los **aranceles** o subir las **cargas sociales** alimenta el **cierre de pymes**; la **ayuda a pymes** lo frena.
 - Flexibilizar las **leyes laborales** o bajar el **salario mínimo** alimenta los **paros de la CGT**.
-- El **control de capitales** y la **emisión** del juego agrandan la **brecha cambiaria**, igual que el cepo y la emisión del mod.
+- El **control de capitales** (el cepo) y la **emisión** agrandan la **brecha cambiaria**.
 - Bajar la **salud pública**, las **becas universitarias** o la **pensión por discapacidad** enciende los conflictos en **hospitales, universidades y discapacidad**.
 - La **independencia judicial** baja el **riesgo país** y los **escándalos de corrupción**, y atrae **inversiones**.
 - Las **situaciones del juego** también empujan a sus equivalentes argentinas: la **hiperinflación** y la **inflación alta** del juego alimentan el salto cambiario y "el sueldo no alcanza"; la **huelga general**, el **paro de médicos** y el **paro docente** alimentan los paros de la CGT y los conflictos en hospitales y universidades; el **éxodo de empresas** frena las inversiones.
 
 Los nombres internos se comprobaron contra partidas guardadas reales de Democracy 4 (versión 1.65).
 
-Al arrancar, el país tiene activas las políticas del juego que existían en 2023 (aranceles altos, aerolínea, trenes y petrolera estatales). El control de capitales y la emisión del juego arrancan apagados, porque el mod los representa con más detalle (cepo y asistencia del BCRA al Tesoro).
+Al arrancar, el país tiene activas las políticas del juego que existían en 2023 (aranceles altos, aerolínea, trenes y petrolera estatales, control de capitales al máximo, emisión, impuesto a la riqueza).
+
+## Sin políticas repetidas
+
+En otros mods de Argentina pasa que aparecen dos políticas para lo mismo (por ejemplo, "Universidad pública" y "Becas universitarias", las dos activas). Acá no: cuando el juego ya tiene una política equivalente, **se usa la del juego** y se le conectan todas las consecuencias argentinas. Sus íconos, costos y efectos generales son los del juego; lo argentino (crisis, eventos, dilemas) se suma encima.
+
+| Lo argentino | Se maneja con la política del juego |
+|---|---|
+| Cepo cambiario | Control de capitales |
+| Asistencia del BCRA al Tesoro | Emisión monetaria (flexibilización cuantitativa) |
+| Movilidad jubilatoria | Jubilaciones estatales |
+| AUH | Asignaciones familiares |
+| Prestaciones por discapacidad | Pensión por discapacidad |
+| Universidad pública | Becas universitarias |
+| CONICET | Financiamiento científico |
+| Hospitales nacionales (Garrahan) | Salud pública |
+| Ganancias sobre salarios | Impuesto a la renta |
+| Bienes Personales | Impuesto a la riqueza |
+| RIGI | Beneficios a inversores extranjeros |
+| Vaca Muerta | Subsidio a la perforación petrolera |
+| Subsidios al transporte | Subsidios al colectivo |
+| Obra pública nacional | Construcción de rutas |
+| Reequipamiento militar | Gasto militar |
+| Plan contra el narcotráfico | Lucha contra las drogas |
+| Política migratoria | Controles fronterizos |
+| Privatizaciones | Aerolínea estatal (bajarla = privatizar) |
+| Reforma laboral | Leyes laborales (bajarlas = reforma) |
+| Apertura comercial | Aranceles (bajarlos = abrir) |
+
+Las políticas que quedan propias del mod son las que el juego no tiene: retenciones, impuesto PAIS, bandas cambiarias, tasa del BCRA, monotributo, moratoria, planes sociales, subsidios a las tarifas, Malvinas, etc.
 
 ## Efecto dominó: todo se encadena
 
@@ -102,7 +132,7 @@ El mod se generó y validó automáticamente, pero **todavía no se probó dentr
 
 1. **¿Arranca el juego con el mod activado?** Si no, el error suele indicar el archivo y la fila.
 2. **¿Aparece "República Argentina (diciembre de 2023)"**, con bandera, mapa y descripción?
-3. **¿Aparecen las 59 políticas**, con íconos y con las etiquetas de los deslizadores?
+3. **¿Aparecen las 39 políticas propias**, con íconos y con las etiquetas de los deslizadores?
 4. **Las políticas del juego (jubilaciones, aranceles, salario mínimo…) ¿mueven las situaciones argentinas?**
 5. **Moneda y cifras:** el país usa dólares (US$). Revisá que el PBI, la deuda y el presupuesto se vean razonables.
 6. **Situaciones al arrancar:** deberían coincidir más o menos con "Cómo arranca".
@@ -125,6 +155,7 @@ El contenido está como datos, ordenado por tema:
 - `build/content_ext.py`: ampliación 2024-2026, cadenas y enlaces causales.
 - `build/content_intl.py`: el mundo (política exterior, crisis globales, eventos y dilemas internacionales).
 - `build/content_base.py`: conexiones con las políticas que ya trae Democracy 4.
+- `build/content_merge.py`: fusiona con las del juego las políticas argentinas que hacían lo mismo (sin repetidos).
 
 ```bash
 # una sola vez: herramientas de gráficos

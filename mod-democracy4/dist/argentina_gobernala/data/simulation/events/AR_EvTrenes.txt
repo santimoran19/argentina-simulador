@@ -5,4 +5,4 @@ OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(Poor,-0.04,0.75);Creat
 
 [influences]
 0 = _random_,0,0.05
-1 = AR_SubsidiosTransporte,0.06-(0.06*x)
+1 = BusSubsidies,0.06-(0.06*x)

@@ -6,7 +6,7 @@ control de capitales...). Este módulo hace que esas políticas también muevan 
 decisión tomada con una política del juego tiene las mismas consecuencias que la equivalente del mod.
 
 Además fija el valor inicial de algunas políticas base que en la Argentina de 2023 existían y que el país modelo no
-tenía (aranceles altos, empresas estatales), y deja apagadas las del juego que el mod reemplaza con más detalle.
+tenía (empresas estatales), y deja apagadas las del juego que el mod reemplaza con más detalle.
 """
 
 # Política del juego base -> qué situaciones argentinas mueve. Fórmulas: x = nivel de la política (0 a 1).
@@ -51,10 +51,10 @@ BASE_SITUATION_LINKS = {
 }
 
 # Políticas del juego base que la Argentina de diciembre de 2023 tenía activas
+# (Los aranceles y la aerolínea estatal toman el valor de 2023 de las políticas argentinas fusionadas: apertura
+# comercial 0 = aranceles al máximo, con SIRA; privatizaciones 0 = aerolínea 100 % estatal.)
 BASE_START_2023 = {
-    'ImportTarrifs': 0.7,          # licencias de importación (SIRA) y aranceles altos
     'SmallBusinessGrants': 0.3,
-    'StateAirline': 1.0,           # aerolínea de bandera estatal
     'StateRail': 0.8,              # trenes estatales
     'StateEnergy': 0.5,            # petrolera y empresa de energía con mayoría estatal
     'AgricultureSubsidies': 0.1,
@@ -62,8 +62,18 @@ BASE_START_2023 = {
 
 
 def extend(C):
+    """Se aplica después de content_merge. Cada enlace se centra en el valor de arranque de 2023 de la política:
+    en diciembre de 2023 no suma ni resta nada, y empieza a pesar cuando el jugador la sube o la baja."""
+    import content_merge as M
+    C.COUNTRY_POLICIES.update({k: v for k, v in BASE_START_2023.items() if k not in C.COUNTRY_POLICIES})
     by = {s['name']: s for s in C.SITUATIONS}
     for links in (BASE_LINKS, BASE_SITUATION_LINKS):
         for name, causes in links.items():
-            by[name]['causes'].extend(causes)
-    C.COUNTRY_POLICIES.update(BASE_START_2023)
+            have = {c.split(',')[0] for c in by[name]['causes']}
+            for c in causes:
+                src, f = c.split(',', 1)
+                if src in have:
+                    continue          # ya la mueve una regla calibrada a mano (p. ej. el cepo fusionado)
+                _a, b = M.linear(f)
+                x0 = C.COUNTRY_POLICIES.get(src, 0.0)
+                by[name]['causes'].append('{},{}'.format(src, M.fmt(-b * x0, b)))

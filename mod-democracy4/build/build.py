@@ -163,6 +163,8 @@ def build():
         for dirpath, _dirs, files in os.walk(ASSETS):
             for f in files:
                 src = os.path.join(dirpath, f)
+                if f.lower() in {'icons_{}.svg'.format(n.lower()) for n in C.MERGED}:
+                    continue  # política fusionada con una del juego
                 rel = os.path.relpath(src, ASSETS)
                 dst = os.path.join(OUT, rel)
                 os.makedirs(os.path.dirname(dst), exist_ok=True)

@@ -3,7 +3,7 @@ name=AR_DilAerolineas
 
 [influences]
 0 = _random_,0,0.06
-1 = AR_Privatizaciones,0+(0.10*x)
+1 = StateAirline,0.1-(0.1*x)
 
 [option0]
 OnImplement = CreateGrudge(Patriot,-0.05,0.9);CreateGrudge(StateEmployees,-0.05,0.9);CreateGrudge(Capitalist,0.05,0.9);CreateGrudge(TradeUnionist,-0.04,0.9);

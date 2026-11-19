@@ -28,6 +28,7 @@ def f(expr, x):
 def run(label, start, turns=24, boosts=()):
     boost = {t: float(eq) for _l, t, eq in boosts}
     pol = {p['name']: 0.0 for p in C.POLICIES}
+    pol.update({k: v for k, v in C.COUNTRY_POLICIES.items() if not k.startswith('_')})
     pol.update(start)
     val = {s['name']: 0.0 for s in C.SITUATIONS}
     active = {s['name']: False for s in C.SITUATIONS}

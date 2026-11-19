@@ -42,6 +42,10 @@ ES = {
     'ArmedPolice': 'policía armada (juego)', 'SmallBusinessGrants': 'ayuda a pymes (juego)',
     'Hyperinflation': 'hiperinflación (juego)', 'HighInflation': 'inflación alta (juego)', 'GeneralStrike': 'huelga general (juego)',
     'DoctorsStrike': 'paro de médicos (juego)', 'TeachersStrike': 'paro docente (juego)', 'CorporateExodus': 'éxodo de empresas (juego)',
+    'BusSubsidies': 'subsidios al colectivo (juego)', 'Punitivewealthtax': 'impuesto a la riqueza (juego)',
+    'MilitarySpending': 'gasto militar (juego)', 'RoadBuilding': 'construcción de rutas (juego)',
+    'OilDrillingSubsidy': 'subsidio a la perforación petrolera (juego)', 'DrugEnforcement': 'lucha contra el narcotráfico (juego)',
+    'StateAirline': 'aerolínea estatal (juego)', 'FoodStamps': 'tarjeta alimentaria (juego)',
     'EnterpriseInvestmentScheme': 'incentivo a la inversión (juego)', 'AgricultureSubsidies': 'subsidios agrícolas (juego)',
 }
 DEPT = {'ECONOMY': 'Economía', 'TAX': 'Impuestos', 'WELFARE': 'Bienestar social', 'PUBLICSERVICES': 'Servicios públicos',
@@ -119,6 +123,20 @@ for d in C.DILEMMAS:
         opts.append('{}: {}'.format(es[0], ', '.join('{} {}'.format('▲' if a > 0 else '▼', label(t)) for t, a in grudges)))
     lines.append('| **{}** | {} | {} |'.format(d['es'][0], opts[0], opts[1]))
 
+lines += ['', '## Políticas argentinas fusionadas con las del juego', '',
+          'Para que no haya dos políticas para lo mismo, estas versiones argentinas no existen como política aparte: '
+          'se usa la del juego, que ahora mueve todo lo que movía la argentina. "Al revés" quiere decir que subir la del '
+          'juego equivale a bajar la argentina.', '', '| Antes (mod) | Ahora (juego) |', '|---|---|']
+OLD_ES = {'AR_Cepo': 'Cepo cambiario', 'AR_EmisionTesoro': 'Asistencia del BCRA al Tesoro', 'AR_SubsidiosTransporte': 'Subsidios al transporte',
+          'AR_MovilidadJubilatoria': 'Movilidad jubilatoria', 'AR_TarjetaAlimentar': 'AUH y Tarjeta Alimentar',
+          'AR_LeyDiscapacidad': 'Prestaciones por discapacidad', 'AR_UniversidadPublica': 'Universidad pública', 'AR_CONICET': 'CONICET',
+          'AR_EmergenciaPediatrica': 'Hospitales nacionales', 'AR_Ganancias4ta': 'Ganancias sobre salarios',
+          'AR_BienesPersonales': 'Bienes Personales', 'AR_Reequipamiento': 'Reequipamiento militar',
+          'AR_ObraPublicaNacional': 'Obra pública nacional', 'AR_RIGI': 'RIGI', 'AR_PoliticaMigratoria': 'Política migratoria',
+          'AR_VacaMuerta': 'Vaca Muerta', 'AR_Narcotrafico': 'Plan contra el narcotráfico', 'AR_Privatizaciones': 'Privatizaciones',
+          'AR_ReformaLaboral': 'Reforma laboral', 'AR_Mercosur': 'Apertura comercial / Mercosur'}
+for k, (base, inv) in C.MERGED.items():
+    lines.append('| {} | {}{} |'.format(OLD_ES.get(k, k), label(base), ' (al revés)' if inv else ''))
 lines += ['', '## Rasgos estructurales y enlaces causales argentinos', '',
           '| Rasgo | Efecto |', '|---|---|'] + ['| {} | ▲ {} |'.format(l, label(t)) for l, t, _e in C.COUNTRY_OVERRIDES]
 lines += ['', '| Causa | Consecuencia |', '|---|---|']

@@ -82,9 +82,10 @@ def extend(C):
         pc=(10, 6, 6, 4), impl=6, cost=(200, 1500))
 
     pol('AR_MisionesPaz', 'FOREIGNPOLICY', 'helmet',
-        ('Misiones de paz y ayuda humanitaria', 'Cascos azules argentinos en misiones de la ONU y envíos de ayuda a zonas de '
-         'desastre y guerra.'),
-        ('Peacekeeping and humanitarian aid', 'Argentine peacekeepers on UN missions and aid shipments to disaster and war zones.'),
+        ('Misiones de paz de la ONU', 'Cascos azules argentinos en misiones de la ONU, como Chipre y Haití. La ayuda económica '
+         'a otros países va por la política de ayuda exterior del juego.'),
+        ('UN peacekeeping missions', 'Argentine blue helmets on UN missions, such as Cyprus and Haiti. Economic aid to other '
+         'countries goes through the game\'s foreign aid policy.'),
         ['ForeignRelations,0+(0.06*x)', 'Liberal,0+(0.04*x)', 'Patriot,0+(0.02*x)'],
         pc=(4, 4, 3, 3), impl=2, cost=(20, 200))
 

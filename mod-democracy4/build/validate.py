@@ -76,7 +76,7 @@ for p in C.POLICIES:
     w = 'política ' + p['name']
     if p['dept'] not in DEPTS: err(w + ': departamento inválido ' + p['dept'])
     if p['slider'] != 'default' and p['slider'] not in C.SLIDERS: err(w + ': deslizador no definido ' + p['slider'])
-    if p['opposites'] and p['opposites'] not in OWN_POL: err(w + ': opuesta inexistente ' + p['opposites'])
+    if p['opposites'] and p['opposites'] not in OWN_POL | BASE: err(w + ': opuesta inexistente ' + p['opposites'])
     if not p['effects']: err(w + ': sin efectos')
     if p['cost'] == (0, 0) and p['income'] == (0, 0): pass
     for e in p['effects']: check_effect(w, e, -0.6, 0.6)
@@ -129,7 +129,7 @@ for d in C.DILEMMAS:
 # ---------------- escenarios ----------------
 for label, start in (('2023', C.START_2023), ('referencia 2026', C.REFERENCIA_2026)):
     for k, v in start.items():
-        if k not in OWN_POL: err('escenario {}: política inexistente {}'.format(label, k))
+        if k not in OWN_POL | BASE: err('escenario {}: política inexistente {}'.format(label, k))
         if not 0 <= v <= 1: err('escenario {}: valor fuera de 0-1 en {}'.format(label, k))
 for m in (C.COUNTRY,):
     for f in ('data/missions/{0}/{0}.txt'.format(m), 'translations/English/missions/{}.txt'.format(m),

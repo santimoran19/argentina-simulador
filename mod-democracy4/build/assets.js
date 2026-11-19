@@ -10,7 +10,7 @@ const ROOT = path.resolve(__dirname, '..');
 const GAME = path.resolve(ROOT, '..');                    // el juego web, para reusar las escenas de eventos
 const OUT = path.join(ROOT, 'assets');
 const TMP = process.argv[2] || path.join(ROOT, '.tmp');
-const content = JSON.parse(fs.readFileSync(path.join(TMP, 'content.json'), 'utf8'));
+const content = require.main === module ? JSON.parse(fs.readFileSync(path.join(TMP, 'content.json'), 'utf8')) : null;
 const tablerDir = require.resolve.paths('@tabler/icons').map(d => d + '/@tabler/icons/icons/outline/').find(d => fs.existsSync(d));
 const mk = d => fs.mkdirSync(d, { recursive: true });
 
@@ -28,9 +28,11 @@ function mapSvg() {
   const lat0 = -38 * Math.PI / 180, k = Math.cos(lat0);
   let minX = 1e9, maxX = -1e9, minY = 1e9, maxY = -1e9;
   polys.forEach(p => p.forEach(r => r.forEach(([lon, lat]) => { const x = lon * k, y = -lat; minX = Math.min(minX, x); maxX = Math.max(maxX, x); minY = Math.min(minY, y); maxY = Math.max(maxY, y); })));
-  const s = 380 / Math.max(maxX - minX, maxY - minY), ox = (400 - (maxX - minX) * s) / 2, oy = (400 - (maxY - minY) * s) / 2;
-  const d = polys.map(p => p.map(r => 'M' + r.map(([lon, lat]) => ((lon * k - minX) * s + ox).toFixed(1) + ' ' + ((-lat - minY) * s + oy).toFixed(1)).join(' L') + ' Z').join(' ')).join(' ');
-  return '<svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0, 0, 400,400"><g id="svgg"><path id="path0" d="' + d + '" stroke="none" fill="#ececec" fill-rule="evenodd"></path></g></svg>';
+  // Mismo formato que los mapas de los países del juego y de los mods publicados: lienzo de 512x512, relleno blanco y
+  // borde negro (el juego lo tiñe al seleccionar el país); un trazado por polígono.
+  const W = 512, s = 470 / Math.max(maxX - minX, maxY - minY), ox = (W - (maxX - minX) * s) / 2, oy = (W - (maxY - minY) * s) / 2;
+  const paths = polys.map(p => '\t<path class="st1" d="' + p.map(r => 'M' + r.map(([lon, lat]) => ((lon * k - minX) * s + ox).toFixed(2) + ',' + ((-lat - minY) * s + oy).toFixed(2)).join('L') + 'z').join('') + '"/>').join('\n');
+  return '<?xml version="1.0" encoding="utf-8"?>\n<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"\n\t viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">\n<style type="text/css">\n\t.st1{fill:#FFFFFF;stroke:#000000;stroke-miterlimit:10;}\n</style>\n<g id="Layer_2">\n' + paths + '\n</g>\n</svg>\n';
 }
 
 // Bandera circular con el Sol de Mayo (512x512, fondo transparente, como las del juego)
@@ -49,7 +51,8 @@ function flagHtml() {
     '<path d="M0 -4 L-2 4 L2 4" fill="none" stroke="#85340a" stroke-width="1.6"/></g></g></svg></body></html>';
 }
 
-(async () => {
+module.exports = { mapSvg };
+if (require.main === module) (async () => {
   mk(TMP); mk(path.join(TMP, 'iconpng'));
   mk(path.join(OUT, 'data/svg')); mk(path.join(OUT, 'data/bitmaps/flags')); mk(path.join(OUT, 'data/bitmaps/events'));
   const b = await chromium.launch();

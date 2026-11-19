@@ -5,5 +5,5 @@ GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(_All_,-0.03,0.75);CreateGrudge(MiddleIncome,-0.02,0.75);CreateGrudge(GDP,-0.01,0.7);
 
 [influences]
-0 = _random_,0,0.05
-1 = AR_CrisisEnergetica,0+(0.15*x)
+0 = _random_,0,0.2
+1 = AR_CrisisEnergetica,0+(0.5*x)

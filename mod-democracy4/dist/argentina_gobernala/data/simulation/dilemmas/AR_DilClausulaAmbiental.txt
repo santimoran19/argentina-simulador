@@ -2,8 +2,8 @@
 name=AR_DilClausulaAmbiental
 
 [influences]
-0 = _random_,0,0.04
-1 = AR_AcuerdoUEVigente,0+(0.10*x)
+0 = _random_,0,0.1
+1 = AR_AcuerdoUEVigente,0+(0.25*x)
 
 [option0]
 OnImplement = CreateGrudge(Environmentalist,0.04,0.9);CreateGrudge(Farmers,-0.04,0.9);CreateGrudge(InternationalTrade,0.02,0.9);

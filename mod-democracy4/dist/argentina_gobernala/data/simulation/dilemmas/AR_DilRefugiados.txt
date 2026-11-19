@@ -2,8 +2,8 @@
 name=AR_DilRefugiados
 
 [influences]
-0 = _random_,0,0.05
-1 = AR_CrisisMigratoria,0+(0.15*x)
+0 = _random_,0,0.125
+1 = AR_CrisisMigratoria,0+(0.375*x)
 
 [option0]
 OnImplement = CreateGrudge(Immigration,0.04,0.9);CreateGrudge(Liberal,0.04,0.9);CreateGrudge(Conservatives,-0.04,0.9);CreateGrudge(SkillsShortage,-0.01,0.9);

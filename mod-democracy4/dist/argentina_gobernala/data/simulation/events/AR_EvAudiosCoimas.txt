@@ -5,6 +5,6 @@ GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(_All_,-0.06,0.85);CreateGrudge(Parents,-0.06,0.85);CreateGrudge(AR_EscandaloCorrupcion,0.1,0.9);
 
 [influences]
-0 = _random_,0,0.05
-1 = DisabilityBenefit,0.002+(0.04*x)
-2 = AR_EscandaloCorrupcion,0+(0.10*x)
+0 = _random_,0,0.2
+1 = DisabilityBenefit,0.008+(0.16*x)
+2 = AR_EscandaloCorrupcion,0+(0.4*x)

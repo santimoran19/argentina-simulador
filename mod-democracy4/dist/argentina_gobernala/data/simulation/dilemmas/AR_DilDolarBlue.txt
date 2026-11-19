@@ -2,8 +2,8 @@
 name=AR_DilDolarBlue
 
 [influences]
-0 = _random_,0,0.10
-1 = AR_BrechaCambiaria,0+(0.20*x)
+0 = _random_,0,0.25
+1 = AR_BrechaCambiaria,0+(0.5*x)
 
 [option0]
 OnImplement = CreateGrudge(AR_BrechaCambiaria,-0.06,0.9);CreateGrudge(Inflation,0.04,0.9);CreateGrudge(MiddleIncome,0.02,0.9);

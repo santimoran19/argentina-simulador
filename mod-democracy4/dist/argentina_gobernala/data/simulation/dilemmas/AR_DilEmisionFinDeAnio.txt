@@ -2,8 +2,8 @@
 name=AR_DilEmisionFinDeAnio
 
 [influences]
-0 = _random_,0,0.10
-1 = QuantitativeEasing,0.05-(0.05*x)
+0 = _random_,0,0.25
+1 = QuantitativeEasing,0.125-(0.125*x)
 
 [option0]
 OnImplement = CreateGrudge(Inflation,0.05,0.9);CreateGrudge(StateEmployees,0.03,0.9);CreateGrudge(Retired,0.03,0.9);

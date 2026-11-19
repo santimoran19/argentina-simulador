@@ -5,5 +5,5 @@ GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(AR_CrisisMigratoria,0.55,0.92);CreateGrudge(Immigration,0.04,0.85);
 
 [influences]
-0 = _random_,0,0.04
-1 = BorderControls,0.042-(0.03*x)
+0 = _random_,0,0.16
+1 = BorderControls,0.168-(0.12*x)

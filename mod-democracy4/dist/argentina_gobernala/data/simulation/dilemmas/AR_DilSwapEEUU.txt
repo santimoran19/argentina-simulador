@@ -2,8 +2,8 @@
 name=AR_DilSwapEEUU
 
 [influences]
-0 = _random_,0,0.06
-1 = AR_ReservasAgotadas,0+(0.15*x)
+0 = _random_,0,0.15
+1 = AR_ReservasAgotadas,0+(0.375*x)
 
 [option0]
 OnImplement = CreateGrudge(CurrencyStrength,0.05,0.9);CreateGrudge(AR_ReservasAgotadas,-0.08,0.9);CreateGrudge(Patriot,-0.04,0.9);CreateGrudge(Farmers,-0.02,0.9);

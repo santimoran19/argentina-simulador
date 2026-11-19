@@ -2,9 +2,9 @@
 name=AR_DilTechoBanda
 
 [influences]
-0 = _random_,0,0.08
-1 = AR_BandasCambiarias,0+(0.10*x)
-2 = AR_BrechaCambiaria,0+(0.10*x)
+0 = _random_,0,0.2
+1 = AR_BandasCambiarias,0+(0.25*x)
+2 = AR_BrechaCambiaria,0+(0.25*x)
 
 [option0]
 OnImplement = CreateGrudge(AR_ReservasAgotadas,0.08,0.9);CreateGrudge(Inflation,-0.02,0.9);CreateGrudge(CurrencyStrength,0.03,0.9);

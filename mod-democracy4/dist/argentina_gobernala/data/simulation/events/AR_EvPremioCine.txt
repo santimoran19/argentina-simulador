@@ -5,4 +5,4 @@ GUISound = DM4_Low Corruption Praised.wav
 OnImplement = CreateGrudge(_All_,0.02,0.8);CreateGrudge(Liberal,0.03,0.8);
 
 [influences]
-0 = _random_,0,0.05
+0 = _random_,0,0.2

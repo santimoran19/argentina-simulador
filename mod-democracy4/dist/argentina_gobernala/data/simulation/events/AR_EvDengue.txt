@@ -5,5 +5,5 @@ GUISound = DM4_Credit Rating Downgraded.wav
 OnImplement = CreateGrudge(Health,-0.03,0.8);CreateGrudge(_All_,-0.02,0.8);CreateGrudge(HealthcareDemand,0.04,0.8);
 
 [influences]
-0 = _random_,0,0.06
-1 = StateHealthService,0.0345-(0.03*x)
+0 = _random_,0,0.24
+1 = StateHealthService,0.138-(0.12*x)

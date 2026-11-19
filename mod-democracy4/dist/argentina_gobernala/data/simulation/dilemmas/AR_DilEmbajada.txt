@@ -2,8 +2,8 @@
 name=AR_DilEmbajada
 
 [influences]
-0 = _random_,0,0.04
-1 = AR_RelacionIsrael,0+(0.06*x)
+0 = _random_,0,0.1
+1 = AR_RelacionIsrael,0+(0.15*x)
 
 [option0]
 OnImplement = CreateGrudge(Religious,0.04,0.9);CreateGrudge(ForeignRelations,-0.04,0.9);CreateGrudge(_Terrorism,0.03,0.9);CreateGrudge(Socialist,-0.04,0.9);

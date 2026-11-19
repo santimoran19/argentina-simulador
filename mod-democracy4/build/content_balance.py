@@ -28,6 +28,11 @@ TRAITS = {
     'BrainDrain': '+0.02+(0.02*x)',
     'BlackMarket': '+0.03+(0.02*x)',
 }
+# Probabilidad de eventos y dilemas: en la partida de prueba los eventos del juego llegaban a ~0,9 de valor y los
+# argentinos a 0,15 como máximo, así que no salió ninguno en 8 turnos. Se llevan a la escala del juego.
+EVENT_INFLUENCE_SCALE = 4.0
+DILEMMA_INFLUENCE_SCALE = 2.5
+
 DROP_CHAINS = {'Dolar a precios'}   # reemplazaba el enlace dólar->inflación del juego por uno mucho más fuerte
 
 # Gasto inicial más parecido al presupuesto nacional real
@@ -84,5 +89,19 @@ def extend(C):
                 parts[1] = _scale(parts[1], POLICY_GDP_SCALE)
             out.append(','.join(parts))
         p['effects'] = out
+    for items, k in ((C.EVENTS, EVENT_INFLUENCE_SCALE), (C.DILEMMAS, DILEMMA_INFLUENCE_SCALE)):
+        for it in items:
+            out = []
+            for i in it['influences']:
+                parts = i.split(',')
+                if parts[0] == '_random_':
+                    parts[2] = '{:g}'.format(min(0.6, float(parts[2]) * k))
+                else:
+                    import content_merge as M
+                    a0, b0 = M.linear(parts[1])
+                    top = max(abs(a0), abs(a0 + b0)) * k
+                    parts[1] = _scale(parts[1], k * min(1.0, 0.5 / top) if top else k)   # tope 0,5 por término
+                out.append(','.join(parts))
+            it['influences'] = out
     C.COUNTRY_OVERRIDES[:] = [(l, t, TRAITS.get(t, eq)) for l, t, eq in C.COUNTRY_OVERRIDES]
     C.CHAIN_OVERRIDES[:] = [c for c in C.CHAIN_OVERRIDES if c[0] not in DROP_CHAINS]

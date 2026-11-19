@@ -1,0 +1,9 @@
+[config]
+Name = AR_EvInundacion
+Texture = AR_EvInundacion.jpg
+country_specific = argentina
+OnImplement = CreateGrudge(_All_,-0.02,0.75);CreateGrudge(Poor,-0.04,0.75);CreateGrudge(GDP,-0.01,0.7);
+
+[influences]
+0 = _random_,0,0.10
+1 = RoadBuilding,0-(0.05*x)

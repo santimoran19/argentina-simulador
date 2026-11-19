@@ -1,0 +1,19 @@
+[config]
+name  = argentina
+guiname = "Argentine Republic"
+description = "Argentina has resources to spare: the fertile Pampas, Vaca Muerta shale, lithium and an educated population. It also carries decades of inflation, debt crises, currency controls and a society split in two. You take office with negative reserves, triple-digit inflation and half the country against you. Can you govern Argentina?"
+
+jobtitle = "President"
+
+[stats]
+Motto: = "In union and liberty"
+National Anthem: = "Argentine National Anthem"
+Population: = "46 million (2023)"
+Area: = "2,780,400 km2 (mainland)"
+Currency: = "Argentine peso (ARS)"
+GDP: = "US$640 billion (2023)"
+Inflation: = "211% a year (2023)"
+Poverty: = "41.7% (2023)"
+Capital: = "Buenos Aires"
+Largest City: = "Buenos Aires"
+Difficulty: = "Very hard"

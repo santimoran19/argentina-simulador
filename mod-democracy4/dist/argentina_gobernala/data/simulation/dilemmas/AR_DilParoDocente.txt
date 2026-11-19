@@ -1,0 +1,13 @@
+[dilemma]
+name=AR_DilParoDocente
+country_specific = argentina
+
+[influences]
+0 = _random_,0,0.12
+1 = AR_UniversidadPublica,0.06-(0.06*x)
+
+[option0]
+OnImplement = CreateGrudge(Parents,0.04,0.9);CreateGrudge(StateEmployees,0.05,0.9);CreateGrudge(Education,0.02,0.9);CreateGrudge(Inflation,0.01,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Parents,-0.04,0.9);CreateGrudge(StateEmployees,-0.05,0.9);CreateGrudge(Conservatives,0.03,0.9);

@@ -1,0 +1,11 @@
+[config]
+Name = AR_EvSaqueos
+Texture = AR_EvSaqueos.jpg
+country_specific = argentina
+OnImplement = CreateGrudge(_All_,-0.05,0.8);CreateGrudge(SelfEmployed,-0.06,0.8);CreateGrudge(Stability,-0.05,0.8);
+
+[influences]
+0 = _random_,0,0.03
+1 = ExtremePoverty,0+(0.15*x)
+2 = Inflation,0+(0.12*x)
+3 = AR_PlanesSociales,0-(0.05*x)

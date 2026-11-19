@@ -1,0 +1,9 @@
+[config]
+Name = AR_EvTemporada
+Texture = AR_EvTemporada.jpg
+country_specific = argentina
+OnImplement = CreateGrudge(Tourism,0.04,0.75);CreateGrudge(SelfEmployed,0.03,0.75);CreateGrudge(GDP,0.01,0.7);
+
+[influences]
+0 = _random_,0,0.10
+1 = AR_BrechaCambiaria,0+(0.06*x)

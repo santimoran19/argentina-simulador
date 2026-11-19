@@ -1,0 +1,13 @@
+[dilemma]
+name=AR_DilParitarias
+country_specific = argentina
+
+[influences]
+0 = _random_,0,0.15
+1 = Inflation,0+(0.12*x)
+
+[option0]
+OnImplement = CreateGrudge(TradeUnionist,0.06,0.9);CreateGrudge(Inflation,0.04,0.9);CreateGrudge(Capitalist,-0.04,0.9);
+
+[option1]
+OnImplement = CreateGrudge(TradeUnionist,-0.06,0.9);CreateGrudge(Inflation,-0.02,0.9);CreateGrudge(AR_ParoCGT,0.06,0.9);

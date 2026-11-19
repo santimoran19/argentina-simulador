@@ -1,0 +1,19 @@
+[config]
+name  = argentina
+guiname = "República Argentina"
+description = "Argentina tiene recursos de sobra: la pampa húmeda, Vaca Muerta, litio y una población educada. También arrastra décadas de inflación, crisis de deuda, cepo y una sociedad partida en dos. Asumís con reservas negativas, inflación de tres dígitos y la mitad del país en contra. ¿Podés con la Argentina?"
+
+jobtitle = "Presidente"
+
+[stats]
+Lema: = "En unión y libertad"
+Himno: = "Himno Nacional Argentino"
+Población: = "46 millones (2023)"
+Superficie: = "2.780.400 km² (continental)"
+Moneda: = "Peso argentino (ARS)"
+PBI: = "US$ 640.000 millones (2023)"
+Inflación: = "211 % anual (2023)"
+Pobreza: = "41,7 % (2023)"
+Capital: = "Buenos Aires"
+Ciudad más grande: = "Buenos Aires"
+Dificultad: = "Muy alta"

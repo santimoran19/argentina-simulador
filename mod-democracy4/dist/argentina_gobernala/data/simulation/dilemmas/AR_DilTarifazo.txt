@@ -1,0 +1,13 @@
+[dilemma]
+name=AR_DilTarifazo
+country_specific = argentina
+
+[influences]
+0 = _random_,0,0.12
+1 = AR_SubsidiosEnergia,0+(0.10*x)
+
+[option0]
+OnImplement = CreateGrudge(MiddleIncome,-0.06,0.9);CreateGrudge(Poor,-0.04,0.9);CreateGrudge(AR_CrisisEnergetica,-0.06,0.9);CreateGrudge(Inflation,0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(MiddleIncome,0.04,0.9);CreateGrudge(AR_CrisisEnergetica,0.06,0.9);CreateGrudge(Capitalist,-0.04,0.9);

@@ -1,0 +1,9 @@
+[config]
+Name = AR_EvSequia
+Texture = AR_EvSequia.jpg
+country_specific = argentina
+OnImplement = CreateGrudge(GDP,-0.03,0.8);CreateGrudge(Farmers,-0.06,0.8);CreateGrudge(AR_ReservasAgotadas,0.08,0.85);
+
+[influences]
+0 = _random_,0,0.15
+1 = AR_Retenciones,0+(0.02*x)

@@ -1,0 +1,9 @@
+[config]
+Name = AR_EvCumbre
+Texture = AR_EvCumbre.jpg
+country_specific = argentina
+OnImplement = CreateGrudge(ForeignRelations,0.04,0.85);CreateGrudge(ForeignInvestment,0.02,0.85);
+
+[influences]
+0 = _random_,0,0.06
+1 = ForeignRelations,0+(0.06*x)

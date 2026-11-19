@@ -1,0 +1,9 @@
+[config]
+Name = AR_EvMarchaUniversitaria
+Texture = AR_EvMarchaUniversitaria.jpg
+country_specific = argentina
+OnImplement = CreateGrudge(Young,-0.05,0.8);CreateGrudge(Liberal,-0.04,0.8);CreateGrudge(Socialist,-0.03,0.8);
+
+[influences]
+0 = _random_,0,0.05
+1 = AR_UniversidadPublica,0.10-(0.10*x)

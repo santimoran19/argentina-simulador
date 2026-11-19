@@ -96,6 +96,25 @@ En la primera partida de prueba (Democracy 4 1.67) el país colapsaba en los tur
 
 En la segunda partida de prueba el colapso seguía: en el primer turno de preparación el delito saltaba de 0,23 a 0,95 y la salud de 0,86 a 0,45 por la combinación de políticas del juego con que arrancaba el país. Ahora el país arranca con los niveles de políticas del juego de una partida argentina que sí funcionaba en Democracy 4, más los ajustes argentinos (cepo, universidad gratuita, CONICET, YPF), y con menos emisión inicial.
 
+### Calibración con las fórmulas reales del juego
+
+Con los archivos `data/simulation` de Democracy 4 (1.67) se armó un simulador (`build/d4sim.py`) que reproduce las ecuaciones del juego; comprobado contra partidas reales, predice el turno siguiente con un error medio de ~0,04 y reproduce el colapso que se veía en las partidas de prueba. Con él (`build/warmup.py`) se buscaron, dentro de rangos realistas, los niveles iniciales de las políticas que después de los turnos de preparación dejan a la Argentina cerca de los datos de diciembre de 2023:
+
+| | Simulado al empezar | Objetivo (escala del juego) | Dato real |
+|---|---|---|---|
+| PBI | 0,46 | 0,40 | recesión, −1,6 % en 2023 |
+| Desempleo | 0,42 | 0,40 | 5,7 % |
+| Inflación | 0,73 | 0,72 | 211 % anual |
+| Peso | 0,07 | 0,08 | brecha de más del 100 % |
+| Pobreza | 0,62 | 0,58 | 41,7 % |
+| Delito | 0,60 | 0,62 | alto, con Rosario como foco |
+| Salud | 0,62 | 0,62 | |
+| Igualdad | 0,47 | 0,45 | Gini ~0,45 |
+
+Valores argentinos que salen de ahí: cepo fuerte, emisión alta, aranceles y licencias SIRA, IVA alto, Ganancias bajo (eliminado para casi todos los asalariados en septiembre de 2023), salario mínimo licuado, AUH y Tarjeta Alimentar, DNI obligatorio, policía armada, sin impuesto a la herencia nacional. Si después se aplican las políticas de 2024-2026, el modelo baja la inflación, aprecia el peso, hunde y después recupera el PBI, baja la pobreza y sube la confianza empresaria, como pasó.
+
+Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
+
 ## Efecto dominó: todo se encadena
 
 Las decisiones no afectan a una sola cosa. En Argentina, el mod refuerza las cadenas de transmisión del juego con **11 enlaces causales propios** y hace que **unas crisis desencadenen otras**:
@@ -169,6 +188,8 @@ El contenido está como datos, ordenado por tema:
 - `build/content_intl.py`: el mundo (política exterior, crisis globales, eventos y dilemas internacionales).
 - `build/content_base.py`: conexiones con las políticas que ya trae Democracy 4.
 - `build/content_names.py`: nombres y descripciones argentinas para políticas y situaciones del juego.
+- `build/content_balance.py`: balance y calibración probados contra el juego.
+- `build/d4sim.py` y `build/warmup.py`: simulador con las ecuaciones del juego (necesita los archivos del juego).
 - `build/content_merge.py`: fusiona con las del juego las políticas argentinas que hacían lo mismo (sin repetidos).
 
 ```bash

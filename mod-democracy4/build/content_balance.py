@@ -68,13 +68,50 @@ LATAM_BASELINE = {
 
 DROP_FROM_BASELINE = {'HelicopterMoney',   # la emisión la representa la política de emisión del juego (cepo/BCRA)
                       'Creationism'}
+# Calibración con las fórmulas reales del juego (archivos data/simulation de Democracy 4 1.67 + build/d4sim.py):
+# se buscaron, dentro de rangos realistas para la Argentina de diciembre de 2023, los niveles que después de los
+# turnos de preparación dejan al país cerca de los indicadores reales (escala del juego): PBI 0,40 (en recesión),
+# desempleo 0,40, inflación 0,72 (211 % anual), peso 0,08 (brecha enorme), pobreza 0,58 (41,7 %), delito 0,62,
+# salud 0,62, igualdad 0,45 (Gini ~0,45), confianza empresaria 0,30. Resultado simulado: 0,45 / 0,43 / 0,71 / 0,08 /
+# (ver warmup.py), estable 8 turnos sin tocar nada (el peso se sigue debilitando, como en la realidad).
 ARG_ON_TOP = {
-    'CapitalControls': 0.6,       # cepo: fuerte, pero no al máximo (al máximo hundía el comercio)
-    'UniversityGrants': 0.6,      # universidad pública y gratuita
-    'ScienceFunding': 0.35,       # CONICET
-    'StateEnergy': 0.35,          # YPF/ENARSA
+    'AlcoholTax': 0.23,
+    'ArmedPolice': 0.8,   # la policía argentina anda armada
+    'CCTVCameras': 0.6,
+    'CapitalControls': 0.75,   # cepo
+    'ChildBenefit': 0.72,   # AUH
+    'CorporationTax': 0.5,
+    'DisabilityBenefit': 0.4,
+    'DrugTreatment': 0.75,
+    'FoodStamps': 0.8,   # Tarjeta Alimentar
     'ForeignInvestorTaxBreaks': 0.1,
+    'Gambling': 0.63,
+    'HandgunLaws': 0.5,
+    'IDCards': 0.9,   # DNI obligatorio
+    'ImportTarrifs': 0.9,   # aranceles altos y licencias SIRA
+    'IncomeTax': 0.41,   # Ganancias: eliminado para casi todos los asalariados en sept-2023
+    'IntelligenceServices': 0.3,
+    'LabourLaws': 0.5,
+    'MinimumWage': 0.25,   # salario mínimo licuado por la inflación
+    'PayrollTax': 0.67,   # cargas sociales altas
+    'PhoneTapping': 0.3,   # escuchas con orden judicial
+    'PoliceForce': 0.6,
+    'PrisonRegime': 0.49,
+    'PrisonerTagging': 0.34,
+    'PropertyTax': 0.4,
+    'QuantitativeEasing': 0.8,   # emisión para financiar al Tesoro
+    'SalesTax': 0.8,   # IVA 21 %
+    'ScienceFunding': 0.35,   # CONICET
+    'StateEnergy': 0.35,   # YPF/ENARSA
+    'StateHealthService': 0.75,
+    'StateHousing': 0.2,
+    'StateSchools': 0.8,
+    'UnemployedBenefit': 0.63,
+    'UniversityGrants': 0.6,   # universidad pública y gratuita
 }
+NOT_IN_ARGENTINA = {'InheritanceTax',   # no hay impuesto a la herencia nacional
+                    'LuxuryGoodsTax', 'MansionTax'}   # el patrimonio lo grava Bienes Personales
+ECONOMIC_CYCLE_START = 0.4   # la economía mundial en 2023 no estaba en recesión (la recesión era argentina)
 
 # (ya no se usa: reemplazado por LATAM_BASELINE + ARG_ON_TOP)
 COUNTRY_POLICY_FIX_OLD = {
@@ -88,8 +125,10 @@ COUNTRY_POLICY_FIX_OLD = {
 }
 START_FIX = {
     'AR_VacaMuerta': 0.15,        # en 2023 el desarrollo era privado; el subsidio estatal, chico
-    'AR_EmisionTesoro': 0.35,     # la emisión del juego hundía el peso en pocos turnos
-    'AR_Mercosur': 0.2,           # aranceles altos (0,8), no al máximo
+    'AR_EmisionTesoro': 0.8,
+    'AR_Cepo': 0.75,
+    'AR_TasaBCRA': 0.63,          # tasa de política monetaria del 133 %
+    'AR_Mercosur': 0.1,           # economía muy cerrada
     'AR_BonoNavidad': 0.05,
     'AR_ParitariasEstatales': 0.5,
 }
@@ -109,6 +148,9 @@ def apply_start(C):
     C.COUNTRY_POLICIES.update(keep)
     C.COUNTRY_POLICIES.update({k: v for k, v in LATAM_BASELINE.items() if k not in DROP_FROM_BASELINE})
     C.COUNTRY_POLICIES.update(ARG_ON_TOP)
+    for k in NOT_IN_ARGENTINA:
+        C.COUNTRY_POLICIES.pop(k, None)
+    C.COUNTRY_CONFIG['economic_cycle_start'] = ECONOMIC_CYCLE_START
     C.START_2023.update(START_FIX)
 
 

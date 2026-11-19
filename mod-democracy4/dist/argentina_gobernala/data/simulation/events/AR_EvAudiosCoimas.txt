@@ -6,5 +6,5 @@ OnImplement = CreateGrudge(_All_,-0.06,0.85);CreateGrudge(Parents,-0.06,0.85);Cr
 
 [influences]
 0 = _random_,0,0.2
-1 = DisabilityBenefit,-0.0368+(0.16*x)
+1 = DisabilityBenefit,0.032+(0.16*x)
 2 = AR_EscandaloCorrupcion,0+(0.4*x)

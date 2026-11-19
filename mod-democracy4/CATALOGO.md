@@ -18,7 +18,7 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 | **Explotación de litio** | 30% | ▲ inversión extranjera, tecnología, PBI, escasez de agua · ▼ ambientalistas |
 | **Recorte del gasto público ("motosierra")** | — | ▲ desempleo, empresarios · ▼ estatales, inflación, PBI, izquierda, burocracia, sectores bajos, jubilados |
 | **Regla de déficit cero** | — | ▲ confianza empresaria, empresarios · ▼ inflación, jubilados, estatales, izquierda |
-| **Tasa de interés del Banco Central** | 90% | ▲ fortaleza del peso, desempleo, clase alta · ▼ inflación, PBI, cuentapropistas, clase media |
+| **Tasa de interés del Banco Central** | 63% | ▲ fortaleza del peso, desempleo, clase alta · ▼ inflación, PBI, cuentapropistas, clase media |
 
 ### Impuestos (5)
 

@@ -307,7 +307,7 @@ def extend(C):
         ('Hospital conflict', 'Residents and specialists at national hospitals strike over pay. Surgeries are rescheduled and '
          'patients\' families march alongside the doctors.'))
 
-    sit('AR_CrisisDiscapacidad', 'WELFARE', 'wheelchair', 0, 0.60, 0.42,
+    sit('AR_CrisisDiscapacidad', 'WELFARE', 'wheelchair', 0, 0.56, 0.42,
         ['_default_,0.15', 'AR_LeyDiscapacidad,0.30-(0.30*x)', 'AR_Motosierra,0+(0.15*x)', 'AR_PerdidaPoderAdquisitivo,0+(0.05*x)'],
         ['Parents,-0.04-(0.04*x)', 'Poor,-0.03-(0.03*x)', '_All_,-0.01-(0.02*x)', 'Liberal,-0.02-(0.03*x)'],
         ('Crisis en el sistema de discapacidad', 'Prestadores que cobran con meses de atraso, pensiones dadas de baja y centros que '

@@ -6,4 +6,4 @@ OnImplement = CreateGrudge(AR_AcuerdoUEVigente,0.55,0.95);CreateGrudge(Internati
 
 [influences]
 0 = _random_,0,0.12
-1 = ImportTarrifs,0.256-(0.32*x)
+1 = ImportTarrifs,0.32-(0.32*x)

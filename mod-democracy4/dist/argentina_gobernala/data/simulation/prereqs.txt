@@ -1,2 +1,2 @@
 [config]
-7311 = _prereq_argentina_gb
+973 = _prereq_argentina_gb

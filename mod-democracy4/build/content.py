@@ -14,8 +14,8 @@ Convenciones del juego (tomadas de mods publicados que funcionan):
 MOD_NAME = 'argentina_gobernala'
 COUNTRY = 'argentina'
 PREREQ = '_prereq_argentina_gb'
-PREREQ_ID = 7311          # número libre (el Overhaul usa 921-950)
-COUNTRY_GUID = 731
+PREREQ_ID = 973           # mismo rango que los mods publicados (el Overhaul usa 921-950); 7311 dejaba el país inutilizable
+COUNTRY_GUID = 11         # el valor que usan los 71 países del Overhaul; 731 dejaba el país en gris
 
 MOD_CONFIG = {
     'guiname': 'Argentina: Gobernala',

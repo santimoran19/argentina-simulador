@@ -14,7 +14,7 @@ names_file = "data/names/argentinanames_gb.txt"
 flag = "flag_argentina_gb.png"
 apathy = 0.24
 map = "map_argentina_gb.svg"
-GUID = 731
+GUID = 11
 minor_parties = 4
 difficulty = 5
 

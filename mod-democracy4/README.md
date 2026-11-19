@@ -121,10 +121,11 @@ Ejemplos:
 
 ## Instalación
 
-1. Descomprimí `argentina_gobernala.zip`.
-2. Copiá la carpeta `argentina_gobernala` a la carpeta de mods del juego:
+1. Abrí la carpeta de mods del juego (si no existe, creala al lado de `savegames`):
    - Windows: `Documentos\My Games\democracy4\mods\`
    - Mac/Linux: la carpeta `democracy4/mods` dentro de tus documentos del juego
+2. Descomprimí `argentina_gobernala.zip` ahí. Tienen que quedar, uno al lado del otro, la carpeta
+   `argentina_gobernala` y la imagen `argentina_gobernala.jpg` (es la que muestra el menú de mods).
 3. Abrí Democracy 4, entrá a **Mods** y activá **Argentina: Gobernala**.
 4. Empezá una partida nueva y elegí **República Argentina (diciembre de 2023)**.
 

@@ -183,6 +183,11 @@ def build():
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
                 shutil.copy2(src, dst)
                 copied += 1
+    # Imagen del menú de mods: el juego la busca como mods/<nombre del mod>.jpg, AL LADO de la carpeta del mod
+    # (así lo dice su registro: "Failed to create texture from file: argentina_gobernala.jpg").
+    prev = os.path.join(OUT, 'preview.jpg')
+    if os.path.exists(prev):
+        shutil.move(prev, os.path.join(os.path.dirname(OUT), C.MOD_NAME + '.jpg'))
     print('Mod generado en', OUT)
     print('  {} políticas, {} situaciones, {} eventos, {} dilemas, {} deslizadores, {} rasgos y {} enlaces causales argentinos, '
           '{} gráficos'.format(len(C.POLICIES), len(C.SITUATIONS), len(C.EVENTS), len(C.DILEMMAS), len(C.SLIDERS),

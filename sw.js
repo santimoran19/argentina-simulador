@@ -1,6 +1,6 @@
 /* Service worker: el juego entero queda guardado para jugar sin internet.
    Al publicar cambios, subí VERSION para que los jugadores reciban la versión nueva. */
-const VERSION = 'ar-sim-v6';
+const VERSION = 'ar-sim-v7';
 const CORE = [
   './', './index.html', './manifest.webmanifest', './css/game.css', './css/fonts.css',
   './fonts/barlow-400.woff2', './fonts/barlow-500.woff2', './fonts/barlow-600.woff2', './fonts/barlow-700.woff2', './fonts/barlow-semi-condensed-500.woff2', './fonts/barlow-semi-condensed-600.woff2', './fonts/barlow-semi-condensed-700.woff2',

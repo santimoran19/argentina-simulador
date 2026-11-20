@@ -1,0 +1,13 @@
+[dilemma]
+name=ARDilImportaciones
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_CierrePymes,0+(0.2*x)
+2 = AR_AtrasoCambiario,0+(0.1*x)
+
+[option0]
+OnImplement = CreateGrudge(SelfEmployed,0.04,0.9);CreateGrudge(TradeUnionist,0.04,0.9);CreateGrudge(AR_CierrePymes,-0.06,0.9);CreateGrudge(Inflation,0.02,0.9);CreateGrudge(MiddleIncome,-0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(MiddleIncome,0.03,0.9);CreateGrudge(Inflation,-0.02,0.9);CreateGrudge(AR_CierrePymes,0.05,0.9);CreateGrudge(TradeUnionist,-0.03,0.9);

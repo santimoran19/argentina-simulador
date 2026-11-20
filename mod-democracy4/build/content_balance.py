@@ -230,5 +230,9 @@ def extend(C):
     for e in C.EVENTS:
         if not any(t == e['name'] for t, _a, _d in e['grudges']):
             e['grudges'].append((e['name'], -0.9, 0.83))
+    # Nombres de dilemas sin guion bajo: el juego identifica las opciones como <dilema>_0, <dilema>_1, y ningún dilema del
+    # juego ni de los mods publicados lleva '_' en el nombre. Con 'AR_Dil...' los dilemas aparecían sin texto.
+    for d in C.DILEMMAS:
+        d['name'] = d['name'].replace('_', '')
     C.COUNTRY_OVERRIDES[:] = [(l, t, TRAITS.get(t, eq)) for l, t, eq in C.COUNTRY_OVERRIDES]
     C.CHAIN_OVERRIDES[:] = [c for c in C.CHAIN_OVERRIDES if c[0] not in DROP_CHAINS] + BASE_EFFECT_OVERRIDES

@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilSubsidioColectivo
+
+[influences]
+0 = _random_,0.2,0.8
+1 = BusSubsidies,0.0931+(0.2069*x)
+
+[option0]
+OnImplement = CreateGrudge(Poor,0.03,0.9);CreateGrudge(Inflation,0.01,0.9);CreateGrudge(Farmers,-0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Poor,-0.04,0.9);CreateGrudge(Inflation,0.02,0.9);CreateGrudge(Capitalist,0.02,0.9);

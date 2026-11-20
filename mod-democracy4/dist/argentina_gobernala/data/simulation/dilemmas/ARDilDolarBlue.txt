@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilDolarBlue
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_BrechaCambiaria,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(AR_BrechaCambiaria,-0.06,0.9);CreateGrudge(Inflation,0.04,0.9);CreateGrudge(MiddleIncome,0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(AR_BrechaCambiaria,0.05,0.9);CreateGrudge(BlackMarket,0.04,0.9);CreateGrudge(Wealthy,-0.03,0.9);

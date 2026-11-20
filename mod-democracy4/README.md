@@ -135,6 +135,8 @@ Sexta partida de prueba: arranque muy cerca de lo real (pobreza 0,42 contra 41,7
 
 Todo con datos reales (pedido del jugador): la deuda inicial vuelve a la deuda bruta real del Estado nacional (US$ 370.700 millones, ~89 % del PBI); las partidas muestran que el juego tolera relaciones deuda/PBI de 0,9 a 1,3 sin crisis, y que el colapso de la tercera partida lo causó la huelga general. Arrancan activos el impuesto al cheque y los impuestos internos, que existían, y la policía de cercanía tiene cobertura parcial.
 
+Los dilemas seguían sin texto. Ninguno de los 94 dilemas del juego ni de los mods publicados lleva guion bajo en el nombre, y el juego identifica las opciones como `<dilema>_0` y `<dilema>_1`: con nombres `AR_Dil...` se confundía. Ahora los dilemas se llaman `ARDil...` (el validador lo controla).
+
 Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
 
 ## Efecto dominó: todo se encadena

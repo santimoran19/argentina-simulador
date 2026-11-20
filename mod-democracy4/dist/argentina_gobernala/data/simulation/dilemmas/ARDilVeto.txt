@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilVeto
+
+[influences]
+0 = _random_,0.2,0.8
+1 = StatePensions,0.3-(0.2326*x)
+
+[option0]
+OnImplement = CreateGrudge(Retired,-0.07,0.9);CreateGrudge(Capitalist,0.04,0.9);CreateGrudge(Inflation,-0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Retired,0.07,0.9);CreateGrudge(Inflation,0.03,0.9);CreateGrudge(AR_RiesgoPaisAlto,0.04,0.9);

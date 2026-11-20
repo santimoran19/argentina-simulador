@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilGlaciares
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_LeyGlaciares,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(ForeignInvestment,0.05,0.9);CreateGrudge(Environmentalist,-0.08,0.9);CreateGrudge(Capitalist,0.04,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Environmentalist,0.06,0.9);CreateGrudge(ForeignInvestment,-0.03,0.9);CreateGrudge(Environment,0.01,0.9);

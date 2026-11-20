@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilRefugiados
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_CrisisMigratoria,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(Immigration,0.04,0.9);CreateGrudge(Liberal,0.04,0.9);CreateGrudge(Conservatives,-0.04,0.9);CreateGrudge(SkillsShortage,-0.01,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Immigration,-0.03,0.9);CreateGrudge(Conservatives,0.05,0.9);CreateGrudge(Liberal,-0.04,0.9);

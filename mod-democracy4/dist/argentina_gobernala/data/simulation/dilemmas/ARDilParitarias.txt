@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilParitarias
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_PerdidaPoderAdquisitivo,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(TradeUnionist,0.06,0.9);CreateGrudge(Inflation,0.04,0.9);CreateGrudge(Capitalist,-0.04,0.9);
+
+[option1]
+OnImplement = CreateGrudge(TradeUnionist,-0.06,0.9);CreateGrudge(Inflation,-0.02,0.9);CreateGrudge(AR_ParoCGT,0.06,0.9);

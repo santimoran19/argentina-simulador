@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilDeudaFMI
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_ReservasAgotadas,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(AR_ReservasAgotadas,-0.06,0.9);CreateGrudge(Socialist,-0.04,0.9);CreateGrudge(Capitalist,0.03,0.9);CreateGrudge(ForeignRelations,0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(AR_ReservasAgotadas,0.08,0.9);CreateGrudge(Patriot,0.04,0.9);CreateGrudge(Capitalist,-0.05,0.9);CreateGrudge(ForeignRelations,-0.05,0.9);

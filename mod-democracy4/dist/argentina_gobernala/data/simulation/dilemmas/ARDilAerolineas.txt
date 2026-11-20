@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilAerolineas
+
+[influences]
+0 = _random_,0.2,0.8
+1 = StateAirline,0.3-(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(Patriot,-0.05,0.9);CreateGrudge(StateEmployees,-0.05,0.9);CreateGrudge(Capitalist,0.05,0.9);CreateGrudge(TradeUnionist,-0.04,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Patriot,0.04,0.9);CreateGrudge(StateEmployees,0.03,0.9);CreateGrudge(Capitalist,-0.03,0.9);

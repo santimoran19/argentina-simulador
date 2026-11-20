@@ -68,7 +68,9 @@ def check_influence(where, i):
 names = [p['name'] for p in C.POLICIES] + [s['name'] for s in C.SITUATIONS] + [e['name'] for e in C.EVENTS] + [d['name'] for d in C.DILEMMAS]
 for n in names:
     if names.count(n) > 1: err('nombre repetido: ' + n)
-    if not n.startswith('AR_'): err('falta el prefijo AR_: ' + n)
+    if not n.startswith('AR_') and not (n.startswith('ARDil') and '_' not in n): err('falta el prefijo AR_: ' + n)
+for d in C.DILEMMAS:
+    if '_' in d['name']: err('dilema con guion bajo en el nombre (el juego no muestra su texto): ' + d['name'])
     if n in BASE: err('choca con un nombre del juego base: ' + n)
 
 # ---------------- políticas ----------------

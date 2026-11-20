@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilMalvinas
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_ReclamoMalvinas,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(Patriot,0.07,0.9);CreateGrudge(ForeignRelations,-0.05,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Patriot,-0.05,0.9);CreateGrudge(ForeignRelations,0.04,0.9);CreateGrudge(ForeignInvestment,0.02,0.9);

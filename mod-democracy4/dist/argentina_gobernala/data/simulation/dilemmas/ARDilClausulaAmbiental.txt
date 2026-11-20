@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilClausulaAmbiental
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_AcuerdoUEVigente,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(Environmentalist,0.04,0.9);CreateGrudge(Farmers,-0.04,0.9);CreateGrudge(InternationalTrade,0.02,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Farmers,0.04,0.9);CreateGrudge(Environmentalist,-0.04,0.9);CreateGrudge(InternationalTrade,-0.02,0.9);

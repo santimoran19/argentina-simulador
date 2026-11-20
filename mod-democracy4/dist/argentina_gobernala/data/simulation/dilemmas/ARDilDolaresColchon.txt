@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilDolaresColchon
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_InocenciaFiscal,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(CurrencyStrength,0.04,0.9);CreateGrudge(TaxEvasion,0.04,0.9);CreateGrudge(Corruption,0.02,0.9);CreateGrudge(MiddleIncome,0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(TaxEvasion,-0.03,0.9);CreateGrudge(Corruption,-0.02,0.9);CreateGrudge(Wealthy,-0.03,0.9);

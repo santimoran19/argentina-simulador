@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilGarrahan
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_ConflictoSalud,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(Parents,0.05,0.9);CreateGrudge(AR_ConflictoSalud,-0.1,0.9);CreateGrudge(StateEmployees,0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Parents,-0.05,0.9);CreateGrudge(AR_ConflictoSalud,0.08,0.9);CreateGrudge(Capitalist,0.02,0.9);

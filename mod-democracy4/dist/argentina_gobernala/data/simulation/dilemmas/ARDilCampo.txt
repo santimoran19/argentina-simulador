@@ -1,0 +1,12 @@
+[dilemma]
+name=ARDilCampo
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_Retenciones,0+(0.3*x)
+
+[option0]
+OnImplement = CreateGrudge(Farmers,0.08,0.9);CreateGrudge(Socialist,-0.04,0.9);CreateGrudge(AR_ReservasAgotadas,-0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Farmers,-0.08,0.9);CreateGrudge(Socialist,0.04,0.9);CreateGrudge(Stability,-0.03,0.9);

@@ -1,0 +1,13 @@
+[dilemma]
+name=ARDilTechoBanda
+
+[influences]
+0 = _random_,0.2,0.8
+1 = AR_BandasCambiarias,0+(0.15*x)
+2 = AR_BrechaCambiaria,0+(0.15*x)
+
+[option0]
+OnImplement = CreateGrudge(AR_ReservasAgotadas,0.08,0.9);CreateGrudge(Inflation,-0.02,0.9);CreateGrudge(CurrencyStrength,0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(AR_SaltoCambiario,0.1,0.9);CreateGrudge(Inflation,0.04,0.9);CreateGrudge(Farmers,0.03,0.9);

@@ -1,0 +1,11 @@
+[dilemma]
+name=ARDilFutbol
+
+[influences]
+0 = _random_,0.2,0.8
+
+[option0]
+OnImplement = CreateGrudge(Capitalist,0.04,0.9);CreateGrudge(Patriot,-0.04,0.9);CreateGrudge(Young,-0.03,0.9);
+
+[option1]
+OnImplement = CreateGrudge(Capitalist,-0.03,0.9);CreateGrudge(Patriot,0.04,0.9);CreateGrudge(Young,0.03,0.9);

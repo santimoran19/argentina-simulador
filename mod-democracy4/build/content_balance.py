@@ -77,7 +77,7 @@ DROP_FROM_BASELINE = {'HelicopterMoney',   # la emisión la representa la polít
 ARG_ON_TOP = {
     # Todo realista (pedido del jugador): impuestos que existían en dic-2023
     'FinancialTransactionsTax': 0.6,   # impuesto al cheque
-    'LuxuryGoodsTax': 0.3,             # impuestos internos
+    'CapitalGainsTax': 0.3,            # ganancias de capital de personas: 15 % desde 2018
     # Quinta partida: el delito arrancaba en 0,96 y la salud en 0,41. Políticas argentinas reales que faltaban:
     'CommunityPolicing': 0.3,          # policía de cercanía / cuadrantes (cobertura parcial)
     'CompulsoryFoodLabelling': 0.8,    # Ley de Etiquetado Frontal (2021)
@@ -120,7 +120,8 @@ ARG_ON_TOP = {
     'UnemployedBenefit': 0.63,
     'UniversityGrants': 0.6,   # universidad pública y gratuita
 }
-NOT_IN_ARGENTINA = {'OrganicSubsidy', 'SmartMeterProgram', 'RacialProfiling', 'DivertedProfitsTax',   # venían de otra partida; no son argentinas
+NOT_IN_ARGENTINA = {'LuxuryGoodsTax',   # los impuestos internos son sobre todo al alcohol y al tabaco (AlcoholTax, TobaccoTax)
+                    'OrganicSubsidy', 'SmartMeterProgram', 'RacialProfiling', 'DivertedProfitsTax',   # venían de otra partida; no son argentinas
                     'InheritanceTax',   # no hay impuesto a la herencia nacional
                     'MansionTax'}   # el patrimonio lo grava Bienes Personales
 # Tercera partida de prueba: al empezar el ajuste se activó la huelga general del juego, que resta 0,3-0,5 de PBI por

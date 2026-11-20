@@ -1,7 +1,7 @@
 [config]
 name  = argentina
 guiname = "República Argentina (diciembre de 2023)"
-description = "10 de diciembre de 2023: asumís la Presidencia. Argentina tiene recursos de sobra (la pampa húmeda, Vaca Muerta, litio y una población educada), pero recibís reservas negativas, una inflación del 25 % mensual, cepo, déficit, la mitad del país bajo la línea de pobreza y un Congreso en contra. En los años que vienen te esperan el FMI, la CGT, los vetos, los mercados y un mundo en guerra. ¿Podés con la Argentina?"
+description = "10 de diciembre de 2023: asumís la Presidencia. Argentina tiene recursos de sobra (la pampa húmeda, Vaca Muerta, litio y una población educada), pero recibís reservas negativas, una inflación del 25 % mensual, cepo, déficit, más del 40 % de la población bajo la línea de pobreza y un Congreso en contra. En los años que vienen te esperan el FMI, la CGT, los vetos, los mercados y un mundo en guerra. ¿Podés con la Argentina?"
 
 jobtitle = "Presidente"
 

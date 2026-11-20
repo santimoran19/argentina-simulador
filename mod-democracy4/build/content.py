@@ -737,7 +737,7 @@ COUNTRY_TEXT = {
         'jobtitle': 'Presidente',
         'description': ('10 de diciembre de 2023: asumís la Presidencia. Argentina tiene recursos de sobra (la pampa húmeda, '
                         'Vaca Muerta, litio y una población educada), pero recibís reservas negativas, una inflación del 25 % '
-                        'mensual, cepo, déficit, la mitad del país bajo la línea de pobreza y un Congreso en contra. En los años '
+                        'mensual, cepo, déficit, más del 40 % de la población bajo la línea de pobreza y un Congreso en contra. En los años '
                         'que vienen te esperan el FMI, la CGT, los vetos, los mercados y un mundo en guerra. ¿Podés con la Argentina?'),
         'stats': [('Lema', 'En unión y libertad'), ('Himno', 'Himno Nacional Argentino'), ('Población', '46 millones (2023)'),
                   ('Superficie', '2.780.400 km² (continental)'), ('Moneda', 'Peso argentino (ARS)'),
@@ -749,7 +749,7 @@ COUNTRY_TEXT = {
         'jobtitle': 'President',
         'description': ('10 December 2023: you take office. Argentina has resources to spare (the fertile Pampas, Vaca Muerta '
                         'shale, lithium and an educated population), but you inherit negative reserves, 25% monthly inflation, '
-                        'currency controls, a deficit, half the country below the poverty line and a hostile Congress. Ahead lie the '
+                        'currency controls, a deficit, over 40 % of the population below the poverty line and a hostile Congress. Ahead lie the '
                         'IMF, the unions, vetoes, the markets and a world at war. Can you govern Argentina?'),
         'stats': [('Motto', 'In union and liberty'), ('National Anthem', 'Argentine National Anthem'),
                   ('Population', '46 million (2023)'), ('Area', '2,780,400 km2 (mainland)'), ('Currency', 'Argentine peso (ARS)'),

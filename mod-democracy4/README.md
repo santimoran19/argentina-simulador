@@ -7,8 +7,8 @@ Agrega la **República Argentina** como país jugable, desde el cambio de gobier
 ## Cómo arranca
 
 Una sola Argentina, que empieza el 10 de diciembre de 2023:
-- **Lo que heredás:** cepo total, emisión para financiar el déficit, retenciones del 26 %, subsidios amplios, reservas negativas, inflación del 25 % mensual y un Congreso en minoría. Dificultad 5.
-- **Crisis activas al arrancar:** brecha cambiaria, reservas agotadas, riesgo país, salto cambiario, sueldos que no alcanzan, recesión, crisis energética, piquetes y la grieta.
+- **Lo que heredás:** cepo, emisión para financiar el déficit, retenciones, impuesto PAIS, Precios Justos, subsidios amplios a la luz, el gas y el transporte, reservas negativas, inflación del 25 % mensual, deuda bruta de US$ 370.700 millones y un Congreso en minoría. Dificultad 5.
+- **Crisis activas al arrancar:** brecha cambiaria, reservas agotadas y crisis energética, más mercado negro, evasión y crimen organizado del juego. En los primeros turnos se suman riesgo país, salto cambiario, "el sueldo no alcanza" y recesión.
 - **Al borde:** corrida, corralito y default.
 
 Todo lo que pasó después (bandas cambiarias, motosierra, superávit, swap con EE.UU., reforma laboral, vetos, escándalos, Ormuz, la Fed…) está disponible como **políticas que podés tomar o no**, y como **eventos, dilemas y crisis que pueden aparecer** según lo que hagas. Si aplicás las políticas que se tomaron en la realidad, el modelo llega a algo parecido a la Argentina de 2026: desinflación, superávit e inversiones, pero con atraso cambiario, cierre de pymes, conflicto en hospitales y marchas de jubilados.
@@ -17,14 +17,14 @@ Todo lo que pasó después (bandas cambiarias, motosierra, superávit, swap con 
 
 | | Cantidad | Ejemplos |
 |---|---|---|
-| Políticas propias | 54 | Bandas cambiarias, tasa del BCRA, retenciones, impuesto PAIS, FMI, alineamiento con EE.UU., motosierra, déficit cero, desregulación, facultades delegadas, cierre de organismos, litio, inocencia fiscal, blanqueo, monotributo, moratoria, planes sociales, bonos, subsidios a la luz y el gas, salarios estatales, ANMAT, protocolo antipiquetes, aportes sindicales, PASO, Ficha Limpia, imputabilidad, ley de glaciares, Hidrovía, Malvinas, dolarización; y exterior: Ucrania, Israel, China, BRICS, OCDE, misiones de paz, Antártida |
+| Políticas propias | 54 | Bandas cambiarias, tasa del BCRA, retenciones, impuesto PAIS, FMI, alineamiento con EE.UU., motosierra, déficit cero, desregulación, facultades delegadas, cierre de organismos, litio, inocencia fiscal, blanqueo, monotributo, moratoria, planes sociales, bonos, subsidios a la luz y el gas, salarios estatales, ANMAT, protocolo antipiquetes, aportes sindicales, PASO, Ficha Limpia, imputabilidad, ley de glaciares, Hidrovía, Malvinas, dolarización; y exterior: Ucrania, Israel, China, BRICS, OCDE, misiones de paz, Antártida; y de otros espacios: dólar diferencial, prohibición de despidos, Compre Argentino, aporte solidario, reforma judicial, ley de medios, expropiaciones, bimonetarismo, independencia del BCRA, Boleta Única, educación esencial, reiterancia, no pago de la deuda, nacionalización de la banca, reducción de la jornada |
 | Políticas del juego con efectos argentinos | 20 | El cepo es el control de capitales del juego, la emisión es su emisión monetaria, la AUH son las asignaciones familiares, el CONICET es el financiamiento científico, etc. Ver "Sin políticas repetidas" |
 | Situaciones | 38 | Brecha, reservas agotadas, riesgo país, corrida, salto cambiario, corralito, default, sueldos que no alcanzan, recesión, atraso cambiario, cierre de pymes, desempleo, piquetes, paros de la CGT, conflicto en hospitales, crisis de discapacidad, universidades, marchas de jubilados, Congreso en contra, escándalos, crisis energética, grieta; y a favor: desinflación, superávit, inversiones, boom energético, cosecha récord, estabilidad. Internacionales: guerra en Europa, crisis en Medio Oriente, guerra comercial, tasas altas en EE.UU., crisis en Brasil, superciclo de materias primas, pandemia, crisis financiera global, ola migratoria, acuerdo con la UE en vigor |
 | Eventos con imagen | 38 | Campeones del mundo, escándalo cripto presidencial, audios de coimas, fentanilo contaminado, temporal en el sur bonaerense, muerte del Papa, rescate del Tesoro de EE.UU., dengue, falta de gas, paro de controladores, caen los homicidios en Rosario, mejora la nota de la deuda, cierra una fábrica emblemática; y del mundo: estalla una guerra en Europa, se cierra el estrecho de Ormuz, aranceles globales, la Fed sube tasas, Brasil devalúa, la soja vuela, pandemia, derrumbe en Wall Street, éxodo venezolano, entra en vigor el acuerdo con la UE, China compra soja récord |
 | Dilemas | 38 | Vetos a discapacidad y universidades, paro en el hospital pediátrico, condiciones del swap, el dólar toca el techo de la banda, privatizar la aerolínea, suspender las PASO, imputabilidad, glaciares, dólares del colchón, la CGT ofrece negociar, los industriales piden frenar importaciones, FMI, paritarias, lockout del campo, fondos buitre; y del mundo: armas para Ucrania, votación en la ONU sobre Medio Oriente, embajada en Jerusalén, refugiados, estación espacial china en Neuquén, 5G, moneda común con Brasil, aviones de combate, cláusulas ambientales de Europa |
 | Rasgos estructurales | 6 | Inercia inflacionaria, evasión, corrupción, grieta, fuga de cerebros, economía informal |
-| Enlaces causales argentinos | 11 | Ver "Efecto dominó" |
-| Otras conexiones con el juego | 47 | Ver "Lo que ya trae el juego" |
+| Enlaces causales argentinos | 12 | Ver "Efecto dominó" |
+| Otras conexiones con el juego | 45 | Ver "Lo que ya trae el juego" |
 
 El detalle de cada política, situación, evento y dilema, con sus efectos, está en el **[catálogo completo](CATALOGO.md)**.
 
@@ -51,13 +51,13 @@ Democracy 4 ya tiene sus propias políticas: jubilaciones, salario mínimo, leye
 - La **independencia judicial** baja el **riesgo país** y los **escándalos de corrupción**, y atrae **inversiones**.
 - Las **situaciones del juego** también empujan a sus equivalentes argentinas: la **hiperinflación** del juego alimenta el salto cambiario y "el sueldo no alcanza"; la **huelga general**, el **paro de médicos** y el **paro docente** alimentan los paros de la CGT y los conflictos en hospitales y universidades; el **éxodo de empresas** frena las inversiones.
 
-Los nombres internos se comprobaron contra partidas guardadas reales de Democracy 4 (versión 1.65).
+Todos los nombres internos se comprobaron contra los archivos del juego (Democracy 4 1.67).
 
-Al arrancar, el país tiene activas las políticas del juego que existían en 2023 (aranceles altos, aerolínea, trenes y petrolera estatales, control de capitales al máximo, emisión, impuesto a la riqueza).
+Al arrancar, el país tiene activas las políticas del juego que existían en 2023: aranceles y licencias SIRA, Aerolíneas, Trenes Argentinos, YPF y AySA estatales, cepo, emisión, Bienes Personales, impuesto al cheque, AUH, Tarjeta Alimentar, DNI, etiquetado frontal, ART, etc. Las que no existen en Argentina (impuesto a la herencia nacional, a las mansiones…) arrancan apagadas.
 
 ## Nombres argentinos
 
-El mod también **renombra 30 políticas, 4 situaciones y 52 eventos del juego** para que se lean como en Argentina: el control de capitales es el **Cepo cambiario**, el impuesto sobre la renta es **Impuesto a las Ganancias**, el de ventas es el **IVA**, la nómina son las **Cargas sociales**, la aerolínea estatal es **Aerolíneas Argentinas**, los ferrocarriles son **Trenes Argentinos**, la energía estatal es **YPF**, el correo es **Correo Argentino**, los servicios de inteligencia son la **SIDE**, la huelga de profesores es el **Paro docente**, etc. Es sólo el texto (nombre y descripción, en castellano y en inglés): la mecánica sigue siendo la del juego más lo que le conecta el mod. Mientras el mod esté activo, esos nombres cambian también si jugás con otro país. La lista completa está en el [catálogo](CATALOGO.md).
+El mod también **renombra 36 políticas, 4 situaciones y 52 eventos del juego** para que se lean como en Argentina: el control de capitales es el **Cepo cambiario**, el impuesto sobre la renta es **Impuesto a las Ganancias**, el de ventas es el **IVA**, la nómina son las **Cargas sociales**, la aerolínea estatal es **Aerolíneas Argentinas**, los ferrocarriles son **Trenes Argentinos**, la energía estatal es **YPF**, el correo es **Correo Argentino**, los servicios de inteligencia son la **SIDE**, la huelga de profesores es el **Paro docente**, etc. Es sólo el texto (nombre y descripción, en castellano y en inglés): la mecánica sigue siendo la del juego más lo que le conecta el mod. Mientras el mod esté activo, esos nombres cambian también si jugás con otro país. La lista completa está en el [catálogo](CATALOGO.md).
 
 También tienen versión argentina **52 eventos del juego**: el escándalo de cuentas offshore, el fraude en el Banco Central, el paro de estatales, las condenas por lesa humanidad, el terremoto en Cuyo, el derrame en la costa patagónica, la serie argentina que arrasa en el mundo, el unicornio que sale a la bolsa, gatillo fácil, el faltante de nafta, la Selección que se vuelve temprano del Mundial, un argentino al frente de la ONU, etc. Cada uno cuenta el mismo hecho que el original y tiene el mismo efecto; sólo cambia el relato. Quedaron afuera los que ya tienen un evento propio en el mod (sequía, Mundial ganado, incendios, pandemia, temporal, cierre de fábrica, guerra comercial, mejora de la nota de la deuda), para no tener dos iguales, y los que no aplican a Argentina (los de la realeza, o el de Malvinas, que el juego cuenta desde el lado británico).
 
@@ -102,42 +102,28 @@ En otros mods de Argentina pasa que aparecen dos políticas para lo mismo (por e
 
 Las políticas que quedan propias del mod son las que el juego no tiene: retenciones, impuesto PAIS, bandas cambiarias, tasa del BCRA, monotributo, moratoria, planes sociales, subsidios a las tarifas, Malvinas, etc.
 
-## Balance probado en el juego
+## Probado en el juego y calibrado con sus fórmulas
 
-En la primera partida de prueba (Democracy 4 1.67) el país colapsaba en los turnos de preparación que simula el juego antes de empezar: PBI a cero, desempleo de 77 % y peso a cero. Se corrigió en `build/content_balance.py`: los golpes macro de las crisis argentinas van a la mitad (se suman entre sí y con las del juego), la inercia inflacionaria ya no empuja una espiral, se quitó el enlace dólar-precios que pisaba el del juego y el gasto inicial se parece más al presupuesto nacional real (escuelas y hospitales son sobre todo provinciales).
+El mod se probó en ocho partidas reales (Democracy 4 1.67) y se ajustó con lo que mostraban las partidas guardadas y el registro del juego. Con los archivos `data/simulation` del juego se armó un simulador (`build/d4sim.py`, `build/warmup.py`) que reproduce sus ecuaciones (error medio ~0,04 por turno contra partidas reales) y se usó para calibrar el arranque contra los datos de diciembre de 2023.
 
-En la segunda partida de prueba el colapso seguía: en el primer turno de preparación el delito saltaba de 0,23 a 0,95 y la salud de 0,86 a 0,45 por la combinación de políticas del juego con que arrancaba el país. Ahora el país arranca con los niveles de políticas del juego de una partida argentina que sí funcionaba en Democracy 4, más los ajustes argentinos (cepo, universidad gratuita, CONICET, YPF), y con menos emisión inicial.
+Última partida de prueba (16 turnos, escala del juego de 0 a 1):
 
-### Calibración con las fórmulas reales del juego
+| | Al empezar | Peor momento | Turno 16 | Dato real |
+|---|---|---|---|---|
+| PBI | 0,48 | 0,18 | 0,38 | recesión y recuperación |
+| Inflación | 0,54 | | 0,28 | 211 % anual en 2023, en baja en 2024 |
+| Pobreza | 0,42 | | 0,30 | 41,7 % (2.º semestre de 2023) |
+| Delito | 0,54 | | 0,32 | alto, con Rosario como foco |
+| Aprobación | 55 % | 41 % | 44 % | ~50 % al asumir |
 
-Con los archivos `data/simulation` de Democracy 4 (1.67) se armó un simulador (`build/d4sim.py`) que reproduce las ecuaciones del juego; comprobado contra partidas reales, predice el turno siguiente con un error medio de ~0,04 y reproduce el colapso que se veía en las partidas de prueba. Con él (`build/warmup.py`) se buscaron, dentro de rangos realistas, los niveles iniciales de las políticas que después de los turnos de preparación dejan a la Argentina cerca de los datos de diciembre de 2023:
-
-| | Simulado al empezar | Objetivo (escala del juego) | Dato real |
-|---|---|---|---|
-| PBI | 0,46 | 0,40 | recesión, −1,6 % en 2023 |
-| Desempleo | 0,42 | 0,40 | 5,7 % |
-| Inflación | 0,73 | 0,72 | 211 % anual |
-| Peso | 0,07 | 0,08 | brecha de más del 100 % |
-| Pobreza | 0,62 | 0,58 | 41,7 % |
-| Delito | 0,60 | 0,62 | alto, con Rosario como foco |
-| Salud | 0,62 | 0,62 | |
-| Igualdad | 0,47 | 0,45 | Gini ~0,45 |
-
-Valores argentinos que salen de ahí: cepo fuerte, emisión alta, aranceles y licencias SIRA, IVA alto, Ganancias bajo (eliminado para casi todos los asalariados en septiembre de 2023), salario mínimo licuado, AUH y Tarjeta Alimentar, DNI obligatorio, policía armada, sin impuesto a la herencia nacional. Si después se aplican las políticas de 2024-2026, el modelo baja la inflación, aprecia el peso, hunde y después recupera el PBI, baja la pobreza y sube la confianza empresaria, como pasó.
-
-Tercera partida de prueba: al empezar el ajuste el PBI se iba a cero. El simulador lo reprodujo y mostró dos causas: la deuda inicial (con 390.000 la "deuda efectiva" del juego quedaba alrededor de 1,3, lo que deja la confianza empresaria y la estabilidad en cero y dispara la crisis de deuda) y la huelga general del juego (−0,3 a −0,5 de PBI por turno mientras dura). Ahora la deuda inicial cuenta sólo la deuda con privados y organismos (240.000; la intra-sector público con el BCRA y la ANSES no presiona igual) y, sólo en Argentina, la huelga general cuesta lo que un paro real. Con las mismas jugadas de esa partida, el simulador da recesión al principio, desinflación y recuperación después.
-
-Cuarta partida de prueba: la trayectoria ya se parece a la real (recesión al empezar el ajuste, después desinflación, superávit y recuperación; la confianza empresaria pasó de 0 a 0,76). Pero en tres partidas no había salido ni un evento argentino: en el juego un evento ocurre cuando su valor llega a 1, y los del mod llegaban como mucho a 0,67. Ahora usan la mecánica de los del juego: azar de 0,3 a 0,8 más condiciones argentinas que lo llevan a 1 cuando corresponden (los que son sólo azar, ~6 % de los turnos) y un castigo sobre sí mismos para no repetirse enseguida. Los dilemas usan el azar de los del juego (0,2 a 0,8) más sus condiciones.
-
-Quinta partida de prueba: ya salen eventos y dilemas argentinos (Mundial, visita del Papa, escándalo cripto, guerra en Europa, pandemia; dilemas de la CGT, 5G, PASO, colectivo, FMI y glaciares). Dos arreglos: los dilemas aparecían en blanco porque el juego no dibuja las comillas tipográficas (“ ”) que usaban todas sus opciones; ahora los textos usan comillas castellanas (« ») y ningún carácter fuera de Latin-1. Y el delito (0,96) y la salud (0,41) arrancaban fuera de lo real: se suman políticas argentinas que faltaban (policía de cercanía, etiquetado frontal, salud sexual y procreación responsable, comedores escolares, ART, educación física obligatoria, impuestos internos al alcohol).
-
-Sexta partida de prueba: arranque muy cerca de lo real (pobreza 0,42 contra 41,7 %, aprobación inicial 53 %), recesión, desinflación (0,56 a 0,07) y recuperación del PBI hasta 0,49, con 48 % de aprobación al turno 16. Los dilemas seguían sin texto: en el archivo de traducciones de dilemas la primera fila tenía 5 columnas y las de las opciones 4; ahora todas las filas de cada archivo tienen la misma cantidad de columnas, como en los mods publicados, y las situaciones del mod traen avisos de inicio y fin como las del juego. La salud arrancaba en 1,0: la salud pública nacional baja a 0,6 (el grueso del sistema es provincial).
-
-Todo con datos reales (pedido del jugador): la deuda inicial vuelve a la deuda bruta real del Estado nacional (US$ 370.700 millones, ~89 % del PBI); las partidas muestran que el juego tolera relaciones deuda/PBI de 0,9 a 1,3 sin crisis, y que el colapso de la tercera partida lo causó la huelga general. Arrancan activos el impuesto al cheque y los impuestos internos, que existían, y la policía de cercanía tiene cobertura parcial.
-
-Los dilemas seguían sin texto. Ninguno de los 94 dilemas del juego ni de los mods publicados lleva guion bajo en el nombre, y el juego identifica las opciones como `<dilema>_0` y `<dilema>_1`: con nombres `AR_Dil...` se confundía. Ahora los dilemas se llaman `ARDil...` (el validador lo controla).
-
-Séptima partida: los dilemas ya se ven, la deuda real no genera colapso (la partida terminó con deuda de 1,2 veces el PBI, sin crisis de deuda y con 47-54 % de aprobación). Las políticas nuevas de otros espacios con efectos más débiles se reforzaron (Compre Argentino, ley de medios, educación esencial, reiterancia, Boleta Única, reforma judicial) y ahora también empujan situaciones del juego (economía poco competitiva, concentración de medios, paro docente, cárceles saturadas, fuga de empresas y de cerebros, huelga general). Se sacaron del arranque políticas heredadas de otra partida que no son argentinas.
+Qué se corrigió con las partidas:
+- **El país colapsaba antes de empezar.** Las crisis argentinas se sumaban entre sí y con las del juego: sus golpes al PBI, el desempleo y el peso van a la mitad, y los efectos de las políticas del mod sobre el PBI al 60 %. La inercia inflacionaria ya no arma una espiral.
+- **Arranque con niveles argentinos reales,** buscados con el simulador para quedar cerca de los datos: cepo, emisión, aranceles y SIRA, IVA alto, Ganancias bajo (eliminado para casi todos los asalariados en septiembre de 2023), salario mínimo licuado, AUH, Tarjeta Alimentar, DNI, policía armada, policía de cercanía parcial, etiquetado frontal, ART, comedores escolares.
+- **Deuda real.** La deuda bruta del Estado nacional (US$ 370.700 millones, ~89 % del PBI). Las partidas mostraron que el juego tolera deudas de 0,9 a 1,3 veces el PBI sin crisis de deuda.
+- **Huelga general.** En el juego resta 0,3-0,5 de PBI por turno mientras dura; en Argentina (sólo acá) cuesta lo que un paro real: la CGT hizo tres paros generales de un día en dos años.
+- **Eventos.** En el juego un evento ocurre cuando su valor llega a 1; los del mod no llegaban nunca. Ahora usan la mecánica de los del juego: azar más condiciones argentinas, y un castigo sobre sí mismos para no repetirse enseguida.
+- **Dilemas sin texto.** Tres causas: comillas tipográficas que el juego no dibuja, filas de traducción con distinta cantidad de columnas y, la principal, el guion bajo en el nombre interno (el juego identifica las opciones como `<dilema>_0`). Ahora se llaman `ARDil...`.
+- **Mapa, imagen e identificador.** El mapa usa el formato de los mapas del juego, la imagen del menú de mods va al lado de la carpeta y el país usa el mismo identificador que los mods publicados (si no, aparecía en gris y no se podía elegir).
 
 Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
 
@@ -184,27 +170,13 @@ Es compatible con *D4 Overhaul & Expansion*: usa nombres, prerrequisitos e ident
 
 El mod está pensado para jugar con Argentina: las políticas y situaciones argentinas sólo aparecen en Argentina, pero algunos eventos y dilemas pueden aparecer si jugás con otro país.
 
-## Lista de pruebas (primera vez en el juego)
+## Si algo falla
 
-El mod se generó y validó automáticamente, pero **todavía no se probó dentro de Democracy 4**. Revisá, de lo más a lo menos importante:
-
-1. **¿Arranca el juego con el mod activado?** Si no, el error suele indicar el archivo y la fila.
-2. **¿Aparece "República Argentina (diciembre de 2023)"**, con bandera, mapa y descripción?
-3. **¿Aparecen las 39 políticas propias**, con íconos y con las etiquetas de los deslizadores?
-4. **Las políticas del juego (jubilaciones, aranceles, salario mínimo…) ¿mueven las situaciones argentinas?**
-5. **Moneda y cifras:** el país usa dólares (US$). Revisá que el PBI, la deuda y el presupuesto se vean razonables.
-6. **Situaciones al arrancar:** deberían coincidir más o menos con "Cómo arranca".
-7. **Eventos y dilemas:** que aparezcan con imagen y texto.
-
-Puntos del formato que no pude confirmar con la documentación oficial:
-- **Eventos y dilemas que afectan situaciones del mod** con `CreateGrudge` (por ejemplo, "se cierra Ormuz" dispara `AR_CrisisMedioOriente`). Es la forma en que arrancan las crisis internacionales. Cada evento también aplica su golpe directo sobre la economía, así que el shock se siente igual aunque esto no funcionara.
-- **Enlaces causales entre valores distintos** dentro de los overrides de un país. El formato es el mismo que usan los overrides globales de otros mods.
-
-Si algo falla, pasame el mensaje de error o una captura y lo corrijo en el generador.
+El juego deja su registro en `Documentos\My Games\Democracy4\debug\debug.txt` (y `errors.txt`). Con ese archivo, la partida guardada (`savegames\autosave.xml`) y una captura se puede ver qué pasó. Al actualizar el mod, borrá antes la carpeta `mods\argentina_gobernala`: si se descomprime encima, pueden quedar archivos viejos.
 
 ## Subirlo a Steam Workshop
 
-Desde el menú **Mods** del juego, elegí el mod y usá la opción para subirlo al Workshop. Como imagen de portada usá `preview.jpg`, dentro de la carpeta del mod.
+Desde el menú **Mods** del juego, elegí el mod y usá la opción para subirlo al Workshop. Como imagen de portada usá `argentina_gobernala.jpg`.
 
 ## Cómo se genera
 
@@ -213,7 +185,8 @@ El contenido está como datos, ordenado por tema:
 - `build/content_ext.py`: ampliación 2024-2026, cadenas y enlaces causales.
 - `build/content_intl.py`: el mundo (política exterior, crisis globales, eventos y dilemas internacionales).
 - `build/content_base.py`: conexiones con las políticas que ya trae Democracy 4.
-- `build/content_names.py`: nombres y descripciones argentinas para políticas y situaciones del juego.
+- `build/content_parties.py`: políticas de Unión por la Patria, el PRO y el Frente de Izquierda.
+- `build/content_names.py`: nombres y descripciones argentinas para políticas, situaciones y eventos del juego.
 - `build/content_balance.py`: balance y calibración probados contra el juego.
 - `build/d4sim.py` y `build/warmup.py`: simulador con las ecuaciones del juego (necesita los archivos del juego).
 - `build/content_merge.py`: fusiona con las del juego las políticas argentinas que hacían lo mismo (sin repetidos).

@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
-"""Balance probado en el juego (partida de prueba con Democracy 4 1.67, noviembre de 2026).
+"""Balance y arranque de la Argentina, probados en el juego (Democracy 4 1.67) y calibrados con sus fórmulas reales.
 
-Qué pasó: en los ~16 turnos de preparación que el juego simula antes de entregarte el país, la economía colapsó
-(PBI 0,58 -> 0, desempleo 32 % -> 77 %, peso 0,37 -> 0) y el jugador recibió un país destruido. Causas:
+Orden (ver content.py): apply_start() antes de content_merge; extend() después de content_merge y antes de content_base.
 
-1. Muchas crisis argentinas activas a la vez, cada una con su golpe fijo al PBI/desempleo/peso: sumadas, -0,17 de
-   PBI por turno, más los efectos de las políticas.
-2. El rasgo "inercia inflacionaria" sumaba +0,12 de inflación por turno, fijo, y el enlace dólar->precios
-   reemplazaba el del juego: espiral inflación -> peso -> inflación.
-3. Un gasto inicial de casi el doble de lo recaudado (la Argentina real gastaba ~1,3 veces), con escuelas y
-   hospitales cargados como gasto nacional (en Argentina los pagan sobre todo las provincias).
-
-Este módulo se aplica después de content_merge y antes de content_base (así los enlaces con el juego se centran en
-los valores de arranque ya corregidos).
+- Arranque: políticas del juego con los niveles de una configuración argentina que funcionaba en el juego
+  (LATAM_BASELINE), corregidos con valores argentinos reales de diciembre de 2023 (ARG_ON_TOP) y sin las que no
+  existen en Argentina (NOT_IN_ARGENTINA). Los niveles de ARG_ON_TOP salen de una búsqueda con build/d4sim.py que
+  deja al país, después de los turnos de preparación, cerca de los indicadores reales.
+- Deuda inicial: la deuda bruta real (US$ 370.700 millones). Las partidas mostraron que el juego tolera relaciones
+  deuda/PBI de 0,9 a 1,3 sin disparar la crisis de deuda.
+- Huelga general del juego: en Argentina cuesta lo que un paro real (BASE_EFFECT_OVERRIDES).
+- Golpes macro de las crisis argentinas a la mitad y efectos de políticas sobre el PBI al 60 %: se suman entre sí y
+  con los del juego.
+- Eventos y dilemas con la mecánica del juego; dilemas sin guion bajo en el nombre.
 """
 
 # Golpes macro de las situaciones argentinas: a la mitad (se suman entre sí y con las del juego).
@@ -28,11 +28,6 @@ TRAITS = {
     'BrainDrain': '+0.02+(0.02*x)',
     'BlackMarket': '+0.03+(0.02*x)',
 }
-# Probabilidad de eventos y dilemas: en la partida de prueba los eventos del juego llegaban a ~0,9 de valor y los
-# argentinos a 0,15 como máximo, así que no salió ninguno en 8 turnos. Se llevan a la escala del juego.
-EVENT_INFLUENCE_SCALE = 4.0
-DILEMMA_INFLUENCE_SCALE = 2.5
-
 DROP_CHAINS = {'Dolar a precios'}   # reemplazaba el enlace dólar->inflación del juego por uno mucho más fuerte
 
 # Segunda partida de prueba: con la configuración anterior de políticas del juego, en el primer turno de preparación
@@ -42,7 +37,7 @@ DROP_CHAINS = {'Dolar a precios'}   # reemplazaba el enlace dólar->inflación d
 # del juego base, no las de ese mod). Encima van los ajustes argentinos de ARG_ON_TOP.
 LATAM_BASELINE = {
     'AbortionLaw': 0.75, 'AdultEducationSubsidies': 0.6, 'AgricultureSubsidies': 0.1, 'AirlineTax': 0.5, 'AlcoholLaw': 0.4,
-    'AlcoholTax': 0.45,   # impuestos internos al alcohol 'AntiCorruptionAgency': 0.15, 'AntibioticsBan': 0.6, 'ArtsSubsidies': 0.35, 'BicycleSubsidies': 0.1,
+    'AlcoholTax': 0.25, 'AntiCorruptionAgency': 0.15, 'AntibioticsBan': 0.6, 'ArtsSubsidies': 0.35, 'BicycleSubsidies': 0.1,
     'BorderControls': 0.5, 'BusLanes': 0.6, 'BusSubsidies': 0.25, 'CCTVCameras': 0.5, 'CapitalControls': 0.25,
     'CapitalGainsTax': 0.6, 'CarTax': 0.25, 'ChildBenefit': 0.9, 'ChildcareProvision': 0.6, 'CleanEnergySubsidies': 0.1,
     'CompulsoryForeignLanguageClasses': 0.35, 'ConsumerRights': 0.6, 'CorporationTax': 0.7, 'Creationism': 0.5, 'DisabilityBenefit': 0.83,
@@ -72,9 +67,16 @@ DROP_FROM_BASELINE = {'HelicopterMoney',   # la emisión la representa la polít
 # se buscaron, dentro de rangos realistas para la Argentina de diciembre de 2023, los niveles que después de los
 # turnos de preparación dejan al país cerca de los indicadores reales (escala del juego): PBI 0,40 (en recesión),
 # desempleo 0,40, inflación 0,72 (211 % anual), peso 0,08 (brecha enorme), pobreza 0,58 (41,7 %), delito 0,62,
-# salud 0,62, igualdad 0,45 (Gini ~0,45), confianza empresaria 0,30. Resultado simulado: 0,45 / 0,43 / 0,71 / 0,08 /
-# (ver warmup.py), estable 8 turnos sin tocar nada (el peso se sigue debilitando, como en la realidad).
+# salud 0,62, igualdad 0,45 (Gini ~0,45), confianza empresaria 0,30. Después se ajustó con las partidas reales.
 ARG_ON_TOP = {
+    # Revisión final contra la Argentina real (venían de la configuración de otra partida)
+    'StateAirline': 1.0,               # Aerolíneas Argentinas, 100 % estatal
+    'StateRail': 0.8,                  # Trenes Argentinos y Belgrano Cargas
+    'GovernmentSubsidiesForUnions': 0.2,   # los gremios se financian con aportes obligatorios (AR_ModeloSindical)
+    'ForeignAid': 0.05,                # Argentina casi no es donante
+    'SchoolBuses': 0.2,
+    'MicrogenerationGrants': 0.2,      # ley de generación distribuida, con poco subsidio
+    'CleanEnergySubsidies': 0.3,       # programa RenovAr
     # Todo realista (pedido del jugador): impuestos que existían en dic-2023
     'FinancialTransactionsTax': 0.6,   # impuesto al cheque
     'CapitalGainsTax': 0.3,            # ganancias de capital de personas: 15 % desde 2018
@@ -130,21 +132,10 @@ NOT_IN_ARGENTINA = {'LuxuryGoodsTax',   # los impuestos internos son sobre todo 
 BASE_EFFECT_OVERRIDES = [
     ('Paro general de un dia', 'GeneralStrike', 'GDP', '-0.03-(0.04*x)', 2),
 ]
-# La deuda "efectiva" del juego baja la confianza empresaria y la estabilidad y dispara la crisis de deuda. Se cuenta
-# la deuda con privados y organismos (FMI), no la intra-sector público (BCRA, ANSES), que no presiona igual.
+# Deuda bruta real. (Las partidas mostraron que el juego tolera relaciones deuda/PBI de 0,9 a 1,3 sin crisis de deuda.)
 STARTING_DEBT = 370000   # deuda bruta real del Estado nacional a dic-2023: US$ 370.700 millones
 ECONOMIC_CYCLE_START = 0.4   # la economía mundial en 2023 no estaba en recesión (la recesión era argentina)
 
-# (ya no se usa: reemplazado por LATAM_BASELINE + ARG_ON_TOP)
-COUNTRY_POLICY_FIX_OLD = {
-    'StateHealthService': 0.55,   # hospitales: sobre todo provinciales
-    'StateSchools': 0.50,         # escuelas: provinciales
-    'MilitarySpending': 0.10,     # Defensa ~0,5 % del PBI
-    'ChildcareProvision': 0.15,
-    'StateHousing': 0.20,
-    'SalesTax': 0.85,             # IVA del 21 %, de los más altos del mundo
-    'CorporationTax': 0.70,       # Ganancias de sociedades del 35 %
-}
 START_FIX = {
     'AR_VacaMuerta': 0.15,        # en 2023 el desarrollo era privado; el subsidio estatal, chico
     'AR_EmisionTesoro': 0.8,
@@ -154,7 +145,6 @@ START_FIX = {
     'AR_BonoNavidad': 0.05,
     'AR_ParitariasEstatales': 0.5,
 }
-BASE_START_FIX = {'StateRail': 0.45, 'StateEnergy': 0.35}
 
 
 def _scale(formula, k):
@@ -179,8 +169,6 @@ def apply_start(C):
 
 def extend(C):
     """Después de content_merge, antes de content_base."""
-    import content_base as B
-    B.BASE_START_2023.update(BASE_START_FIX)
     for s in C.SITUATIONS:
         if not s['name'].startswith('AR_'):
             continue

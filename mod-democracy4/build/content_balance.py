@@ -81,7 +81,7 @@ ARG_ON_TOP = {
     # Quinta partida: el delito arrancaba en 0,96 y la salud en 0,41. Políticas argentinas reales que faltaban:
     'CommunityPolicing': 0.3,          # policía de cercanía / cuadrantes (cobertura parcial)
     'CompulsoryFoodLabelling': 0.8,    # Ley de Etiquetado Frontal (2021)
-    'FamilyPlanning': 0.6,             # Salud sexual y procreación responsable (Ley 25.673)
+    'FamilyPlanning': 0.4,             # Salud sexual y procreación responsable (Ley 25.673)
     'FreeSchoolMeals': 0.4,            # comedores escolares
     'WorkSafetyLaw': 0.6,              # riesgos del trabajo (ART)
     'CompulsorySchoolSports': 0.5,     # educación física obligatoria
@@ -120,7 +120,8 @@ ARG_ON_TOP = {
     'UnemployedBenefit': 0.63,
     'UniversityGrants': 0.6,   # universidad pública y gratuita
 }
-NOT_IN_ARGENTINA = {'InheritanceTax',   # no hay impuesto a la herencia nacional
+NOT_IN_ARGENTINA = {'OrganicSubsidy', 'SmartMeterProgram', 'RacialProfiling', 'DivertedProfitsTax',   # venían de otra partida; no son argentinas
+                    'InheritanceTax',   # no hay impuesto a la herencia nacional
                     'MansionTax'}   # el patrimonio lo grava Bienes Personales
 # Tercera partida de prueba: al empezar el ajuste se activó la huelga general del juego, que resta 0,3-0,5 de PBI por
 # turno mientras dura, y el PBI pasó de 0,37 a 0 en dos turnos. En la realidad la CGT hizo tres paros generales de un

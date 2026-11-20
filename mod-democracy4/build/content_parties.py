@@ -66,7 +66,8 @@ def extend(C):
         ('Ban on dismissals and double severance', 'Dismissals without cause are banned or cost double. It was in force from '
          '2019 to 2022. It protects existing jobs, but nobody hires formally and informality grows.'),
         ['TradeUnionist,0+(0.15*x)', 'Capitalist,0-(0.15*x)', 'SelfEmployed,0-(0.06*x)', 'Unemployment,0-(0.03*x),2',
-         'BusinessConfidence,0-(0.08*x)', 'ForeignInvestment,0-(0.04*x),4', 'BlackMarket,0+(0.04*x),4'],
+         'BusinessConfidence,0-(0.08*x)', 'ForeignInvestment,0-(0.04*x),4', 'BlackMarket,0+(0.04*x),4',
+         'GeneralStrike,0-(0.08*x)'],
         pc=(10, 8, 5, 5), impl=1, cost=(0, 0))
 
     pol('AR_CompreArgentino', 'ECONOMY', 'building-factory-2',
@@ -74,9 +75,10 @@ def extend(C):
          'y trabas a lo importado. Defiende fábricas y empleos industriales, pero encarece todo y aísla del mundo.'),
         ('Buy Argentine and import substitution', 'Preference for domestic industry in state purchases and barriers to '
          'imports. It protects factories and industrial jobs, but makes everything dearer and isolates the economy.'),
-        ['TradeUnionist,0+(0.08*x)', 'Patriot,0+(0.08*x)', 'Unemployment,0-(0.02*x),4', 'Inflation,0+(0.03*x),4',
-         'InternationalTrade,0-(0.06*x)', 'Capitalist,0-(0.04*x)', 'MiddleIncome,0-(0.04*x)'],
-        pc=(8, 6, 4, 4), impl=4, cost=(0, 40))
+        ['TradeUnionist,0+(0.12*x)', 'Patriot,0+(0.12*x)', 'Capitalist,0-(0.06*x)', 'MiddleIncome,0-(0.06*x)',
+         'Unemployment,0-(0.05*x),4', 'Inflation,0+(0.06*x),4', 'InternationalTrade,0-(0.12*x)', 'WorkerProductivity,0-(0.04*x),8',
+         'GDP,0+(0.02*x),2', 'ForeignRelations,0-(0.03*x)', 'Uncompetitive Economy,0+(0.08*x),8'],
+        pc=(8, 6, 4, 4), impl=4, cost=(0, 150))
 
     pol('AR_AporteSolidario', 'TAX', 'coins',
         ('Aporte solidario de las grandes fortunas', 'Impuesto extraordinario a los patrimonios de más de 200 millones de '
@@ -84,7 +86,8 @@ def extend(C):
         ('Solidarity levy on large fortunes', 'One-off tax on fortunes above 200 million pesos, like the 2021 pandemic levy. '
          'It raises money once, but large savers move their money abroad.'),
         ['Wealthy,0-(0.25*x)', 'Capitalist,0-(0.10*x)', 'Socialist,0+(0.12*x)', 'Equality,0+(0.03*x),4',
-         'ForeignInvestment,0-(0.04*x),4', 'BusinessConfidence,0-(0.04*x)'],
+         'ForeignInvestment,0-(0.04*x),4', 'BusinessConfidence,0-(0.04*x)',
+         'BrainDrain,0+(0.10*x),4', 'CorporateExodus,0+(0.05*x),4'],
         pc=(12, 8, 6, 6), impl=2, income=(0, 2500))
 
     pol('AR_ReformaJudicial', 'LAWANDORDER', 'gavel',
@@ -92,8 +95,8 @@ def extend(C):
          'Sus defensores hablan de democratizar la Justicia; sus críticos, de colonizarla.'),
         ('Judicial reform and Supreme Court expansion', 'More justices on the Supreme Court and changes to the federal courts. '
          'Supporters call it democratising the courts; critics call it packing them.'),
-        ['Socialist,0+(0.08*x)', 'Liberal,0-(0.10*x)', 'Conservatives,0-(0.08*x)', 'Democracy,0-(0.04*x),4',
-         'Corruption,0+(0.03*x),6', 'ForeignInvestment,0-(0.03*x),4'],
+        ['Socialist,0+(0.10*x)', 'Liberal,0-(0.12*x)', 'Conservatives,0-(0.10*x)', 'Democracy,0-(0.06*x),4',
+         'Corruption,0+(0.05*x),6', 'ForeignInvestment,0-(0.04*x),4', 'Polarization,0+(0.04*x),4'],
         pc=(25, 10, 10, 8), impl=4, cost=(0, 0))
 
     pol('AR_LeyMedios', 'LAWANDORDER', 'news',
@@ -101,7 +104,8 @@ def extend(C):
          'como la ley de 2009. Más voces o más control político de los medios, según quién lo mire.'),
         ('Media law (breaking up monopolies)', 'Limits on how many radio and TV licences one group can hold, like the 2009 '
          'law. More voices or more political control of the media, depending on who you ask.'),
-        ['Socialist,0+(0.06*x)', 'Capitalist,0-(0.08*x)', 'Liberal,0-(0.04*x)', 'Polarization,0+(0.03*x),4'],
+        ['Socialist,0+(0.08*x)', 'Capitalist,0-(0.10*x)', 'Liberal,0-(0.06*x)', 'Polarization,0+(0.05*x),4',
+         'Democracy,0-(0.03*x),4', 'ForeignRelations,0-(0.02*x)', 'MediaMonopolies,0-(0.15*x),4'],
         pc=(15, 8, 6, 6), impl=4, cost=(0, 20))
 
     pol('AR_Expropiaciones', 'ECONOMY', 'building-factory',
@@ -110,7 +114,8 @@ def extend(C):
         ('Expropriation of strategic firms', 'The state takes over firms in crisis or deemed strategic, as was attempted with '
          'the Vicentin grain company in 2020. Activists love it; investors flee.'),
         ['Capitalist,0-(0.20*x)', 'Socialist,0+(0.12*x)', 'Patriot,0+(0.05*x)', 'ForeignInvestment,0-(0.10*x),4',
-         'BusinessConfidence,0-(0.10*x)', 'StateEmployees,0+(0.05*x)'],
+         'BusinessConfidence,0-(0.10*x)', 'StateEmployees,0+(0.05*x)',
+         'CorporateExodus,0+(0.10*x),4'],
         pc=(20, 10, 10, 8), impl=2, cost=(0, 80))
 
     # ------------------------------------------------------------------ PRO / Juntos por el Cambio
@@ -141,7 +146,7 @@ def extend(C):
          'boletas y abarata las elecciones para los partidos chicos. Se aprobó en 2024, impulsada por el PRO.'),
         ('Single paper ballot', 'One state-printed ballot listing every candidate. It ends ballot theft and makes elections '
          'cheaper for small parties. Approved in 2024, pushed by the PRO party.'),
-        ['Democracy,0+(0.03*x),4', 'Corruption,0-(0.02*x),6', 'Liberal,0+(0.04*x)'],
+        ['Democracy,0+(0.05*x),4', 'Corruption,0-(0.03*x),6', 'Liberal,0+(0.06*x)', 'Conservatives,0+(0.03*x)'],
         pc=(8, 8, 4, 4), impl=4, cost=(0, 10))
 
     pol('AR_EducacionEsencial', 'PUBLICSERVICES', 'school',
@@ -149,7 +154,8 @@ def extend(C):
          'impulsa el PRO desde la pandemia. Los gremios docentes lo consideran un ataque al derecho de huelga.'),
         ('Education as an essential service', 'Schools cannot close because of strikes: a minimum of classes is guaranteed. '
          'Pushed by the PRO party since the pandemic. Teachers\' unions see it as an attack on the right to strike.'),
-        ['Education,0+(0.03*x),8', 'Parents,0+(0.10*x)', 'TradeUnionist,0-(0.10*x)', 'StateEmployees,0-(0.06*x)'],
+        ['Education,0+(0.06*x),8', 'Parents,0+(0.12*x)', 'TradeUnionist,0-(0.12*x)', 'StateEmployees,0-(0.08*x)',
+         'TeachersStrike,0-(0.15*x),2'],
         pc=(10, 8, 5, 5), impl=2, cost=(0, 0))
 
     pol('AR_Reiterancia', 'LAWANDORDER', 'shield-lock',
@@ -157,7 +163,8 @@ def extend(C):
          'justifique. Es parte de la agenda de seguridad del PRO y de Patricia Bullrich.'),
         ('Repeat-offender law', 'Anyone with several pending criminal cases awaits trial in custody, even if no single offence '
          'would justify it. Part of the security agenda of the PRO party and Patricia Bullrich.'),
-        ['CrimeRate,0-(0.04*x),6', 'Conservatives,0+(0.10*x)', 'Liberal,0-(0.08*x)', 'Retired,0+(0.04*x)'],
+        ['CrimeRate,0-(0.06*x),6', 'ViolentCrimeRate,0-(0.04*x),6', 'Conservatives,0+(0.12*x)', 'Liberal,0-(0.10*x)',
+         'Retired,0+(0.05*x)', 'PrisonOvercrowding,0+(0.10*x),4'],
         pc=(10, 8, 5, 5), impl=2, cost=(0, 60))
 
     # ------------------------------------------------------------------ Frente de Izquierda
@@ -181,7 +188,8 @@ def extend(C):
          'It is the Left Front\'s programme. It controls the dollars at the source, but savers rush to withdraw deposits.'),
         ['Capitalist,0-(0.35*x)', 'Wealthy,0-(0.20*x)', 'Socialist,0+(0.20*x)', 'ForeignInvestment,0-(0.15*x),4',
          'BusinessConfidence,0-(0.15*x)', 'InternationalTrade,0-(0.08*x)', 'Corruption,0+(0.03*x),6',
-         'BlackMarket,0+(0.06*x),4', 'StateEmployees,0+(0.06*x)'],
+         'BlackMarket,0+(0.06*x),4', 'StateEmployees,0+(0.06*x)',
+         'CorporateExodus,0+(0.15*x),2'],
         pc=(35, 25, 12, 10), impl=4, cost=(0, 200))
 
     pol('AR_JornadaReducida', 'ECONOMY', 'clock',
@@ -191,7 +199,8 @@ def extend(C):
         ('Shorter working week', 'Six-hour days or a four-day week with no pay cut, as proposed by the Left Front and some '
          'Peronist deputies. Better quality of life, but each job costs more.'),
         ['WorkingWeek,0-(0.10*x),4', 'TradeUnionist,0+(0.12*x)', 'Young,0+(0.06*x)', 'Capitalist,0-(0.15*x)',
-         'SelfEmployed,0-(0.06*x)', 'Health,0+(0.02*x),8', 'GDP,0-(0.03*x),4', 'BusinessConfidence,0-(0.05*x)'],
+         'SelfEmployed,0-(0.06*x)', 'Health,0+(0.02*x),8', 'GDP,0-(0.03*x),4', 'BusinessConfidence,0-(0.05*x)',
+         'GeneralStrike,0-(0.05*x)'],
         pc=(12, 8, 6, 6), impl=4, cost=(0, 0))
 
     # ------------------------------------------------------------------ cómo encadenan con las crisis argentinas
@@ -211,7 +220,7 @@ def extend(C):
         'AR_Desinflacion': ['AR_BCRAIndependiente,0+(0.06*x)', 'AR_Bimonetarismo,0+(0.05*x)'],
         'AR_CierrePymes': ['AR_ProhibicionDespidos,0+(0.06*x)', 'AR_JornadaReducida,0+(0.08*x)',
                            'AR_CompreArgentino,0-(0.08*x)'],
-        'AR_DesempleoCreciente': ['AR_ProhibicionDespidos,0-(0.06*x)'],
+        'AR_DesempleoCreciente': ['AR_ProhibicionDespidos,0-(0.06*x)', 'AR_CompreArgentino,0-(0.05*x)'],
         'AR_ParoCGT': ['AR_JornadaReducida,0-(0.10*x)', 'AR_ProhibicionDespidos,0-(0.08*x)',
                        'AR_EducacionEsencial,0+(0.04*x)'],
         'AR_ConflictoUniversitario': ['AR_EducacionEsencial,0+(0.05*x)'],

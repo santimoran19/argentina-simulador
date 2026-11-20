@@ -13,18 +13,18 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 | **Aportes sindicales y obras sociales** | 80% | ▲ sindicalistas, corrupción, salarios, desempleo · ▼ empresarios |
 | **Bandas cambiarias** | — | ▲ fortaleza del peso, confianza empresaria, empresarios · ▼ inflación, campo |
 | **Bimonetarismo** | — | ▲ fortaleza del peso, confianza empresaria, clase media · ▼ inflación, nacionalistas, izquierda |
-| **Compre Argentino y sustitución de importaciones** | — | ▲ sindicalistas, nacionalistas, inflación · ▼ desempleo, comercio exterior, empresarios, clase media |
+| **Compre Argentino y sustitución de importaciones** | — | ▲ sindicalistas, nacionalistas, inflación, PBI, Uncompetitive Economy · ▼ empresarios, clase media, desempleo, comercio exterior, productividad, relaciones exteriores |
 | **Control de precios** | 40% | ▲ inflación, mercado negro, sectores bajos · ▼ inflación, confianza empresaria, empresarios, cuentapropistas, precio de los alimentos |
 | **Desregulación de la economía** | 10% | ▲ confianza empresaria, cuentapropistas, productividad, empresarios · ▼ burocracia, sindicalistas, calidad democrática, sectores bajos |
 | **Dolarización** | — | ▲ empresarios, desempleo, confianza empresaria, fortaleza del peso · ▼ inflación, nacionalistas, izquierda, estatales |
 | **Dólares diferenciales (dólar soja, dólar agro)** | — | ▲ campo, comercio exterior, inflación, empresarios, mercado negro · ▼ fortaleza del peso |
 | **Explotación de litio** | 30% | ▲ inversión extranjera, tecnología, PBI, escasez de agua · ▼ ambientalistas |
-| **Expropiación de empresas estratégicas** | — | ▲ izquierda, nacionalistas, estatales · ▼ empresarios, inversión extranjera, confianza empresaria |
+| **Expropiación de empresas estratégicas** | — | ▲ izquierda, nacionalistas, estatales, éxodo de empresas (juego) · ▼ empresarios, inversión extranjera, confianza empresaria |
 | **Independencia del Banco Central** | — | ▲ confianza empresaria, inversión extranjera, empresarios · ▼ inflación, izquierda |
-| **Nacionalización de la banca y del comercio exterior** | — | ▲ izquierda, corrupción, mercado negro, estatales · ▼ empresarios, clase alta, inversión extranjera, confianza empresaria, comercio exterior |
-| **Prohibición de despidos y doble indemnización** | — | ▲ sindicalistas, mercado negro · ▼ empresarios, cuentapropistas, desempleo, confianza empresaria, inversión extranjera |
+| **Nacionalización de la banca y del comercio exterior** | — | ▲ izquierda, corrupción, mercado negro, estatales, éxodo de empresas (juego) · ▼ empresarios, clase alta, inversión extranjera, confianza empresaria, comercio exterior |
+| **Prohibición de despidos y doble indemnización** | — | ▲ sindicalistas, mercado negro · ▼ empresarios, cuentapropistas, desempleo, confianza empresaria, inversión extranjera, huelga general (juego) |
 | **Recorte del gasto público ("motosierra")** | — | ▲ desempleo, empresarios · ▼ estatales, inflación, PBI, izquierda, burocracia, sectores bajos, jubilados |
-| **Reducción de la jornada laboral** | — | ▲ sindicalistas, jóvenes, salud · ▼ WorkingWeek, empresarios, cuentapropistas, PBI, confianza empresaria |
+| **Reducción de la jornada laboral** | — | ▲ sindicalistas, jóvenes, salud · ▼ WorkingWeek, empresarios, cuentapropistas, PBI, confianza empresaria, huelga general (juego) |
 | **Regla de déficit cero** | — | ▲ confianza empresaria, empresarios · ▼ inflación, jubilados, estatales, izquierda |
 | **Tasa de interés del Banco Central** | 63% | ▲ fortaleza del peso, desempleo, clase alta · ▼ inflación, PBI, cuentapropistas, clase media |
 
@@ -32,7 +32,7 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 
 | Política | Nivel inicial | Efectos |
 |---|---|---|
-| **Aporte solidario de las grandes fortunas** | — | ▲ izquierda, igualdad · ▼ clase alta, empresarios, inversión extranjera, confianza empresaria |
+| **Aporte solidario de las grandes fortunas** | — | ▲ izquierda, igualdad, fuga de cerebros, éxodo de empresas (juego) · ▼ clase alta, empresarios, inversión extranjera, confianza empresaria |
 | **Blanqueo de capitales** | — | ▲ corrupción, clase alta, confianza empresaria · ▼ evasión, clase media |
 | **Derechos de exportación (retenciones)** | 75% | ▲ igualdad, izquierda · ▼ campo, ingresos del campo, comercio exterior, PBI, precio de los alimentos, empresarios |
 | **Impuesto PAIS** | 60% | ▲ turismo, evasión · ▼ clase media, clase alta |
@@ -54,7 +54,7 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 |---|---|---|
 | **Cierre de organismos públicos** | — | ▲ empresarios · ▼ estatales, campo, tecnología, burocracia |
 | **Controles sanitarios (ANMAT)** | 50% | ▲ salud, burocracia · ▼ corrupción, confianza empresaria |
-| **Educación como servicio esencial** | — | ▲ educación, familias · ▼ sindicalistas, estatales |
+| **Educación como servicio esencial** | — | ▲ educación, familias · ▼ sindicalistas, estatales, Paro docente (juego) |
 | **Salarios del sector público** | 50% | ▲ estatales, inflación, sindicalistas · ▼ empresarios |
 | **Transferencias discrecionales a provincias** | 60% | ▲ corrupción, estabilidad, igualdad, todos los votantes |
 
@@ -63,15 +63,15 @@ Generado automáticamente a partir del contenido (`build/catalog.py`). ▲ sube,
 | Política | Nivel inicial | Efectos |
 |---|---|---|
 | **Baja de la edad de imputabilidad** | — | ▲ conservadores, hacinamiento carcelario · ▼ progresistas, delito, jóvenes |
-| **Boleta Única de Papel** | — | ▲ calidad democrática, progresistas · ▼ corrupción |
+| **Boleta Única de Papel** | — | ▲ calidad democrática, progresistas, conservadores · ▼ corrupción |
 | **Facultades delegadas y gobierno por decreto** | — | ▲ empresarios · ▼ calidad democrática, progresistas, burocracia, estabilidad |
 | **Ficha Limpia** | — | ▲ calidad democrática, progresistas, clase media · ▼ corrupción |
 | **Ley de glaciares** | 60% | ▲ ambientalistas, ambiente · ▼ inversión extranjera, empresarios, escasez de agua |
-| **Ley de medios (desmonopolización)** | — | ▲ izquierda, polarización · ▼ empresarios, progresistas |
-| **Ley de reiterancia** | — | ▲ conservadores, jubilados · ▼ delito, progresistas |
+| **Ley de medios (desmonopolización)** | — | ▲ izquierda, polarización · ▼ empresarios, progresistas, calidad democrática, relaciones exteriores, MediaMonopolies |
+| **Ley de reiterancia** | — | ▲ conservadores, jubilados, hacinamiento carcelario · ▼ delito, delito violento, progresistas |
 | **Primarias abiertas (PASO)** | 100% | ▲ calidad democrática, progresistas, burocracia |
 | **Protocolo antipiquetes** | — | ▲ conservadores, clase media, estabilidad · ▼ tránsito, progresistas, izquierda, sindicalistas, calidad democrática |
-| **Reforma judicial y ampliación de la Corte** | — | ▲ izquierda, corrupción · ▼ progresistas, conservadores, calidad democrática, inversión extranjera |
+| **Reforma judicial y ampliación de la Corte** | — | ▲ izquierda, corrupción, polarización · ▼ progresistas, conservadores, calidad democrática, inversión extranjera |
 
 ### Política exterior (11)
 
@@ -118,7 +118,7 @@ Qué las enciende (causas) y qué provocan mientras están activas (efectos). La
 | **Caída de la actividad** | El sueldo no alcanza, Recorte del gasto público ("motosierra"), Tasa de interés del Banco Central, Riesgo país por las nubes, Crisis en Brasil, Nueva pandemia, Crisis financiera global, Guerra comercial global, IVA (juego), Impuesto a las Ganancias (juego), Ganancias de sociedades (juego) | PBI, Obra pública vial (juego), Lluvia de inversiones, ayuda a pymes (juego) | ▲ desempleo · ▼ cuentapropistas, empresarios, PBI |
 | **Argentina cara en dólares** | fortaleza del peso, Bandas cambiarias, Tasa de interés del Banco Central, Alineamiento con Estados Unidos | Salto cambiario | ▲ clase media · ▼ turismo, campo, inflación, comercio exterior |
 | **Cierre de pymes** | Caída de la actividad, Argentina cara en dólares, Tasa de interés del Banco Central, Crisis energética, Crisis en Brasil, Acuerdo con la Unión Europea en vigor, Guerra comercial global, Prohibición de despidos y doble indemnización, Reducción de la jornada laboral, Cargas sociales (juego), éxodo de empresas (juego) | Aranceles y licencias de importación (juego), Subsidios a la luz y el gas, Compre Argentino y sustitución de importaciones, ayuda a pymes (juego), incentivo a la inversión (juego) | ▲ desempleo, comercio exterior · ▼ cuentapropistas, sindicalistas |
-| **Desempleo en alza** | desempleo, Cierre de pymes, Caída de la actividad, Recorte del gasto público ("motosierra"), Ley de Contrato de Trabajo (juego), Cargas sociales (juego) | Lluvia de inversiones, Prohibición de despidos y doble indemnización | ▲ delito, fuga de cerebros · ▼ sectores bajos, jóvenes, sindicalistas |
+| **Desempleo en alza** | desempleo, Cierre de pymes, Caída de la actividad, Recorte del gasto público ("motosierra"), Ley de Contrato de Trabajo (juego), Cargas sociales (juego) | Lluvia de inversiones, Prohibición de despidos y doble indemnización, Compre Argentino y sustitución de importaciones | ▲ delito, fuga de cerebros · ▼ sectores bajos, jóvenes, sindicalistas |
 | **Conflicto en los hospitales** | Recorte del gasto público ("motosierra"), Nueva pandemia, Paro de médicos y residentes (juego) | Hospitales públicos (juego), Salarios del sector público, salud | ▼ salud, familias, estatales, progresistas |
 | **Crisis en el sistema de discapacidad** | Recorte del gasto público ("motosierra"), El sueldo no alcanza | Pensiones y prestaciones por discapacidad (juego) | ▼ familias, sectores bajos, todos los votantes, progresistas |
 | **Universidades en pie de guerra** | Recorte del gasto público ("motosierra"), Educación como servicio esencial, Paro docente (juego) | Universidad pública y gratuita (juego), CONICET y ciencia (juego) | ▲ fuga de cerebros · ▼ jóvenes, progresistas, educación |

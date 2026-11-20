@@ -137,6 +137,8 @@ Todo con datos reales (pedido del jugador): la deuda inicial vuelve a la deuda b
 
 Los dilemas seguían sin texto. Ninguno de los 94 dilemas del juego ni de los mods publicados lleva guion bajo en el nombre, y el juego identifica las opciones como `<dilema>_0` y `<dilema>_1`: con nombres `AR_Dil...` se confundía. Ahora los dilemas se llaman `ARDil...` (el validador lo controla).
 
+Séptima partida: los dilemas ya se ven, la deuda real no genera colapso (la partida terminó con deuda de 1,2 veces el PBI, sin crisis de deuda y con 47-54 % de aprobación). Las políticas nuevas de otros espacios con efectos más débiles se reforzaron (Compre Argentino, ley de medios, educación esencial, reiterancia, Boleta Única, reforma judicial) y ahora también empujan situaciones del juego (economía poco competitiva, concentración de medios, paro docente, cárceles saturadas, fuga de empresas y de cerebros, huelga general). Se sacaron del arranque políticas heredadas de otra partida que no son argentinas.
+
 Los archivos del juego no están en el repositorio (son de Positech). Para usar el simulador: `D4_BASE=<carpeta data/simulation del juego> python3 build/warmup.py`.
 
 ## Efecto dominó: todo se encadena
